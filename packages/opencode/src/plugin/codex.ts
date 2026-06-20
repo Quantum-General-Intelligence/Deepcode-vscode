@@ -1,11 +1,11 @@
 import type { Hooks, PluginInput } from "@kilocode/plugin"
-import { Log } from "../util"
-import { Installation } from "../installation"
-import { InstallationVersion } from "../installation/version"
+import * as Log from "@opencode-ai/core/util/log"
+import { InstallationVersion } from "@opencode-ai/core/installation/version"
 import { OAUTH_DUMMY_KEY } from "../auth"
 import os from "os"
 import { setTimeout as sleep } from "node:timers/promises"
 import { createServer } from "http"
+import { refreshCodexAuth } from "@/kilocode/provider/codex-refresh" // kilocode_change
 
 const log = Log.create({ service: "plugin.codex" })
 
@@ -14,6 +14,20 @@ const ISSUER = "https://auth.openai.com"
 const CODEX_API_ENDPOINT = "https://chatgpt.com/backend-api/codex/responses"
 const OAUTH_PORT = 1455
 const OAUTH_POLLING_SAFETY_MARGIN_MS = 3000
+const ALLOWED_MODELS = new Set([
+  "gpt-5.5",
+  "gpt-5.2",
+  "gpt-5.3-codex",
+  "gpt-5.3-codex-spark",
+  "gpt-5.4",
+  "gpt-5.4-mini",
+  // kilocode_change start - additional codex models supported by Kilo
+  "gpt-5.1-codex",
+  "gpt-5.1-codex-max",
+  "gpt-5.1-codex-mini",
+  "gpt-5.2-codex",
+  // kilocode_change end
+])
 
 interface PkceCodes {
   verifier: string
@@ -98,7 +112,7 @@ function buildAuthorizeUrl(redirectUri: string, pkce: PkceCodes, state: string):
     id_token_add_organizations: "true",
     codex_cli_simplified_flow: "true",
     state,
-    originator: "opencode",
+    originator: "kilo", // kilocode_change
   })
   return `${ISSUER}/oauth/authorize?${params.toString()}`
 }
@@ -108,6 +122,11 @@ interface TokenResponse {
   access_token: string
   refresh_token: string
   expires_in?: number
+}
+
+interface CodexAuthPluginOptions {
+  issuer?: string
+  codexApiEndpoint?: string
 }
 
 async function exchangeCodeForTokens(code: string, redirectUri: string, pkce: PkceCodes): Promise<TokenResponse> {
@@ -128,10 +147,13 @@ async function exchangeCodeForTokens(code: string, redirectUri: string, pkce: Pk
   return response.json()
 }
 
-async function refreshAccessToken(refreshToken: string): Promise<TokenResponse> {
-  const response = await fetch(`${ISSUER}/oauth/token`, {
+// kilocode_change start
+async function refreshAccessToken(refreshToken: string, issuer = ISSUER, signal?: AbortSignal): Promise<TokenResponse> {
+  const response = await fetch(`${issuer}/oauth/token`, {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    signal,
+    headers: { "Content-Type": "application/x-www-form-urlencoded", "User-Agent": `kilo/${InstallationVersion}` },
+    // kilocode_change end
     body: new URLSearchParams({
       grant_type: "refresh_token",
       refresh_token: refreshToken,
@@ -362,42 +384,56 @@ function waitForOAuthCallback(pkce: PkceCodes, state: string): Promise<TokenResp
   })
 }
 
-export async function CodexAuthPlugin(input: PluginInput): Promise<Hooks> {
+export async function CodexAuthPlugin(input: PluginInput, options: CodexAuthPluginOptions = {}): Promise<Hooks> {
+  const issuer = options.issuer ?? ISSUER
+  const codexApiEndpoint = options.codexApiEndpoint ?? CODEX_API_ENDPOINT
+
   return {
+    provider: {
+      id: "openai",
+      async models(provider, ctx) {
+        if (ctx.auth?.type !== "oauth") return provider.models
+
+        return Object.fromEntries(
+          Object.entries(provider.models)
+            .filter(([, model]) => {
+              if (ALLOWED_MODELS.has(model.api.id)) return true
+              const match = model.api.id.match(/^gpt-(\d+\.\d+)/)
+              return match ? parseFloat(match[1]) > 5.4 : false
+            })
+            .map(([modelID, model]) => [
+              modelID,
+              {
+                ...model,
+                cost: {
+                  input: 0,
+                  output: 0,
+                  cache: { read: 0, write: 0 },
+                },
+                limit: model.id.includes("gpt-5.5")
+                  ? {
+                      context: 400_000,
+                      input: 272_000,
+                      output: 128_000,
+                    }
+                  : model.limit,
+              },
+            ]),
+        )
+      },
+    },
     auth: {
       provider: "openai",
-      async loader(getAuth, provider) {
+      async loader(getAuth) {
         const auth = await getAuth()
         if (auth.type !== "oauth") return {}
 
-        // Filter models to only allowed Codex models for OAuth
-        const allowedModels = new Set([
-          "gpt-5.1-codex",
-          "gpt-5.1-codex-max",
-          "gpt-5.1-codex-mini",
-          "gpt-5.2",
-          "gpt-5.2-codex",
-          "gpt-5.3-codex",
-          "gpt-5.4",
-          "gpt-5.4-mini",
-          "gpt-5.5",
-        ])
-        for (const [modelId, model] of Object.entries(provider.models)) {
-          if (modelId.includes("codex")) continue
-          if (allowedModels.has(model.api.id)) continue
-          const match = model.api.id.match(/^gpt-(\d+\.\d+)/)
-          if (match && parseFloat(match[1]) > 5.4) continue
-          delete provider.models[modelId]
-        }
-
-        // Zero out costs for Codex (included with ChatGPT subscription)
-        for (const model of Object.values(provider.models)) {
-          model.cost = {
-            input: 0,
-            output: 0,
-            cache: { read: 0, write: 0 },
-          }
-        }
+        let refreshPromise:
+          | Promise<{
+              access: string
+              accountId: string | undefined
+            }>
+          | undefined
 
         return {
           apiKey: OAUTH_DUMMY_KEY,
@@ -423,21 +459,29 @@ export async function CodexAuthPlugin(input: PluginInput): Promise<Hooks> {
 
             // Check if token needs refresh
             if (!currentAuth.access || currentAuth.expires < Date.now()) {
-              log.info("refreshing codex access token")
-              const tokens = await refreshAccessToken(currentAuth.refresh)
-              const newAccountId = extractAccountId(tokens) || authWithAccount.accountId
-              await input.client.auth.set({
-                path: { id: "openai" },
-                body: {
-                  type: "oauth",
-                  refresh: tokens.refresh_token,
-                  access: tokens.access_token,
-                  expires: Date.now() + (tokens.expires_in ?? 3600) * 1000,
-                  ...(newAccountId && { accountId: newAccountId }),
-                },
-              })
-              currentAuth.access = tokens.access_token
-              authWithAccount.accountId = newAccountId
+              if (!refreshPromise) {
+                log.info("refreshing codex access token")
+                // kilocode_change start
+                refreshPromise = refreshCodexAuth({
+                  input,
+                  getAuth,
+                  auth: currentAuth,
+                  refresh: (token, signal) => refreshAccessToken(token, issuer, signal),
+                  account: extractAccountId,
+                })
+                  .then((auth) => ({
+                    access: auth.access,
+                    accountId: auth.accountId,
+                  }))
+                  .finally(() => {
+                    refreshPromise = undefined
+                  })
+                // kilocode_change end
+              }
+
+              const refreshed = await refreshPromise
+              currentAuth.access = refreshed.access
+              authWithAccount.accountId = refreshed.accountId
             }
 
             // Build headers
@@ -471,7 +515,7 @@ export async function CodexAuthPlugin(input: PluginInput): Promise<Hooks> {
                 : new URL(typeof requestInput === "string" ? requestInput : requestInput.url)
             const url =
               parsed.pathname.includes("/v1/responses") || parsed.pathname.includes("/chat/completions")
-                ? new URL(CODEX_API_ENDPOINT)
+                ? new URL(codexApiEndpoint)
                 : parsed
 
             return fetch(url, {

@@ -1,11 +1,14 @@
 package ai.kilocode.rpc
 
 import ai.kilocode.rpc.dto.ChatEventDto
+import ai.kilocode.rpc.dto.CloudSessionListDto
 import ai.kilocode.rpc.dto.ConfigUpdateDto
 import ai.kilocode.rpc.dto.MessageWithPartsDto
+import ai.kilocode.rpc.dto.ModelSelectionDto
 import ai.kilocode.rpc.dto.PermissionAlwaysRulesDto
 import ai.kilocode.rpc.dto.PermissionReplyDto
 import ai.kilocode.rpc.dto.PermissionRequestDto
+import ai.kilocode.rpc.dto.PartDto
 import ai.kilocode.rpc.dto.PromptDto
 import ai.kilocode.rpc.dto.QuestionReplyDto
 import ai.kilocode.rpc.dto.QuestionRequestDto
@@ -37,6 +40,9 @@ interface KiloSessionRpcApi : RemoteApi<Unit> {
     /** List root sessions for a directory. */
     suspend fun list(directory: String): SessionListDto
 
+    /** List recent root sessions for the current worktree family. */
+    suspend fun recent(directory: String, limit: Int): SessionListDto
+
     /** Create a new session in the given directory. */
     suspend fun create(directory: String): SessionDto
 
@@ -45,6 +51,15 @@ interface KiloSessionRpcApi : RemoteApi<Unit> {
 
     /** Delete a session. */
     suspend fun delete(id: String, directory: String)
+
+    /** Rename a session. */
+    suspend fun rename(id: String, directory: String, title: String): SessionDto
+
+    /** List cloud-backed sessions. */
+    suspend fun cloudSessions(directory: String, cursor: String?, limit: Int, gitUrl: String?): CloudSessionListDto
+
+    /** Import a cloud-backed session into local storage. */
+    suspend fun importCloudSession(id: String, directory: String): SessionDto
 
     /** Observe live session status changes. */
     suspend fun statuses(): Flow<Map<String, SessionStatusDto>>
@@ -57,14 +72,23 @@ interface KiloSessionRpcApi : RemoteApi<Unit> {
 
     // ------ chat ------
 
+    /** Rewrite a draft prompt using the configured small model. */
+    suspend fun enhancePrompt(directory: String, text: String): String
+
     /** Send a prompt to a session (fire-and-forget). */
     suspend fun prompt(id: String, directory: String, prompt: PromptDto)
 
     /** Abort ongoing processing for a session. */
     suspend fun abort(id: String, directory: String)
 
+    /** Summarize/compact a session using the selected model. */
+    suspend fun compact(id: String, directory: String, model: ModelSelectionDto)
+
     /** Load message history for a session. */
     suspend fun messages(id: String, directory: String): List<MessageWithPartsDto>
+
+    /** Load one attachment part from a session without returning full history to the frontend. */
+    suspend fun attachmentPart(id: String, directory: String, messageId: String, partId: String, attachmentKey: String?): PartDto?
 
     /** Subscribe to streaming chat events for a specific session. */
     suspend fun events(id: String, directory: String): Flow<ChatEventDto>

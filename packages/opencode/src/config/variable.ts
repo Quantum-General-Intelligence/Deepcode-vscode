@@ -2,7 +2,7 @@ export * as ConfigVariable from "./variable"
 
 import path from "path"
 import os from "os"
-import { Filesystem } from "@/util"
+import { Filesystem } from "@/util/filesystem"
 import { InvalidError } from "./error"
 
 type ParseSource =
@@ -19,6 +19,8 @@ type ParseSource =
 type SubstituteInput = ParseSource & {
   text: string
   missing?: "error" | "empty"
+  escapeJson?: boolean // kilocode_change
+  env?: Record<string, string>
 }
 
 function source(input: ParseSource) {
@@ -32,8 +34,9 @@ function dir(input: ParseSource) {
 /** Apply {env:VAR} and {file:path} substitutions to config text. */
 export async function substitute(input: SubstituteInput) {
   const missing = input.missing ?? "error"
+  const escape = input.escapeJson ?? true // kilocode_change
   let text = input.text.replace(/\{env:([^}]+)\}/g, (_, varName) => {
-    return process.env[varName] || ""
+    return (input.env?.[varName] ?? process.env[varName]) || ""
   })
 
   const fileMatches = Array.from(text.matchAll(/\{file:[^}]+\}/g))
@@ -46,7 +49,7 @@ export async function substitute(input: SubstituteInput) {
 
   for (const match of fileMatches) {
     const token = match[0]
-    const index = match.index!
+    const index = match.index
     out += text.slice(cursor, index)
 
     const lineStart = text.lastIndexOf("\n", index - 1) + 1
@@ -81,7 +84,7 @@ export async function substitute(input: SubstituteInput) {
       })
     ).trim()
 
-    out += JSON.stringify(fileContent).slice(1, -1)
+    out += escape ? JSON.stringify(fileContent).slice(1, -1) : fileContent // kilocode_change
     cursor = index + token.length
   }
 

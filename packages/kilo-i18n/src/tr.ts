@@ -7,10 +7,21 @@ export const dict = {
   "provider.connect.kiloGateway.visit.prefix": "API anahtarınızı almak için ",
   "provider.connect.kiloGateway.visit.link": "kilo.ai",
   "provider.connect.kiloGateway.visit.suffix": " adresini ziyaret edin.",
+  "provider.connect.kiloGateway.byok.prefix": "Daha fazla kullanım istatistiği için ",
+  "provider.connect.kiloGateway.byok.link": "Kilo's Gateway üzerinden BYOK",
+  "provider.connect.kiloGateway.byok.suffix": " kullanın.",
 
-  // Provider dialog translations
-  "dialog.provider.group.recommended": "Önerilen",
-  "dialog.provider.kilo.note": "500+ AI modeline erişim",
+  // Provider settings translations
+  "settings.providers.group.recommended": "Önerilen",
+  "settings.providers.note.kilo": "500+ AI modeline erişim",
+  "settings.providers.note.opencode": "Claude, GPT, Gemini ve daha fazlasını içeren seçilmiş modeller",
+  "settings.providers.note.anthropic": "Pro ve Max dahil Claude modellerine doğrudan erişim",
+  "settings.providers.note.deepseek": "Akıl yürütme ve kodlama görevleri için DeepSeek modelleri",
+  "settings.providers.note.copilot": "Kodlama yardımı için Claude modelleri",
+  "settings.providers.note.openai": "API anahtarı veya ChatGPT girişiyle GPT ve Codex modelleri",
+  "settings.providers.note.google": "Hızlı, yapılandırılmış yanıtlar için Gemini modelleri",
+  "settings.providers.note.openrouter": "Desteklenen tüm modellere tek sağlayıcıdan erişim",
+  "settings.providers.note.vercel": "Akıllı yönlendirme ile AI modellerine birleşik erişim",
 
   // Reasoning block label
   "ui.permission.run": "Çalıştır",
@@ -19,7 +30,6 @@ export const dict = {
   // Marketplace
   "marketplace.tab.skills": "Yetenekler",
   "marketplace.tab.mcpServers": "MCP Sunucuları",
-  "marketplace.tab.modes": "Modlar",
   "marketplace.category.all": "Tümü",
   "marketplace.placeholder": "Uygulanacak",
   "marketplace.card.installed": "Yüklendi",
@@ -45,6 +55,7 @@ export const dict = {
   "marketplace.remove.cancel": "İptal",
   "marketplace.remove.confirm.button": "Kaldır",
   "marketplace.tab.mcp": "MCP",
+  "marketplace.tab.agents": "Ajanlar",
   "marketplace.search": "Ara...",
   "marketplace.filter.all": "Tüm Öğeler",
   "marketplace.filter.notInstalled": "Yüklü Değil",
@@ -60,7 +71,7 @@ export const dict = {
   "marketplace.scope.global": "genel",
   "marketplace.remove.type.mcp": "MCP sunucusu",
   "marketplace.remove.type.skill": "yetenek",
-  "marketplace.remove.type.mode": "mod",
+  "marketplace.remove.type.agent": "ajan",
   "marketplace.remove.failed": "{{name}} kaldırılamadı",
   "marketplace.install": "Yükle",
   "marketplace.filter.installed": "Yüklendi",
@@ -69,8 +80,10 @@ export const dict = {
   "marketplace.warning.busyMany": "Birden fazla oturum çalışıyor ve kesintiye uğrayacak",
   "marketplace.warning.installAnyway": "Yine de yükle",
   "marketplace.warning.cancel": "İptal",
-  "marketplace.contribute.prompt": "Bir yetenek, mod veya MCP sunucusu mu eksik?",
+  "marketplace.contribute.prompt": "Bir yetenek, ajan veya MCP sunucusu mu eksik?",
   "marketplace.contribute.cta": "GitHub'da katkıda bulun",
+  "marketplace.migration.notice":
+    "Modlar agentlarla değiştirildi. Daha önce marketplace modları yüklediyseniz, yeni formata geçiş yapmak için bunları kaldırın ve agent olarak yeniden yükleyin.",
 
   // Plan follow-up question shown after plan_exit
   "plan.followup.header": "Uygula",
@@ -79,4 +92,26 @@ export const dict = {
   "plan.followup.answer.newSession.description": "Temiz bir bağlamla yeni bir oturumda uygula",
   "plan.followup.answer.continue": "Burada devam et",
   "plan.followup.answer.continue.description": "Planı bu oturumda uygula",
+
+  // Slow-repo snapshot prompt
+  "snapshot.slowRepo.header": "Anlık görüntü yavaş",
+  "snapshot.slowRepo.question":
+    "Anlık görüntü sisteminin başlatılması uzun sürüyor, muhtemelen deponun boyutu nedeniyle.\n\nBu depo için anlık görüntüleri devre dışı bırakmak istiyor musunuz?",
+  "snapshot.slowRepo.answer.continue": "Anlık görüntülerle devam et",
+  "snapshot.slowRepo.answer.continue.description":
+    "Anlık görüntü tamamlanana kadar bekleyin. İlk anlık görüntü oluşturulduktan sonra sonraki turlar hızlıdır.",
+  "snapshot.slowRepo.answer.disable": "Bu proje için devre dışı bırak",
+  "snapshot.slowRepo.answer.disable.description":
+    "Bu proje için Kilo anlık görüntülerini kapat. Kilo değişiklikleri için geri alma/yeniden yapmayı kaybedersiniz, ancak git her şeyi izlemeye devam eder.",
+
+  // Edit-tool header and shell-tool section labels
+  "ui.messagePart.openInDiffViewer": "Fark Görüntüleyicide Aç",
+  "ui.messagePart.shell.command": "Komut",
+  "ui.messagePart.shell.output": "Çıktı",
+  "ui.messagePart.openInEditor": "Düzenleyicide Aç",
+
+  // Message feedback (thumbs up/down per assistant response)
+  "ui.message.feedback.helpful": "Bu yardımcı oldu",
+  "ui.message.feedback.notHelpful": "Bu yardımcı olmadı",
+  "ui.message.feedback.clearRating": "Değerlendirmeyi temizle",
 }

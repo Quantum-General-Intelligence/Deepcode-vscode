@@ -46,11 +46,18 @@ const mockVscode = {
   version: "1.90.0",
   workspace: {
     workspaceFolders: [{ uri: { fsPath: "/repo" } }],
+    textDocuments: [] as Array<unknown>,
+    onDidOpenTextDocument: () => ({ dispose: noop }),
+    onDidChangeTextDocument: () => ({ dispose: noop }),
+    onDidCloseTextDocument: () => ({ dispose: noop }),
     getConfiguration: () => ({
       get: <T>(_key: string, value?: T) => value,
       update: async () => {},
     }),
-    asRelativePath: (pathOrUri: string) => pathOrUri,
+    asRelativePath: (pathOrUri: string | { fsPath?: string }) => {
+      const value = typeof pathOrUri === "string" ? pathOrUri : (pathOrUri.fsPath ?? "")
+      return value.startsWith("/repo/") ? value.slice("/repo/".length) : value
+    },
     fs: {
       createDirectory: async () => {},
       writeFile: async () => {},
@@ -71,6 +78,16 @@ const mockVscode = {
     showTextDocument: async () => {},
     showWarningMessage: async () => undefined,
     createTerminal: () => ({ show: noop, sendText: noop, dispose: noop }),
+    createOutputChannel: () => ({
+      name: "",
+      append: noop,
+      appendLine: noop,
+      replace: noop,
+      clear: noop,
+      show: noop,
+      hide: noop,
+      dispose: noop,
+    }),
     createStatusBarItem: () => ({
       text: "",
       tooltip: "",
@@ -84,6 +101,10 @@ const mockVscode = {
   commands: {
     registerCommand: () => ({ dispose: noop }),
     executeCommand: async () => {},
+  },
+  languages: {
+    getDiagnostics: () => [],
+    registerCodeActionsProvider: () => ({ dispose: noop }),
   },
   CodeAction: class {
     command?: { command: string; title: string }
@@ -102,6 +123,12 @@ const mockVscode = {
     Workspace: 2,
     WorkspaceFolder: 3,
   },
+  FileType: {
+    Unknown: 0,
+    File: 1,
+    Directory: 2,
+    SymbolicLink: 64,
+  },
   TabInputText: class {
     constructor(public uri: { scheme: string; fsPath: string }) {}
   },
@@ -115,6 +142,13 @@ const mockVscode = {
     constructor(
       public start: { line: number; character: number },
       public end: { line: number; character: number },
+    ) {}
+  },
+  InlineCompletionItem: class {
+    constructor(
+      public insertText: string,
+      public range?: unknown,
+      public command?: unknown,
     ) {}
   },
   Disposable: class {

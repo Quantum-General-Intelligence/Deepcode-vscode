@@ -11,7 +11,19 @@ data class ModelDto(
     val temperature: Boolean = false,
     val toolCall: Boolean = false,
     val free: Boolean = false,
+    val byok: Boolean = false,
     val status: String? = null,
+    val recommendedIndex: Double? = null,
+    val variants: List<String> = emptyList(),
+    val limit: ModelLimitDto? = null,
+    val mayTrainOnYourPrompts: Boolean = false,
+)
+
+@Serializable
+data class ModelLimitDto(
+    val context: Long = 0,
+    val input: Long? = null,
+    val output: Long = 0,
 )
 
 @Serializable

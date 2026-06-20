@@ -49,6 +49,10 @@ Each Agent Manager session runs in an isolated git worktree on a separate branch
 
 Managed worktrees are created under `.kilo/worktrees/` in your project. Kilo also stores Agent Manager UI state in `.kilo/agent-manager.json`.
 
+{% callout type="info" %}
+Worktrees share Git object storage with the main repository, but each worktree is still a separate checkout on disk. Files created inside each worktree, such as `node_modules`, build output, local databases, generated files, and package-manager caches, can multiply disk usage across parallel agents. Closing a managed worktree removes its checkout directory, but it does not remove external caches, containers, volumes, simulators, or databases that your scripts created outside the worktree.
+{% /callout %}
+
 ### PR Status Badges
 
 Each worktree item displays a **PR status badge** when its branch has an associated pull request. The badge shows the PR number (e.g. `#142`) and is color-coded to reflect the current state at a glance. Click the badge to open the PR in your browser.
@@ -132,6 +136,27 @@ Imported work stays associated with its branch or worktree and can be continued 
 - Use session history to reopen local sessions or preview cloud sessions
 - Continue a cloud session locally from Agent Manager using the same extension sign-in and provider settings
 
+### Renaming Worktrees
+
+Double-click a worktree name to edit its label inline. You can also right-click the worktree and choose **Rename**. Press `Enter` or click outside the field to save, or press `Escape` to cancel.
+
+Renaming a worktree changes only the label shown in Agent Manager. It does not rename the underlying git branch.
+
+## Starting Sessions From Chat
+
+Kilo can start Agent Manager sessions from chat with the `agent_manager` tool. It is available by default only in the VS Code extension because Agent Manager is an extension feature.
+
+The tool supports two modes:
+
+| Mode | Behavior |
+|---|---|
+| `worktree` | Creates one Agent Manager git worktree and session per task |
+| `local` | Creates Agent Manager sessions in the current workspace without git worktree isolation |
+
+Each request can include 1-20 tasks. Each task must include at least one of `prompt`, `name`, or `branchName`. Use `versions: true` only when the tasks are alternate versions of the same work to compare; otherwise, multiple tasks start as independent sessions.
+
+The tool uses the `agent_manager` permission. Approval prompts are scoped to the requested mode, so approving `worktree` does not automatically approve `local`.
+
 ## Sections
 
 Sections let you group worktrees into collapsible, color-coded folders in the sidebar. Use them to organize your workflow however you like — by status ("Review Pending", "In Progress"), by project area ("Frontend", "Backend"), priority, or any other scheme that fits.
@@ -149,7 +174,7 @@ Sections let you group worktrees into collapsible, color-coded folders in the si
 
 Multi-version worktrees (created via Multi-Version Mode) are moved together — assigning one version to a section moves all versions in the group.
 
-### Renaming
+### Renaming Sections
 
 Right-click the section header and select **Rename Section**. An inline text field appears — type the new name and press `Enter` to confirm or `Escape` to cancel.
 
@@ -183,6 +208,7 @@ Press `Cmd+D` (macOS) / `Ctrl+D` (Windows/Linux) to toggle the diff panel. It sh
 - Select files and click **Apply to local** to copy the worktree's changes onto your local checkout of the base branch
 - Conflicts are surfaced with a resolution dialog
 - Supports unified and split diff views
+- Markdown files include an eye/code toggle in the file header to switch between rendered Markdown and the raw diff
 - **Drag file headers into chat** — drag a file header from the diff panel into the chat input to insert an `@file` mention, giving the agent context about specific changed files
 
 See [Agent Manager Workflows](/docs/automate/agent-manager-workflows#merging-worktree-and-parent-branch) for the full integration story, including when to apply locally vs. merge directly vs. open a pull request.
@@ -200,7 +226,58 @@ A common workflow is letting the agent work, then switching to the terminal to r
 
 ## Setup Scripts
 
-Place an executable script at `.kilo/setup-script` in your project root. It runs automatically whenever a new worktree is created (useful for `npm install`, env setup, etc.). Root-level `.env` and `.env.*` files are also auto-copied from the main repo before the setup script runs.
+Setup scripts let you prepare each new worktree before the agent starts, for example by installing dependencies, linking local config, copying non-standard env files, or creating per-worktree databases.
+
+Create a script file in `.kilo/` using the appropriate filename for your platform:
+
+| Platform | Filename (checked in order) |
+|---|---|
+| macOS / Linux | `.kilo/setup-script`, `.kilo/setup-script.sh` |
+| Windows | `.kilo/setup-script.ps1`, `.kilo/setup-script.cmd`, `.kilo/setup-script.bat` |
+
+Kilo runs the script automatically whenever a new worktree is created. It uses `sh` for POSIX scripts, PowerShell for `.ps1`, and `cmd.exe` for `.cmd` / `.bat`, so executable permissions are not required.
+
+Two extra variables are injected into the setup script's environment:
+
+| Variable | Value |
+|---|---|
+| `WORKTREE_PATH` | Absolute path to the new worktree directory |
+| `REPO_PATH` | Repository root |
+
+For example, on macOS / Linux:
+
+```sh
+#!/bin/sh
+set -e
+
+cd "$WORKTREE_PATH"
+npm install
+
+# Copy a nested env file that Kilo does not auto-copy.
+if [ -f "$REPO_PATH/apps/web/.env.local" ] && [ ! -f "$WORKTREE_PATH/apps/web/.env.local" ]; then
+  cp "$REPO_PATH/apps/web/.env.local" "$WORKTREE_PATH/apps/web/.env.local"
+fi
+```
+
+If the setup script fails, Agent Manager shows the failure and keeps the worktree available so you can inspect it, fix the script, or run setup steps manually.
+
+### Environment File Copying
+
+Before the setup script runs, Kilo automatically copies root-level `.env` files from the main repo into the new worktree.
+
+Copied automatically:
+
+- Root-level plain files named exactly `.env`
+- Root-level plain files matching `.env.*`, such as `.env.local` or `.env.development`
+
+Not copied automatically:
+
+- Nested env files, such as `apps/web/.env.local`
+- Non-dotenv files, such as `.envrc`, `.environment`, or `.env-cmdrc`
+- Directories named `.env` or `.env.local`
+- Files that already exist in the worktree, because Kilo never overwrites them
+
+Use `.kilo/setup-script` for anything outside the automatic copy rules, including nested env files, ignored local config, local certificates, local database files, generated config directories, or tool-specific files required to run the project.
 
 ## Run Script
 
@@ -221,6 +298,25 @@ For example, on macOS / Linux create `.kilo/run-script`:
 #!/bin/sh
 npm run dev
 ```
+
+For projects that need a unique dev-server port per worktree, assign the port in the run script and make your app read it from `PORT`:
+
+```sh
+#!/bin/sh
+set -e
+
+# Pick a deterministic port from the worktree path so each worktree keeps the same URL.
+sum=$(cksum <<EOF | cut -d ' ' -f 1
+$WORKTREE_PATH
+EOF
+)
+export PORT=$((4000 + (sum % 1000)))
+
+echo "Starting dev server on http://localhost:$PORT"
+npm run dev
+```
+
+If your stack supports `PORT=0`, you can also let the OS pick a free port instead. Prefer app-side env support where possible, then use the run script to provide per-worktree defaults.
 
 The next time you click the run button (or press `Cmd+E` / `Ctrl+E`), the script runs in the selected worktree's directory.
 
