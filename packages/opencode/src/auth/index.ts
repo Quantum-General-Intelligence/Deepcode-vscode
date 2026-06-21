@@ -3,7 +3,7 @@ import { Effect, Layer, Record, Result, Schema, Context } from "effect"
 import { zod } from "@/util/effect-zod"
 import { Global } from "../global"
 import { AppFileSystem } from "@opencode-ai/shared/filesystem"
-import { Telemetry } from "@kilocode/kilo-telemetry" // kilocode_change
+import { Telemetry } from "@takedeep/telemetry" // kilocode_change
 import { makeRuntime } from "@/effect/run-service" // kilocode_change
 
 export const OAUTH_DUMMY_KEY = "opencode-oauth-dummy-key"

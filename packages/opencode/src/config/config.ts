@@ -46,7 +46,7 @@ import { Npm } from "@/npm"
 // kilocode_change start
 import { KilocodeConfig } from "../kilocode/config/config"
 import { KilocodeDefaultPlugins } from "@/kilocode/config/default-plugins" // kilocode_change
-import { IndexingConfig as KiloIndexingConfig } from "@kilocode/kilo-indexing/config" // kilocode_change
+import { IndexingConfig as KiloIndexingConfig } from "@takedeep/indexing/config" // kilocode_change
 import { makeRuntime } from "@/effect/run-service"
 import { unique } from "remeda"
 // kilocode_change end
@@ -716,7 +716,7 @@ export const layer = Layer.effect(
             .install(dir, {
               add: [
                 {
-                  name: "@kilocode/plugin",
+                  name: "@takedeep/plugin",
                   version: InstallationLocal ? undefined : InstallationVersion,
                 },
               ],

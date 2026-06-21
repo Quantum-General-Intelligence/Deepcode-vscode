@@ -3,32 +3,32 @@ import { $ } from "bun"
 export const SIDECAR_BINARIES: Array<{ rustTarget: string; ocBinary: string; assetExt: string }> = [
   {
     rustTarget: "aarch64-apple-darwin",
-    ocBinary: "@kilocode/cli-darwin-arm64", // kilocode_change
+    ocBinary: "@takedeep/cli-darwin-arm64", // kilocode_change
     assetExt: "zip",
   },
   {
     rustTarget: "x86_64-apple-darwin",
-    ocBinary: "@kilocode/cli-darwin-x64", // kilocode_change
+    ocBinary: "@takedeep/cli-darwin-x64", // kilocode_change
     assetExt: "zip",
   },
   {
     rustTarget: "aarch64-pc-windows-msvc",
-    ocBinary: "@kilocode/cli-windows-arm64", // kilocode_change
+    ocBinary: "@takedeep/cli-windows-arm64", // kilocode_change
     assetExt: "zip",
   },
   {
     rustTarget: "x86_64-pc-windows-msvc",
-    ocBinary: "@kilocode/cli-windows-x64", // kilocode_change
+    ocBinary: "@takedeep/cli-windows-x64", // kilocode_change
     assetExt: "zip",
   },
   {
     rustTarget: "x86_64-unknown-linux-gnu",
-    ocBinary: "@kilocode/cli-linux-x64", // kilocode_change
+    ocBinary: "@takedeep/cli-linux-x64", // kilocode_change
     assetExt: "tar.gz",
   },
   {
     rustTarget: "aarch64-unknown-linux-gnu",
-    ocBinary: "@kilocode/cli-linux-arm64", // kilocode_change
+    ocBinary: "@takedeep/cli-linux-arm64", // kilocode_change
     assetExt: "tar.gz",
   },
 ]

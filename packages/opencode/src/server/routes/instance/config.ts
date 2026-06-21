@@ -7,7 +7,7 @@ import { errors } from "../../error"
 import { lazy } from "@/util/lazy"
 import { jsonRequest } from "./trace"
 // kilocode_change start
-import { fetchDefaultModel } from "@kilocode/kilo-gateway"
+import { fetchDefaultModel } from "@takedeep/gateway"
 import { Auth } from "@/auth"
 import { Effect } from "effect"
 import { ModelID, ProviderID } from "@/provider/schema"

@@ -1,4 +1,4 @@
-import type { Session, SessionStatus } from "@kilocode/sdk/v2/client"
+import type { Session, SessionStatus } from "@takedeep/sdk/v2/client"
 import type { KiloConnectionService } from "../services/cli-backend"
 import { forkSession } from "../agent-manager/fork-session"
 

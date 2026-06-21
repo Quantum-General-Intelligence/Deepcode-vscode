@@ -1,5 +1,5 @@
 // kilocode_change - new file
-import type { TuiPlugin, TuiPluginApi, TuiPluginModule } from "@kilocode/plugin/tui"
+import type { TuiPlugin, TuiPluginApi, TuiPluginModule } from "@takedeep/plugin/tui"
 import { createMemo } from "solid-js"
 import { formatCount, getUsage } from "@tui/routes/session/usage"
 

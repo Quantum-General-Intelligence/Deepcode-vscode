@@ -89,7 +89,7 @@ export function applyFirstLineOnly(
  * Command ID for tracking inline completion acceptance.
  * This command is executed after the user accepts an inline completion.
  */
-export const INLINE_COMPLETION_ACCEPTED_COMMAND = "kilocode.autocomplete.inline-completion.accepted"
+export const INLINE_COMPLETION_ACCEPTED_COMMAND = "takedeep.autocomplete.inline-completion.accepted"
 
 export function countLines(text: string): number {
   return _countLines(text)
@@ -181,7 +181,7 @@ export class AutocompleteInlineCompletionProvider implements vscode.InlineComple
 
     this.acceptedCommand = vscode.commands.registerCommand(INLINE_COMPLETION_ACCEPTED_COMMAND, () => {
       this.telemetry?.captureAcceptSuggestion(this.lastSuggestion?.length)
-      vscode.commands.executeCommand("setContext", "kilo-code.new.autocomplete.hasSuggestions", false)
+      vscode.commands.executeCommand("setContext", "takedeep.autocomplete.hasSuggestions", false)
     })
   }
 
@@ -335,7 +335,7 @@ export class AutocompleteInlineCompletionProvider implements vscode.InlineComple
     _context: vscode.InlineCompletionContext,
     _token: vscode.CancellationToken,
   ): Promise<vscode.InlineCompletionItem[] | vscode.InlineCompletionList> {
-    vscode.commands.executeCommand("setContext", "kilo-code.new.autocomplete.hasSuggestions", false)
+    vscode.commands.executeCommand("setContext", "takedeep.autocomplete.hasSuggestions", false)
 
     // Build telemetry context
     const telemetryContext: AutocompleteContext = {
@@ -412,7 +412,7 @@ export class AutocompleteInlineCompletionProvider implements vscode.InlineComple
         }
         this.telemetry?.captureCacheHit(matchingResult.matchType, telemetryContext, matchingResult.text.length)
         this.telemetry?.startVisibilityTracking(matchingResult.fillInAtCursor, "cache", telemetryContext)
-        vscode.commands.executeCommand("setContext", "kilo-code.new.autocomplete.hasSuggestions", true)
+        vscode.commands.executeCommand("setContext", "takedeep.autocomplete.hasSuggestions", true)
         return stringToInlineCompletions(matchingResult.text, position)
       }
 
@@ -436,7 +436,7 @@ export class AutocompleteInlineCompletionProvider implements vscode.InlineComple
         }
         this.telemetry?.captureLlmSuggestionReturned(telemetryContext, cachedResult.text.length)
         this.telemetry?.startVisibilityTracking(cachedResult.fillInAtCursor, "llm", telemetryContext)
-        vscode.commands.executeCommand("setContext", "kilo-code.new.autocomplete.hasSuggestions", true)
+        vscode.commands.executeCommand("setContext", "takedeep.autocomplete.hasSuggestions", true)
       } else {
         this.telemetry?.cancelVisibilityTracking() // No suggestion to show - cancel any pending visibility tracking
       }

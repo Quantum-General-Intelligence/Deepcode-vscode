@@ -8,18 +8,18 @@
  */
 
 import { Component, createEffect, createMemo, For, Show } from "solid-js"
-import { ToolRegistry, ToolProps, getToolInfo } from "@kilocode/kilo-ui/message-part"
-import { BasicTool } from "@kilocode/kilo-ui/basic-tool"
-import { Icon } from "@kilocode/kilo-ui/icon"
-import { IconButton } from "@kilocode/kilo-ui/icon-button"
-import { useData } from "@kilocode/kilo-ui/context/data"
+import { ToolRegistry, ToolProps, getToolInfo } from "@takedeep/ui/message-part"
+import { BasicTool } from "@takedeep/ui/basic-tool"
+import { Icon } from "@takedeep/ui/icon"
+import { IconButton } from "@takedeep/ui/icon-button"
+import { useData } from "@takedeep/ui/context/data"
 import { useLanguage } from "../../context/language"
-import { useI18n } from "@kilocode/kilo-ui/context/i18n"
-import { createAutoScroll } from "@kilocode/kilo-ui/hooks"
+import { useI18n } from "@takedeep/ui/context/i18n"
+import { createAutoScroll } from "@takedeep/ui/hooks"
 import { useSession } from "../../context/session"
 import { useVSCode } from "../../context/vscode"
 import { childID } from "../../context/session-utils"
-import type { ToolPart, Message as SDKMessage } from "@kilocode/sdk/v2"
+import type { ToolPart, Message as SDKMessage } from "@takedeep/sdk/v2"
 
 /** Collect all tool parts from all assistant messages in a given session. */
 function getSessionToolParts(store: ReturnType<typeof useData>["store"], sessionId: string): ToolPart[] {

@@ -12,7 +12,7 @@ import { DialogPrompt } from "@tui/ui/dialog-prompt"
 import { useSync } from "@tui/context/sync"
 import { useToast } from "@tui/ui/toast"
 import { reconcile } from "solid-js/store"
-import type { IndexingConfig, Config } from "@kilocode/sdk/v2"
+import type { IndexingConfig, Config } from "@takedeep/sdk/v2"
 
 // These types are OpenCode-internal and imported at runtime
 type UseSDK = any

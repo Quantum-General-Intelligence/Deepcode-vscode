@@ -52,7 +52,7 @@ graph LR
 
 ## Kilo CLI — The Foundation
 
-The CLI (`packages/opencode/`) is the core engine that all products are built on. It contains the AI agent runtime, tool execution, session management, provider integrations, and an HTTP server. Each client spawns or connects to a `kilo serve` process and communicates via HTTP + SSE using the `@kilocode/sdk`.
+The CLI (`packages/opencode/`) is the core engine that all products are built on. It contains the AI agent runtime, tool execution, session management, provider integrations, and an HTTP server. Each client spawns or connects to a `kilo serve` process and communicates via HTTP + SSE using the `@takedeep/sdk`.
 
 The CLI can run in several modes:
 
@@ -201,10 +201,10 @@ Git worktree isolation for parallel task execution:
 
 ### Client-Server Communication
 
-All clients communicate with the CLI via its HTTP + SSE API. The `@kilocode/sdk` package provides a TypeScript client:
+All clients communicate with the CLI via its HTTP + SSE API. The `@takedeep/sdk` package provides a TypeScript client:
 
 ```typescript
-import { KiloClient } from "@kilocode/sdk"
+import { KiloClient } from "@takedeep/sdk"
 
 const client = new KiloClient({ baseUrl: "http://localhost:3000" })
 const session = await client.session.create({ ... })
@@ -232,7 +232,7 @@ Prefer importing the specific export when possible. Use the namespace re-export 
 
 ### CLI Server API
 
-The CLI server is Hono-based and publishes an OpenAPI-compatible HTTP + SSE API consumed by `@kilocode/sdk`. Some route groups are being migrated behind the experimental Effect `HttpApi` bridge while preserving the generated SDK shape.
+The CLI server is Hono-based and publishes an OpenAPI-compatible HTTP + SSE API consumed by `@takedeep/sdk`. Some route groups are being migrated behind the experimental Effect `HttpApi` bridge while preserving the generated SDK shape.
 
 - Keep the SDK output stable when moving routes between Hono and Effect `HttpApi`.
 - Use `KILO_EXPERIMENTAL_HTTPAPI` only for migration testing; public clients should not depend on the bridge detail.

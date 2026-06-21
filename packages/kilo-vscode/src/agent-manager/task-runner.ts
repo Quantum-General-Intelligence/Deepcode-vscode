@@ -4,6 +4,7 @@
 
 import * as vscode from "vscode"
 import type { SetupTaskConfig } from "./SetupScriptRunner"
+import { EXTENSION_DISPLAY_NAME } from "../constants"
 
 const GRACE_MS = 250
 const TIMEOUT_MS = 5 * 60 * 1000
@@ -14,10 +15,10 @@ export async function executeVscodeTask(config: SetupTaskConfig): Promise<number
     env: config.env,
   })
   const task = new vscode.Task(
-    { type: "kilo-worktree-setup", script: config.command },
+    { type: "takedeep-worktree-setup", script: config.command },
     vscode.TaskScope.Workspace,
     "Worktree Setup",
-    "Kilo Code",
+    EXTENSION_DISPLAY_NAME,
     proc,
     [],
   )

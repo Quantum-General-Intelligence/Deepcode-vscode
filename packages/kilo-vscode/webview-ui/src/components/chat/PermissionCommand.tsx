@@ -5,8 +5,8 @@
  */
 
 import { Component, createSignal } from "solid-js"
-import { Icon } from "@kilocode/kilo-ui/icon"
-import { Tooltip } from "@kilocode/kilo-ui/tooltip"
+import { Icon } from "@takedeep/ui/icon"
+import { Tooltip } from "@takedeep/ui/tooltip"
 import { useLanguage } from "../../context/language"
 
 export const PermissionCommand: Component<{ command: string }> = (props) => {

@@ -6,8 +6,9 @@
 // This module exports patch functions and data that the upstream provider.ts
 // calls at well-defined injection points (each marked with kilocode_change).
 
-import { createKilo, type KiloProvider, AI_SDK_PROVIDERS, PROMPTS } from "@kilocode/kilo-gateway"
+import { createKilo, type KiloProvider, AI_SDK_PROVIDERS, PROMPTS } from "@takedeep/gateway"
 import { DEFAULT_HEADERS } from "@/kilocode/const"
+import { litellmLoader } from "@/kilocode/provider/litellm"
 import { ProviderID, ModelID } from "@/provider/schema"
 import { Effect, Schema } from "effect"
 import type { LanguageModelV3 } from "@ai-sdk/provider"
@@ -23,7 +24,7 @@ export const REQUEST_TIMEOUT_MS = 120_000 // 2 minutes
 type BundledSDK = { languageModel(modelId: string): LanguageModelV3 }
 
 export const KILO_BUNDLED_PROVIDERS: Record<string, () => Promise<(options: any) => BundledSDK>> = {
-  "@kilocode/kilo-gateway": async () => createKilo as unknown as (options: any) => BundledSDK,
+  "@takedeep/gateway": async () => createKilo as unknown as (options: any) => BundledSDK,
 }
 
 // ---------------------------------------------------------------------------
@@ -152,6 +153,8 @@ export function kiloCustomLoaders(dep: CustomDep): Record<string, CustomLoader> 
         autoload: false,
         options: { headers: DEFAULT_HEADERS },
       }),
+
+    litellm: litellmLoader(dep),
   }
 }
 

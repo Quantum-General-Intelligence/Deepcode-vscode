@@ -1,11 +1,11 @@
 // KiloClaw root component
 
 import { Switch, Match } from "solid-js"
-import { ThemeProvider } from "@kilocode/kilo-ui/theme"
-import { MarkedProvider } from "@kilocode/kilo-ui/context/marked"
-import { Button } from "@kilocode/kilo-ui/button"
-import { Spinner } from "@kilocode/kilo-ui/spinner"
-import { Toast } from "@kilocode/kilo-ui/toast"
+import { ThemeProvider } from "@takedeep/ui/theme"
+import { MarkedProvider } from "@takedeep/ui/context/marked"
+import { Button } from "@takedeep/ui/button"
+import { Spinner } from "@takedeep/ui/spinner"
+import { Toast } from "@takedeep/ui/toast"
 import { ClawProvider, useClaw } from "./context/claw"
 import { KiloClawLanguageProvider, useKiloClawLanguage } from "./context/language"
 import { ChatPanel } from "./components/ChatPanel"

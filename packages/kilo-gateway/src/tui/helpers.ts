@@ -6,6 +6,7 @@
  */
 
 import type { KilocodeProfile, KilocodeBalance, Organization } from "../types.js"
+import { BRAND } from "../brand.js"
 
 /**
  * Format profile information for display
@@ -42,8 +43,8 @@ export function formatProfileInfo(
 
   // Add usage details link
   const usageUrl = currentOrgId
-    ? `https://app.kilo.ai/organizations/${currentOrgId}/usage-details`
-    : "https://app.kilo.ai/usage"
+    ? `${BRAND.appUrl}/organizations/${currentOrgId}/usage-details`
+    : `${BRAND.appUrl}/usage`
   content += `\nUsage Details: ${usageUrl}`
 
   return content

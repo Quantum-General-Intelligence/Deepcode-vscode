@@ -10,7 +10,7 @@ const tmpDir = path.join(os.tmpdir(), `kilo-test-${Date.now()}`)
 class TestPaths extends MarketplacePaths {
   override configPath(scope: "project" | "global", workspace?: string): string {
     if (scope === "global") return path.join(tmpDir, "global", "kilo.json")
-    return path.join(tmpDir, "project", ".kilo", "kilo.json")
+    return path.join(tmpDir, "project", ".takedeep", "kilo.json")
   }
   override skillsDir(scope: "project" | "global", workspace?: string): string {
     return path.join(tmpDir, "skills")

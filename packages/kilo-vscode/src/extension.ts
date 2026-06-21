@@ -7,7 +7,7 @@ import { DiffViewerProvider } from "./DiffViewerProvider"
 import { DiffVirtualProvider } from "./DiffVirtualProvider"
 import { SettingsEditorProvider } from "./SettingsEditorProvider"
 import { SubAgentViewerProvider } from "./SubAgentViewerProvider"
-import { EXTENSION_DISPLAY_NAME } from "./constants"
+import { EXTENSION_DISPLAY_NAME, ENABLE_CLAW } from "./constants"
 import { KiloConnectionService } from "./services/cli-backend"
 import { registerAutocompleteProvider } from "./services/autocomplete"
 import { ensureBackendForAutocomplete } from "./services/autocomplete/ensure-backend"
@@ -25,7 +25,7 @@ import { RemoteStatusService } from "./services/RemoteStatusService"
 // requiring the user to open a Kilo sidebar or panel first. The CLI backend is NOT spawned here;
 // it starts lazily when a webview connects or when ensureBackendForAutocomplete() triggers it.
 export function activate(context: vscode.ExtensionContext) {
-  console.log("Kilo Code extension is now active")
+  console.log(`${EXTENSION_DISPLAY_NAME} extension is now active`)
 
   const telemetry = TelemetryProxy.getInstance()
 
@@ -95,13 +95,23 @@ export function activate(context: vscode.ExtensionContext) {
   // The terminal intercepts all keystrokes unless the command is listed in
   // terminal.integrated.commandsToSkipShell, which only contains built-in
   // commands by default.
-  const skip = ["kilo-code.new.agentManagerOpen", "kilo-code.new.agentManager.showTerminal"]
-  if (process.platform === "darwin") skip.push("kilo-code.new.agentManager.runScript")
+  const skip = ["takedeep.agentManagerOpen", "takedeep.agentManager.showTerminal"]
+  if (process.platform === "darwin") skip.push("takedeep.agentManager.runScript")
   ensureCommandsSkipShell(skip)
 
-  // Create KiloClaw chat provider for editor panel
-  const kiloClawProvider = new KiloClawProvider(context.extensionUri, connectionService)
-  context.subscriptions.push(kiloClawProvider)
+  // KiloClaw (disabled for TakeDeep fork — Kilo cloud feature)
+  if (ENABLE_CLAW) {
+    const kiloClawProvider = new KiloClawProvider(context.extensionUri, connectionService)
+    context.subscriptions.push(kiloClawProvider)
+    context.subscriptions.push(
+      vscode.window.registerWebviewPanelSerializer(KiloClawProvider.viewType, {
+        deserializeWebviewPanel(panel: vscode.WebviewPanel) {
+          kiloClawProvider.restorePanel(panel)
+          return Promise.resolve()
+        },
+      }),
+    )
+  }
 
   // Create Agent Manager provider for editor panel
   const agentManagerHost = new VscodeHost(context.extensionUri, connectionService, context)
@@ -152,19 +162,9 @@ export function activate(context: vscode.ExtensionContext) {
     }),
   )
 
-  // Register serializer so KiloClaw panel restores when VS Code restarts
-  context.subscriptions.push(
-    vscode.window.registerWebviewPanelSerializer(KiloClawProvider.viewType, {
-      deserializeWebviewPanel(panel: vscode.WebviewPanel) {
-        kiloClawProvider.restorePanel(panel)
-        return Promise.resolve()
-      },
-    }),
-  )
-
   // Register serializer so "Open in Tab" restores when VS Code restarts
   context.subscriptions.push(
-    vscode.window.registerWebviewPanelSerializer("kilo-code.new.TabPanel", {
+    vscode.window.registerWebviewPanelSerializer("takedeep.TabPanel", {
       deserializeWebviewPanel(panel: vscode.WebviewPanel) {
         const tabProvider = new KiloProvider(context.extensionUri, connectionService, context)
         tabProvider.setRemoteService(remoteService)
@@ -218,7 +218,7 @@ export function activate(context: vscode.ExtensionContext) {
   const settingsViews = ["settingsPanel", "profilePanel", "marketplacePanel"] as const
   for (const suffix of settingsViews) {
     context.subscriptions.push(
-      vscode.window.registerWebviewPanelSerializer(`kilo-code.new.${suffix}`, {
+      vscode.window.registerWebviewPanelSerializer(`takedeep.${suffix}`, {
         deserializeWebviewPanel(panel: vscode.WebviewPanel) {
           settingsEditorProvider.deserializePanel(panel)
           return Promise.resolve()
@@ -237,7 +237,7 @@ export function activate(context: vscode.ExtensionContext) {
   )
 
   context.subscriptions.push(
-    vscode.window.registerWebviewPanelSerializer("kilo-code.new.SubAgentViewerPanel", {
+    vscode.window.registerWebviewPanelSerializer("takedeep.SubAgentViewerPanel", {
       deserializeWebviewPanel(panel: vscode.WebviewPanel) {
         // Sub-agent viewer requires a session ID that can't be recovered
         // after restart, so dispose the stale panel cleanly.
@@ -249,65 +249,62 @@ export function activate(context: vscode.ExtensionContext) {
 
   // Register toolbar button command handlers
   context.subscriptions.push(
-    vscode.commands.registerCommand("kilo-code.new.plusButtonClicked", () => {
+    vscode.commands.registerCommand("takedeep.plusButtonClicked", () => {
       const tab = activeTabProvider()
       if (tab) tab.postMessage({ type: "action", action: "plusButtonClicked" })
       else provider.postMessage({ type: "action", action: "plusButtonClicked" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManagerOpen", () => {
+    vscode.commands.registerCommand("takedeep.agentManagerOpen", () => {
       agentManagerProvider.openPanel()
     }),
-    vscode.commands.registerCommand("kilo-code.new.marketplaceButtonClicked", (directory?: string) => {
+    vscode.commands.registerCommand("takedeep.marketplaceButtonClicked", (directory?: string) => {
       settingsEditorProvider.openPanel("marketplace", undefined, directory)
     }),
-    vscode.commands.registerCommand("kilo-code.new.kiloClawOpen", () => {
-      kiloClawProvider.openPanel()
-    }),
-    vscode.commands.registerCommand("kilo-code.new.historyButtonClicked", () => {
+    vscode.commands.registerCommand("takedeep.historyButtonClicked", () => {
       const tab = activeTabProvider()
       if (tab) tab.postMessage({ type: "action", action: "historyButtonClicked" })
       else provider.postMessage({ type: "action", action: "historyButtonClicked" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.cycleAgentMode", () => {
+    vscode.commands.registerCommand("takedeep.cycleAgentMode", () => {
       const tab = activeTabProvider()
       if (tab) tab.postMessage({ type: "action", action: "cycleAgentMode" })
       else provider.postMessage({ type: "action", action: "cycleAgentMode" })
       agentManagerProvider.postMessage({ type: "action", action: "cycleAgentMode" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.cyclePreviousAgentMode", () => {
+    vscode.commands.registerCommand("takedeep.cyclePreviousAgentMode", () => {
       const tab = activeTabProvider()
       if (tab) tab.postMessage({ type: "action", action: "cyclePreviousAgentMode" })
       else provider.postMessage({ type: "action", action: "cyclePreviousAgentMode" })
       agentManagerProvider.postMessage({ type: "action", action: "cyclePreviousAgentMode" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.profileButtonClicked", () => {
+    vscode.commands.registerCommand("takedeep.profileButtonClicked", () => {
       settingsEditorProvider.openPanel("profile")
     }),
-    vscode.commands.registerCommand("kilo-code.new.settingsButtonClicked", (tab?: string) => {
+    vscode.commands.registerCommand("takedeep.settingsButtonClicked", (tab?: string) => {
       settingsEditorProvider.openPanel("settings", tab)
     }),
-    vscode.commands.registerCommand("kilo-code.new.openIndexingSettings", () => {
+    vscode.commands.registerCommand("takedeep.openIndexingSettings", () => {
       settingsEditorProvider.openPanel("settings", "indexing")
     }),
     // legacy-migration start
-    vscode.commands.registerCommand("kilo-code.new.openMigrationWizard", () => {
+    vscode.commands.registerCommand("takedeep.openMigrationWizard", () => {
       provider.postMessage({ type: "migrationState", needed: true })
     }),
     // legacy-migration end
-    vscode.commands.registerCommand("kilo-code.new.generateTerminalCommand", async () => {
+    vscode.commands.registerCommand("takedeep.generateTerminalCommand", async () => {
       const input = await vscode.window.showInputBox({
         prompt: "Describe the terminal command you want to generate",
         placeHolder: "e.g., find all .ts files modified in the last 24 hours",
       })
       if (!input) return
-      await vscode.commands.executeCommand("kilo-code.SidebarProvider.focus")
+      await vscode.commands.executeCommand("takedeep.SidebarProvider.focus")
       await provider.waitForReady()
       provider.postMessage({ type: "triggerTask", text: `Generate a terminal command: ${input}` })
     }),
-    vscode.commands.registerCommand("kilo-code.new.toggleRemote", () => {
+    vscode.commands.registerCommand("takedeep.toggleRemote", () => {
       remoteService.toggle().catch((err) => console.error("[Kilo New] toggleRemote command failed:", err))
     }),
-    vscode.commands.registerCommand("kilo-code.new.openInTab", () => {
+    vscode.commands.registerCommand("takedeep.openInTab", () => {
       return openKiloInNewTab(
         context,
         connectionService,
@@ -318,62 +315,62 @@ export function activate(context: vscode.ExtensionContext) {
         autoApprove,
       )
     }),
-    vscode.commands.registerCommand("kilo-code.new.showChanges", () => {
+    vscode.commands.registerCommand("takedeep.showChanges", () => {
       diffViewerProvider.openPanel()
     }),
-    vscode.commands.registerCommand("kilo-code.new.openSubAgentViewer", (sessionID: string, title?: string) => {
+    vscode.commands.registerCommand("takedeep.openSubAgentViewer", (sessionID: string, title?: string) => {
       subAgentViewerProvider.openPanel(sessionID, title)
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.previousSession", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.previousSession", () => {
       agentManagerProvider.postMessage({ type: "action", action: "sessionPrevious" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.nextSession", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.nextSession", () => {
       agentManagerProvider.postMessage({ type: "action", action: "sessionNext" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.previousTab", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.previousTab", () => {
       agentManagerProvider.postMessage({ type: "action", action: "tabPrevious" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.nextTab", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.nextTab", () => {
       agentManagerProvider.postMessage({ type: "action", action: "tabNext" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.showTerminal", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.showTerminal", () => {
       // Route through the webview so it can reach into the active session
       // state and open the VS Code integrated terminal for it.
       agentManagerProvider.postMessage({ type: "action", action: "showTerminal" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.runScript", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.runScript", () => {
       agentManagerProvider.postMessage({ type: "action", action: "runScript" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.toggleDiff", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.toggleDiff", () => {
       agentManagerProvider.postMessage({ type: "action", action: "toggleDiff" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.showShortcuts", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.showShortcuts", () => {
       agentManagerProvider.postMessage({ type: "action", action: "showShortcuts" })
     }),
 
-    vscode.commands.registerCommand("kilo-code.new.agentManager.newTab", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.newTab", () => {
       agentManagerProvider.postMessage({ type: "action", action: "newTab" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.newTerminal", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.newTerminal", () => {
       agentManagerProvider.postMessage({ type: "action", action: "newTerminal" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.closeTab", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.closeTab", () => {
       agentManagerProvider.postMessage({ type: "action", action: "closeTab" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.newWorktree", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.newWorktree", () => {
       agentManagerProvider.postMessage({ type: "action", action: "newWorktree" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.openWorktree", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.openWorktree", () => {
       agentManagerProvider.postMessage({ type: "action", action: "openWorktree" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.closeWorktree", () => {
+    vscode.commands.registerCommand("takedeep.agentManager.closeWorktree", () => {
       agentManagerProvider.postMessage({ type: "action", action: "closeWorktree" })
     }),
-    vscode.commands.registerCommand("kilo-code.new.agentManager.advancedWorktree", () =>
+    vscode.commands.registerCommand("takedeep.agentManager.advancedWorktree", () =>
       agentManagerProvider.openAdvancedWorktree(),
     ),
     ...Array.from({ length: 9 }, (_, i) =>
-      vscode.commands.registerCommand(`kilo-code.new.agentManager.jumpTo${i + 1}`, () => {
+      vscode.commands.registerCommand(`takedeep.agentManager.jumpTo${i + 1}`, () => {
         agentManagerProvider.postMessage({ type: "action", action: `jumpTo${i + 1}` })
       }),
     ),
@@ -448,7 +445,7 @@ async function openKiloInNewTab(
 
   const targetCol = hasVisibleEditors ? Math.max(lastCol + 1, 1) : vscode.ViewColumn.Two
 
-  const panel = vscode.window.createWebviewPanel("kilo-code.new.TabPanel", EXTENSION_DISPLAY_NAME, targetCol, {
+  const panel = vscode.window.createWebviewPanel("takedeep.TabPanel", EXTENSION_DISPLAY_NAME, targetCol, {
     enableScripts: true,
     retainContextWhenHidden: true,
     localResourceRoots: [context.extensionUri],

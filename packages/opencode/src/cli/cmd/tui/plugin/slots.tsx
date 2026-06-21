@@ -1,4 +1,4 @@
-import type { TuiPluginApi, TuiSlotContext, TuiSlotMap, TuiSlotProps } from "@kilocode/plugin/tui"
+import type { TuiPluginApi, TuiSlotContext, TuiSlotMap, TuiSlotProps } from "@takedeep/plugin/tui"
 import { createSlot, createSolidSlotRegistry, type JSX, type SolidPlugin } from "@opentui/solid"
 import { children, mergeProps } from "solid-js" // kilocode_change
 import { isRecord } from "@/util/record"

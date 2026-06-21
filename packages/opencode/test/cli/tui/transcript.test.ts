@@ -5,7 +5,7 @@ import {
   formatPart,
   formatTranscript,
 } from "../../../src/cli/cmd/tui/util/transcript"
-import type { AssistantMessage, Part, Provider, UserMessage } from "@kilocode/sdk/v2"
+import type { AssistantMessage, Part, Provider, UserMessage } from "@takedeep/sdk/v2"
 
 const providers: Provider[] = [
   {

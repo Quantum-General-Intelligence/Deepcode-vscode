@@ -1,1 +1,14 @@
-export const EXTENSION_DISPLAY_NAME = "Kilo Code"
+export const EXTENSION_DISPLAY_NAME = "TakeDeep"
+export const EXTENSION_ID = "takedeep.takedeep"
+export const CLI_NAME = "deeper"
+export const CONFIG_DIR = ".takedeep"
+export const API_URL = "https://deeper-api.takedeep.ai"
+export const APP_URL = "https://deeper-dash.takedeep.ai"
+export const WEB_URL = "https://deeper.takedeep.ai"
+export const MARKETPLACE_API_URL = `${API_URL}/api/marketplace`
+export const SIDEBAR_VIEW_ID = "takedeep.SidebarProvider"
+export const COMMAND_PREFIX = "takedeep"
+export const SETTINGS_SCOPE = "takedeep"
+export const TAB_PANEL_ID = "takedeep.TabPanel"
+export const AGENT_MANAGER_PANEL_ID = "takedeep.AgentManagerPanel"
+export const ENABLE_CLAW = false

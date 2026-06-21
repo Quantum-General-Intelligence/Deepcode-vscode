@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, spyOn, test } from "bun:test"
-import { CodeIndexManager } from "@kilocode/kilo-indexing/engine"
+import { CodeIndexManager } from "@takedeep/indexing/engine"
 import type { Config } from "../../src/config"
 import { GlobalBus } from "../../src/bus/global"
 import { AppRuntime } from "../../src/effect/app-runtime"
@@ -13,7 +13,7 @@ import { tmpdir } from "../fixture/fixture"
 Log.init({ print: false })
 
 const cfg: Partial<Config.Info> = {
-  plugin: ["@kilocode/kilo-indexing"],
+  plugin: ["@takedeep/indexing"],
   experimental: {
     semantic_indexing: true,
   },
@@ -28,7 +28,7 @@ const cfg: Partial<Config.Info> = {
 }
 
 const off: Partial<Config.Info> = {
-  plugin: ["@kilocode/kilo-indexing"],
+  plugin: ["@takedeep/indexing"],
   experimental: {
     semantic_indexing: false,
   },

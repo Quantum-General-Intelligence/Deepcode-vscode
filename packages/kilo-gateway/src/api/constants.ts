@@ -1,16 +1,18 @@
 /**
- * Kilo Gateway Configuration Constants
- * Centralized configuration for all API endpoints, headers, and settings
+ * Gateway configuration constants (TakeDeep fork).
  */
 
-/** Environment variable for custom Kilo API URL */
-export const ENV_KILO_API_URL = "KILO_API_URL"
+import { BRAND, ENV_API_URL, apiBase } from "../brand.js"
 
-/** Default Kilo API URL */
-export const DEFAULT_KILO_API_URL = "https://api.kilo.ai"
+/** Environment variable for custom API URL */
+export const ENV_KILO_API_URL = ENV_API_URL
+export const ENV_TAKEDEEP_API_URL = ENV_API_URL
 
-/** Base URL for Kilo API - can be overridden by KILO_API_URL env var */
-export const KILO_API_BASE = process.env[ENV_KILO_API_URL] || DEFAULT_KILO_API_URL
+/** Default API URL */
+export const DEFAULT_KILO_API_URL = BRAND.apiUrl
+
+/** Base URL for the TakeDeep API */
+export const KILO_API_BASE = apiBase()
 
 /** Default base URL for OpenRouter-compatible endpoint */
 export const KILO_OPENROUTER_BASE = `${KILO_API_BASE}/api/openrouter`
@@ -28,13 +30,13 @@ export const DEFAULT_FREE_MODEL = "kilo-auto/free"
 export const TOKEN_EXPIRATION_MS = 365 * 24 * 60 * 60 * 1000
 
 /** User-Agent header base value for requests */
-export const USER_AGENT_BASE = "opencode-kilo-provider"
+export const USER_AGENT_BASE = "takedeep-provider"
 
 /** Content-Type header value for requests */
 export const CONTENT_TYPE = "application/json"
 
-/** Default provider name */
-export const DEFAULT_PROVIDER_NAME = "kilo"
+/** Default provider id (API contract) */
+export const DEFAULT_PROVIDER_NAME = BRAND.providerId
 
 /** Default API key for anonymous requests */
 export const ANONYMOUS_API_KEY = "anonymous"
@@ -53,7 +55,7 @@ export const HEADER_EDITORNAME = "X-KILOCODE-EDITORNAME"
 export const HEADER_MACHINEID = "X-KILOCODE-MACHINEID"
 
 /** Default editor name value */
-export const DEFAULT_EDITOR_NAME = "Kilo CLI"
+export const DEFAULT_EDITOR_NAME = `${BRAND.name} CLI`
 
 /** Environment variable name for custom editor name */
 export const ENV_EDITOR_NAME = "KILOCODE_EDITOR_NAME"

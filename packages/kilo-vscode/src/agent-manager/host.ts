@@ -8,7 +8,7 @@
  * files listed in the architecture test allowlist.
  */
 
-import type { Session } from "@kilocode/sdk/v2/client"
+import type { Session } from "@takedeep/sdk/v2/client"
 
 // ---------------------------------------------------------------------------
 // Primitives

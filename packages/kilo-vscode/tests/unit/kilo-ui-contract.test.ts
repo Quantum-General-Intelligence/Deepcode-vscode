@@ -1,5 +1,5 @@
 /**
- * Runtime contract tests for kilo-vscode's dependencies on @kilocode/kilo-ui.
+ * Runtime contract tests for kilo-vscode's dependencies on @takedeep/ui.
  *
  * These tests import the upstream UI modules directly and verify at runtime
  * that the exports kilo-vscode depends on still exist with the expected shape.

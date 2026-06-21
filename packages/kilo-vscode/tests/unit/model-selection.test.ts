@@ -12,7 +12,7 @@ function makeProvider(id: string, name: string, modelIds: string[]): Provider {
 }
 
 const providers = {
-  kilo: makeProvider("kilo", "Kilo Gateway", ["kilo-auto/free"]),
+  kilo: makeProvider("kilo", "TakeDeep Gateway", ["kilo-auto/free"]),
   anthropic: makeProvider("anthropic", "Anthropic", ["claude-sonnet-4"]),
   openai: makeProvider("openai", "OpenAI", ["gpt-4.1"]),
 }

@@ -12,7 +12,8 @@ import { Hash } from "@opencode-ai/shared/util/hash"
 import { Config } from "../config"
 import { ModelCache } from "./model-cache"
 import { Auth } from "../auth"
-import { AI_SDK_PROVIDERS, KILO_OPENROUTER_BASE, PROMPTS } from "@kilocode/kilo-gateway"
+import { AI_SDK_PROVIDERS, KILO_API_BASE, KILO_OPENROUTER_BASE, PROMPTS } from "@takedeep/gateway"
+import { BRAND } from "@takedeep/gateway/brand"
 // kilocode_change end
 
 // Try to import bundled snapshot (generated at build time)
@@ -200,8 +201,8 @@ export async function get() {
       ...(kiloOrgId ? { kilocodeOrganizationId: kiloOrgId } : {}),
     }
     const defaultBaseURL = kiloOrgId
-      ? `https://api.kilo.ai/api/organizations/${kiloOrgId}`
-      : "https://api.kilo.ai/api/openrouter"
+      ? `${KILO_API_BASE}/api/organizations/${kiloOrgId}`
+      : KILO_OPENROUTER_BASE
     const providerBaseURL = normalizedBaseURL ?? defaultBaseURL
     const ensureTrailingSlash = (value: string): string => (value.endsWith("/") ? value : `${value}/`)
     const apertisConfig = config.provider?.apertis?.options
@@ -219,10 +220,10 @@ export async function get() {
 
     providers["kilo"] = {
       id: "kilo",
-      name: "Kilo Gateway",
+      name: `${BRAND.name} Gateway`,
       env: ["KILO_API_KEY"],
       api: ensureTrailingSlash(KILO_OPENROUTER_BASE),
-      npm: "@kilocode/kilo-gateway",
+      npm: "@takedeep/gateway",
       models: kiloModels,
     }
     if (Object.keys(kiloModels).length === 0) {

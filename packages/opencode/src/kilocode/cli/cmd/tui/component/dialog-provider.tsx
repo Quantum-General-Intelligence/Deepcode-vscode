@@ -8,7 +8,7 @@
 
 import type { JSX } from "solid-js"
 import type { RGBA } from "@opentui/core"
-import type { ProviderAuthAuthorization } from "@kilocode/sdk/v2"
+import type { ProviderAuthAuthorization } from "@takedeep/sdk/v2"
 import { KiloAutoMethod } from "@/kilocode/components/dialog-kilo-auto-method"
 
 // ---------------------------------------------------------------------------
@@ -87,10 +87,10 @@ export function renderApiDescription(
   return () => (
     <box gap={1}>
       <text fg={theme.textMuted}>
-        Kilo Gateway gives you access to all the best coding models at the cheapest prices with a single API key.
+        TakeDeep Gateway gives you access to coding models with your TakeDeep account.
       </text>
       <text fg={theme.text}>
-        Go to <span style={{ fg: theme.primary }}>https://kilo.ai/gateway</span> to get a key
+        Go to <span style={{ fg: theme.primary }}>https://deeper-dash.takedeep.ai</span> to sign in
       </text>
     </box>
   )

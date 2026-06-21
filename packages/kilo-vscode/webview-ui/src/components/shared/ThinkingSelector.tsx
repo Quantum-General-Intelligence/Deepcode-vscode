@@ -9,7 +9,7 @@
 
 import { Component, createSignal, For, onCleanup, Show } from "solid-js"
 import { PopupSelector } from "./PopupSelector"
-import { Button } from "@kilocode/kilo-ui/button"
+import { Button } from "@takedeep/ui/button"
 import { useSession } from "../../context/session"
 
 // ---------------------------------------------------------------------------

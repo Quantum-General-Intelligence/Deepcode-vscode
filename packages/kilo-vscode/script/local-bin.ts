@@ -6,13 +6,13 @@ import { chmodSync, statSync, rmSync, readdirSync, existsSync } from "node:fs"
 const forceRebuild = process.argv.includes("--force")
 
 /**
- * Ensures the VS Code extension has a CLI binary at `packages/kilo-vscode/bin/kilo`.
+ * Ensures the VS Code extension has a CLI binary at `packages/kilo-vscode/bin/deeper`.
  *
  * Strategy:
  * 1) If `bin/kilo` already exists -> ok.
  * 2) Else try to locate a prebuilt binary produced by `packages/opencode` build.
  * 3) Else try to build it via `bun run build --single` in `packages/opencode`.
- * 4) Copy the resulting binary into `packages/kilo-vscode/bin/kilo` and chmod +x.
+ * 4) Copy the resulting binary into `packages/kilo-vscode/bin/deeper` and chmod +x.
  *
  * This script is intended to be run from `packages/kilo-vscode` as part of build/package.
  */
@@ -22,7 +22,7 @@ const packagesDir = join(kiloVscodeDir, "..")
 const opencodeDir = join(packagesDir, "opencode")
 
 const targetBinDir = join(kiloVscodeDir, "bin")
-const binName = process.platform === "win32" ? "kilo.exe" : "kilo"
+const binName = process.platform === "win32" ? "deeper.exe" : "deeper"
 const targetBinPath = join(targetBinDir, binName)
 const versionFile = join(targetBinDir, ".cli-version")
 
@@ -76,7 +76,7 @@ async function findKiloBinaryInOpencodeDist(): Promise<string | null> {
 
   // Prefer the binary matching the current platform (e.g. cli-darwin-arm64)
   const tag = platformTag()
-  const preferred = join(distDir, `@kilocode`, tag, "bin", binName)
+  const preferred = join(distDir, `@takedeep`, tag, "bin", binName)
   try {
     statSync(preferred)
     return preferred
@@ -103,7 +103,7 @@ async function findKiloBinaryInOpencodeDist(): Promise<string | null> {
         queue.push(p)
         continue
       }
-      if (e.isFile() && (e.name === "kilo" || e.name === "kilo.exe") && basename(dirname(p)) === "bin") {
+      if (e.isFile() && (e.name === "deeper" || e.name === "deeper.exe" || e.name === "kilo" || e.name === "kilo.exe") && basename(dirname(p)) === "bin") {
         return p
       }
     }
@@ -132,12 +132,12 @@ async function ensureBuiltBinary(): Promise<string> {
   await $`bun install --frozen-lockfile`.cwd(opencodeDir)
 
   // Build using the opencode package script.
-  await $`bun run build --single`.cwd(opencodeDir)
+  await $`bun run build --single --skip-install`.cwd(opencodeDir)
 
   const built = await findKiloBinaryInOpencodeDist()
   if (!built) {
     throw new Error(
-      `CLI build completed but no binary was found in ${join(opencodeDir, "dist")} (expected dist/**/bin/kilo).`,
+      `CLI build completed but no binary was found in ${join(opencodeDir, "dist")} (expected dist/**/bin/deeper).`,
     )
   }
   return built

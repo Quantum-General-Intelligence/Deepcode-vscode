@@ -120,7 +120,7 @@ export const dict = {
   "dialog.model.expand": "Розгорнути",
   "dialog.model.collapse": "Згорнути",
 
-  "dialog.model.unpaid.freeModels.title": "Безкоштовні моделі від Kilo",
+  "dialog.model.unpaid.freeModels.title": "Безкоштовні моделі від TakeDeep",
   "dialog.model.unpaid.addMore.title": "Додайте більше моделей від популярних провайдерів",
 
   "dialog.provider.viewAll": "Показати більше провайдерів",
@@ -133,7 +133,7 @@ export const dict = {
   "provider.connect.status.waiting": "Очікування авторизації...",
   "provider.connect.status.failed": "Авторизація не вдалася: {{error}}",
   "provider.connect.apiKey.description":
-    "Введіть свій API-ключ {{provider}}, щоб підключити акаунт {{provider}} і використовувати моделі {{provider}} в Kilo.",
+    "Введіть свій API-ключ {{provider}}, щоб підключити акаунт {{provider}} і використовувати моделі {{provider}} в TakeDeep.",
   "provider.connect.apiKey.label": "API-ключ {{provider}}",
   "provider.connect.apiKey.placeholder": "API-ключ",
   "provider.connect.apiKey.required": "API-ключ обов'язковий",
@@ -147,7 +147,7 @@ export const dict = {
   "provider.connect.oauth.code.visit.prefix": "Перейдіть за ",
   "provider.connect.oauth.code.visit.link": "цим посиланням",
   "provider.connect.oauth.code.visit.suffix":
-    " щоб отримати код авторизації для підключення акаунта та використання моделей {{provider}} у Kilo.",
+    " щоб отримати код авторизації для підключення акаунта та використання моделей {{provider}} у TakeDeep.",
   "provider.connect.oauth.code.label": "Код авторизації {{method}}",
   "provider.connect.oauth.code.placeholder": "Код авторизації",
   "provider.connect.oauth.code.required": "Код авторизації обов'язковий",
@@ -155,7 +155,7 @@ export const dict = {
   "provider.connect.oauth.auto.visit.prefix": "Перейдіть за ",
   "provider.connect.oauth.auto.visit.link": "цим посиланням",
   "provider.connect.oauth.auto.visit.suffix":
-    " та введіть код нижче, щоб підключити акаунт і використовувати моделі {{provider}} у Kilo.",
+    " та введіть код нижче, щоб підключити акаунт і використовувати моделі {{provider}} у TakeDeep.",
   "provider.connect.oauth.auto.confirmationCode": "Код підтвердження",
   "provider.connect.toast.connected.title": "{{provider}} підключено",
   "provider.connect.toast.connected.description": "Моделі {{provider}} тепер доступні.",
@@ -301,7 +301,7 @@ export const dict = {
   "dialog.directory.empty": "Папок не знайдено",
 
   "dialog.server.title": "Сервери",
-  "dialog.server.description": "Змінити, до якого сервера Kilo підключається цей додаток.",
+  "dialog.server.description": "Змінити, до якого сервера TakeDeep підключається цей додаток.",
   "dialog.server.search.placeholder": "Пошук сервера",
   "dialog.server.empty": "Поки що немає серверів",
   "dialog.server.add.title": "Додати сервер",
@@ -430,7 +430,7 @@ export const dict = {
   "toast.session.listFailed.title": "Не вдалося завантажити сесії для {{project}}",
 
   "toast.update.title": "Доступне оновлення",
-  "toast.update.description": "Нова версія Kilo ({{version}}) готова до встановлення.",
+  "toast.update.description": "Нова версія TakeDeep ({{version}}) готова до встановлення.",
   "toast.update.action.installRestart": "Встановити і перезапустити",
   "toast.update.action.notYet": "Не зараз",
 
@@ -441,7 +441,7 @@ export const dict = {
   "error.page.action.checking": "Перевірка...",
   "error.page.action.checkUpdates": "Перевірити оновлення",
   "error.page.action.updateTo": "Оновити до {{version}}",
-  "error.page.report.prefix": "Будь ласка, повідомте про цю помилку команді Kilo",
+  "error.page.report.prefix": "Будь ласка, повідомте про цю помилку команді TakeDeep",
   "error.page.report.discord": "через Discord",
   "error.page.version": "Версія: {{version}}",
 
@@ -470,7 +470,7 @@ export const dict = {
   "error.chain.didYouMean": "Можливо ви мали на увазі: {{suggestions}}",
   "error.chain.modelNotFound": "Модель не знайдено: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Перевірте назви провайдера/моделі у файлі конфігурації (opencode.json)",
-  "error.chain.mcpFailed": 'MCP-сервер "{{name}}" зазнав помилки. Примітка: Kilo поки не підтримує автентифікацію MCP.',
+  "error.chain.mcpFailed": 'MCP-сервер "{{name}}" зазнав помилки. Примітка: TakeDeep поки не підтримує автентифікацію MCP.',
   "error.chain.providerAuthFailed": "Автентифікація провайдера не вдалася ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'Не вдалося ініціалізувати провайдера "{{provider}}". Перевірте облікові дані та конфігурацію.',
@@ -642,12 +642,12 @@ export const dict = {
   "sidebar.workspaces.enable": "Увімкнути робочі дерева",
   "sidebar.workspaces.disable": "Вимкнути робочі дерева",
   "sidebar.gettingStarted.title": "Початок роботи",
-  "sidebar.gettingStarted.line1": "Kilo включає безкоштовні моделі, тому ви можете почати відразу.",
+  "sidebar.gettingStarted.line1": "TakeDeep включає безкоштовні моделі, тому ви можете почати відразу.",
   "sidebar.gettingStarted.line2": "Підключіть будь-якого провайдера для використання моделей Claude, GPT, Gemini тощо.",
   "sidebar.project.recentSessions": "Останні сесії",
   "sidebar.project.viewAllSessions": "Переглянути всі сесії",
 
-  "app.name.desktop": "Kilo Desktop",
+  "app.name.desktop": "TakeDeep Desktop",
 
   "settings.section.desktop": "Робочий стіл",
   "settings.section.server": "Сервер",
@@ -660,11 +660,11 @@ export const dict = {
   "settings.general.section.sounds": "Звукові ефекти",
 
   "settings.general.row.language.title": "Мова",
-  "settings.general.row.language.description": "Змінити мову відображення Kilo",
+  "settings.general.row.language.description": "Змінити мову відображення TakeDeep",
   "settings.general.row.appearance.title": "Вигляд",
-  "settings.general.row.appearance.description": "Налаштувати вигляд Kilo на вашому пристрої",
+  "settings.general.row.appearance.description": "Налаштувати вигляд TakeDeep на вашому пристрої",
   "settings.general.row.theme.title": "Тема",
-  "settings.general.row.theme.description": "Налаштувати тему Kilo.",
+  "settings.general.row.theme.description": "Налаштувати тему TakeDeep.",
   "settings.general.row.font.title": "Шрифт",
   "settings.general.row.font.description": "Налаштувати моноширинний шрифт, що використовується в блоках коду",
 
@@ -672,13 +672,13 @@ export const dict = {
   "settings.general.row.releaseNotes.description": "Показувати сповіщення про новини після оновлень",
 
   "settings.updates.row.startup.title": "Перевіряти оновлення під час запуску",
-  "settings.updates.row.startup.description": "Автоматично перевіряти оновлення при запуску Kilo",
+  "settings.updates.row.startup.description": "Автоматично перевіряти оновлення при запуску TakeDeep",
   "settings.updates.row.check.title": "Перевірити оновлення",
   "settings.updates.row.check.description": "Вручну перевірити та встановити оновлення",
   "settings.updates.action.checkNow": "Перевірити зараз",
   "settings.updates.action.checking": "Перевірка...",
   "settings.updates.toast.latest.title": "Ви використовуєте актуальну версію",
-  "settings.updates.toast.latest.description": "У вас встановлена остання версія Kilo.",
+  "settings.updates.toast.latest.description": "У вас встановлена остання версія TakeDeep.",
   "font.option.ibmPlexMono": "IBM Plex Mono",
   "font.option.cascadiaCode": "Cascadia Code",
   "font.option.firaCode": "Fira Code",
@@ -773,7 +773,7 @@ export const dict = {
   "settings.providers.title": "Провайдери",
   "settings.providers.description": "Тут можна буде налаштовувати параметри провайдерів.",
   "settings.providers.betaNotice":
-    "Наразі в інтерфейсі налаштувань можна налаштувати лише провайдера Kilo Gateway. Підтримка інших провайдерів з'явиться в бета-версії найближчим часом. Тим часом ви можете налаштовувати провайдерів через CLI або файл конфігурації. Kilo залишається відкритим — без прив'язки.",
+    "Наразі в інтерфейсі налаштувань можна налаштувати лише провайдера TakeDeep Gateway. Підтримка інших провайдерів з'явиться в бета-версії найближчим часом. Тим часом ви можете налаштовувати провайдерів через CLI або файл конфігурації. TakeDeep залишається відкритим — без прив'язки.",
   "settings.providers.section.connected": "Підключені провайдери",
   "settings.providers.connected.empty": "Підключених провайдерів немає",
   "settings.providers.section.popular": "Популярні провайдери",
@@ -875,19 +875,19 @@ export const dict = {
   "settings.config.status.loadedLegacy": "завантажено застарілу конфігурацію",
   "settings.config.status.notLoaded": "не завантажено",
   "settings.config.status.create": "не знайдено - створити цей файл",
-  "settings.config.title": "Відкрити файл конфігурації Kilo ({{scope}})",
+  "settings.config.title": "Відкрити файл конфігурації TakeDeep ({{scope}})",
   "settings.config.placeholder":
     "Файли конфігурації об'єднуються по порядку; файли, позначені як завантажені, наразі впливають на налаштування.",
-  "settings.config.noWorkspace": "Відкрийте папку робочої області, щоб відредагувати локальний файл конфігурації Kilo.",
-  "settings.config.openFailed": "Не вдалося відкрити файл конфігурації Kilo ({{scope}}): {{message}}",
+  "settings.config.noWorkspace": "Відкрийте папку робочої області, щоб відредагувати локальний файл конфігурації TakeDeep.",
+  "settings.config.openFailed": "Не вдалося відкрити файл конфігурації TakeDeep ({{scope}}): {{message}}",
   "settings.config.source.xdg": "Глобальна конфігурація XDG",
-  "settings.config.source.homeKilo": "Конфігурація .kilo (Home)",
+  "settings.config.source.homeKilo": "Конфігурація .takedeep (Home)",
   "settings.config.source.homeKilocode": "Конфігурація .kilocode (Home)",
   "settings.config.source.homeOpencode": "Конфігурація .opencode (Home)",
   "settings.config.source.envFile": "Файл середовища KILO_CONFIG",
   "settings.config.source.envDir": "KILO_CONFIG_DIR",
   "settings.config.source.envContent": "Вбудована конфігурація середовища",
-  "settings.config.source.projectKilo": "Конфігурація .kilo проєкту",
+  "settings.config.source.projectKilo": "Конфігурація .takedeep проєкту",
   "settings.config.source.projectRoot": "Коренева конфігурація проєкту",
   "settings.config.source.projectKilocode": "Застаріла конфігурація .kilocode",
   "settings.config.source.projectOpencode": "Застаріла конфігурація .opencode",
@@ -999,7 +999,7 @@ export const dict = {
   "deviceAuth.toast.codeCopied": "Код скопійовано до буфера обміну",
   "deviceAuth.toast.errorCopied": "Помилку скопійовано до буфера обміну",
   "deviceAuth.status.initiating": "Ініціалізація входу...",
-  "deviceAuth.title": "Увійти до Kilo Code",
+  "deviceAuth.title": "Увійти до TakeDeep",
   "deviceAuth.step1": "Крок 1: Відкрийте цей URL",
   "deviceAuth.action.copyUrl": "Копіювати URL",
   "deviceAuth.action.openBrowser": "Відкрити браузер",
@@ -1020,7 +1020,7 @@ export const dict = {
 
   "profile.title": "Профіль",
   "profile.notLoggedIn": "Не увійшов",
-  "profile.action.login": "Увійти через Kilo Code",
+  "profile.action.login": "Увійти через TakeDeep",
   "profile.balance.title": "Баланс",
   "profile.balance.refresh": "Оновити баланс",
   "profile.action.dashboard": "Панель керування",
@@ -1065,11 +1065,11 @@ export const dict = {
 
   "settings.experimental.title": "Експериментальне",
   "settings.language.title": "Мова",
-  "settings.aboutKiloCode.title": "Про Kilo Code",
+  "settings.aboutKiloCode.title": "Про TakeDeep",
 
   "session.messages.empty": "Напишіть повідомлення нижче, щоб розпочати чат.",
   "session.messages.welcome":
-    "Kilo Code — це асистент з кодування на базі ШІ. Попросіть його розробити функцію, виправити помилку або пояснити вашу кодову базу.",
+    "TakeDeep — це асистент з кодування на базі ШІ. Попросіть його розробити функцію, виправити помилку або пояснити вашу кодову базу.",
   "session.messages.scrollToBottom": "Прокрутити до низу",
   "session.messages.initializing": "Ініціалізація...",
   "session.messages.taskStarting": "Запуск...",
@@ -1113,7 +1113,7 @@ export const dict = {
   "settings.aboutKiloCode.port.label": "Порт:",
   "settings.aboutKiloCode.versionInfo": "Інформація про версію",
   "settings.aboutKiloCode.version.label": "Версія:",
-  "settings.aboutKiloCode.extensionName": "Розширення Kilo Code",
+  "settings.aboutKiloCode.extensionName": "Розширення TakeDeep",
   "settings.aboutKiloCode.community": "Спільнота і підтримка",
   "settings.aboutKiloCode.feedback.prefix": "Якщо у вас є питання або відгуки, будь ласка, відкрийте тікет на:",
   "settings.aboutKiloCode.feedback.or": "або",
@@ -1129,10 +1129,10 @@ export const dict = {
   "settings.aboutKiloCode.importSettings": "Імпортувати",
   "settings.aboutKiloCode.importSettings.invalidJson":
     "Недійсний файл JSON. Будь ласка, виберіть дійсний файл налаштувань.",
-  "settings.aboutKiloCode.importSettings.invalidConfig": "Файл не містить дійсних налаштувань Kilo.",
+  "settings.aboutKiloCode.importSettings.invalidConfig": "Файл не містить дійсних налаштувань TakeDeep.",
   "settings.aboutKiloCode.importSettings.tooLarge": "Файл занадто великий. Файли налаштувань мають бути менше 1 МБ.",
   "settings.aboutKiloCode.importSettings.newerVersion":
-    "Цей файл було експортовано з новішої версії Kilo. Деякі налаштування можуть бути проігноровані.",
+    "Цей файл було експортовано з новішої версії TakeDeep. Деякі налаштування можуть бути проігноровані.",
   "settings.aboutKiloCode.importSettings.success":
     "Налаштування імпортовано. Перегляньте зміни вище, потім натисніть Зберегти.",
 
@@ -1159,7 +1159,7 @@ export const dict = {
   "settings.browser.headless.description": "Запускати в безголовому режимі (без видимого вікна браузера).",
 
   "settings.language.description":
-    '"Автоматично" використовує мову відображення VS Code. Виберіть мову для інтерфейсу Kilo Code.',
+    '"Автоматично" використовує мову відображення VS Code. Виберіть мову для інтерфейсу TakeDeep.',
   "settings.language.auto": "Автоматично (мова VS Code)",
   "settings.language.current": "Поточна:",
 
@@ -1215,7 +1215,7 @@ export const dict = {
   "settings.experimental.mcpTimeout.description": "Тайм-аут у мілісекундах для запитів до MCP-сервера",
   "settings.experimental.remote.title": "Керування Remote",
   "settings.experimental.remote.description":
-    "Увімкніть керування Remote сеансами через Kilo Cloud. Це також вплине на CLI на цьому комп'ютері.",
+    "Увімкніть керування Remote сеансами через TakeDeep Cloud. Це також вплине на CLI на цьому комп'ютері.",
   "settings.experimental.remote.current": "Поточний стан:",
   "settings.experimental.remote.startup": "Автоматичне ввімкнення під час запуску:",
   "settings.experimental.remote.active": "Активний",
@@ -1276,7 +1276,7 @@ export const dict = {
   "settings.agentBehaviour.claudeCompat.heading": "Сумісність з Claude Code",
   "settings.agentBehaviour.claudeCompat.title": "Завантажувати файли Claude Code",
   "settings.agentBehaviour.claudeCompat.description":
-    "Завантажувати інструкції та навички CLAUDE.md з вашого каталогу конфігурації Claude Code у сесії. Увімкніть це, якщо ви хочете, щоб Kilo використовував ваші інструкції та навички Claude Code. Потребує перезапуску.",
+    "Завантажувати інструкції та навички CLAUDE.md з вашого каталогу конфігурації Claude Code у сесії. Увімкніть це, якщо ви хочете, щоб TakeDeep використовував ваші інструкції та навички Claude Code. Потребує перезапуску.",
   "settings.agentBehaviour.removeMcp.title": "Видалити MCP-сервер",
   "settings.agentBehaviour.removeMcp.confirm": 'Видалити MCP-сервер "{{name}}"? Це видалить його з вашої конфігурації.',
   "settings.agentBehaviour.removeMcp.button": "Видалити",
@@ -1402,10 +1402,10 @@ export const dict = {
   "settings.legacyMigration.link": "Перенести зі старої версії",
   "settings.aboutKiloCode.legacyMigration.title": "Перенесення зі старої версії",
   "settings.aboutKiloCode.legacyMigration.description":
-    "Перенести налаштування з попередньої версії Kilo Code, включаючи API-ключі провайдерів та стандартну модель.",
+    "Перенести налаштування з попередньої версії TakeDeep, включаючи API-ключі провайдерів та стандартну модель.",
 
   // Screen 1 — What's New
-  "migration.whatsNew.title": "Що нового в Kilo Code",
+  "migration.whatsNew.title": "Що нового в TakeDeep",
   "migration.whatsNew.badge": "Бета",
   "migration.whatsNew.subtitle": "Ми відбудували розширення на більш швидкій та ефективній основі.",
   "migration.whatsNew.features.performance.title": "Швидша продуктивність агента",
@@ -1418,7 +1418,7 @@ export const dict = {
     "Єдиний інтерфейс для запуску кількох агентів паралельно, кожен у власному робочому дереві — стежте за прогресом, перемикайте контекст і переглядайте зміни з одного місця.",
   "migration.whatsNew.features.foundation.title": "Спільна основа",
   "migration.whatsNew.features.foundation.detail":
-    "Малий та ефективний ядерний модуль у кожному продукті Kilo. Знайомий досвід незалежно від того, як ви вважаєте за краще працювати.",
+    "Малий та ефективний ядерний модуль у кожному продукті TakeDeep. Знайомий досвід незалежно від того, як ви вважаєте за краще працювати.",
   "migration.whatsNew.blogLink": "Читати повне оголошення",
   "migration.whatsNew.docsLink": "Що нового та часті запитання",
   "migration.whatsNew.continue": "Продовжити",

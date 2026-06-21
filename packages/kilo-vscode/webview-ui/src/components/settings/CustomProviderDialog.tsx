@@ -1,17 +1,18 @@
-import { Button } from "@kilocode/kilo-ui/button"
-import { useDialog } from "@kilocode/kilo-ui/context/dialog"
-import { Dialog } from "@kilocode/kilo-ui/dialog"
-import { IconButton } from "@kilocode/kilo-ui/icon-button"
-import { ProviderIcon } from "@kilocode/kilo-ui/provider-icon"
-import { Spinner } from "@kilocode/kilo-ui/spinner"
-import { TextField } from "@kilocode/kilo-ui/text-field"
-import { showToast } from "@kilocode/kilo-ui/toast"
+import { Button } from "@takedeep/ui/button"
+import { useDialog } from "@takedeep/ui/context/dialog"
+import { Dialog } from "@takedeep/ui/dialog"
+import { IconButton } from "@takedeep/ui/icon-button"
+import { ProviderIcon } from "@takedeep/ui/provider-icon"
+import { Spinner } from "@takedeep/ui/spinner"
+import { TextField } from "@takedeep/ui/text-field"
+import { showToast } from "@takedeep/ui/toast"
 import { For, Show, createEffect, createMemo, createSignal, onCleanup } from "solid-js"
 import { createStore, reconcile } from "solid-js/store"
 import { useConfig } from "../../context/config"
 import { useLanguage } from "../../context/language"
 import { useProvider } from "../../context/provider"
 import { useVSCode } from "../../context/vscode"
+import { BRAND } from "../../brand"
 import type { ExtensionMessage, ProviderConfig } from "../../types/messages"
 import { createProviderAction } from "../../utils/provider-action"
 import { MASKED_CUSTOM_PROVIDER_KEY, resolveCustomProviderKey } from "../../../../src/shared/custom-provider"
@@ -447,12 +448,12 @@ const CustomProviderDialog = (props: CustomProviderDialogProps) => {
           <div style={{ "font-size": "14px", color: "var(--text-base)" }}>
             {language.t("provider.custom.description.prefix")}
             <a
-              href="https://kilo.ai/docs/providers/#custom-provider"
+              href={`${BRAND.docsUrl}/providers/#custom-provider`}
               onClick={(e) => {
                 e.preventDefault()
                 vscode.postMessage({
                   type: "openExternal",
-                  url: "https://kilo.ai/docs/providers/#custom-provider",
+                  url: `${BRAND.docsUrl}/providers/#custom-provider`,
                 })
               }}
             >

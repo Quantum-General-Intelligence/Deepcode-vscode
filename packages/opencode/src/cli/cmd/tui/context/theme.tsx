@@ -45,7 +45,7 @@ import { Global } from "@/global"
 import { Filesystem } from "@/util"
 import { useTuiConfig } from "./tui-config"
 import { isRecord } from "@/util/record"
-import type { TuiThemeCurrent } from "@kilocode/plugin/tui"
+import type { TuiThemeCurrent } from "@takedeep/plugin/tui"
 
 type Theme = TuiThemeCurrent & {
   _hasSelectedListItemText: boolean

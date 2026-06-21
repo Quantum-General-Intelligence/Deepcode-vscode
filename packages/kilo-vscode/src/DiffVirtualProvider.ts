@@ -41,7 +41,7 @@ export class DiffVirtualProvider implements vscode.Disposable {
       return
     }
 
-    const panel = vscode.window.createWebviewPanel("kilo-code.new.DiffVirtualPanel", title, vscode.ViewColumn.One, {
+    const panel = vscode.window.createWebviewPanel("takedeep.DiffVirtualPanel", title, vscode.ViewColumn.One, {
       enableScripts: true,
       retainContextWhenHidden: true,
       localResourceRoots: [this.extensionUri],
@@ -70,7 +70,7 @@ export class DiffVirtualProvider implements vscode.Disposable {
       this.post({
         type: "ready",
         vscodeLanguage: vscode.env.language,
-        languageOverride: vscode.workspace.getConfiguration("kilo-code.new").get<string>("language"),
+        languageOverride: vscode.workspace.getConfiguration("takedeep").get<string>("language"),
         workspaceDirectory: getWorkspaceRoot(),
       })
       this.pushData()

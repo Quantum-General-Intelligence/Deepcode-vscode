@@ -50,7 +50,7 @@ export { createKiloRoutes } from "./server/routes.js"
 // ============================================================================
 // Note: TUI exports moved to separate entry point
 // ============================================================================
-// For TUI components and commands, import from "@kilocode/kilo-gateway/tui"
+// For TUI components and commands, import from "@takedeep/gateway/tui"
 // This avoids circular dependencies with opencode TUI infrastructure
 
 // ============================================================================
@@ -73,6 +73,8 @@ export type {
   ProviderInfo,
   LanguageModelV3,
 } from "./types.js"
+
+export { BRAND, ENV_API_URL, ENV_LEGACY_API_URL, apiBase } from "./brand.js"
 
 // ============================================================================
 // Constants

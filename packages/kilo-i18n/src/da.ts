@@ -1,20 +1,20 @@
 export const dict = {
-  // Kilo Gateway provider translations
+  // TakeDeep Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway giver dig adgang til et udvalgt sæt pålidelige, optimerede modeller til kodningsagenter.",
+    "TakeDeep Gateway giver dig adgang til et udvalgt sÃ¦t pÃ¥lidelige, optimerede modeller til kodningsagenter.",
   "provider.connect.kiloGateway.line2":
-    "Med en enkelt API-nøgle får du adgang til modeller som Claude, GPT, Gemini, GLM og flere.",
-  "provider.connect.kiloGateway.visit.prefix": "Besøg ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
-  "provider.connect.kiloGateway.visit.suffix": " for at hente din API-nøgle.",
+    "Med en enkelt API-nÃ¸gle fÃ¥r du adgang til modeller som Claude, GPT, Gemini, GLM og flere.",
+  "provider.connect.kiloGateway.visit.prefix": "BesÃ¸g ",
+  "provider.connect.kiloGateway.visit.link": "deeper-api.takedeep.ai",
+  "provider.connect.kiloGateway.visit.suffix": " for at hente din API-nÃ¸gle.",
 
   // Provider dialog translations
   "dialog.provider.group.recommended": "Anbefalede",
   "dialog.provider.kilo.note": "Adgang til 500+ AI-modeller",
 
   // Reasoning block label
-  "ui.permission.run": "Kør",
-  "ui.reasoning.label": "Ræsonnement",
+  "ui.permission.run": "KÃ¸r",
+  "ui.reasoning.label": "RÃ¦sonnement",
 
   // Marketplace
   "marketplace.tab.skills": "Skills",
@@ -32,20 +32,20 @@ export const dict = {
   "marketplace.install.scope": "Omfang",
   "marketplace.install.scope.project": "Projekt",
   "marketplace.install.scope.global": "Global",
-  "marketplace.install.prerequisites": "Forudsætninger",
+  "marketplace.install.prerequisites": "ForudsÃ¦tninger",
   "marketplace.install.installing": "Installerer...",
   "marketplace.install.cancel": "Annuller",
   "marketplace.install.success": "Installeret med succes!",
   "marketplace.install.failed": "Installation mislykkedes",
-  "marketplace.install.done": "Færdig",
+  "marketplace.install.done": "FÃ¦rdig",
   "marketplace.install.close": "Luk",
   "marketplace.remove.title": "Fjern {{name}}?",
   "marketplace.remove.confirm":
-    "Er du sikker på, at du vil fjerne denne {{type}}? Dette vil fjerne den fra din {{scope}} konfiguration.",
+    "Er du sikker pÃ¥, at du vil fjerne denne {{type}}? Dette vil fjerne den fra din {{scope}} konfiguration.",
   "marketplace.remove.cancel": "Annuller",
   "marketplace.remove.confirm.button": "Fjern",
   "marketplace.tab.mcp": "MCP",
-  "marketplace.search": "Søg...",
+  "marketplace.search": "SÃ¸g...",
   "marketplace.filter.all": "Alle elementer",
   "marketplace.filter.notInstalled": "Ikke installeret",
   "marketplace.empty": "Ingen elementer fundet",
@@ -55,28 +55,28 @@ export const dict = {
   "marketplace.install.method": "Installationsmetode",
   "marketplace.install.parameters": "Parametre",
   "marketplace.install.optional": "(valgfrit)",
-  "marketplace.install.required": "{{name}} er påkrævet",
+  "marketplace.install.required": "{{name}} er pÃ¥krÃ¦vet",
   "marketplace.scope.project": "projekt",
   "marketplace.scope.global": "global",
   "marketplace.remove.type.mcp": "MCP-server",
-  "marketplace.remove.type.skill": "færdighed",
+  "marketplace.remove.type.skill": "fÃ¦rdighed",
   "marketplace.remove.type.mode": "tilstand",
   "marketplace.remove.failed": "Kunne ikke fjerne {{name}}",
   "marketplace.install": "Installer",
   "marketplace.filter.installed": "Installeret",
   "marketplace.error.dismiss": "Afvis",
-  "marketplace.warning.busyOne": "En session kører og vil blive afbrudt",
-  "marketplace.warning.busyMany": "Flere sessioner kører og vil blive afbrudt",
+  "marketplace.warning.busyOne": "En session kÃ¸rer og vil blive afbrudt",
+  "marketplace.warning.busyMany": "Flere sessioner kÃ¸rer og vil blive afbrudt",
   "marketplace.warning.installAnyway": "Installer alligevel",
   "marketplace.warning.cancel": "Annuller",
   "marketplace.contribute.prompt": "Mangler du en skill, tilstand eller MCP-server?",
-  "marketplace.contribute.cta": "Bidrag på GitHub",
+  "marketplace.contribute.cta": "Bidrag pÃ¥ GitHub",
 
   // Plan follow-up question shown after plan_exit
-  "plan.followup.header": "Implementér",
+  "plan.followup.header": "ImplementÃ©r",
   "plan.followup.question": "Klar til at implementere?",
   "plan.followup.answer.newSession": "Start ny session",
-  "plan.followup.answer.newSession.description": "Implementér i en ny session med ren kontekst",
-  "plan.followup.answer.continue": "Fortsæt her",
-  "plan.followup.answer.continue.description": "Implementér planen i denne session",
+  "plan.followup.answer.newSession.description": "ImplementÃ©r i en ny session med ren kontekst",
+  "plan.followup.answer.continue": "FortsÃ¦t her",
+  "plan.followup.answer.continue.description": "ImplementÃ©r planen i denne session",
 }

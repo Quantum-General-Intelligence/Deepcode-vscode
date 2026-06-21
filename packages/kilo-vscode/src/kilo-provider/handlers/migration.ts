@@ -5,7 +5,7 @@
  * No vscode dependency — all vscode access is injected via MigrationContext.
  */
 
-import type { KiloClient } from "@kilocode/sdk/v2/client"
+import type { KiloClient } from "@takedeep/sdk/v2/client"
 import type {
   LegacyMigrationData,
   MigrationSelections,

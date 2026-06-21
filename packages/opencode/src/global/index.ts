@@ -5,7 +5,9 @@ import os from "os"
 import { Filesystem } from "../util"
 import { Flock } from "@opencode-ai/shared/util/flock"
 
-const app = "kilo" // kilocode_change
+import { BRAND } from "@/takedeep/brand"
+
+const app = BRAND.cli // kilocode_change
 
 // kilocode_change start
 // Defensively strip surrounding whitespace from the resolved XDG paths.

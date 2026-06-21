@@ -170,7 +170,7 @@ export const layer = Layer.effect(
           .install(dir, {
             add: [
               {
-                name: "@kilocode/plugin",
+                name: "@takedeep/plugin",
                 version: InstallationLocal ? undefined : InstallationVersion,
               },
             ],

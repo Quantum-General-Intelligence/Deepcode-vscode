@@ -1,24 +1,19 @@
-// Kilo-specific translations and overrides
-// Keys here will override any matching keys from upstream translations
+// TakeDeep-specific translations and overrides
 export const dict = {
-  // Kilo Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway gives you access to a curated set of reliable optimized models for coding agents.",
+    "TakeDeep Gateway gives you access to a curated set of reliable optimized models for coding agents.",
   "provider.connect.kiloGateway.line2":
-    "With a single API key you'll get access to models such as Claude, GPT, Gemini, GLM and more.",
+    "Sign in with your TakeDeep account, or add your own API keys for Anthropic, OpenAI, OpenRouter, and more.",
   "provider.connect.kiloGateway.visit.prefix": "Visit ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
-  "provider.connect.kiloGateway.visit.suffix": " to collect your API key.",
+  "provider.connect.kiloGateway.visit.link": "deeper-api.takedeep.ai",
+  "provider.connect.kiloGateway.visit.suffix": " to sign in or manage your account.",
 
-  // Provider dialog translations
   "dialog.provider.group.recommended": "Recommended",
-  "dialog.provider.kilo.note": "Access 500+ AI models",
+  "dialog.provider.kilo.note": "Access managed and BYOK models",
 
-  // Reasoning block label
   "ui.permission.run": "Run",
   "ui.reasoning.label": "Reasoning",
 
-  // Marketplace
   "marketplace.tab.skills": "Skills",
   "marketplace.tab.mcpServers": "MCP Servers",
   "marketplace.tab.modes": "Modes",
@@ -74,9 +69,6 @@ export const dict = {
   "marketplace.contribute.prompt": "Missing a skill, mode, or MCP server?",
   "marketplace.contribute.cta": "Contribute on GitHub",
 
-  // Plan follow-up question shown after plan_exit. The English strings here must match
-  // the canonical `label`/`header`/`question` sent by the backend — those canonical labels
-  // are still what the backend matches on (see packages/opencode/src/kilocode/plan-followup.ts).
   "plan.followup.header": "Implement",
   "plan.followup.question": "Ready to implement?",
   "plan.followup.answer.newSession": "Start new session",

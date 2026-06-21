@@ -11,23 +11,23 @@
 
 import { Component, createMemo, For, Show, createSignal, createEffect, on } from "solid-js"
 import { Dynamic } from "solid-js/web"
-import { UserMessageDisplay } from "@kilocode/kilo-ui/message-part"
-import { Collapsible } from "@kilocode/kilo-ui/collapsible"
-import { Accordion } from "@kilocode/kilo-ui/accordion"
-import { DiffChanges } from "@kilocode/kilo-ui/diff-changes"
-import { Icon } from "@kilocode/kilo-ui/icon"
-import { StickyAccordionHeader } from "@kilocode/kilo-ui/sticky-accordion-header"
-import { useData } from "@kilocode/kilo-ui/context/data"
-import { useFileComponent } from "@kilocode/kilo-ui/context/file"
-import { normalize } from "@kilocode/kilo-ui/session-diff"
-import { useI18n } from "@kilocode/kilo-ui/context/i18n"
+import { UserMessageDisplay } from "@takedeep/ui/message-part"
+import { Collapsible } from "@takedeep/ui/collapsible"
+import { Accordion } from "@takedeep/ui/accordion"
+import { DiffChanges } from "@takedeep/ui/diff-changes"
+import { Icon } from "@takedeep/ui/icon"
+import { StickyAccordionHeader } from "@takedeep/ui/sticky-accordion-header"
+import { useData } from "@takedeep/ui/context/data"
+import { useFileComponent } from "@takedeep/ui/context/file"
+import { normalize } from "@takedeep/ui/session-diff"
+import { useI18n } from "@takedeep/ui/context/i18n"
 import { AssistantMessage } from "./AssistantMessage"
 import type {
   AssistantMessage as SDKAssistantMessage,
   Message as SDKMessage,
   Part as SDKPart,
   SnapshotFileDiff,
-} from "@kilocode/sdk/v2"
+} from "@takedeep/sdk/v2"
 import { ErrorDisplay } from "./ErrorDisplay"
 import { useServer } from "../../context/server"
 import { useSession } from "../../context/session"

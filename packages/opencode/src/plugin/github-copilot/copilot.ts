@@ -1,5 +1,5 @@
-import type { Hooks, PluginInput } from "@kilocode/plugin"
-import type { Model } from "@kilocode/sdk/v2"
+import type { Hooks, PluginInput } from "@takedeep/plugin"
+import type { Model } from "@takedeep/sdk/v2"
 import { InstallationVersion } from "@/installation/version"
 import { iife } from "@/util/iife"
 import { Log } from "../../util"

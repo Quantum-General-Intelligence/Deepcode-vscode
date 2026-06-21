@@ -542,7 +542,7 @@ export class WorktreeStateManager {
       // Rewrite stale .kilocode paths while preserving the separator style already stored.
       const fixed =
         wt.path?.replace(/([/\\])\.kilocode([/\\])/g, (_match, leadingSep, trailingSep) => {
-          return `${leadingSep}.kilo${trailingSep}`
+          return `${leadingSep}${KILO_DIR}${trailingSep}`
         }) ?? wt.path
       this.worktrees.set(id, { id, ...wt, path: fixed })
     }
@@ -610,7 +610,10 @@ export class WorktreeStateManager {
 
   /** Wait for any in-flight save to complete without triggering a new one. */
   async flush(): Promise<void> {
-    if (this.saving) await this.saving
+    while (this.saving || this.pendingSave) {
+      if (this.saving) await this.saving
+      else if (this.pendingSave) await this.save()
+    }
   }
 
   async save(): Promise<void> {
@@ -619,13 +622,11 @@ export class WorktreeStateManager {
       return
     }
 
-    // Serialize concurrent saves — if a save is in-flight, queue one follow-up
     if (this.saving) {
       this.pendingSave = true
       await this.saving
-      // The in-flight save finished but our data may not have been written yet.
-      // If there's a new save already running (the pendingSave follow-up), wait for it.
       if (this.saving) await this.saving
+      if (this.pendingSave) await this.flush()
       return
     }
 
@@ -682,6 +683,11 @@ export class WorktreeStateManager {
       if (!fs.existsSync(dir)) await fs.promises.mkdir(dir, { recursive: true })
       const content = JSON.stringify(data, null, 2)
       await fs.promises.writeFile(tmp, content, "utf-8")
+      if (process.platform === "win32") {
+        await fs.promises.copyFile(tmp, this.file)
+        await fs.promises.rm(tmp, { force: true })
+        return
+      }
       await fs.promises.rename(tmp, this.file)
     } catch (error) {
       await fs.promises.rm(tmp, { force: true }).catch((err) => this.log(`Failed to remove temp state file: ${err}`))

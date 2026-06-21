@@ -3,8 +3,8 @@ import {
   type SnapshotFileDiff,
   Message as MessageType,
   Part as PartType,
-} from "@kilocode/sdk/v2/client"
-import type { SessionStatus } from "@kilocode/sdk/v2"
+} from "@takedeep/sdk/v2/client"
+import type { SessionStatus } from "@takedeep/sdk/v2"
 import { useData } from "../context"
 import { useFileComponent } from "../context/file"
 

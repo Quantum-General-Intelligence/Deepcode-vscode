@@ -1,7 +1,7 @@
 import * as path from "path"
 import * as vscode from "vscode"
 import { inspect } from "util"
-import type { SnapshotFileDiff } from "@kilocode/sdk/v2/client"
+import type { SnapshotFileDiff } from "@takedeep/sdk/v2/client"
 import { GitOps } from "./agent-manager/GitOps"
 import { resolveBase } from "./agent-manager/local-diff"
 

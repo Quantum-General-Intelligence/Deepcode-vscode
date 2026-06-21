@@ -1,4 +1,4 @@
-import type { KiloClient } from "@kilocode/sdk/v2/client"
+import type { KiloClient } from "@takedeep/sdk/v2/client"
 import type { GitOps } from "./agent-manager/GitOps"
 
 /**

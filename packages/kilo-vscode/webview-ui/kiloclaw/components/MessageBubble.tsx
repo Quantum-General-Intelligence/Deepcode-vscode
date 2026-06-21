@@ -1,8 +1,8 @@
 // Individual chat message bubble
 
 import { Show, createMemo } from "solid-js"
-import { Markdown } from "@kilocode/kilo-ui/markdown"
-import { TextShimmer } from "@kilocode/kilo-ui/text-shimmer"
+import { Markdown } from "@takedeep/ui/markdown"
+import { TextShimmer } from "@takedeep/ui/text-shimmer"
 import type { ChatMessage } from "../lib/types"
 import { useKiloClawLanguage } from "../context/language"
 

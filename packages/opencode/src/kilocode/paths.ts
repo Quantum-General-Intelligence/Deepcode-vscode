@@ -1,37 +1,37 @@
 import * as path from "path"
 import os from "os"
 import { Filesystem } from "../util"
+import { BRAND } from "@/takedeep/brand"
 
 export namespace KilocodePaths {
   const home = () => process.env.HOME || process.env.USERPROFILE || os.homedir()
 
+  const extensionStorage = `${BRAND.extensionPublisher}.${BRAND.extensionName}`
+
   /**
-   * Get the platform-specific VSCode global storage path for Kilocode extension.
-   * - macOS: ~/Library/Application Support/Code/User/globalStorage/kilocode.kilo-code
-   * - Windows: %APPDATA%/Code/User/globalStorage/kilocode.kilo-code
-   * - Linux: ~/.config/Code/User/globalStorage/kilocode.kilo-code
+   * Get the platform-specific VSCode global storage path for the TakeDeep extension.
    */
   export function vscodeGlobalStorage(): string {
     const home = os.homedir()
     switch (process.platform) {
       case "darwin":
-        return path.join(home, "Library", "Application Support", "Code", "User", "globalStorage", "kilocode.kilo-code")
+        return path.join(home, "Library", "Application Support", "Code", "User", "globalStorage", extensionStorage)
       case "win32":
         return path.join(
           process.env.APPDATA || path.join(home, "AppData", "Roaming"),
           "Code",
           "User",
           "globalStorage",
-          "kilocode.kilo-code",
+          extensionStorage,
         )
       default:
-        return path.join(home, ".config", "Code", "User", "globalStorage", "kilocode.kilo-code")
+        return path.join(home, ".config", "Code", "User", "globalStorage", extensionStorage)
     }
   }
 
-  /** Global Kilo directories in user home: ~/.kilocode and ~/.kilo (legacy first, .kilo wins later) */
+  /** Global config directories: legacy paths first, then .takedeep */
   export function globalDirs(): string[] {
-    return [path.join(home(), ".kilocode"), path.join(home(), ".kilo")]
+    return [...BRAND.legacyConfigDirs.map((name) => path.join(home(), name)), path.join(home(), BRAND.configDir)]
   }
 
   /**
@@ -69,11 +69,9 @@ export namespace KilocodePaths {
       }
     }
 
-    // 3. Walk up from project dir to worktree root for .kilocode/ and .kilo/
-    // Returns parent directories (not skills/) because
-    // the glob pattern "skills/[*]/SKILL.md" is applied from the parent
-    // Loaded last so project-level skills take precedence over global
-    for (const target of [".kilocode", ".kilo"] as const) {
+    // 3. Walk up from project dir to worktree root for config directories
+    const projectTargets = [...BRAND.legacyConfigDirs, BRAND.configDir] as const
+    for (const target of projectTargets) {
       const projectDirs = await Array.fromAsync(
         Filesystem.up({
           targets: [target],

@@ -1,5 +1,5 @@
 import type { McpServer } from "@agentclientprotocol/sdk"
-import type { KiloClient } from "@kilocode/sdk/v2"
+import type { KiloClient } from "@takedeep/sdk/v2"
 import type { ProviderID, ModelID } from "../provider/schema"
 
 export interface ACPSessionState {

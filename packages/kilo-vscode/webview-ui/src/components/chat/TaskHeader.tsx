@@ -9,10 +9,10 @@
  */
 
 import { Component, For, Show, createMemo, createSignal, onMount, onCleanup } from "solid-js"
-import { IconButton } from "@kilocode/kilo-ui/icon-button"
-import { Tooltip } from "@kilocode/kilo-ui/tooltip"
-import { Icon } from "@kilocode/kilo-ui/icon"
-import { Checkbox } from "@kilocode/kilo-ui/checkbox"
+import { IconButton } from "@takedeep/ui/icon-button"
+import { Tooltip } from "@takedeep/ui/tooltip"
+import { Icon } from "@takedeep/ui/icon"
+import { Checkbox } from "@takedeep/ui/checkbox"
 import { useSession } from "../../context/session"
 import { collapseCostBreakdown } from "../../context/session-utils"
 import { useLanguage } from "../../context/language"

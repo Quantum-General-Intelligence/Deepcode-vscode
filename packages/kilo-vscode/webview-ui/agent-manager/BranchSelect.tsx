@@ -2,8 +2,8 @@
 
 import { type Component, For, Show } from "solid-js"
 import type { BranchInfo } from "../src/types/messages"
-import { Icon } from "@kilocode/kilo-ui/icon"
-import { Spinner } from "@kilocode/kilo-ui/spinner"
+import { Icon } from "@takedeep/ui/icon"
+import { Spinner } from "@takedeep/ui/spinner"
 import { formatRelativeDate } from "../src/utils/date"
 
 interface AutoOption {

@@ -1,4 +1,4 @@
-import type { Event } from "@kilocode/sdk/v2/client"
+import type { Event } from "@takedeep/sdk/v2/client"
 
 /**
  * Pure session ID resolution for SSE events.

@@ -1,4 +1,4 @@
-import type { KiloClient, SessionStatus } from "@kilocode/sdk/v2/client"
+import type { KiloClient, SessionStatus } from "@takedeep/sdk/v2/client"
 
 /**
  * Returns the number of sessions currently in "busy" state.

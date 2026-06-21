@@ -1,0 +1,17 @@
+# Cloudflare Tunnel — symboliq-g6x16 (TakeDeep)
+# Route in Zero Trust dashboard:
+#   deeper-api.takedeep.ai  -> http://127.0.0.1:8787
+#   deeper-dash.takedeep.ai -> http://127.0.0.1:8788
+#   deeper.takedeep.ai      -> http://127.0.0.1:4096
+
+tunnel: symboliq-g6x16
+credentials-file: /etc/cloudflared/symboliq-g6x16.json
+
+ingress:
+  - hostname: deeper-api.takedeep.ai
+    service: http://127.0.0.1:8787
+  - hostname: deeper-dash.takedeep.ai
+    service: http://127.0.0.1:8788
+  - hostname: deeper.takedeep.ai
+    service: http://127.0.0.1:4096
+  - service: http_status:404

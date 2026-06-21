@@ -8,7 +8,7 @@ import { createContext, useContext, createSignal, createMemo, onCleanup } from "
 import type { ParentComponent, Accessor } from "solid-js"
 import { useVSCode } from "./vscode"
 import type { Provider, ProviderModel, ModelSelection, ExtensionMessage, ProviderAuthState } from "../types/messages"
-import type { ProviderAuthMethod } from "@kilocode/sdk/v2/client"
+import type { ProviderAuthMethod } from "@takedeep/sdk/v2/client"
 import { flattenModels, findModel as _findModel, isModelValid as isValid } from "./provider-utils"
 import { KILO_AUTO } from "../../../src/shared/provider-model"
 

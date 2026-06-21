@@ -54,7 +54,7 @@ jobs:
 
       - name: Install Kilo
         if: inputs.bump || inputs.version
-        run: bun i -g @kilocode/cli
+        run: bun i -g @takedeep/cli
       # kilocode_change end
 
       - id: version

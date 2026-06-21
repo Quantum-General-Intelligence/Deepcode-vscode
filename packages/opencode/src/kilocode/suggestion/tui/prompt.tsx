@@ -1,7 +1,7 @@
 /** @jsxImportSource @opentui/solid */
 
 import { useKeyboard } from "@opentui/solid"
-import type { SuggestionRequest } from "@kilocode/sdk/v2"
+import type { SuggestionRequest } from "@takedeep/sdk/v2"
 import { createMemo, createSignal, For } from "solid-js"
 import { SplitBorder } from "../../../cli/cmd/tui/component/border"
 import { useKeybind } from "../../../cli/cmd/tui/context/keybind"

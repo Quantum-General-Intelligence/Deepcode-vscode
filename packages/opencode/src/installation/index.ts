@@ -233,7 +233,7 @@ export const layer: Layer.Layer<Service, never, HttpClient.HttpClient | ChildPro
         }
 
         if (detectedMethod === "npm" || detectedMethod === "bun" || detectedMethod === "pnpm") {
-          return yield* viewVersion(detectedMethod, `@kilocode/cli@${InstallationChannel}`) // kilocode_change
+          return yield* viewVersion(detectedMethod, `@takedeep/cli@${InstallationChannel}`) // kilocode_change
         }
 
         if (detectedMethod === "choco") {
@@ -273,13 +273,13 @@ export const layer: Layer.Layer<Service, never, HttpClient.HttpClient | ChildPro
             result = yield* upgradeCurl(target)
             break
           case "npm":
-            result = yield* run(["npm", "install", "-g", `@kilocode/cli@${target}`]) // kilocode_change
+            result = yield* run(["npm", "install", "-g", `@takedeep/cli@${target}`]) // kilocode_change
             break
           case "pnpm":
-            result = yield* run(["pnpm", "install", "-g", `@kilocode/cli@${target}`]) // kilocode_change
+            result = yield* run(["pnpm", "install", "-g", `@takedeep/cli@${target}`]) // kilocode_change
             break
           case "bun":
-            result = yield* run(["bun", "install", "-g", `@kilocode/cli@${target}`]) // kilocode_change
+            result = yield* run(["bun", "install", "-g", `@takedeep/cli@${target}`]) // kilocode_change
             break
           case "brew": {
             const formula = yield* getBrewFormula()

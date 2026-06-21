@@ -3,10 +3,10 @@
  * Transform package names and branding from opencode to kilo
  *
  * This script transforms:
- * - opencode-ai -> @kilocode/cli
- * - @opencode-ai/cli -> @kilocode/cli
- * - @opencode-ai/sdk -> @kilocode/sdk
- * - @opencode-ai/plugin -> @kilocode/plugin
+ * - opencode-ai -> @takedeep/cli
+ * - @opencode-ai/cli -> @takedeep/cli
+ * - @opencode-ai/sdk -> @takedeep/sdk
+ * - @opencode-ai/plugin -> @takedeep/plugin
  * - OPENCODE_* -> KILO_* (env variables, excluding OPENCODE_API_KEY)
  * - x-opencode-* -> x-kilo-* (HTTP headers)
  * - opencode.db -> kilo.db (database filename)
@@ -30,41 +30,41 @@ export interface TransformOptions {
 
 const PACKAGE_PATTERNS = [
   // In package.json name field
-  { pattern: /"name":\s*"opencode-ai"/, replacement: '"name": "@kilocode/cli"' },
-  { pattern: /"name":\s*"@opencode-ai\/cli"/, replacement: '"name": "@kilocode/cli"' },
+  { pattern: /"name":\s*"opencode-ai"/, replacement: '"name": "@takedeep/cli"' },
+  { pattern: /"name":\s*"@opencode-ai\/cli"/, replacement: '"name": "@takedeep/cli"' },
 
   // In dependencies/devDependencies
-  { pattern: /"opencode-ai":\s*"/g, replacement: '"@kilocode/cli": "' },
-  { pattern: /"@opencode-ai\/cli":\s*"/g, replacement: '"@kilocode/cli": "' },
-  { pattern: /"@opencode-ai\/sdk":\s*"/g, replacement: '"@kilocode/sdk": "' },
-  { pattern: /"@opencode-ai\/plugin":\s*"/g, replacement: '"@kilocode/plugin": "' },
+  { pattern: /"opencode-ai":\s*"/g, replacement: '"@takedeep/cli": "' },
+  { pattern: /"@opencode-ai\/cli":\s*"/g, replacement: '"@takedeep/cli": "' },
+  { pattern: /"@opencode-ai\/sdk":\s*"/g, replacement: '"@takedeep/sdk": "' },
+  { pattern: /"@opencode-ai\/plugin":\s*"/g, replacement: '"@takedeep/plugin": "' },
 
   // In any string context (mock.module, dynamic references, etc.)
   // Only cli, sdk, and plugin are renamed — other @opencode-ai/* packages
   // (e.g. @opencode-ai/ui, @opencode-ai/util) keep their upstream names.
-  { pattern: /@opencode-ai\/cli(?=\/|"|'|`|$)/g, replacement: "@kilocode/cli" },
-  { pattern: /@opencode-ai\/sdk(?=\/|"|'|`|$)/g, replacement: "@kilocode/sdk" },
-  { pattern: /@opencode-ai\/plugin(?=\/|"|'|`|$)/g, replacement: "@kilocode/plugin" },
+  { pattern: /@opencode-ai\/cli(?=\/|"|'|`|$)/g, replacement: "@takedeep/cli" },
+  { pattern: /@opencode-ai\/sdk(?=\/|"|'|`|$)/g, replacement: "@takedeep/sdk" },
+  { pattern: /@opencode-ai\/plugin(?=\/|"|'|`|$)/g, replacement: "@takedeep/plugin" },
 
   // In import statements (supports subpaths like @opencode-ai/sdk/v2)
-  { pattern: /from\s+["']opencode-ai["']/g, replacement: 'from "@kilocode/cli"' },
-  { pattern: /from\s+["']@opencode-ai\/cli(\/[^"']*)?["']/g, replacement: 'from "@kilocode/cli$1"' },
-  { pattern: /from\s+["']@opencode-ai\/sdk(\/[^"']*)?["']/g, replacement: 'from "@kilocode/sdk$1"' },
-  { pattern: /from\s+["']@opencode-ai\/plugin(\/[^"']*)?["']/g, replacement: 'from "@kilocode/plugin$1"' },
+  { pattern: /from\s+["']opencode-ai["']/g, replacement: 'from "@takedeep/cli"' },
+  { pattern: /from\s+["']@opencode-ai\/cli(\/[^"']*)?["']/g, replacement: 'from "@takedeep/cli$1"' },
+  { pattern: /from\s+["']@opencode-ai\/sdk(\/[^"']*)?["']/g, replacement: 'from "@takedeep/sdk$1"' },
+  { pattern: /from\s+["']@opencode-ai\/plugin(\/[^"']*)?["']/g, replacement: 'from "@takedeep/plugin$1"' },
 
   // In require statements (supports subpaths like @opencode-ai/sdk/v2)
-  { pattern: /require\(["']opencode-ai["']\)/g, replacement: 'require("@kilocode/cli")' },
-  { pattern: /require\(["']@opencode-ai\/cli(\/[^"']*)?["']\)/g, replacement: 'require("@kilocode/cli$1")' },
-  { pattern: /require\(["']@opencode-ai\/sdk(\/[^"']*)?["']\)/g, replacement: 'require("@kilocode/sdk$1")' },
-  { pattern: /require\(["']@opencode-ai\/plugin(\/[^"']*)?["']\)/g, replacement: 'require("@kilocode/plugin$1")' },
+  { pattern: /require\(["']opencode-ai["']\)/g, replacement: 'require("@takedeep/cli")' },
+  { pattern: /require\(["']@opencode-ai\/cli(\/[^"']*)?["']\)/g, replacement: 'require("@takedeep/cli$1")' },
+  { pattern: /require\(["']@opencode-ai\/sdk(\/[^"']*)?["']\)/g, replacement: 'require("@takedeep/sdk$1")' },
+  { pattern: /require\(["']@opencode-ai\/plugin(\/[^"']*)?["']\)/g, replacement: 'require("@takedeep/plugin$1")' },
 
   // Internal placeholder hostname used for in-process RPC (never resolved by DNS)
   { pattern: /opencode\.internal/g, replacement: "kilo.internal" },
 
   // In npx/npm commands
-  { pattern: /npx opencode-ai/g, replacement: "npx @kilocode/cli" },
-  { pattern: /npm install opencode-ai/g, replacement: "npm install @kilocode/cli" },
-  { pattern: /bun add opencode-ai/g, replacement: "bun add @kilocode/cli" },
+  { pattern: /npx opencode-ai/g, replacement: "npx @takedeep/cli" },
+  { pattern: /npm install opencode-ai/g, replacement: "npm install @takedeep/cli" },
+  { pattern: /bun add opencode-ai/g, replacement: "bun add @takedeep/cli" },
 
   // SDK public API renames (Opencode → Kilo)
   // Order matters: longer names first to avoid partial matches

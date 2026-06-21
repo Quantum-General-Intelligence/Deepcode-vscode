@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@kilocode/plugin",
+  "name": "@takedeep/plugin",
   "version": "7.2.31",
   "type": "module",
   "license": "MIT",
@@ -17,7 +17,7 @@
     "dist"
   ],
   "dependencies": {
-    "@kilocode/sdk": "workspace:*",
+    "@takedeep/sdk": "workspace:*",
     "effect": "catalog:",
     "zod": "catalog:"
   },

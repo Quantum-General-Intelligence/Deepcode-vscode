@@ -161,7 +161,7 @@ function workflow(file: string, text: string) {
   return text
     .replace(/github\.repository == 'anomalyco\/opencode'/g, "github.repository == 'Kilo-Org/kilocode'")
     .replace(/github\.repository == "anomalyco\/opencode"/g, 'github.repository == "Kilo-Org/kilocode"')
-    .replace(/\bopencode-ai\b/g, "@kilocode/cli")
+    .replace(/\bopencode-ai\b/g, "@takedeep/cli")
     .replace(
       /GH_REPO:\s*\$\{\{ \(github\.ref_name == 'beta' && 'anomalyco\/opencode-beta'\) \|\| github\.repository \}\}/g,
       "GH_REPO: ${{ github.repository }}",

@@ -130,10 +130,10 @@ async function showRemovalSummary(targets: RemovalTargets, method: Installation.
 
   if (method !== "curl" && method !== "unknown") {
     const cmds: Record<string, string> = {
-      npm: "npm uninstall -g @kilocode/cli", // kilocode_change
-      pnpm: "pnpm uninstall -g @kilocode/cli", // kilocode_change
-      bun: "bun remove -g @kilocode/cli", // kilocode_change
-      yarn: "yarn global remove @kilocode/cli", // kilocode_change
+      npm: "npm uninstall -g @takedeep/cli", // kilocode_change
+      pnpm: "pnpm uninstall -g @takedeep/cli", // kilocode_change
+      bun: "bun remove -g @takedeep/cli", // kilocode_change
+      yarn: "yarn global remove @takedeep/cli", // kilocode_change
       brew: "brew uninstall opencode",
       choco: "choco uninstall kilo", // kilocode_change
       scoop: "scoop uninstall kilo", // kilocode_change
@@ -181,10 +181,10 @@ async function executeUninstall(method: Installation.Method, targets: RemovalTar
 
   if (method !== "curl" && method !== "unknown") {
     const cmds: Record<string, string[]> = {
-      npm: ["npm", "uninstall", "-g", "@kilocode/cli"], // kilocode_change
-      pnpm: ["pnpm", "uninstall", "-g", "@kilocode/cli"], // kilocode_change
-      bun: ["bun", "remove", "-g", "@kilocode/cli"], // kilocode_change
-      yarn: ["yarn", "global", "remove", "@kilocode/cli"], // kilocode_change
+      npm: ["npm", "uninstall", "-g", "@takedeep/cli"], // kilocode_change
+      pnpm: ["pnpm", "uninstall", "-g", "@takedeep/cli"], // kilocode_change
+      bun: ["bun", "remove", "-g", "@takedeep/cli"], // kilocode_change
+      yarn: ["yarn", "global", "remove", "@takedeep/cli"], // kilocode_change
       brew: ["brew", "uninstall", "opencode"],
       choco: ["choco", "uninstall", "kilo"], // kilocode_change
       scoop: ["scoop", "uninstall", "kilo"], // kilocode_change

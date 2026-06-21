@@ -1,11 +1,11 @@
 import { createSignal, createMemo, createEffect, onCleanup, onMount, Show } from "solid-js"
-import { Tabs } from "@kilocode/kilo-ui/tabs"
-import { Card } from "@kilocode/kilo-ui/card"
-import { Button } from "@kilocode/kilo-ui/button"
+import { Tabs } from "@takedeep/ui/tabs"
+import { Card } from "@takedeep/ui/card"
+import { Button } from "@takedeep/ui/button"
 import { useVSCode } from "../../context/vscode"
 import { useServer } from "../../context/server"
 import { useLanguage } from "../../context/language"
-import { useDialog } from "@kilocode/kilo-ui/context/dialog"
+import { useDialog } from "@takedeep/ui/context/dialog"
 import type {
   MarketplaceItem,
   McpMarketplaceItem,

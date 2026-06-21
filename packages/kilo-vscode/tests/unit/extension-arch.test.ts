@@ -69,7 +69,7 @@ describe("Extension — package.json command sync", () => {
     // Commands generated via template literals can't be extracted by regex,
     // so verify the dynamic registration pattern exists in source instead.
     const dynamic: Record<string, string> = {
-      "kilo-code.new.agentManager.jumpTo": "registerCommand(`kilo-code.new.agentManager.jumpTo${",
+      "takedeep.agentManager.jumpTo": "registerCommand(`takedeep.agentManager.jumpTo${",
     }
 
     const missing: string[] = []
@@ -92,15 +92,15 @@ describe("Extension — package.json command sync", () => {
   })
 
   /**
-   * All declared commands must use the kilo-code.new. prefix.
+   * All declared commands must use the takedeep. prefix.
    * The legacy kilo-code.* namespace (without .new.) belongs to the old
    * extension and must not be reintroduced.
    */
-  it("all declared commands use the kilo-code.new. prefix", () => {
-    const bad = declared.filter((cmd) => !cmd.startsWith("kilo-code.new."))
+  it("all declared commands use the takedeep. prefix", () => {
+    const bad = declared.filter((cmd) => !cmd.startsWith("takedeep."))
     expect(
       bad,
-      `Commands without "kilo-code.new." prefix — use the namespaced form:\n` + bad.map((b) => `  - ${b}`).join("\n"),
+      `Commands without "takedeep." prefix — use the namespaced form:\n` + bad.map((b) => `  - ${b}`).join("\n"),
     ).toEqual([])
   })
 })
@@ -168,7 +168,7 @@ describe("Extension — KiloProvider handler wiring", () => {
   })
 
   it("TabPanel deserializer wires setContinueInWorktreeHandler before resolveWebviewPanel", () => {
-    const serializer = ext.indexOf('"kilo-code.new.TabPanel"')
+    const serializer = ext.indexOf('"takedeep.TabPanel"')
     expect(serializer, "TabPanel serializer must exist").toBeGreaterThan(-1)
     const body = sliceBlock(ext, serializer)
     const handler = body.indexOf("setContinueInWorktreeHandler")

@@ -2,7 +2,7 @@
 import { Hono } from "hono"
 import { describeRoute, validator, resolver } from "hono-openapi"
 import z from "zod"
-import { Telemetry } from "@kilocode/kilo-telemetry"
+import { Telemetry } from "@takedeep/telemetry"
 import { lazy } from "@/util/lazy"
 import { errors } from "../../error"
 

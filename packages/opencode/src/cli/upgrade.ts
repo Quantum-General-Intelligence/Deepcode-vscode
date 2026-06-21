@@ -9,7 +9,7 @@ export async function upgrade() {
   const config = await AppRuntime.runPromise(Config.Service.use((cfg) => cfg.getGlobal()))
   if (config.autoupdate === false || Flag.KILO_DISABLE_AUTOUPDATE) return
   const method = await AppRuntime.runPromise(Installation.Service.use((svc) => svc.method()))
-  // kilocode_change start - only auto-upgrade for npm/pnpm/bun (we only publish @kilocode/cli via npm registry)
+  // kilocode_change start - only auto-upgrade for npm/pnpm/bun (we only publish @takedeep/cli via npm registry)
   if (method !== "npm" && method !== "pnpm" && method !== "bun") return
   // kilocode_change end
   const latest = await AppRuntime.runPromise(Installation.Service.use((svc) => svc.latest(method))).catch(() => {})

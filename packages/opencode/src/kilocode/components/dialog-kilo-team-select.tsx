@@ -6,8 +6,8 @@
  */
 
 import { DialogSelect } from "@tui/ui/dialog-select"
-import type { Organization } from "@kilocode/kilo-gateway"
-import { getOrganizationOptions } from "@kilocode/kilo-gateway/tui"
+import type { Organization } from "@takedeep/gateway"
+import { getOrganizationOptions } from "@takedeep/gateway/tui"
 
 interface DialogKiloTeamSelectProps {
   organizations: Organization[]

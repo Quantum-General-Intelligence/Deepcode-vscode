@@ -93,7 +93,7 @@ To compile a standalone executable:
 Then run it with:
 
 ```bash
-./packages/opencode/dist/@kilocode/cli-<platform>/bin/kilo
+./packages/opencode/dist/@takedeep/cli-<platform>/bin/kilo
 ```
 
 Replace `<platform>` with your platform (e.g., `darwin-arm64`, `linux-x64`).

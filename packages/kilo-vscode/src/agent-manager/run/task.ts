@@ -1,5 +1,6 @@
 import * as vscode from "vscode"
 import type { RunHandle } from "./manager"
+import { EXTENSION_DISPLAY_NAME } from "../../constants"
 
 const GRACE_MS = 250
 
@@ -22,10 +23,10 @@ export async function startVscodeRunTask(config: RunTaskConfig, done: (exit: Run
     env: config.env,
   })
   const task = new vscode.Task(
-    { type: "kilo-worktree-run" },
+    { type: "takedeep-worktree-run" },
     vscode.TaskScope.Workspace,
     `Run: ${config.branch}`,
-    "Kilo Code",
+    EXTENSION_DISPLAY_NAME,
     proc,
     [],
   )

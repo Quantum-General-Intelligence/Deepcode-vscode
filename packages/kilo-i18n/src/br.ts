@@ -1,11 +1,11 @@
 export const dict = {
-  // Kilo Gateway provider translations
+  // TakeDeep Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "O Kilo Gateway oferece acesso a um conjunto selecionado de modelos confiáveis e otimizados para agentes de codificação.",
+    "O TakeDeep Gateway oferece acesso a um conjunto selecionado de modelos confiÃ¡veis e otimizados para agentes de codificaÃ§Ã£o.",
   "provider.connect.kiloGateway.line2":
-    "Com uma única chave de API, você terá acesso a modelos como Claude, GPT, Gemini, GLM e mais.",
+    "Com uma Ãºnica chave de API, vocÃª terÃ¡ acesso a modelos como Claude, GPT, Gemini, GLM e mais.",
   "provider.connect.kiloGateway.visit.prefix": "Visite ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "deeper-api.takedeep.ai",
   "provider.connect.kiloGateway.visit.suffix": " para obter sua chave de API.",
 
   // Provider dialog translations
@@ -14,7 +14,7 @@ export const dict = {
 
   // Reasoning block label
   "ui.permission.run": "Executar",
-  "ui.reasoning.label": "Raciocínio",
+  "ui.reasoning.label": "RaciocÃ­nio",
 
   // Marketplace
   "marketplace.tab.skills": "Skills",
@@ -32,30 +32,30 @@ export const dict = {
   "marketplace.install.scope": "Escopo",
   "marketplace.install.scope.project": "Projeto",
   "marketplace.install.scope.global": "Global",
-  "marketplace.install.prerequisites": "Pré-requisitos",
+  "marketplace.install.prerequisites": "PrÃ©-requisitos",
   "marketplace.install.installing": "Instalando...",
   "marketplace.install.cancel": "Cancelar",
   "marketplace.install.success": "Instalado com sucesso!",
-  "marketplace.install.failed": "Falha na instalação",
-  "marketplace.install.done": "Concluído",
+  "marketplace.install.failed": "Falha na instalaÃ§Ã£o",
+  "marketplace.install.done": "ConcluÃ­do",
   "marketplace.install.close": "Fechar",
   "marketplace.remove.title": "Remover {{name}}?",
   "marketplace.remove.confirm":
-    "Tem certeza que deseja remover este {{type}}? Isso o removerá da sua configuração {{scope}}.",
+    "Tem certeza que deseja remover este {{type}}? Isso o removerÃ¡ da sua configuraÃ§Ã£o {{scope}}.",
   "marketplace.remove.cancel": "Cancelar",
   "marketplace.remove.confirm.button": "Remover",
   "marketplace.tab.mcp": "MCP",
   "marketplace.search": "Pesquisar...",
   "marketplace.filter.all": "Todos os Itens",
-  "marketplace.filter.notInstalled": "Não Instalado",
+  "marketplace.filter.notInstalled": "NÃ£o Instalado",
   "marketplace.empty": "Nenhum item encontrado",
   "marketplace.badge.mcpServer": "Servidor MCP",
   "marketplace.badge.mode": "Modo",
   "marketplace.card.by": "por {{author}}",
-  "marketplace.install.method": "Método de Instalação",
-  "marketplace.install.parameters": "Parâmetros",
+  "marketplace.install.method": "MÃ©todo de InstalaÃ§Ã£o",
+  "marketplace.install.parameters": "ParÃ¢metros",
   "marketplace.install.optional": "(opcional)",
-  "marketplace.install.required": "{{name}} é obrigatório",
+  "marketplace.install.required": "{{name}} Ã© obrigatÃ³rio",
   "marketplace.scope.project": "projeto",
   "marketplace.scope.global": "global",
   "marketplace.remove.type.mcp": "servidor MCP",
@@ -65,18 +65,18 @@ export const dict = {
   "marketplace.install": "Instalar",
   "marketplace.filter.installed": "Instalado",
   "marketplace.error.dismiss": "Dispensar",
-  "marketplace.warning.busyOne": "Uma sessão está em execução e será interrompida",
-  "marketplace.warning.busyMany": "Várias sessões estão em execução e serão interrompidas",
+  "marketplace.warning.busyOne": "Uma sessÃ£o estÃ¡ em execuÃ§Ã£o e serÃ¡ interrompida",
+  "marketplace.warning.busyMany": "VÃ¡rias sessÃµes estÃ£o em execuÃ§Ã£o e serÃ£o interrompidas",
   "marketplace.warning.installAnyway": "Instalar mesmo assim",
   "marketplace.warning.cancel": "Cancelar",
-  "marketplace.contribute.prompt": "Está faltando uma skill, modo ou servidor MCP?",
+  "marketplace.contribute.prompt": "EstÃ¡ faltando uma skill, modo ou servidor MCP?",
   "marketplace.contribute.cta": "Contribuir no GitHub",
 
   // Plan follow-up question shown after plan_exit
   "plan.followup.header": "Implementar",
   "plan.followup.question": "Pronto para implementar?",
-  "plan.followup.answer.newSession": "Iniciar nova sessão",
-  "plan.followup.answer.newSession.description": "Implementar em uma nova sessão com contexto limpo",
+  "plan.followup.answer.newSession": "Iniciar nova sessÃ£o",
+  "plan.followup.answer.newSession.description": "Implementar em uma nova sessÃ£o com contexto limpo",
   "plan.followup.answer.continue": "Continuar aqui",
-  "plan.followup.answer.continue.description": "Implementar o plano nesta sessão",
+  "plan.followup.answer.continue.description": "Implementar o plano nesta sessÃ£o",
 }

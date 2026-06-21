@@ -5,7 +5,7 @@ import os from "os"
 import { Config } from "../config"
 import { ConfigAgent, ConfigPermission } from "../config"
 import { KilocodePaths } from "./paths"
-import type { OrganizationMode } from "@kilocode/kilo-gateway"
+import type { OrganizationMode } from "@takedeep/gateway"
 
 export namespace ModesMigrator {
   // Kilocode mode structure

@@ -1,6 +1,6 @@
 import * as vscode from "vscode"
 import { ServerManager } from "./server-manager"
-import { createKiloClient, type KiloClient, type Event } from "@kilocode/sdk/v2/client"
+import { createKiloClient, type KiloClient, type Event } from "@takedeep/sdk/v2/client"
 import { SdkSSEAdapter } from "./sdk-sse-adapter"
 import type { ServerConfig } from "./types"
 import { resolveEventSessionId as resolveEventSessionIdPure } from "./connection-utils"

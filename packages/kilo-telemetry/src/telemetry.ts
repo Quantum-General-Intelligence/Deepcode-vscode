@@ -83,15 +83,16 @@ export namespace Telemetry {
     const enabled = level ? level === "all" : options.enabled
     Client.setEnabled(enabled)
 
-    // Initialize OpenTelemetry tracer for AI SDK spans
-    TracerSetup.init({
-      version: props.appVersion,
-      enabled,
-      appName: props.appName,
-      platform: props.platform,
-      editorName: props.editorName,
-      vscodeVersion: props.vscodeVersion,
-    })
+    if (Client.getClient()) {
+      TracerSetup.init({
+        version: props.appVersion,
+        enabled,
+        appName: props.appName,
+        platform: props.platform,
+        editorName: props.editorName,
+        vscodeVersion: props.vscodeVersion,
+      })
+    }
 
     await Identity.getMachineId()
 

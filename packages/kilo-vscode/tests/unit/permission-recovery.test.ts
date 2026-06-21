@@ -82,14 +82,14 @@ describe("recoveryDirs", () => {
 
   it("returns workspace root plus each unique worktree directory", () => {
     const dirs = new Map([
-      ["s1", "/workspace/.kilo/worktrees/alpha"],
-      ["s2", "/workspace/.kilo/worktrees/beta"],
-      ["s3", "/workspace/.kilo/worktrees/alpha"],
+      ["s1", "/workspace/.takedeep/worktrees/alpha"],
+      ["s2", "/workspace/.takedeep/worktrees/beta"],
+      ["s3", "/workspace/.takedeep/worktrees/alpha"],
     ])
     expect(recoveryDirs("/workspace", dirs)).toEqual([
       "/workspace",
-      "/workspace/.kilo/worktrees/alpha",
-      "/workspace/.kilo/worktrees/beta",
+      "/workspace/.takedeep/worktrees/alpha",
+      "/workspace/.takedeep/worktrees/beta",
     ])
   })
 })
@@ -118,25 +118,25 @@ describe("fetchAndSendPendingPermissions", () => {
 
   it("queries workspace root plus each unique worktree directory", async () => {
     const dirs = new Map([
-      ["s1", "/workspace/.kilo/worktrees/alpha"],
-      ["s2", "/workspace/.kilo/worktrees/beta"],
+      ["s1", "/workspace/.takedeep/worktrees/alpha"],
+      ["s2", "/workspace/.takedeep/worktrees/beta"],
     ])
     const { fake, queries } = ctx({ tracked: ["s1", "s2"], dirs })
     await fetchAndSendPendingPermissions(fake)
     expect(queries).toContain("/workspace")
-    expect(queries).toContain("/workspace/.kilo/worktrees/alpha")
-    expect(queries).toContain("/workspace/.kilo/worktrees/beta")
+    expect(queries).toContain("/workspace/.takedeep/worktrees/alpha")
+    expect(queries).toContain("/workspace/.takedeep/worktrees/beta")
     expect(queries).toHaveLength(3)
   })
 
   it("deduplicates directories", async () => {
     const dirs = new Map([
-      ["s1", "/workspace/.kilo/worktrees/alpha"],
-      ["s2", "/workspace/.kilo/worktrees/alpha"],
+      ["s1", "/workspace/.takedeep/worktrees/alpha"],
+      ["s2", "/workspace/.takedeep/worktrees/alpha"],
     ])
     const { fake, queries } = ctx({ tracked: ["s1", "s2"], dirs })
     await fetchAndSendPendingPermissions(fake)
-    expect(queries.filter((d) => d === "/workspace/.kilo/worktrees/alpha")).toHaveLength(1)
+    expect(queries.filter((d) => d === "/workspace/.takedeep/worktrees/alpha")).toHaveLength(1)
   })
 
   it("forwards permissions from worktree directories", async () => {

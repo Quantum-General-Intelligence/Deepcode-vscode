@@ -74,6 +74,7 @@ export async function getShellEnvironment(): Promise<Record<string, string>> {
     })
 
     const env = parseEnvOutput(stdout)
+    if (!env.PATH && env.Path) env.PATH = env.Path
     cached = env
     cacheTime = now
     wasFallback = false
@@ -84,6 +85,7 @@ export async function getShellEnvironment(): Promise<Record<string, string>> {
     for (const [key, value] of Object.entries(process.env)) {
       if (typeof value === "string") env[key] = value
     }
+    if (!env.PATH && env.Path) env.PATH = env.Path
     cached = env
     cacheTime = now
     wasFallback = true

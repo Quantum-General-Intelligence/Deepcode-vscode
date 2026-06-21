@@ -2,7 +2,7 @@
  * Provider action handlers extracted from KiloProvider to stay under max-lines.
  * These are pure async functions that operate on the SDK client — no vscode dependency.
  */
-import type { KiloClient } from "@kilocode/sdk/v2"
+import type { KiloClient } from "@takedeep/sdk/v2"
 import { validateProviderID as validateProviderIDShared } from "./shared/custom-provider"
 import {
   resolveCustomProviderAuth,

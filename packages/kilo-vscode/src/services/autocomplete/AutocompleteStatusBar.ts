@@ -3,8 +3,10 @@ import { t } from "./shims/i18n"
 import type { AutocompleteStatusBarStateProps } from "./types"
 import { humanFormatSessionCost, formatTime } from "./statusbar-utils"
 
-const SUPPORTED_PROVIDER_DISPLAY_NAME = "Kilo Gateway"
-const SETTINGS_COMMAND = `command:kilo-code.new.settingsButtonClicked?${encodeURIComponent(JSON.stringify(["autocomplete"]))}`
+import { EXTENSION_DISPLAY_NAME } from "../../constants"
+
+const SUPPORTED_PROVIDER_DISPLAY_NAME = `${EXTENSION_DISPLAY_NAME} Gateway`
+const SETTINGS_COMMAND = `command:takedeep.settingsButtonClicked?${encodeURIComponent(JSON.stringify(["autocomplete"]))}`
 
 export class AutocompleteStatusBar {
   statusBar: vscode.StatusBarItem

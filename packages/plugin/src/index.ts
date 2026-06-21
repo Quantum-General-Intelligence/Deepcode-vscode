@@ -10,8 +10,8 @@ import type {
   Part,
   Auth,
   Config as SDKConfig,
-} from "@kilocode/sdk"
-import type { Provider as ProviderV2, Model as ModelV2 } from "@kilocode/sdk/v2"
+} from "@takedeep/sdk"
+import type { Provider as ProviderV2, Model as ModelV2 } from "@takedeep/sdk/v2"
 
 import type { BunShell } from "./shell.js"
 import { type ToolDefinition } from "./tool.js"

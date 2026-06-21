@@ -1,5 +1,5 @@
 import { ulid } from "ulid"
-import type * as SDK from "@kilocode/sdk/v2"
+import type * as SDK from "@takedeep/sdk/v2"
 import type { KiloSession } from "@/kilocode/session"
 
 export namespace IngestQueue {

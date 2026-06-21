@@ -21,7 +21,7 @@ import { DialogSelect } from "@tui/ui/dialog-select"
 import { Link } from "@tui/ui/link"
 import { isKiloError, showKiloErrorToast } from "@/kilocode/kilo-errors"
 import { registerKiloCommands } from "@/kilocode/kilo-commands"
-import { initializeTUIDependencies } from "@kilocode/kilo-gateway/tui"
+import { initializeTUIDependencies } from "@takedeep/gateway/tui"
 
 // Re-export so upstream can render the route without importing directly
 export { KiloClawView } from "@/kilocode/claw/view"
@@ -34,7 +34,7 @@ export { KiloClawView } from "@/kilocode/claw/view"
 export const APP_TITLE = "Kilo CLI"
 
 /** Public docs URL shown in the command palette. */
-export const DOCS_URL = "https://kilo.ai/docs"
+export const DOCS_URL = "https://deeper-api.takedeep.ai"
 
 /** Human-readable product name used in user-facing messages. */
 export const APP_NAME = "Kilo"

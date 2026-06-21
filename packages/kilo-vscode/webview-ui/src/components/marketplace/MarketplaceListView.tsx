@@ -1,8 +1,8 @@
 import { createSignal, createMemo, For, Show } from "solid-js"
-import { TextField } from "@kilocode/kilo-ui/text-field"
-import { Select } from "@kilocode/kilo-ui/select"
-import { Tag } from "@kilocode/kilo-ui/tag"
-import { Spinner } from "@kilocode/kilo-ui/spinner"
+import { TextField } from "@takedeep/ui/text-field"
+import { Select } from "@takedeep/ui/select"
+import { Tag } from "@takedeep/ui/tag"
+import { Spinner } from "@takedeep/ui/spinner"
 import type {
   MarketplaceItem,
   McpMarketplaceItem,

@@ -3,7 +3,7 @@ Use Kilo Code directly from your terminal for maximum flexibility.
 ### Install via npm
 
 ```bash
-npm install -g @kilocode/cli
+npm install -g @takedeep/cli
 ```
 
 ### Older CPUs (No AVX Support)

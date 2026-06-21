@@ -25,6 +25,7 @@ export default function Home() {
   const homedir = createMemo(() => sync.data.path.home)
   const recent = createMemo(() => {
     return sync.data.project
+      .filter((p) => p.worktree && p.worktree !== "/")
       .slice()
       .sort((a, b) => (b.time.updated ?? b.time.created) - (a.time.updated ?? a.time.created))
       .slice(0, 5)

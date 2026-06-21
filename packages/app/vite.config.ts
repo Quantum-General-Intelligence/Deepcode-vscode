@@ -10,6 +10,13 @@ export default defineConfig({
   },
   build: {
     target: "esnext",
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes("packages/app/src/context")) return "app-context"
+        },
+      },
+    },
     // sourcemap: true,
   },
 })

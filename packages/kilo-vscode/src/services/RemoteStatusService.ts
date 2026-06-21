@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import type { KiloClient } from "@kilocode/sdk/v2/client"
+import type { KiloClient } from "@takedeep/sdk/v2/client"
 import { t } from "./cli-backend/i18n"
 
 export type RemoteState = { enabled: boolean; connected: boolean }
@@ -19,7 +19,7 @@ export class RemoteStatusService implements vscode.Disposable {
 
   constructor() {
     this.bar = vscode.window.createStatusBarItem(vscode.StatusBarAlignment.Right, 99)
-    this.bar.command = "kilo-code.new.toggleRemote"
+    this.bar.command = "takedeep.toggleRemote"
     this.sync()
   }
 

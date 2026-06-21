@@ -43,7 +43,7 @@
 - [#9614](https://github.com/Kilo-Org/kilocode/pull/9614) [`6908f8a`](https://github.com/Kilo-Org/kilocode/commit/6908f8ae6df201233ad75df6c000b109ecaea637) - Start Agent Manager new tasks in the selected worktree instead of the workspace root.
 
 - Updated dependencies [[`28a0eae`](https://github.com/Kilo-Org/kilocode/commit/28a0eae4b0b940482222f6671a6885b575b2ad9c)]:
-  - @kilocode/kilo-indexing@7.1.4
+  - @takedeep/indexing@7.1.4
 
 ## 7.2.26
 
@@ -95,7 +95,7 @@
 
 - Updated dependencies [[`00ec003`](https://github.com/Kilo-Org/kilocode/commit/00ec003c11476d995556d2b975b4da058f8b958c)]:
   - @opencode-ai/ui@7.2.21
-  - @kilocode/kilo-ui@7.2.21
+  - @takedeep/ui@7.2.21
 
 ## 7.2.19
 
@@ -167,7 +167,7 @@
 
 - Updated dependencies [[`eac2dba`](https://github.com/Kilo-Org/kilocode/commit/eac2dbafa009adedeb4b44016956f2c6cd96b715)]:
   - @opencode-ai/ui@7.2.13
-  - @kilocode/kilo-ui@7.2.13
+  - @takedeep/ui@7.2.13
 
 ## 7.2.12
 

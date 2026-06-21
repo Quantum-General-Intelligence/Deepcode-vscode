@@ -59,17 +59,17 @@ Downloads all build artifacts and publishes to every distribution channel:
 - Commits the version bump, tags the commit, and pushes to the repo.
 - Promotes the draft GitHub Release to a published release.
 
-#### CLI (`@kilocode/cli`)
+#### CLI (`@takedeep/cli`)
 
-- Publishes platform-specific binary packages to **npm** (e.g. `@kilocode/cli-linux-x64`, `@kilocode/cli-darwin-arm64`, etc.).
-- Publishes the main `@kilocode/cli` package to **npm** with optional dependencies on the binary packages.
+- Publishes platform-specific binary packages to **npm** (e.g. `@takedeep/cli-linux-x64`, `@takedeep/cli-darwin-arm64`, etc.).
+- Publishes the main `@takedeep/cli` package to **npm** with optional dependencies on the binary packages.
 - Builds and pushes a multi-arch **Docker image** (`ghcr.io/kilo-org/kilocode`) to GitHub Container Registry (linux/amd64 + linux/arm64).
 
-#### SDK (`@kilocode/sdk`)
+#### SDK (`@takedeep/sdk`)
 
 - Builds and publishes the TypeScript SDK to **npm**.
 
-#### Plugin (`@kilocode/plugin`)
+#### Plugin (`@takedeep/plugin`)
 
 - Builds and publishes the plugin interface package to **npm**.
 

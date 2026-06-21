@@ -11,7 +11,7 @@ Log.init({ print: false })
 // Capture the options passed to fetchKiloModels
 let captured: any = undefined
 
-mock.module("@kilocode/kilo-gateway", () => ({
+mock.module("@takedeep/gateway", () => ({
   fetchKiloModels: async (options: any) => {
     captured = options
     return {

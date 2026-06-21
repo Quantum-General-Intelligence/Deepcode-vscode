@@ -120,7 +120,7 @@ export const dict = {
   "dialog.model.expand": "展開",
   "dialog.model.collapse": "折りたたむ",
 
-  "dialog.model.unpaid.freeModels.title": "Kiloが提供する無料モデル",
+  "dialog.model.unpaid.freeModels.title": "TakeDeepが提供する無料モデル",
   "dialog.model.unpaid.addMore.title": "人気のプロバイダーからモデルを追加",
 
   "dialog.provider.viewAll": "さらにプロバイダーを表示",
@@ -133,7 +133,7 @@ export const dict = {
   "provider.connect.status.waiting": "認証を待機中...",
   "provider.connect.status.failed": "認証に失敗しました: {{error}}",
   "provider.connect.apiKey.description":
-    "{{provider}}のAPIキーを入力してアカウントを接続し、Kiloで{{provider}}モデルを使用します。",
+    "{{provider}}のAPIキーを入力してアカウントを接続し、TakeDeepで{{provider}}モデルを使用します。",
   "provider.connect.apiKey.label": "{{provider}} APIキー",
   "provider.connect.apiKey.placeholder": "APIキー",
   "provider.connect.apiKey.required": "APIキーが必要です",
@@ -146,7 +146,7 @@ export const dict = {
   "provider.connect.oauth.code.visit.prefix": " ",
   "provider.connect.oauth.code.visit.link": "このリンク",
   "provider.connect.oauth.code.visit.suffix":
-    " にアクセスして認証コードを取得し、アカウントを接続してKiloで{{provider}}モデルを使用してください。",
+    " にアクセスして認証コードを取得し、アカウントを接続してTakeDeepで{{provider}}モデルを使用してください。",
   "provider.connect.oauth.code.label": "{{method}} 認証コード",
   "provider.connect.oauth.code.placeholder": "認証コード",
   "provider.connect.oauth.code.required": "認証コードが必要です",
@@ -154,7 +154,7 @@ export const dict = {
   "provider.connect.oauth.auto.visit.prefix": " ",
   "provider.connect.oauth.auto.visit.link": "このリンク",
   "provider.connect.oauth.auto.visit.suffix":
-    " にアクセスし、以下のコードを入力してアカウントを接続し、Kiloで{{provider}}モデルを使用してください。",
+    " にアクセスし、以下のコードを入力してアカウントを接続し、TakeDeepで{{provider}}モデルを使用してください。",
   "provider.connect.oauth.auto.confirmationCode": "確認コード",
   "provider.connect.toast.connected.title": "{{provider}}が接続されました",
   "provider.connect.toast.connected.description": "{{provider}}モデルが使用可能になりました。",
@@ -298,7 +298,7 @@ export const dict = {
   "dialog.directory.empty": "フォルダが見つかりません",
 
   "dialog.server.title": "サーバー",
-  "dialog.server.description": "このアプリが接続するKiloサーバーを切り替えます。",
+  "dialog.server.description": "このアプリが接続するTakeDeepサーバーを切り替えます。",
   "dialog.server.search.placeholder": "サーバーを検索",
   "dialog.server.empty": "サーバーはまだありません",
   "dialog.server.add.title": "サーバーを追加",
@@ -423,7 +423,7 @@ export const dict = {
   "toast.session.listFailed.title": "{{project}}のセッション読み込みに失敗しました",
 
   "toast.update.title": "アップデートが利用可能です",
-  "toast.update.description": "Kiloの新しいバージョン ({{version}}) がインストール可能です。",
+  "toast.update.description": "TakeDeepの新しいバージョン ({{version}}) がインストール可能です。",
   "toast.update.action.installRestart": "インストールして再起動",
   "toast.update.action.notYet": "今はしない",
 
@@ -434,7 +434,7 @@ export const dict = {
   "error.page.action.checking": "確認中...",
   "error.page.action.checkUpdates": "アップデートを確認",
   "error.page.action.updateTo": "{{version}}にアップデート",
-  "error.page.report.prefix": "このエラーをKiloチームに報告してください: ",
+  "error.page.report.prefix": "このエラーをTakeDeepチームに報告してください: ",
   "error.page.report.discord": "Discord",
   "error.page.version": "バージョン: {{version}}",
 
@@ -463,7 +463,7 @@ export const dict = {
   "error.chain.didYouMean": "もしかして: {{suggestions}}",
   "error.chain.modelNotFound": "モデルが見つかりません: {{provider}}/{{model}}",
   "error.chain.checkConfig": "config (opencode.json) のプロバイダー/モデル名を確認してください",
-  "error.chain.mcpFailed": 'MCPサーバー "{{name}}" が失敗しました。注意: KiloはまだMCP認証をサポートしていません。',
+  "error.chain.mcpFailed": 'MCPサーバー "{{name}}" が失敗しました。注意: TakeDeepはまだMCP認証をサポートしていません。',
   "error.chain.providerAuthFailed": "プロバイダー認証に失敗しました ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'プロバイダー "{{provider}}" の初期化に失敗しました。認証情報と設定を確認してください。',
@@ -636,12 +636,12 @@ export const dict = {
   "sidebar.workspaces.enable": "ワークスペースを有効化",
   "sidebar.workspaces.disable": "ワークスペースを無効化",
   "sidebar.gettingStarted.title": "はじめに",
-  "sidebar.gettingStarted.line1": "Kiloには無料モデルが含まれているため、すぐに開始できます。",
+  "sidebar.gettingStarted.line1": "TakeDeepには無料モデルが含まれているため、すぐに開始できます。",
   "sidebar.gettingStarted.line2": "プロバイダーを接続して、Claude、GPT、Geminiなどのモデルを使用できます。",
   "sidebar.project.recentSessions": "最近のセッション",
   "sidebar.project.viewAllSessions": "すべてのセッションを表示",
 
-  "app.name.desktop": "Kilo Desktop",
+  "app.name.desktop": "TakeDeep Desktop",
   "settings.section.desktop": "デスクトップ",
   "settings.section.server": "サーバー",
   "settings.tab.general": "一般",
@@ -653,11 +653,11 @@ export const dict = {
   "settings.general.section.sounds": "効果音",
 
   "settings.general.row.language.title": "言語",
-  "settings.general.row.language.description": "Kiloの表示言語を変更します",
+  "settings.general.row.language.description": "TakeDeepの表示言語を変更します",
   "settings.general.row.appearance.title": "外観",
-  "settings.general.row.appearance.description": "デバイスでのKiloの表示をカスタマイズします",
+  "settings.general.row.appearance.description": "デバイスでのTakeDeepの表示をカスタマイズします",
   "settings.general.row.theme.title": "テーマ",
-  "settings.general.row.theme.description": "Kiloのテーマをカスタマイズします。",
+  "settings.general.row.theme.description": "TakeDeepのテーマをカスタマイズします。",
   "settings.general.row.font.title": "フォント",
   "settings.general.row.font.description": "コードブロックで使用する等幅フォントをカスタマイズします",
 
@@ -665,13 +665,13 @@ export const dict = {
   "settings.general.row.releaseNotes.description": "アップデート後に「新機能」ポップアップを表示",
 
   "settings.updates.row.startup.title": "起動時にアップデートを確認",
-  "settings.updates.row.startup.description": "Kilo の起動時に自動でアップデートを確認します",
+  "settings.updates.row.startup.description": "TakeDeep の起動時に自動でアップデートを確認します",
   "settings.updates.row.check.title": "アップデートを確認",
   "settings.updates.row.check.description": "手動でアップデートを確認し、利用可能ならインストールします",
   "settings.updates.action.checkNow": "今すぐ確認",
   "settings.updates.action.checking": "確認中...",
   "settings.updates.toast.latest.title": "最新です",
-  "settings.updates.toast.latest.description": "Kilo は最新バージョンです。",
+  "settings.updates.toast.latest.description": "TakeDeep は最新バージョンです。",
 
   "font.option.ibmPlexMono": "IBM Plex Mono",
   "font.option.cascadiaCode": "Cascadia Code",
@@ -791,7 +791,7 @@ export const dict = {
   "settings.providers.title": "プロバイダー",
   "settings.providers.description": "プロバイダー設定はここで構成できます。",
   "settings.providers.betaNotice":
-    "現在、設定画面で設定できるのはKilo Gatewayプロバイダーのみです。他のプロバイダーの設定については、ベータ期間中にまもなく対応予定です。それまでの間は、CLIまたは設定ファイルを使用してプロバイダーを設定できます。私たちはKiloをオープンに保ち、ロックインのない状態を維持することをお約束します。",
+    "現在、設定画面で設定できるのはTakeDeep Gatewayプロバイダーのみです。他のプロバイダーの設定については、ベータ期間中にまもなく対応予定です。それまでの間は、CLIまたは設定ファイルを使用してプロバイダーを設定できます。私たちはTakeDeepをオープンに保ち、ロックインのない状態を維持することをお約束します。",
   "settings.providers.section.connected": "接続済みプロバイダー",
   "settings.providers.connected.empty": "接続済みプロバイダーはありません",
   "settings.providers.section.popular": "人気のプロバイダー",
@@ -896,19 +896,19 @@ export const dict = {
   "settings.config.status.loadedLegacy": "旧構成を読み込み済み",
   "settings.config.status.notLoaded": "読み込まれていません",
   "settings.config.status.create": "見つかりません - このファイルを作成する",
-  "settings.config.title": "{{scope}}のKilo構成ファイルを開く",
+  "settings.config.title": "{{scope}}のTakeDeep構成ファイルを開く",
   "settings.config.placeholder":
     "構成ファイルは順番にマージされます。読み込み済みとしてマークされているファイルが現在設定に影響しています。",
-  "settings.config.noWorkspace": "ローカルのKilo構成ファイルを編集するには、ワークスペースフォルダーを開いてください。",
-  "settings.config.openFailed": "{{scope}}のKilo構成ファイルを開けませんでした: {{message}}",
+  "settings.config.noWorkspace": "ローカルのTakeDeep構成ファイルを編集するには、ワークスペースフォルダーを開いてください。",
+  "settings.config.openFailed": "{{scope}}のTakeDeep構成ファイルを開けませんでした: {{message}}",
   "settings.config.source.xdg": "XDGグローバル構成",
-  "settings.config.source.homeKilo": "Homeの.kilo構成",
+  "settings.config.source.homeKilo": "Homeの.takedeep構成",
   "settings.config.source.homeKilocode": "Homeの.kilocode構成",
   "settings.config.source.homeOpencode": "Homeの.opencode構成",
   "settings.config.source.envFile": "KILO_CONFIG環境ファイル",
   "settings.config.source.envDir": "KILO_CONFIG_DIR",
   "settings.config.source.envContent": "インライン環境構成",
-  "settings.config.source.projectKilo": "プロジェクトの.kilo構成",
+  "settings.config.source.projectKilo": "プロジェクトの.takedeep構成",
   "settings.config.source.projectRoot": "プロジェクトルート構成",
   "settings.config.source.projectKilocode": "旧.kilocode構成",
   "settings.config.source.projectOpencode": "旧.opencode構成",
@@ -1019,7 +1019,7 @@ export const dict = {
   "deviceAuth.toast.codeCopied": "コードをクリップボードにコピーしました",
   "deviceAuth.toast.errorCopied": "エラーがクリップボードにコピーされました",
   "deviceAuth.status.initiating": "ログインを開始しています...",
-  "deviceAuth.title": "Kilo Codeにサインイン",
+  "deviceAuth.title": "TakeDeepにサインイン",
   "deviceAuth.step1": "ステップ1：このURLを開く",
   "deviceAuth.action.copyUrl": "URLをコピー",
   "deviceAuth.action.openBrowser": "ブラウザを開く",
@@ -1040,7 +1040,7 @@ export const dict = {
 
   "profile.title": "プロフィール",
   "profile.notLoggedIn": "ログインしていません",
-  "profile.action.login": "Kilo Codeでログイン",
+  "profile.action.login": "TakeDeepでログイン",
   "profile.balance.title": "残高",
   "profile.balance.refresh": "残高を更新",
   "profile.action.dashboard": "ダッシュボード",
@@ -1060,11 +1060,11 @@ export const dict = {
 
   "settings.experimental.title": "実験的機能",
   "settings.language.title": "言語",
-  "settings.aboutKiloCode.title": "Kilo Codeについて",
+  "settings.aboutKiloCode.title": "TakeDeepについて",
 
   "session.messages.empty": "下にメッセージを入力して会話を始めましょう。",
   "session.messages.welcome":
-    "Kilo CodeはAIコーディングアシスタントです。機能の構築、バグの修正、コードベースの説明を依頼できます。",
+    "TakeDeepはAIコーディングアシスタントです。機能の構築、バグの修正、コードベースの説明を依頼できます。",
   "session.messages.scrollToBottom": "下にスクロール",
   "session.messages.initializing": "初期化中...",
   "session.messages.taskStarting": "開始中...",
@@ -1108,7 +1108,7 @@ export const dict = {
   "settings.aboutKiloCode.port.label": "ポート：",
   "settings.aboutKiloCode.versionInfo": "バージョン情報",
   "settings.aboutKiloCode.version.label": "バージョン：",
-  "settings.aboutKiloCode.extensionName": "Kilo Code拡張機能",
+  "settings.aboutKiloCode.extensionName": "TakeDeep拡張機能",
   "settings.aboutKiloCode.community": "コミュニティとサポート",
   "settings.aboutKiloCode.feedback.prefix": "ご質問やフィードバックがありましたら、お気軽にissueを作成してください",
   "settings.aboutKiloCode.feedback.or": "または",
@@ -1125,10 +1125,10 @@ export const dict = {
   "settings.aboutKiloCode.importSettings": "インポート",
   "settings.aboutKiloCode.importSettings.invalidJson":
     "無効な JSON ファイルです。有効な設定ファイルを選択してください。",
-  "settings.aboutKiloCode.importSettings.invalidConfig": "ファイルに有効な Kilo の設定が含まれていません。",
+  "settings.aboutKiloCode.importSettings.invalidConfig": "ファイルに有効な TakeDeep の設定が含まれていません。",
   "settings.aboutKiloCode.importSettings.tooLarge": "ファイルが大きすぎます。設定ファイルは 1 MB 以下にしてください。",
   "settings.aboutKiloCode.importSettings.newerVersion":
-    "このファイルはより新しいバージョンの Kilo からエクスポートされたものです。一部の設定が無視される場合があります。",
+    "このファイルはより新しいバージョンの TakeDeep からエクスポートされたものです。一部の設定が無視される場合があります。",
   "settings.aboutKiloCode.importSettings.success":
     "設定をインポートしました。上記の変更内容を確認してから、保存をクリックしてください。",
 
@@ -1154,7 +1154,7 @@ export const dict = {
   "settings.browser.headless.title": "ヘッドレスモード",
   "settings.browser.headless.description": "ヘッドレスモードで実行します（ブラウザウィンドウは表示されません）。",
 
-  "settings.language.description": "Kilo Code UIの言語を選択します。「自動」はVS Codeの表示言語を使用します。",
+  "settings.language.description": "TakeDeep UIの言語を選択します。「自動」はVS Codeの表示言語を使用します。",
   "settings.language.auto": "自動（VS Code言語）",
   "settings.language.current": "現在：",
 
@@ -1206,7 +1206,7 @@ export const dict = {
   "settings.experimental.mcpTimeout.description": "MCPサーバーリクエストのタイムアウト（ミリ秒）",
   "settings.experimental.remote.title": "Remote コントロール",
   "settings.experimental.remote.description":
-    "Kilo Cloud 経由でのセッションの Remote コントロールを有効にします。これはこのマシンの CLI にも影響します。",
+    "TakeDeep Cloud 経由でのセッションの Remote コントロールを有効にします。これはこのマシンの CLI にも影響します。",
   "settings.experimental.remote.current": "現在の状態:",
   "settings.experimental.remote.startup": "起動時の自動有効化:",
   "settings.experimental.remote.active": "アクティブ",
@@ -1317,7 +1317,7 @@ export const dict = {
   "settings.agentBehaviour.claudeCompat.heading": "Claude Code 互換性",
   "settings.agentBehaviour.claudeCompat.title": "Claude Code ファイルを読み込む",
   "settings.agentBehaviour.claudeCompat.description":
-    "Claude Code の設定ディレクトリから CLAUDE.md のインストラクションとスキルをセッションに読み込みます。Kilo に Claude Code のインストラクションとスキルを使用させる場合は、これを有効にしてください。再起動が必要です。",
+    "Claude Code の設定ディレクトリから CLAUDE.md のインストラクションとスキルをセッションに読み込みます。TakeDeep に Claude Code のインストラクションとスキルを使用させる場合は、これを有効にしてください。再起動が必要です。",
   "settings.agentBehaviour.mcpDetail.command": "コマンド",
   "settings.agentBehaviour.mcpDetail.args": "引数",
   "settings.agentBehaviour.mcpDetail.env": "環境",
@@ -1416,10 +1416,10 @@ export const dict = {
   "settings.legacyMigration.link": "レガシーバージョンからの移行",
   "settings.aboutKiloCode.legacyMigration.title": "レガシー移行",
   "settings.aboutKiloCode.legacyMigration.description":
-    "プロバイダーのAPIキーやデフォルトモデルなど、以前にインストールしたKilo Codeから設定を移行します。",
+    "プロバイダーのAPIキーやデフォルトモデルなど、以前にインストールしたTakeDeepから設定を移行します。",
 
   // Screen 1 — What's New
-  "migration.whatsNew.title": "Kilo Codeの新機能",
+  "migration.whatsNew.title": "TakeDeepの新機能",
   "migration.whatsNew.subtitle": "より高速で効率的な基盤上に拡張機能を再構築しました。",
   "migration.whatsNew.features.performance.title": "高速なエージェントパフォーマンス",
   "migration.whatsNew.features.performance.detail":
@@ -1431,7 +1431,7 @@ export const dict = {
     "複数のエージェントを並列実行するための統合インターフェース。それぞれ独自のワークツリー上で動作し、進捗の確認、コンテキストの切り替え、変更のレビューを一箇所で行えます。",
   "migration.whatsNew.features.foundation.title": "共通基盤",
   "migration.whatsNew.features.foundation.detail":
-    "すべてのKilo製品で共有される小さく効率的なコア。どのような作業スタイルでも馴染みのある体験を提供します。",
+    "すべてのTakeDeep製品で共有される小さく効率的なコア。どのような作業スタイルでも馴染みのある体験を提供します。",
   "migration.whatsNew.blogLink": "完全なアナウンスを読む",
   "migration.whatsNew.docsLink": "新機能とよくある質問",
   "migration.whatsNew.continue": "続行",

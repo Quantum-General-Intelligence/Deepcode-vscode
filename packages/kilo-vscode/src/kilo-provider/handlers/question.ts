@@ -6,7 +6,7 @@
  * No vscode dependency.
  */
 
-import type { KiloClient } from "@kilocode/sdk/v2/client"
+import type { KiloClient } from "@takedeep/sdk/v2/client"
 
 interface QuestionContext {
   readonly client: KiloClient | null

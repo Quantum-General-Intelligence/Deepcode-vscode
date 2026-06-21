@@ -1,13 +1,13 @@
-// Kilo-specific translations and overrides
+// TakeDeep-specific translations and overrides
 // Keys here will override any matching keys from upstream translations
 export const dict = {
-  // Kilo Gateway provider translations
+  // TakeDeep Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway geeft je toegang tot een gecureerde set van betrouwbare, geoptimaliseerde modellen voor coding agents.",
+    "TakeDeep Gateway geeft je toegang tot een gecureerde set van betrouwbare, geoptimaliseerde modellen voor coding agents.",
   "provider.connect.kiloGateway.line2":
-    "Met één enkele API key krijg je toegang tot modellen zoals Claude, GPT, Gemini, GLM en meer.",
+    "Met Ã©Ã©n enkele API key krijg je toegang tot modellen zoals Claude, GPT, Gemini, GLM en meer.",
   "provider.connect.kiloGateway.visit.prefix": "Bezoek ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "deeper-api.takedeep.ai",
   "provider.connect.kiloGateway.visit.suffix": " om je API key op te halen.",
 
   // Provider dialog translations
@@ -24,7 +24,7 @@ export const dict = {
   "marketplace.tab.modes": "Modi",
   "marketplace.category.all": "Alle",
   "marketplace.placeholder": "Nog te implementeren",
-  "marketplace.card.installed": "Geïnstalleerd",
+  "marketplace.card.installed": "GeÃ¯nstalleerd",
   "marketplace.card.install": "Installeren",
   "marketplace.card.remove": "Verwijderen",
   "marketplace.card.removeScope": "Verwijderen ({{scope}})",
@@ -37,7 +37,7 @@ export const dict = {
   "marketplace.install.prerequisites": "Vereisten",
   "marketplace.install.installing": "Installeren...",
   "marketplace.install.cancel": "Annuleren",
-  "marketplace.install.success": "Succesvol geïnstalleerd!",
+  "marketplace.install.success": "Succesvol geÃ¯nstalleerd!",
   "marketplace.install.failed": "Installatie mislukt",
   "marketplace.install.done": "Klaar",
   "marketplace.install.close": "Sluiten",
@@ -49,7 +49,7 @@ export const dict = {
   "marketplace.tab.mcp": "MCP",
   "marketplace.search": "Zoeken...",
   "marketplace.filter.all": "Alle items",
-  "marketplace.filter.notInstalled": "Niet geïnstalleerd",
+  "marketplace.filter.notInstalled": "Niet geÃ¯nstalleerd",
   "marketplace.empty": "Geen items gevonden",
   "marketplace.badge.mcpServer": "MCP Server",
   "marketplace.badge.mode": "Modus",
@@ -65,9 +65,9 @@ export const dict = {
   "marketplace.remove.type.mode": "modus",
   "marketplace.remove.failed": "Verwijderen van {{name}} mislukt",
   "marketplace.install": "Installeren",
-  "marketplace.filter.installed": "Geïnstalleerd",
+  "marketplace.filter.installed": "GeÃ¯nstalleerd",
   "marketplace.error.dismiss": "Sluiten",
-  "marketplace.warning.busyOne": "Er is één sessie actief en deze zal worden onderbroken",
+  "marketplace.warning.busyOne": "Er is Ã©Ã©n sessie actief en deze zal worden onderbroken",
   "marketplace.warning.busyMany": "Er zijn meerdere sessies actief en deze zullen worden onderbroken",
   "marketplace.warning.installAnyway": "Toch installeren",
   "marketplace.warning.cancel": "Annuleren",

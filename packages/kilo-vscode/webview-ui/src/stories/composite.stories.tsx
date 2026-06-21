@@ -8,12 +8,12 @@
  */
 
 import type { Meta, StoryObj } from "storybook-solidjs-vite"
-import type { AssistantMessage as SDKAssistantMessage, TextPart, ToolPart } from "@kilocode/sdk/v2"
+import type { AssistantMessage as SDKAssistantMessage, TextPart, ToolPart } from "@takedeep/sdk/v2"
 import { StoryProviders, defaultMockData, mockSessionValue } from "./StoryProviders"
 import { AssistantMessage } from "../components/chat/AssistantMessage"
 import { VscodeSessionTurn } from "../components/chat/VscodeSessionTurn"
 import { ChatView } from "../components/chat/ChatView"
-import { Part } from "@kilocode/kilo-ui/message-part"
+import { Part } from "@takedeep/ui/message-part"
 import { registerVscodeToolOverrides } from "../components/chat/VscodeToolOverrides"
 import { SessionContext } from "../context/session"
 import { ServerContext } from "../context/server"
@@ -724,7 +724,7 @@ const editPermission: PermissionRequest = {
     filediff: {
       file: "src/components/App.tsx",
       patch:
-        '===================================================================\n--- src/components/App.tsx\n+++ src/components/App.tsx\n@@ -1,3 +1,4 @@\n import { Button } from "@kilocode/kilo-ui/button"\n+import { Card } from "@kilocode/kilo-ui/card"\n \n export function App() {\n',
+        '===================================================================\n--- src/components/App.tsx\n+++ src/components/App.tsx\n@@ -1,3 +1,4 @@\n import { Button } from "@takedeep/ui/button"\n+import { Card } from "@takedeep/ui/card"\n \n export function App() {\n',
       additions: 1,
       deletions: 0,
     },
@@ -745,7 +745,7 @@ const applyPatchPermission: PermissionRequest = {
         relativePath: "src/components/App.tsx",
         type: "update",
         patch:
-          '===================================================================\n--- src/components/App.tsx\n+++ src/components/App.tsx\n@@ -1,3 +1,4 @@\n import { Button } from "@kilocode/kilo-ui/button"\n+import { Card } from "@kilocode/kilo-ui/card"\n \n export function App() {\n',
+          '===================================================================\n--- src/components/App.tsx\n+++ src/components/App.tsx\n@@ -1,3 +1,4 @@\n import { Button } from "@takedeep/ui/button"\n+import { Card } from "@takedeep/ui/card"\n \n export function App() {\n',
         additions: 1,
         deletions: 0,
       },

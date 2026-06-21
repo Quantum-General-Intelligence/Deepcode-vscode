@@ -1,7 +1,7 @@
 // KiloClaw SolidJS webview entry point
 
 import { render } from "solid-js/web"
-import "@kilocode/kilo-ui/styles"
+import "@takedeep/ui/styles"
 import "./kiloclaw.css"
 import { KiloClawApp } from "./KiloClawApp"
 

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "bun:test"
-import type { AssistantMessage } from "@kilocode/sdk/v2"
+import type { AssistantMessage } from "@takedeep/sdk/v2"
 import {
   unwrapError,
   parseAssistantError,

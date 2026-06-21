@@ -19,7 +19,7 @@ import type {
   ProviderListResponse,
   ProviderAuthMethod,
   VcsInfo,
-} from "@kilocode/sdk/v2"
+} from "@takedeep/sdk/v2"
 import { createStore, produce, reconcile } from "solid-js/store"
 import { useProject } from "@tui/context/project"
 import { useEvent } from "@tui/context/event"
@@ -34,7 +34,7 @@ import { handleSuggestionEvent } from "@/kilocode/suggestion/tui/sync" // kiloco
 import { useToast } from "@tui/ui/toast" // kilocode_change
 import { Log } from "@/util"
 import { emptyConsoleState, type ConsoleState } from "@/config/console-state"
-import type { IndexingStatus } from "@kilocode/kilo-indexing/status" // kilocode_change
+import type { IndexingStatus } from "@takedeep/indexing/status" // kilocode_change
 import { KiloIndexing } from "@/kilocode/indexing" // kilocode_change
 
 export const { use: useSync, provider: SyncProvider } = createSimpleContext({

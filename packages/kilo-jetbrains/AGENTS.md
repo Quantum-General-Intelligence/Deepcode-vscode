@@ -65,7 +65,7 @@
 
 - **Full build**: `bun run build` from `packages/kilo-jetbrains/` (builds CLI + Gradle plugin).
 - **Gradle only**: `./gradlew buildPlugin` from `packages/kilo-jetbrains/` (requires CLI binaries already present).
-- **Via Turbo**: `bun turbo build --filter=@kilocode/kilo-jetbrains` from repo root.
+- **Via Turbo**: `bun turbo build --filter=@takedeep/jetbrains` from repo root.
 - **Run in sandbox**: `./gradlew runIde` — launches sandboxed IntelliJ with the plugin. Does NOT build CLI binaries.
 
 ## Files That Must Change Together

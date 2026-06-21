@@ -1,4 +1,4 @@
-import type { ProviderAuthAuthorization, ProviderAuthMethod } from "@kilocode/sdk/v2/client"
+import type { ProviderAuthAuthorization, ProviderAuthMethod } from "@takedeep/sdk/v2/client"
 import type { PartBatch, PartUpdate } from "../../../../src/shared/stream-messages"
 import type { SessionMode } from "../../context/worktree-mode"
 import type { MarketplaceItem, MarketplaceInstalledMetadata } from "../marketplace"

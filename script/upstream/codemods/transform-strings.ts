@@ -3,8 +3,8 @@
  * jscodeshift codemod: Transform string literals
  *
  * Transforms string literals containing opencode references to kilo:
- * - "opencode-ai" -> "@kilocode/cli"
- * - "npx opencode" -> "npx @kilocode/cli"
+ * - "opencode-ai" -> "@takedeep/cli"
+ * - "npx opencode" -> "npx @takedeep/cli"
  * - etc.
  *
  * Usage:
@@ -23,16 +23,16 @@ interface StringReplacement {
 
 const STRING_REPLACEMENTS: StringReplacement[] = [
   // Package names in strings (no trailing \b to allow subpath matching like @opencode-ai/sdk/v2)
-  { pattern: /\bopencode-ai\b/g, replacement: "@kilocode/cli" },
-  { pattern: /@opencode-ai\/cli(?=\/|"|'|`|$)/g, replacement: "@kilocode/cli" },
-  { pattern: /@opencode-ai\/sdk(?=\/|"|'|`|$)/g, replacement: "@kilocode/sdk" },
-  { pattern: /@opencode-ai\/plugin(?=\/|"|'|`|$)/g, replacement: "@kilocode/plugin" },
+  { pattern: /\bopencode-ai\b/g, replacement: "@takedeep/cli" },
+  { pattern: /@opencode-ai\/cli(?=\/|"|'|`|$)/g, replacement: "@takedeep/cli" },
+  { pattern: /@opencode-ai\/sdk(?=\/|"|'|`|$)/g, replacement: "@takedeep/sdk" },
+  { pattern: /@opencode-ai\/plugin(?=\/|"|'|`|$)/g, replacement: "@takedeep/plugin" },
 
   // CLI commands
-  { pattern: /\bnpx opencode\b/g, replacement: "npx @kilocode/cli" },
-  { pattern: /\bbun add opencode\b/g, replacement: "bun add @kilocode/cli" },
-  { pattern: /\bnpm install opencode\b/g, replacement: "npm install @kilocode/cli" },
-  { pattern: /\bnpm i opencode\b/g, replacement: "npm i @kilocode/cli" },
+  { pattern: /\bnpx opencode\b/g, replacement: "npx @takedeep/cli" },
+  { pattern: /\bbun add opencode\b/g, replacement: "bun add @takedeep/cli" },
+  { pattern: /\bnpm install opencode\b/g, replacement: "npm install @takedeep/cli" },
+  { pattern: /\bnpm i opencode\b/g, replacement: "npm i @takedeep/cli" },
 
   // Database filename
   { pattern: /\bopencode\.db\b/g, replacement: "kilo.db" },

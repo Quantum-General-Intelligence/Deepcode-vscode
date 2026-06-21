@@ -287,13 +287,13 @@ describe("WorktreeManager.createWorktree", () => {
     await expect(mgr.createWorktree({ prompt: "test" })).rejects.toThrow("not a git repository")
   })
 
-  it("creates worktrees directory under .kilo/worktrees/", async () => {
+  it("creates worktrees directory under .takedeep/worktrees/", async () => {
     const root = await createTempRepo()
     const mgr = createManager(root)
 
     const result = await mgr.createWorktree({ prompt: "test" })
 
-    expect(result.path).toContain(path.join(".kilo", "worktrees"))
+    expect(result.path).toContain(path.join(".takedeep", "worktrees"))
   })
 
   it("records parentBranch as default branch", async () => {
@@ -334,7 +334,7 @@ describe("WorktreeManager.removeWorktree", () => {
     const mgr = createManager(root)
 
     // Should not throw
-    await mgr.removeWorktree(path.join(root, ".kilo", "worktrees", "nonexistent"))
+    await mgr.removeWorktree(path.join(root, ".takedeep", "worktrees", "nonexistent"))
   })
 
   it("removes orphaned directory that git does not know about", async () => {
@@ -342,7 +342,7 @@ describe("WorktreeManager.removeWorktree", () => {
     const mgr = createManager(root)
 
     // Create an orphaned directory (not a real worktree)
-    const orphanPath = path.join(root, ".kilo", "worktrees", "orphan")
+    const orphanPath = path.join(root, ".takedeep", "worktrees", "orphan")
     await fs.mkdir(orphanPath, { recursive: true })
     await fs.writeFile(path.join(orphanPath, "file.txt"), "orphan")
 
@@ -446,17 +446,17 @@ describe("WorktreeManager.removeWorktree", () => {
       await mgr.removeWorktree(result.path)
 
       // Poll until background rm finishes (up to 5s)
-      const worktreesDir = path.join(root, ".kilo", "worktrees")
+      const worktreesDir = path.join(root, ".takedeep", "worktrees")
       const deadline = Date.now() + 5000
       while (Date.now() < deadline) {
         const entries = await fs.readdir(worktreesDir)
-        if (!entries.some((e) => e.startsWith(".kilo-delete-"))) break
+        if (!entries.some((e) => e.startsWith(".takedeep-delete-"))) break
         await new Promise((r) => setTimeout(r, 100))
       }
 
       // No .kilo-delete-* temp dirs should remain
       const entries = await fs.readdir(worktreesDir)
-      const orphans = entries.filter((e) => e.startsWith(".kilo-delete-"))
+      const orphans = entries.filter((e) => e.startsWith(".takedeep-delete-"))
       expect(orphans).toHaveLength(0)
     },
     { timeout: 10000 },
@@ -468,7 +468,7 @@ describe("WorktreeManager.removeWorktree", () => {
 // ---------------------------------------------------------------------------
 
 describe("WorktreeManager.discoverWorktrees orphan cleanup", () => {
-  it("cleans up .kilo-delete-* dirs left by interrupted deletions", async () => {
+  it("cleans up .takedeep-delete-* dirs left by interrupted deletions", async () => {
     const root = await createTempRepo()
     const mgr = createManager(root)
 
@@ -476,7 +476,7 @@ describe("WorktreeManager.discoverWorktrees orphan cleanup", () => {
     const wt = await mgr.createWorktree({ prompt: "real-wt" })
 
     // Simulate an orphaned temp dir from an interrupted deletion
-    const orphan = path.join(root, ".kilo", "worktrees", ".kilo-delete-fake-uuid")
+    const orphan = path.join(root, ".takedeep", "worktrees", ".takedeep-delete-fake-uuid")
     await fs.mkdir(orphan, { recursive: true })
     await fs.writeFile(path.join(orphan, "leftover.txt"), "stale")
 
@@ -565,7 +565,7 @@ describe("WorktreeManager metadata", () => {
     const result = await mgr.createWorktree({ prompt: "legacy-test" })
 
     // Write only the legacy session-id file (no metadata.json)
-    const dir = path.join(result.path, ".kilo")
+    const dir = path.join(result.path, ".takedeep")
     await fs.mkdir(dir, { recursive: true })
     await fs.writeFile(path.join(dir, "session-id"), "legacy-sess-456", "utf-8")
 
@@ -638,11 +638,11 @@ describe("WorktreeManager.discoverWorktrees", () => {
     expect(found!.parentBranch).toBe("feature/my-branch")
   })
 
-  it("repairs stale gitdir refs when .kilo/worktrees already exists", async () => {
+  it("repairs stale gitdir refs when .takedeep/worktrees already exists", async () => {
     const root = await createTempRepo()
     const mgr = createManager(root)
 
-    const worktree = path.join(root, ".kilo", "worktrees", "partial")
+    const worktree = path.join(root, ".takedeep", "worktrees", "partial")
     const gitdir = path.join(root, ".git", "worktrees", "partial", "gitdir")
     await fs.mkdir(worktree, { recursive: true })
     await fs.mkdir(path.dirname(gitdir), { recursive: true })
@@ -651,7 +651,7 @@ describe("WorktreeManager.discoverWorktrees", () => {
     await mgr.discoverWorktrees()
 
     const fixed = await fs.readFile(gitdir, "utf-8")
-    expect(fixed).toContain(path.join(root, ".kilo", "worktrees", "partial", ".git"))
+    expect(fixed).toContain(path.join(root, ".takedeep", "worktrees", "partial", ".git"))
   })
 })
 
@@ -660,14 +660,14 @@ describe("WorktreeManager.discoverWorktrees", () => {
 // ---------------------------------------------------------------------------
 
 describe("WorktreeManager.ensureGitExclude", () => {
-  it("adds .kilo/worktrees/ to .git/info/exclude", async () => {
+  it("adds .takedeep/worktrees/ to .git/info/exclude", async () => {
     const root = await createTempRepo()
     const mgr = createManager(root)
 
     await mgr.ensureGitExclude()
 
     const content = await fs.readFile(path.join(root, ".git", "info", "exclude"), "utf-8")
-    expect(content).toContain(".kilo/worktrees/")
+    expect(content).toContain(".takedeep/worktrees/")
   })
 
   it("adds only specific legacy Agent Manager paths", async () => {
@@ -692,7 +692,7 @@ describe("WorktreeManager.ensureGitExclude", () => {
     await mgr.ensureGitExclude()
 
     const content = await fs.readFile(path.join(root, ".git", "info", "exclude"), "utf-8")
-    const count = content.split(".kilo/worktrees/").length - 1
+    const count = content.split(".takedeep/worktrees/").length - 1
     expect(count).toBe(1)
   })
 })
@@ -747,7 +747,7 @@ describe("WorktreeManager.removeWorktree safety", () => {
     const root = await createTempRepo()
     const mgr = createManager(root)
 
-    // Create a directory outside .kilo/worktrees/
+    // Create a directory outside .takedeep/worktrees/
     const outside = path.join(root, "important-data")
     await fs.mkdir(outside, { recursive: true })
     await fs.writeFile(path.join(outside, "file.txt"), "precious")

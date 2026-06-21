@@ -1,4 +1,4 @@
-import type { TuiPlugin, TuiPluginModule } from "@kilocode/plugin/tui"
+import type { TuiPlugin, TuiPluginModule } from "@takedeep/plugin/tui"
 import { createMemo, Show } from "solid-js"
 import { Tips } from "./tips-view"
 

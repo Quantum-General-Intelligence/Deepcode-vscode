@@ -8,7 +8,7 @@ import { Instance } from "../../src/project/instance"
 import { tmpdir } from "../fixture/fixture"
 
 const cfg: Partial<Config.Info> = {
-  plugin: ["@kilocode/kilo-indexing"],
+  plugin: ["@takedeep/indexing"],
   experimental: {
     semantic_indexing: true,
   },

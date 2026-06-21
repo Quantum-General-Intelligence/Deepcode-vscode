@@ -1,5 +1,3 @@
-export * as ConfigPaths from "./paths"
-
 import path from "path"
 import { Filesystem } from "@/util"
 import { Flag } from "@/flag/flag"
@@ -8,6 +6,9 @@ import { unique } from "remeda"
 import { JsonError } from "./error"
 import * as Effect from "effect/Effect"
 import { AppFileSystem } from "@opencode-ai/shared/filesystem"
+import { BRAND } from "@/takedeep/brand"
+
+const configTargets = [BRAND.configDir, ...BRAND.legacyConfigDirs, ".opencode"] as const
 
 export const files = Effect.fn("ConfigPaths.projectFiles")(function* (
   name: string,
@@ -28,13 +29,13 @@ export const directories = Effect.fn("ConfigPaths.directories")(function* (direc
     Global.Path.config,
     ...(!Flag.KILO_DISABLE_PROJECT_CONFIG
       ? yield* afs.up({
-          targets: [".kilocode", ".kilo", ".opencode"], // kilocode_change
+          targets: [...configTargets], // kilocode_change
           start: directory,
           stop: worktree,
         })
       : []),
     ...(yield* afs.up({
-      targets: [".kilocode", ".kilo", ".opencode"], // kilocode_change
+      targets: [...configTargets], // kilocode_change
       start: Global.Path.home,
       stop: Global.Path.home,
     })),
@@ -53,3 +54,5 @@ export async function readFile(filepath: string) {
     throw new JsonError({ path: filepath }, { cause: err })
   })
 }
+
+export * as ConfigPaths from "./paths"

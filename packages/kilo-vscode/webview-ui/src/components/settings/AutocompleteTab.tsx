@@ -1,6 +1,6 @@
 import { Component, createSignal, onCleanup } from "solid-js"
-import { Switch } from "@kilocode/kilo-ui/switch"
-import { Card } from "@kilocode/kilo-ui/card"
+import { Switch } from "@takedeep/ui/switch"
+import { Card } from "@takedeep/ui/card"
 import { useVSCode } from "../../context/vscode"
 import { useLanguage } from "../../context/language"
 import type { ExtensionMessage } from "../../types/messages"

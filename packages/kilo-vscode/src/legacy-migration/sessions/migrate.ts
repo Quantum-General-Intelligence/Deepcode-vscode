@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import type { KiloClient } from "@kilocode/sdk/v2/client"
+import type { KiloClient } from "@takedeep/sdk/v2/client"
 import { getMigrationErrorMessage } from "../errors/migration-error"
 import type { MigrationSessionInfo, MigrationSessionProgress, MigrationSessionSelection } from "../legacy-types"
 import { createSessionID } from "./lib/ids"

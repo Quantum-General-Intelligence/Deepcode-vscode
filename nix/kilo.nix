@@ -55,10 +55,10 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   installPhase = ''
     runHook preInstall
 
-    install -Dm755 dist/@kilocode/cli-*/bin/kilo $out/bin/kilo
-    install -Dm644 schema.json $out/share/kilo/schema.json
+    install -Dm755 dist/@takedeep/cli-*/bin/deeper $out/bin/deeper
+    install -Dm644 schema.json $out/share/takedeep/schema.json
 
-    wrapProgram $out/bin/kilo \
+    wrapProgram $out/bin/deeper \
       --prefix PATH : ${
         lib.makeBinPath (
           [
@@ -74,9 +74,9 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   postInstall = lib.optionalString (stdenvNoCC.buildPlatform.canExecute stdenvNoCC.hostPlatform) ''
     # trick yargs into also generating zsh completions
-    installShellCompletion --cmd kilo \
-      --bash <($out/bin/kilo completion) \
-      --zsh <(SHELL=/bin/zsh $out/bin/kilo completion)
+    installShellCompletion --cmd deeper \
+      --bash <($out/bin/deeper completion) \
+      --zsh <(SHELL=/bin/zsh $out/bin/deeper completion)
   '';
 
   nativeInstallCheckInputs = [
@@ -91,14 +91,14 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   versionCheckProgramArg = "--version";
 
   passthru = {
-    jsonschema = "${placeholder "out"}/share/kilo/schema.json";
+    jsonschema = "${placeholder "out"}/share/takedeep/schema.json";
   };
 
   meta = {
-    description = "AI-powered development tool";
-    homepage = "https://kilo.ai/";
+    description = "TakeDeep AI coding agent";
+    homepage = "https://deeper-api.takedeep.ai/";
     license = lib.licenses.mit;
-    mainProgram = "kilo";
+    mainProgram = "deeper";
     inherit (node_modules.meta) platforms;
   };
 })

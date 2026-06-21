@@ -1,4 +1,4 @@
-import { getDefaultHeaders } from "@kilocode/kilo-gateway"
+import { getDefaultHeaders } from "@takedeep/gateway"
 
 /**
  * Default headers for KiloCode requests

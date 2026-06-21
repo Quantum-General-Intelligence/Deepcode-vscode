@@ -1,6 +1,8 @@
 import { afterEach, describe, expect, it } from "bun:test"
 import { getShellEnvironment, execWithShellEnv, clearShellEnvCache } from "../../src/agent-manager/shell-env"
 
+const win = process.platform === "win32"
+
 afterEach(() => {
   clearShellEnvCache()
 })
@@ -15,7 +17,8 @@ describe("getShellEnvironment", () => {
 
   it("returns HOME", async () => {
     const env = await getShellEnvironment()
-    expect(typeof env.HOME).toBe("string")
+    const home = env.HOME || env.USERPROFILE
+    expect(typeof home).toBe("string")
   })
 
   it("caches results across calls", async () => {
@@ -32,8 +35,6 @@ describe("getShellEnvironment", () => {
   })
 
   it("handles multiline env values without corrupting PATH", async () => {
-    // PATH should never contain newlines — verify it parses correctly
-    // even if other env vars have multiline values (e.g. BASH_FUNC_*)
     const env = await getShellEnvironment()
     expect(env.PATH).toBeDefined()
     expect(env.PATH).not.toContain("\n")
@@ -42,23 +43,30 @@ describe("getShellEnvironment", () => {
 
 describe("execWithShellEnv", () => {
   it("executes a simple command", async () => {
-    const { stdout } = await execWithShellEnv("echo", ["hello"])
+    const { stdout } = win
+      ? await execWithShellEnv("cmd", ["/c", "echo", "hello"])
+      : await execWithShellEnv("echo", ["hello"])
     expect(stdout.trim()).toBe("hello")
   })
 
-  it("passes cwd option through", async () => {
+  it.skipIf(win)("passes cwd option through", async () => {
     const { stdout } = await execWithShellEnv("pwd", [], { cwd: "/tmp" })
-    // /tmp may resolve to /private/tmp on macOS
     expect(stdout.trim()).toMatch(/\/tmp$/)
   })
 
   it("throws on non-ENOENT errors", async () => {
-    await expect(execWithShellEnv("ls", ["--nonexistent-flag-that-fails"])).rejects.toThrow()
+    const cmd = win ? "cmd" : "ls"
+    const args = win ? ["/c", "dir", "--nonexistent-flag-that-fails"] : ["--nonexistent-flag-that-fails"]
+    await expect(execWithShellEnv(cmd, args)).rejects.toThrow()
   })
 
   it("concurrent calls don't reject prematurely", async () => {
-    // Both calls should succeed — neither should throw due to a race
-    const [a, b] = await Promise.all([execWithShellEnv("echo", ["first"]), execWithShellEnv("echo", ["second"])])
+    const [a, b] = win
+      ? await Promise.all([
+          execWithShellEnv("cmd", ["/c", "echo", "first"]),
+          execWithShellEnv("cmd", ["/c", "echo", "second"]),
+        ])
+      : await Promise.all([execWithShellEnv("echo", ["first"]), execWithShellEnv("echo", ["second"])])
     expect(a.stdout.trim()).toBe("first")
     expect(b.stdout.trim()).toBe("second")
   })
@@ -69,7 +77,6 @@ describe("clearShellEnvCache", () => {
     const first = await getShellEnvironment()
     clearShellEnvCache()
     const second = await getShellEnvironment()
-    // Both should succeed and contain PATH
     expect(first.PATH).toBeDefined()
     expect(second.PATH).toBeDefined()
   })

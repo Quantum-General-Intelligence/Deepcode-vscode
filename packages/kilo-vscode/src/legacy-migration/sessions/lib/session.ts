@@ -1,4 +1,4 @@
-import type { KilocodeSessionImportSessionData as Session } from "@kilocode/sdk/v2"
+import type { KilocodeSessionImportSessionData as Session } from "@takedeep/sdk/v2"
 import type { LegacyHistoryItem } from "./legacy-types"
 import { createSessionID } from "./ids"
 

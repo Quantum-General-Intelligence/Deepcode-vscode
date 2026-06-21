@@ -1,16 +1,16 @@
 export const dict = {
-  // Kilo Gateway provider translations
+  // TakeDeep Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway te da acceso a un conjunto seleccionado de modelos optimizados y confiables para agentes de codificación.",
+    "TakeDeep Gateway te da acceso a un conjunto seleccionado de modelos optimizados y confiables para agentes de codificaciÃ³n.",
   "provider.connect.kiloGateway.line2":
-    "Con una sola clave API tendrás acceso a modelos como Claude, GPT, Gemini, GLM y más.",
+    "Con una sola clave API tendrÃ¡s acceso a modelos como Claude, GPT, Gemini, GLM y mÃ¡s.",
   "provider.connect.kiloGateway.visit.prefix": "Visita ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
+  "provider.connect.kiloGateway.visit.link": "deeper-api.takedeep.ai",
   "provider.connect.kiloGateway.visit.suffix": " para obtener tu clave API.",
 
   // Provider dialog translations
   "dialog.provider.group.recommended": "Recomendados",
-  "dialog.provider.kilo.note": "Acceso a más de 500 modelos de IA",
+  "dialog.provider.kilo.note": "Acceso a mÃ¡s de 500 modelos de IA",
 
   // Reasoning block label
   "ui.permission.run": "Ejecutar",
@@ -26,7 +26,7 @@ export const dict = {
   "marketplace.card.install": "Instalar",
   "marketplace.card.remove": "Eliminar",
   "marketplace.card.removeScope": "Eliminar ({{scope}})",
-  "marketplace.card.showMore": "Mostrar más",
+  "marketplace.card.showMore": "Mostrar mÃ¡s",
   "marketplace.card.showLess": "Mostrar menos",
   "marketplace.install.title": "Instalar {{name}}",
   "marketplace.install.scope": "Alcance",
@@ -35,13 +35,13 @@ export const dict = {
   "marketplace.install.prerequisites": "Requisitos previos",
   "marketplace.install.installing": "Instalando...",
   "marketplace.install.cancel": "Cancelar",
-  "marketplace.install.success": "¡Instalado con éxito!",
-  "marketplace.install.failed": "La instalación falló",
+  "marketplace.install.success": "Â¡Instalado con Ã©xito!",
+  "marketplace.install.failed": "La instalaciÃ³n fallÃ³",
   "marketplace.install.done": "Hecho",
   "marketplace.install.close": "Cerrar",
-  "marketplace.remove.title": "¿Eliminar {{name}}?",
+  "marketplace.remove.title": "Â¿Eliminar {{name}}?",
   "marketplace.remove.confirm":
-    "¿Estás seguro de que deseas eliminar este {{type}}? Esto lo eliminará de tu configuración {{scope}}.",
+    "Â¿EstÃ¡s seguro de que deseas eliminar este {{type}}? Esto lo eliminarÃ¡ de tu configuraciÃ³n {{scope}}.",
   "marketplace.remove.cancel": "Cancelar",
   "marketplace.remove.confirm.button": "Eliminar",
   "marketplace.tab.mcp": "MCP",
@@ -52,8 +52,8 @@ export const dict = {
   "marketplace.badge.mcpServer": "Servidor MCP",
   "marketplace.badge.mode": "Modo",
   "marketplace.card.by": "por {{author}}",
-  "marketplace.install.method": "Método de instalación",
-  "marketplace.install.parameters": "Parámetros",
+  "marketplace.install.method": "MÃ©todo de instalaciÃ³n",
+  "marketplace.install.parameters": "ParÃ¡metros",
   "marketplace.install.optional": "(opcional)",
   "marketplace.install.required": "{{name}} es obligatorio",
   "marketplace.scope.project": "proyecto",
@@ -65,18 +65,18 @@ export const dict = {
   "marketplace.install": "Instalar",
   "marketplace.filter.installed": "Instalado",
   "marketplace.error.dismiss": "Descartar",
-  "marketplace.warning.busyOne": "Una sesión está en ejecución y se interrumpirá",
-  "marketplace.warning.busyMany": "Varias sesiones están en ejecución y se interrumpirán",
+  "marketplace.warning.busyOne": "Una sesiÃ³n estÃ¡ en ejecuciÃ³n y se interrumpirÃ¡",
+  "marketplace.warning.busyMany": "Varias sesiones estÃ¡n en ejecuciÃ³n y se interrumpirÃ¡n",
   "marketplace.warning.installAnyway": "Instalar de todas formas",
   "marketplace.warning.cancel": "Cancelar",
-  "marketplace.contribute.prompt": "¿Falta una skill, modo o servidor MCP?",
+  "marketplace.contribute.prompt": "Â¿Falta una skill, modo o servidor MCP?",
   "marketplace.contribute.cta": "Contribuir en GitHub",
 
   // Plan follow-up question shown after plan_exit
   "plan.followup.header": "Implementar",
-  "plan.followup.question": "¿Listo para implementar?",
-  "plan.followup.answer.newSession": "Iniciar nueva sesión",
-  "plan.followup.answer.newSession.description": "Implementar en una sesión nueva con contexto limpio",
-  "plan.followup.answer.continue": "Continuar aquí",
-  "plan.followup.answer.continue.description": "Implementar el plan en esta sesión",
+  "plan.followup.question": "Â¿Listo para implementar?",
+  "plan.followup.answer.newSession": "Iniciar nueva sesiÃ³n",
+  "plan.followup.answer.newSession.description": "Implementar en una sesiÃ³n nueva con contexto limpio",
+  "plan.followup.answer.continue": "Continuar aquÃ­",
+  "plan.followup.answer.continue.description": "Implementar el plan en esta sesiÃ³n",
 }

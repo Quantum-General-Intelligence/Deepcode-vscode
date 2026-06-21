@@ -16,10 +16,10 @@ declare module "solid-js" {
 
 import { Component, Show } from "solid-js"
 import { createSortable } from "@thisbeyond/solid-dnd"
-import { IconButton } from "@kilocode/kilo-ui/icon-button"
-import { Icon } from "@kilocode/kilo-ui/icon"
-import { TooltipKeybind } from "@kilocode/kilo-ui/tooltip"
-import { ContextMenu } from "@kilocode/kilo-ui/context-menu"
+import { IconButton } from "@takedeep/ui/icon-button"
+import { Icon } from "@takedeep/ui/icon"
+import { TooltipKeybind } from "@takedeep/ui/tooltip"
+import { ContextMenu } from "@takedeep/ui/context-menu"
 import { useLanguage } from "../../src/context/language"
 import { parseBindingTokens } from "../keybind-tokens"
 

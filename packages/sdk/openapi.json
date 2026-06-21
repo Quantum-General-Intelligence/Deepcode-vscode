@@ -36,7 +36,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.global.health({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.global.health({\n  ...\n})"
           }
         ]
       }
@@ -61,7 +61,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.global.event({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.global.event({\n  ...\n})"
           }
         ]
       }
@@ -86,7 +86,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.global.config.get({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.global.config.get({\n  ...\n})"
           }
         ]
       },
@@ -128,7 +128,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.global.config.update({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.global.config.update({\n  ...\n})"
           }
         ]
       }
@@ -153,7 +153,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.global.dispose({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.global.dispose({\n  ...\n})"
           }
         ]
       }
@@ -229,7 +229,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.global.upgrade({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.global.upgrade({\n  ...\n})"
           }
         ]
       }
@@ -283,7 +283,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.auth.set({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.auth.set({\n  ...\n})"
           }
         ]
       },
@@ -326,7 +326,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.auth.remove({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.auth.remove({\n  ...\n})"
           }
         ]
       }
@@ -410,7 +410,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.app.log({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.app.log({\n  ...\n})"
           }
         ]
       }
@@ -466,7 +466,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.experimental.workspace.adaptor.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.experimental.workspace.adaptor.list({\n  ...\n})"
           }
         ]
       }
@@ -554,7 +554,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.experimental.workspace.create({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.experimental.workspace.create({\n  ...\n})"
           }
         ]
       },
@@ -596,7 +596,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.experimental.workspace.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.experimental.workspace.list({\n  ...\n})"
           }
         ]
       }
@@ -651,7 +651,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.experimental.workspace.status({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.experimental.workspace.status({\n  ...\n})"
           }
         ]
       }
@@ -711,7 +711,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.experimental.workspace.remove({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.experimental.workspace.remove({\n  ...\n})"
           }
         ]
       }
@@ -795,7 +795,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.experimental.workspace.sessionRestore({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.experimental.workspace.sessionRestore({\n  ...\n})"
           }
         ]
       }
@@ -839,7 +839,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.project.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.project.list({\n  ...\n})"
           }
         ]
       }
@@ -880,7 +880,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.project.current({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.project.current({\n  ...\n})"
           }
         ]
       }
@@ -921,7 +921,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.project.initGit({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.project.initGit({\n  ...\n})"
           }
         ]
       }
@@ -1027,7 +1027,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.project.update({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.project.update({\n  ...\n})"
           }
         ]
       }
@@ -1071,7 +1071,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.pty.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.pty.list({\n  ...\n})"
           }
         ]
       },
@@ -1155,7 +1155,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.pty.create({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.pty.create({\n  ...\n})"
           }
         ]
       }
@@ -1215,7 +1215,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.pty.get({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.pty.get({\n  ...\n})"
           }
         ]
       },
@@ -1299,7 +1299,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.pty.update({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.pty.update({\n  ...\n})"
           }
         ]
       },
@@ -1357,7 +1357,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.pty.remove({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.pty.remove({\n  ...\n})"
           }
         ]
       }
@@ -1417,7 +1417,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.pty.connect({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.pty.connect({\n  ...\n})"
           }
         ]
       }
@@ -1458,7 +1458,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.config.get({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.config.get({\n  ...\n})"
           }
         ]
       },
@@ -1516,7 +1516,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.config.update({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.config.update({\n  ...\n})"
           }
         ]
       }
@@ -1572,7 +1572,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.config.warnings({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.config.warnings({\n  ...\n})"
           }
         ]
       }
@@ -1631,7 +1631,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.config.providers({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.config.providers({\n  ...\n})"
           }
         ]
       }
@@ -1672,7 +1672,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.experimental.console.get({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.experimental.console.get({\n  ...\n})"
           }
         ]
       }
@@ -1743,7 +1743,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.experimental.console.listOrgs({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.experimental.console.listOrgs({\n  ...\n})"
           }
         ]
       }
@@ -1802,7 +1802,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.experimental.console.switchOrg({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.experimental.console.switchOrg({\n  ...\n})"
           }
         ]
       }
@@ -1853,7 +1853,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tool.ids({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tool.ids({\n  ...\n})"
           }
         ]
       }
@@ -1920,7 +1920,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tool.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tool.list({\n  ...\n})"
           }
         ]
       }
@@ -1980,7 +1980,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.worktree.create({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.worktree.create({\n  ...\n})"
           }
         ]
       },
@@ -2022,7 +2022,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.worktree.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.worktree.list({\n  ...\n})"
           }
         ]
       },
@@ -2080,7 +2080,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.worktree.remove({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.worktree.remove({\n  ...\n})"
           }
         ]
       }
@@ -2140,7 +2140,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.worktree.reset({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.worktree.reset({\n  ...\n})"
           }
         ]
       }
@@ -2202,7 +2202,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.worktree.diff({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.worktree.diff({\n  ...\n})"
           }
         ]
       }
@@ -2264,7 +2264,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.worktree.diffSummary({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.worktree.diffSummary({\n  ...\n})"
           }
         ]
       }
@@ -2339,7 +2339,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.worktree.diffFile({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.worktree.diffFile({\n  ...\n})"
           }
         ]
       }
@@ -2448,7 +2448,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.experimental.session.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.experimental.session.list({\n  ...\n})"
           }
         ]
       }
@@ -2495,7 +2495,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.experimental.resource.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.experimental.resource.list({\n  ...\n})"
           }
         ]
       }
@@ -2572,7 +2572,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.list({\n  ...\n})"
           }
         ]
       },
@@ -2649,7 +2649,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.create({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.create({\n  ...\n})"
           }
         ]
       }
@@ -2706,7 +2706,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.status({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.status({\n  ...\n})"
           }
         ]
       }
@@ -2777,7 +2777,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.get({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.get({\n  ...\n})"
           }
         ]
       },
@@ -2845,7 +2845,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.delete({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.delete({\n  ...\n})"
           }
         ]
       },
@@ -2938,7 +2938,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.update({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.update({\n  ...\n})"
           }
         ]
       }
@@ -3012,7 +3012,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.children({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.children({\n  ...\n})"
           }
         ]
       }
@@ -3085,7 +3085,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.todo({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.todo({\n  ...\n})"
           }
         ]
       }
@@ -3177,7 +3177,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.init({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.init({\n  ...\n})"
           }
         ]
       }
@@ -3242,7 +3242,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.fork({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.fork({\n  ...\n})"
           }
         ]
       }
@@ -3312,7 +3312,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.abort({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.abort({\n  ...\n})"
           }
         ]
       }
@@ -3382,7 +3382,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.share({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.share({\n  ...\n})"
           }
         ]
       },
@@ -3450,7 +3450,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.unshare({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.unshare({\n  ...\n})"
           }
         ]
       }
@@ -3511,7 +3511,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.diff({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.diff({\n  ...\n})"
           }
         ]
       }
@@ -3603,7 +3603,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.summarize({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.summarize({\n  ...\n})"
           }
         ]
       }
@@ -3705,7 +3705,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.messages({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.messages({\n  ...\n})"
           }
         ]
       },
@@ -3880,7 +3880,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.prompt({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.prompt({\n  ...\n})"
           }
         ]
       }
@@ -3971,7 +3971,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.message({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.message({\n  ...\n})"
           }
         ]
       },
@@ -4048,7 +4048,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.deleteMessage({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.deleteMessage({\n  ...\n})"
           }
         ]
       }
@@ -4135,7 +4135,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.part.delete({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.part.delete({\n  ...\n})"
           }
         ]
       },
@@ -4229,7 +4229,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.part.update({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.part.update({\n  ...\n})"
           }
         ]
       }
@@ -4387,7 +4387,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.prompt_async({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.prompt_async({\n  ...\n})"
           }
         ]
       }
@@ -4529,7 +4529,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.command({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.command({\n  ...\n})"
           }
         ]
       }
@@ -4645,7 +4645,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.shell({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.shell({\n  ...\n})"
           }
         ]
       }
@@ -4735,7 +4735,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.revert({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.revert({\n  ...\n})"
           }
         ]
       }
@@ -4805,7 +4805,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.unrevert({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.unrevert({\n  ...\n})"
           }
         ]
       }
@@ -4901,7 +4901,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.permission.respond({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.permission.respond({\n  ...\n})"
           }
         ]
       }
@@ -4965,7 +4965,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.session.viewed({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.session.viewed({\n  ...\n})"
           }
         ]
       }
@@ -5054,7 +5054,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.permission.reply({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.permission.reply({\n  ...\n})"
           }
         ]
       }
@@ -5147,7 +5147,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.permission.saveAlwaysRules({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.permission.saveAlwaysRules({\n  ...\n})"
           }
         ]
       }
@@ -5191,7 +5191,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.permission.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.permission.list({\n  ...\n})"
           }
         ]
       }
@@ -5235,7 +5235,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.question.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.question.list({\n  ...\n})"
           }
         ]
       }
@@ -5324,7 +5324,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.question.reply({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.question.reply({\n  ...\n})"
           }
         ]
       }
@@ -5394,7 +5394,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.question.reject({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.question.reject({\n  ...\n})"
           }
         ]
       }
@@ -5459,7 +5459,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.provider.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.provider.list({\n  ...\n})"
           }
         ]
       }
@@ -5509,7 +5509,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.provider.auth({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.provider.auth({\n  ...\n})"
           }
         ]
       }
@@ -5595,7 +5595,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.provider.oauth.authorize({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.provider.oauth.authorize({\n  ...\n})"
           }
         ]
       }
@@ -5675,7 +5675,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.provider.oauth.callback({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.provider.oauth.callback({\n  ...\n})"
           }
         ]
       }
@@ -5716,7 +5716,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.sync.start({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.sync.start({\n  ...\n})"
           }
         ]
       }
@@ -5819,7 +5819,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.sync.replay({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.sync.replay({\n  ...\n})"
           }
         ]
       }
@@ -5912,7 +5912,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.sync.history.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.sync.history.list({\n  ...\n})"
           }
         ]
       }
@@ -6015,7 +6015,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.find.text({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.find.text({\n  ...\n})"
           }
         ]
       }
@@ -6092,7 +6092,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.find.files({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.find.files({\n  ...\n})"
           }
         ]
       }
@@ -6144,7 +6144,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.find.symbols({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.find.symbols({\n  ...\n})"
           }
         ]
       }
@@ -6196,7 +6196,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.file.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.file.list({\n  ...\n})"
           }
         ]
       }
@@ -6245,7 +6245,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.file.read({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.file.read({\n  ...\n})"
           }
         ]
       }
@@ -6289,7 +6289,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.file.status({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.file.status({\n  ...\n})"
           }
         ]
       }
@@ -6330,7 +6330,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.event.subscribe({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.event.subscribe({\n  ...\n})"
           }
         ]
       }
@@ -6377,7 +6377,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.mcp.status({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.mcp.status({\n  ...\n})"
           }
         ]
       },
@@ -6457,7 +6457,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.mcp.add({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.mcp.add({\n  ...\n})"
           }
         ]
       }
@@ -6533,7 +6533,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.mcp.auth.start({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.mcp.auth.start({\n  ...\n})"
           }
         ]
       },
@@ -6597,7 +6597,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.mcp.auth.remove({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.mcp.auth.remove({\n  ...\n})"
           }
         ]
       }
@@ -6682,7 +6682,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.mcp.auth.callback({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.mcp.auth.callback({\n  ...\n})"
           }
         ]
       }
@@ -6751,7 +6751,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.mcp.auth.authenticate({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.mcp.auth.authenticate({\n  ...\n})"
           }
         ]
       }
@@ -6799,7 +6799,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.mcp.connect({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.mcp.connect({\n  ...\n})"
           }
         ]
       }
@@ -6847,7 +6847,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.mcp.disconnect({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.mcp.disconnect({\n  ...\n})"
           }
         ]
       }
@@ -6913,7 +6913,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tui.appendPrompt({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tui.appendPrompt({\n  ...\n})"
           }
         ]
       }
@@ -6954,7 +6954,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tui.openHelp({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tui.openHelp({\n  ...\n})"
           }
         ]
       }
@@ -6995,7 +6995,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tui.openSessions({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tui.openSessions({\n  ...\n})"
           }
         ]
       }
@@ -7036,7 +7036,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tui.openThemes({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tui.openThemes({\n  ...\n})"
           }
         ]
       }
@@ -7077,7 +7077,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tui.openModels({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tui.openModels({\n  ...\n})"
           }
         ]
       }
@@ -7118,7 +7118,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tui.submitPrompt({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tui.submitPrompt({\n  ...\n})"
           }
         ]
       }
@@ -7159,7 +7159,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tui.clearPrompt({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tui.clearPrompt({\n  ...\n})"
           }
         ]
       }
@@ -7225,7 +7225,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tui.executeCommand({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tui.executeCommand({\n  ...\n})"
           }
         ]
       }
@@ -7292,7 +7292,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tui.showToast({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tui.showToast({\n  ...\n})"
           }
         ]
       }
@@ -7365,7 +7365,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tui.publish({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tui.publish({\n  ...\n})"
           }
         ]
       }
@@ -7443,7 +7443,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tui.selectSession({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tui.selectSession({\n  ...\n})"
           }
         ]
       }
@@ -7491,7 +7491,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tui.control.next({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tui.control.next({\n  ...\n})"
           }
         ]
       }
@@ -7539,7 +7539,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.tui.control.response({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.tui.control.response({\n  ...\n})"
           }
         ]
       }
@@ -7580,7 +7580,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.instance.dispose({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.instance.dispose({\n  ...\n})"
           }
         ]
       }
@@ -7621,7 +7621,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.path.get({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.path.get({\n  ...\n})"
           }
         ]
       }
@@ -7662,7 +7662,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.vcs.get({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.vcs.get({\n  ...\n})"
           }
         ]
       }
@@ -7715,7 +7715,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.vcs.diff({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.vcs.diff({\n  ...\n})"
           }
         ]
       }
@@ -7759,7 +7759,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.command.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.command.list({\n  ...\n})"
           }
         ]
       }
@@ -7803,7 +7803,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.app.agents({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.app.agents({\n  ...\n})"
           }
         ]
       }
@@ -7862,7 +7862,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.app.skills({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.app.skills({\n  ...\n})"
           }
         ]
       }
@@ -7906,7 +7906,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.lsp.status({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.lsp.status({\n  ...\n})"
           }
         ]
       }
@@ -7950,7 +7950,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.formatter.status({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.formatter.status({\n  ...\n})"
           }
         ]
       }
@@ -8032,7 +8032,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.permission.allowEverything({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.permission.allowEverything({\n  ...\n})"
           }
         ]
       }
@@ -8076,7 +8076,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.network.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.network.list({\n  ...\n})"
           }
         ]
       }
@@ -8146,7 +8146,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.network.reply({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.network.reply({\n  ...\n})"
           }
         ]
       }
@@ -8216,7 +8216,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.network.reject({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.network.reject({\n  ...\n})"
           }
         ]
       }
@@ -8260,7 +8260,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.suggestion.list({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.suggestion.list({\n  ...\n})"
           }
         ]
       }
@@ -8347,7 +8347,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.suggestion.accept({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.suggestion.accept({\n  ...\n})"
           }
         ]
       }
@@ -8416,7 +8416,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.suggestion.dismiss({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.suggestion.dismiss({\n  ...\n})"
           }
         ]
       }
@@ -8491,7 +8491,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.telemetry.capture({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.telemetry.capture({\n  ...\n})"
           }
         ]
       }
@@ -8541,7 +8541,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.remote.enable({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.remote.enable({\n  ...\n})"
           }
         ]
       }
@@ -8591,7 +8591,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.remote.disable({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.remote.disable({\n  ...\n})"
           }
         ]
       }
@@ -8641,7 +8641,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.remote.status({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.remote.status({\n  ...\n})"
           }
         ]
       }
@@ -8725,7 +8725,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.commitMessage.generate({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.commitMessage.generate({\n  ...\n})"
           }
         ]
       }
@@ -8799,7 +8799,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.enhancePrompt.enhance({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.enhancePrompt.enhance({\n  ...\n})"
           }
         ]
       }
@@ -8915,7 +8915,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.sessionImport.project({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.sessionImport.project({\n  ...\n})"
           }
         ]
       }
@@ -9082,7 +9082,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.sessionImport.session({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.sessionImport.session({\n  ...\n})"
           }
         ]
       }
@@ -9316,7 +9316,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.sessionImport.message({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.sessionImport.message({\n  ...\n})"
           }
         ]
       }
@@ -9644,7 +9644,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.sessionImport.part({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.sessionImport.part({\n  ...\n})"
           }
         ]
       }
@@ -9695,7 +9695,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.heap.snapshot({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.heap.snapshot({\n  ...\n})"
           }
         ]
       }
@@ -9761,7 +9761,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.removeSkill({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.removeSkill({\n  ...\n})"
           }
         ]
       }
@@ -9827,7 +9827,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.removeAgent({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilocode.removeAgent({\n  ...\n})"
           }
         ]
       }
@@ -9937,7 +9937,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilo.profile({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilo.profile({\n  ...\n})"
           }
         ]
       }
@@ -10010,7 +10010,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilo.organization.set({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilo.organization.set({\n  ...\n})"
           }
         ]
       }
@@ -10139,7 +10139,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilo.modes({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilo.modes({\n  ...\n})"
           }
         ]
       }
@@ -10252,7 +10252,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilo.fim({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilo.fim({\n  ...\n})"
           }
         ]
       }
@@ -10339,7 +10339,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilo.notifications({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilo.notifications({\n  ...\n})"
           }
         ]
       }
@@ -10396,7 +10396,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilo.cloud.session.get({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilo.cloud.session.get({\n  ...\n})"
           }
         ]
       }
@@ -10470,7 +10470,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilo.cloud.session.import({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilo.cloud.session.import({\n  ...\n})"
           }
         ]
       }
@@ -10582,7 +10582,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilo.claw.status({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilo.claw.status({\n  ...\n})"
           }
         ]
       }
@@ -10645,7 +10645,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilo.claw.chatCredentials({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilo.claw.chatCredentials({\n  ...\n})"
           }
         ]
       }
@@ -10761,7 +10761,7 @@
         "x-codeSamples": [
           {
             "lang": "js",
-            "source": "import { createKiloClient } from \"@kilocode/sdk\n\nconst client = createKiloClient()\nawait client.kilo.cloudSessions({\n  ...\n})"
+            "source": "import { createKiloClient } from \"@takedeep/sdk\n\nconst client = createKiloClient()\nawait client.kilo.cloudSessions({\n  ...\n})"
           }
         ]
       }

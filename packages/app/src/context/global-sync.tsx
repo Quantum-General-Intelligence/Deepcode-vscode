@@ -6,7 +6,7 @@ import type {
   ProviderAuthResponse,
   ProviderListResponse,
   Todo,
-} from "@kilocode/sdk/v2/client"
+} from "@takedeep/sdk/v2/client"
 import { showToast } from "@opencode-ai/ui/toast"
 import { getFilename } from "@opencode-ai/shared/util/path"
 import { batch, createContext, getOwner, onCleanup, onMount, type ParentProps, untrack, useContext } from "solid-js"

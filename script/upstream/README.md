@@ -78,7 +78,7 @@ The merge automation follows this process, applying **all transformations BEFORE
 
 5. **Apply ALL transformations to upstream branch (PRE-MERGE)**:
    - Remove files that should not exist in Kilo (`skipFiles`)
-   - Transform package names (opencode-ai -> @kilocode/cli)
+   - Transform package names (opencode-ai -> @takedeep/cli)
    - Preserve Kilo's versions
    - Transform i18n files with Kilo branding
    - Transform branding-only files (UI components, configs)
@@ -108,8 +108,8 @@ Configuration is defined in `utils/config.ts`:
 {
   // Package name mappings
   packageMappings: [
-    { from: "opencode-ai", to: "@kilocode/cli" },
-    { from: "@opencode-ai/cli", to: "@kilocode/cli" },
+    { from: "opencode-ai", to: "@takedeep/cli" },
+    { from: "@opencode-ai/cli", to: "@takedeep/cli" },
     // ...
   ],
 
@@ -164,7 +164,7 @@ Configuration is defined in `utils/config.ts`:
 The following transforms are applied to the opencode branch before merging:
 
 1. **Skip files** - Remove upstream-only packages/files that should not exist in Kilo
-2. **Package names** - `opencode-ai` -> `@kilocode/cli`, etc.
+2. **Package names** - `opencode-ai` -> `@takedeep/cli`, etc.
 3. **Versions** - Preserve Kilo's version numbers
 4. **i18n files** - OpenCode -> Kilo in user-visible strings
 5. **Branding files** - UI components, configs with branding only

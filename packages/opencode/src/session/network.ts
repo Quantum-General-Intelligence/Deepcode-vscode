@@ -92,7 +92,7 @@ export namespace SessionNetwork {
   }
 
   class StateService extends Context.Service<StateService, { readonly get: () => Effect.Effect<StateShape> }>()(
-    "@kilocode/SessionNetwork.State",
+    "@takedeep/SessionNetwork.State",
   ) {}
 
   const stateLayer = Layer.effect(

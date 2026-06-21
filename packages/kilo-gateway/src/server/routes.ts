@@ -42,7 +42,7 @@ const FIM_TIMEOUT_MS = 30_000
  *
  * @example
  * ```typescript
- * import { createKiloRoutes } from "@kilocode/kilo-gateway"
+ * import { createKiloRoutes } from "@takedeep/gateway"
  * import { Hono } from "hono"
  * import { describeRoute, validator, resolver } from "hono-openapi"
  * import z from "zod"

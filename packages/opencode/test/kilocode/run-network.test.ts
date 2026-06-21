@@ -114,7 +114,7 @@ function instant() {
 }
 
 async function run(sdk: Record<string, unknown>) {
-  mock.module("@kilocode/sdk/v2", () => ({
+  mock.module("@takedeep/sdk/v2", () => ({
     createKiloClient: () => sdk,
   }))
 

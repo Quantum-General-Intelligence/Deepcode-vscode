@@ -11,11 +11,11 @@ import { errorMessage } from "@/util/error"
 import { withTimeout } from "@/util/timeout"
 import { withNetworkOptions, resolveNetworkOptionsNoConfig } from "@/cli/network"
 import { Filesystem } from "@/util"
-import type { GlobalEvent } from "@kilocode/sdk/v2"
+import type { GlobalEvent } from "@takedeep/sdk/v2"
 import type { EventSource } from "./context/sdk"
 import { win32DisableProcessedInput, win32InstallCtrlCGuard } from "./win32"
 import { importCloudSession, validateCloudFork } from "@/kilocode/cloud-session" // kilocode_change
-import { createKiloClient } from "@kilocode/sdk/v2" // kilocode_change
+import { createKiloClient } from "@takedeep/sdk/v2" // kilocode_change
 import { writeHeapSnapshot } from "v8"
 import { TuiConfig } from "./config/tui"
 import { KILO_PROCESS_ROLE, KILO_RUN_ID, ensureRunID, sanitizedProcessEnv } from "@/util/opencode-process"

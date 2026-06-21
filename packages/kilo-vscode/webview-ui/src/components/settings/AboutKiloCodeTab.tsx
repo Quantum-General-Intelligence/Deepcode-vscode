@@ -1,11 +1,12 @@
 import { Component, createSignal, onCleanup } from "solid-js"
-import { Button } from "@kilocode/kilo-ui/button"
-import { Icon } from "@kilocode/kilo-ui/icon"
-import { showToast } from "@kilocode/kilo-ui/toast"
+import { Button } from "@takedeep/ui/button"
+import { Icon } from "@takedeep/ui/icon"
+import { showToast } from "@takedeep/ui/toast"
 import { useLanguage } from "../../context/language"
 import { useVSCode } from "../../context/vscode"
 import { useConfig } from "../../context/config"
 import type { ConnectionState, ExtensionMessage } from "../../types/messages"
+import { BRAND } from "../../brand"
 import { buildExport, parseImport, MAX_IMPORT_SIZE } from "./settings-io"
 
 export interface AboutKiloCodeTabProps {
@@ -39,7 +40,7 @@ const AboutKiloCodeTab: Component<AboutKiloCodeTabProps> = (props) => {
     const url = URL.createObjectURL(blob)
     const a = document.createElement("a")
     a.href = url
-    a.download = "kilo-settings.json"
+    a.download = "takedeep-settings.json"
     a.click()
     URL.revokeObjectURL(url)
   }
@@ -191,16 +192,8 @@ const AboutKiloCodeTab: Component<AboutKiloCodeTabProps> = (props) => {
           }}
         >
           {language.t("settings.aboutKiloCode.feedback.prefix")}{" "}
-          <span style={linkStyle} onClick={() => open("https://github.com/Kilo-Org/kilocode")}>
-            GitHub
-          </span>
-          ,{" "}
-          <span style={linkStyle} onClick={() => open("https://reddit.com/r/kilocode")}>
-            Reddit
-          </span>
-          , {language.t("settings.aboutKiloCode.feedback.or")}{" "}
-          <span style={linkStyle} onClick={() => open("https://kilo.ai/discord")}>
-            Discord
+          <span style={linkStyle} onClick={() => open(BRAND.docsUrl)}>
+            {BRAND.name}
           </span>
           .
         </p>
@@ -213,8 +206,8 @@ const AboutKiloCodeTab: Component<AboutKiloCodeTabProps> = (props) => {
           }}
         >
           {language.t("settings.aboutKiloCode.support.prefix")}{" "}
-          <span style={linkStyle} onClick={() => open("https://kilo.ai/support")}>
-            kilo.ai/support
+          <span style={linkStyle} onClick={() => open(BRAND.supportUrl)}>
+            {BRAND.supportUrl.replace("https://", "")}
           </span>
           .
         </p>

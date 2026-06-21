@@ -15,7 +15,7 @@ import type {
   SnapshotFileDiff,
   Todo,
   VcsInfo,
-} from "@kilocode/sdk/v2/client"
+} from "@takedeep/sdk/v2/client"
 import type { Accessor } from "solid-js"
 import type { SetStoreFunction, Store } from "solid-js/store"
 

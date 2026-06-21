@@ -1,4 +1,4 @@
-import type { Session } from "@kilocode/sdk/v2/client"
+import type { Session } from "@takedeep/sdk/v2/client"
 import { Avatar } from "@opencode-ai/ui/avatar"
 import { Icon } from "@opencode-ai/ui/icon"
 import { IconButton } from "@opencode-ai/ui/icon-button"

@@ -1,5 +1,5 @@
 //
-// @kilocode/kilo-ui
+// @takedeep/ui
 //
 // Theme and style override layer for @opencode-ai/ui that matches the
 // visual style of the legacy Kilo Code VS Code extension.

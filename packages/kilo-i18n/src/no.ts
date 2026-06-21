@@ -1,19 +1,19 @@
 export const dict = {
-  // Kilo Gateway provider translations
+  // TakeDeep Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway gir deg tilgang til et utvalgt sett med pålitelige, optimaliserte modeller for kodingsagenter.",
+    "TakeDeep Gateway gir deg tilgang til et utvalgt sett med pÃ¥litelige, optimaliserte modeller for kodingsagenter.",
   "provider.connect.kiloGateway.line2":
-    "Med én enkelt API-nøkkel får du tilgang til modeller som Claude, GPT, Gemini, GLM og flere.",
-  "provider.connect.kiloGateway.visit.prefix": "Besøk ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
-  "provider.connect.kiloGateway.visit.suffix": " for å hente API-nøkkelen din.",
+    "Med Ã©n enkelt API-nÃ¸kkel fÃ¥r du tilgang til modeller som Claude, GPT, Gemini, GLM og flere.",
+  "provider.connect.kiloGateway.visit.prefix": "BesÃ¸k ",
+  "provider.connect.kiloGateway.visit.link": "deeper-api.takedeep.ai",
+  "provider.connect.kiloGateway.visit.suffix": " for Ã¥ hente API-nÃ¸kkelen din.",
 
   // Provider dialog translations
   "dialog.provider.group.recommended": "Anbefalt",
   "dialog.provider.kilo.note": "Tilgang til 500+ AI-modeller",
 
   // Reasoning block label
-  "ui.permission.run": "Kjør",
+  "ui.permission.run": "KjÃ¸r",
   "ui.reasoning.label": "Resonnement",
 
   // Marketplace
@@ -41,11 +41,11 @@ export const dict = {
   "marketplace.install.close": "Lukk",
   "marketplace.remove.title": "Fjern {{name}}?",
   "marketplace.remove.confirm":
-    "Er du sikker på at du vil fjerne denne {{type}}? Dette vil fjerne den fra din {{scope}}-konfigurasjon.",
+    "Er du sikker pÃ¥ at du vil fjerne denne {{type}}? Dette vil fjerne den fra din {{scope}}-konfigurasjon.",
   "marketplace.remove.cancel": "Avbryt",
   "marketplace.remove.confirm.button": "Fjern",
   "marketplace.tab.mcp": "MCP",
-  "marketplace.search": "Søk...",
+  "marketplace.search": "SÃ¸k...",
   "marketplace.filter.all": "Alle elementer",
   "marketplace.filter.notInstalled": "Ikke installert",
   "marketplace.empty": "Ingen elementer funnet",
@@ -55,7 +55,7 @@ export const dict = {
   "marketplace.install.method": "Installasjonsmetode",
   "marketplace.install.parameters": "Parametere",
   "marketplace.install.optional": "(valgfritt)",
-  "marketplace.install.required": "{{name}} er påkrevd",
+  "marketplace.install.required": "{{name}} er pÃ¥krevd",
   "marketplace.scope.project": "prosjekt",
   "marketplace.scope.global": "global",
   "marketplace.remove.type.mcp": "MCP-server",
@@ -65,18 +65,18 @@ export const dict = {
   "marketplace.install": "Installer",
   "marketplace.filter.installed": "Installert",
   "marketplace.error.dismiss": "Avvis",
-  "marketplace.warning.busyOne": "En økt kjører og vil bli avbrutt",
-  "marketplace.warning.busyMany": "Flere økter kjører og vil bli avbrutt",
+  "marketplace.warning.busyOne": "En Ã¸kt kjÃ¸rer og vil bli avbrutt",
+  "marketplace.warning.busyMany": "Flere Ã¸kter kjÃ¸rer og vil bli avbrutt",
   "marketplace.warning.installAnyway": "Installer uansett",
   "marketplace.warning.cancel": "Avbryt",
   "marketplace.contribute.prompt": "Mangler du en skill, modus eller MCP-server?",
-  "marketplace.contribute.cta": "Bidra på GitHub",
+  "marketplace.contribute.cta": "Bidra pÃ¥ GitHub",
 
   // Plan follow-up question shown after plan_exit
   "plan.followup.header": "Implementer",
-  "plan.followup.question": "Klar til å implementere?",
-  "plan.followup.answer.newSession": "Start ny økt",
-  "plan.followup.answer.newSession.description": "Implementer i en ny økt med ren kontekst",
+  "plan.followup.question": "Klar til Ã¥ implementere?",
+  "plan.followup.answer.newSession": "Start ny Ã¸kt",
+  "plan.followup.answer.newSession.description": "Implementer i en ny Ã¸kt med ren kontekst",
   "plan.followup.answer.continue": "Fortsett her",
-  "plan.followup.answer.continue.description": "Implementer planen i denne økten",
+  "plan.followup.answer.continue.description": "Implementer planen i denne Ã¸kten",
 }

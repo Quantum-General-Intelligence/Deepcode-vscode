@@ -412,7 +412,7 @@ async function main() {
     logger.success(`Removed ${count} skipped file(s) from opencode branch`)
   }
 
-  // 6a. Transform package names (opencode-ai -> @kilocode/cli)
+  // 6a. Transform package names (opencode-ai -> @takedeep/cli)
   logger.info("Transforming package names...")
   const nameResults = await transformPackageNames({ dryRun: false, verbose: options.verbose })
   logger.success(`Transformed ${nameResults.length} files`)

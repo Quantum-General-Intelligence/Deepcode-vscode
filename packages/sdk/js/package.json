@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@kilocode/sdk",
+  "name": "@takedeep/sdk",
   "version": "7.2.31",
   "type": "module",
   "license": "MIT",

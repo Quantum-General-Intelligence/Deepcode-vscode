@@ -6,7 +6,7 @@ import { useTheme } from "../../context/theme"
 import { SplitBorder } from "../../component/border"
 import { useSDK } from "../../context/sdk"
 import { useDialog } from "../../ui/dialog"
-import type { SessionNetworkWait } from "@kilocode/sdk/v2"
+import type { SessionNetworkWait } from "@takedeep/sdk/v2"
 import { useKeybind } from "../../context/keybind"
 
 export function NetworkPrompt(props: { request: SessionNetworkWait }) {

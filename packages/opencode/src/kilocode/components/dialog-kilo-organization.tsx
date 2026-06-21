@@ -9,8 +9,8 @@ import { useDialog } from "@tui/ui/dialog"
 import { useSync } from "@tui/context/sync"
 import { useToast } from "@tui/ui/toast"
 import { DialogSelect } from "@tui/ui/dialog-select"
-import type { Organization } from "@kilocode/kilo-gateway"
-import { getOrganizationOptions, getDefaultOrganizationSelection } from "@kilocode/kilo-gateway/tui"
+import type { Organization } from "@takedeep/gateway"
+import { getOrganizationOptions, getDefaultOrganizationSelection } from "@takedeep/gateway/tui"
 
 // These types are OpenCode-internal and imported at runtime
 type UseSDK = any

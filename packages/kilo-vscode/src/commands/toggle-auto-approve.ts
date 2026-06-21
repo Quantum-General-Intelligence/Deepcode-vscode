@@ -1,5 +1,5 @@
 import * as vscode from "vscode"
-import type { KiloClient, Event } from "@kilocode/sdk/v2/client"
+import type { KiloClient, Event } from "@takedeep/sdk/v2/client"
 import type { KiloConnectionService } from "../services/cli-backend/connection-service"
 
 /**
@@ -89,7 +89,7 @@ export function registerToggleAutoApprove(
 
   context.subscriptions.push({ dispose: unsubscribe })
 
-  context.subscriptions.push(vscode.commands.registerCommand("kilo-code.new.toggleAutoApprove", toggle))
+  context.subscriptions.push(vscode.commands.registerCommand("takedeep.toggleAutoApprove", toggle))
 
   return {
     active: () => active,

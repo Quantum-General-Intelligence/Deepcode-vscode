@@ -4,7 +4,7 @@ import { useSync } from "@tui/context/sync"
 import { useTheme } from "@tui/context/theme"
 import { indexingEnabled } from "../indexing-feature"
 import { formatIndexingLabel } from "../indexing-label"
-import type { IndexingStatusState } from "@kilocode/kilo-indexing/status"
+import type { IndexingStatusState } from "@takedeep/indexing/status"
 
 function tone(state: IndexingStatusState, theme: ReturnType<typeof useTheme>["theme"]) {
   if (state === "Complete") return theme.success

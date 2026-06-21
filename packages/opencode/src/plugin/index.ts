@@ -4,11 +4,11 @@ import type {
   Plugin as PluginInstance,
   PluginModule,
   WorkspaceAdaptor as PluginWorkspaceAdaptor,
-} from "@kilocode/plugin"
+} from "@takedeep/plugin"
 import { Config } from "../config"
 import { Bus } from "../bus"
 import { Log } from "../util"
-import { createKiloClient } from "@kilocode/sdk"
+import { createKiloClient } from "@takedeep/sdk"
 import { Flag } from "../flag/flag"
 import { CodexAuthPlugin } from "./codex"
 import { Session } from "../session"
@@ -25,7 +25,7 @@ import { PluginLoader } from "./loader"
 import { parsePluginSpecifier, readPluginId, readV1Plugin, resolvePluginId } from "./shared"
 import { registerAdaptor } from "@/control-plane/adaptors"
 import type { WorkspaceAdaptor } from "@/control-plane/types"
-import { KiloAuthPlugin } from "@kilocode/kilo-gateway" // kilocode_change
+import { KiloAuthPlugin } from "@takedeep/gateway" // kilocode_change
 
 const log = Log.create({ service: "plugin" })
 

@@ -1,4 +1,4 @@
-import type { Message, Session, Part, SnapshotFileDiff, SessionStatus, ProviderListResponse } from "@kilocode/sdk/v2"
+import type { Message, Session, Part, SnapshotFileDiff, SessionStatus, ProviderListResponse } from "@takedeep/sdk/v2"
 import { createSimpleContext } from "./helper"
 import { PreloadMultiFileDiffResult } from "@pierre/diffs/ssr"
 

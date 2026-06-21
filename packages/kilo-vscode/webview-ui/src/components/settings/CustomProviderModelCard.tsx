@@ -1,7 +1,7 @@
-import { Button } from "@kilocode/kilo-ui/button"
-import { IconButton } from "@kilocode/kilo-ui/icon-button"
-import { Select } from "@kilocode/kilo-ui/select"
-import { TextField } from "@kilocode/kilo-ui/text-field"
+import { Button } from "@takedeep/ui/button"
+import { IconButton } from "@takedeep/ui/icon-button"
+import { Select } from "@takedeep/ui/select"
+import { TextField } from "@takedeep/ui/text-field"
 import { For, Show } from "solid-js"
 import { useLanguage } from "../../context/language"
 

@@ -1,6 +1,6 @@
 import * as path from "path"
 import * as vscode from "vscode"
-import type { KiloClient } from "@kilocode/sdk/v2/client"
+import type { KiloClient } from "@takedeep/sdk/v2/client"
 import { mergeFileSearchResults } from "../kilo-provider-utils"
 import { mergeFileSearchItems } from "./file-search-items"
 

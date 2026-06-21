@@ -7,7 +7,7 @@ import type {
   SessionStatus,
   SnapshotFileDiff,
   Todo,
-} from "@kilocode/sdk/v2/client"
+} from "@takedeep/sdk/v2/client"
 import { dropSessionCaches, pickSessionCacheEvictions } from "./session-cache"
 
 const msg = (id: string, sessionID: string) =>

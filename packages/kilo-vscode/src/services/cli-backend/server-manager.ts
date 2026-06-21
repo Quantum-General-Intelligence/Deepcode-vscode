@@ -1,3 +1,4 @@
+import { API_URL, CLI_NAME } from "../../constants"
 import { type ChildProcess } from "child_process"
 import { spawn } from "../../util/process"
 import * as crypto from "crypto"
@@ -66,7 +67,7 @@ export class ServerManager {
 
     return new Promise((resolve, reject) => {
       console.log("[Kilo New] ServerManager: 🎬 Spawning CLI process:", cliPath, ["serve", "--port", "0"])
-      const claudeCompat = vscode.workspace.getConfiguration("kilo-code.new").get<boolean>("claudeCodeCompat", false)
+      const claudeCompat = vscode.workspace.getConfiguration("takedeep").get<boolean>("claudeCodeCompat", false)
       // Pin cwd so the CLI doesn't inherit the extension host's cwd ("/" under F5 debug)
       const spawnCwd = vscode.workspace.workspaceFolders?.[0]?.uri.fsPath ?? process.env.HOME ?? require("os").homedir()
       const serverProcess = spawn(cliPath, ["serve", "--port", "0"], {
@@ -85,7 +86,8 @@ export class ServerManager {
           KILO_ENABLE_QUESTION_TOOL: "true",
           KILOCODE_FEATURE: "vscode-extension",
           KILO_TELEMETRY_LEVEL: vscode.env.isTelemetryEnabled ? "all" : "off",
-          KILO_APP_NAME: "kilo-code",
+          KILO_APP_NAME: "takedeep",
+          TAKEDEEP_API_URL: API_URL,
           KILO_EDITOR_NAME: vscode.env.appName,
           KILO_PLATFORM: "vscode",
           KILO_MACHINE_ID: vscode.env.machineId,
@@ -159,7 +161,7 @@ export class ServerManager {
 
   private getCliPath(): string {
     // Always use the bundled binary from the extension directory
-    const binName = process.platform === "win32" ? "kilo.exe" : "kilo"
+    const binName = process.platform === "win32" ? `${CLI_NAME}.exe` : CLI_NAME
     const cliPath = path.join(this.context.extensionPath, "bin", binName)
     console.log("[Kilo New] ServerManager: 📦 Using CLI path:", cliPath)
     return cliPath

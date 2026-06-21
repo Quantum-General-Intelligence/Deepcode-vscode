@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@kilocode/kilo-i18n",
+  "name": "@takedeep/i18n",
   "version": "7.2.31",
   "type": "module",
   "license": "MIT",

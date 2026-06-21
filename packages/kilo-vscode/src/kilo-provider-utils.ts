@@ -1,4 +1,4 @@
-import type { Session, Agent, Event, ProviderListResponse } from "@kilocode/sdk/v2/client"
+import type { Session, Agent, Event, ProviderListResponse } from "@takedeep/sdk/v2/client"
 import { prettifyError } from "zod/v4"
 import type { CloudSessionMessage, IndexingStatus } from "./services/cli-backend/types"
 import type { PartBatch, PartUpdate } from "./kilo-provider/session-stream-scheduler"

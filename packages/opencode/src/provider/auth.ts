@@ -1,4 +1,4 @@
-import type { AuthOAuthResult, Hooks } from "@kilocode/plugin"
+import type { AuthOAuthResult, Hooks } from "@takedeep/plugin"
 import { Auth } from "@/auth"
 import { InstanceState } from "@/effect"
 import { zod } from "@/util/effect-zod"
@@ -9,7 +9,7 @@ import { ProviderID } from "./schema"
 import { Array as Arr, Effect, Layer, Record, Result, Context, Schema } from "effect"
 
 // kilocode_change start
-import { Telemetry } from "@kilocode/kilo-telemetry"
+import { Telemetry } from "@takedeep/telemetry"
 import { ModelCache } from "./model-cache"
 import { Instance } from "@/project/instance"
 // kilocode_change end

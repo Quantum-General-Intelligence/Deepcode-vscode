@@ -48,11 +48,11 @@ import { ConfigMCP } from "@/config/mcp"
 import { Todo } from "@/session/todo"
 import { z } from "zod"
 import { LoadAPIKeyError } from "ai"
-import type { AssistantMessage, Event, KiloClient, SessionMessageResponse, ToolPart } from "@kilocode/sdk/v2"
+import type { AssistantMessage, Event, KiloClient, SessionMessageResponse, ToolPart } from "@takedeep/sdk/v2"
 import { applyPatch } from "diff"
 import { InstallationVersion } from "@/installation/version"
 
-import { fetchDefaultModel } from "@kilocode/kilo-gateway" // kilocode_change
+import { fetchDefaultModel } from "@takedeep/gateway" // kilocode_change
 
 type ModeOption = { id: string; name: string; description?: string }
 type ModelOption = { modelId: string; name: string }

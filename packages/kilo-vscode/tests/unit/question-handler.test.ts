@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test"
-import type { KiloClient } from "@kilocode/sdk/v2/client"
+import type { KiloClient } from "@takedeep/sdk/v2/client"
 import { handleQuestionReject, handleQuestionReply } from "../../src/kilo-provider/handlers/question"
 
 describe("question handlers", () => {

@@ -1,4 +1,4 @@
-import type { KiloClient, Session } from "@kilocode/sdk/v2/client"
+import type { KiloClient, Session } from "@takedeep/sdk/v2/client"
 import { getErrorMessage } from "../kilo-provider-utils"
 import { TelemetryProxy, TelemetryEventName } from "../services/telemetry"
 import type { WorktreeStateManager } from "./WorktreeStateManager"

@@ -1,4 +1,4 @@
-import type { Hooks, PluginInput } from "@kilocode/plugin"
+import type { Hooks, PluginInput } from "@takedeep/plugin"
 
 export async function CloudflareWorkersAuthPlugin(_input: PluginInput): Promise<Hooks> {
   const prompts = !process.env.CLOUDFLARE_ACCOUNT_ID

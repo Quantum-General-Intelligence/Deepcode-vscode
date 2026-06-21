@@ -1,5 +1,5 @@
 // kilocode_change new file
-import { fetchKiloModels } from "@kilocode/kilo-gateway"
+import { fetchKiloModels } from "@takedeep/gateway"
 import { Config } from "../config"
 import { Auth } from "../auth"
 import { Log } from "../util"

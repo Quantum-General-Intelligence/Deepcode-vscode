@@ -2256,7 +2256,7 @@ describe("ProviderTransform.variants", () => {
   })
 
   // kilocode_change start
-  describe("@kilocode/kilo-gateway", () => {
+  describe("@takedeep/gateway", () => {
     test("claude models return empty variants (reasoning disabled)", () => {
       const model = createMockModel({
         id: "kilo/anthropic/claude-sonnet-4",
@@ -2265,7 +2265,7 @@ describe("ProviderTransform.variants", () => {
         api: {
           id: "anthropic/claude-sonnet-4",
           url: "https://gateway.kilo.ai",
-          npm: "@kilocode/kilo-gateway",
+          npm: "@takedeep/gateway",
         },
       })
       const result = ProviderTransform.variants(model)
@@ -2280,7 +2280,7 @@ describe("ProviderTransform.variants", () => {
         api: {
           id: "anthropic/claude-opus-4",
           url: "https://gateway.kilo.ai",
-          npm: "@kilocode/kilo-gateway",
+          npm: "@takedeep/gateway",
         },
       })
       const result = ProviderTransform.variants(model)
@@ -2294,7 +2294,7 @@ describe("ProviderTransform.variants", () => {
         api: {
           id: "openai/gpt-5",
           url: "https://gateway.kilo.ai",
-          npm: "@kilocode/kilo-gateway",
+          npm: "@takedeep/gateway",
         },
       })
       const result = ProviderTransform.variants(model)
@@ -2309,7 +2309,7 @@ describe("ProviderTransform.variants", () => {
         api: {
           id: "google/gemini-3-pro",
           url: "https://gateway.kilo.ai",
-          npm: "@kilocode/kilo-gateway",
+          npm: "@takedeep/gateway",
         },
       })
       const result = ProviderTransform.variants(model)
@@ -2323,7 +2323,7 @@ describe("ProviderTransform.variants", () => {
         api: {
           id: "meta/llama-4",
           url: "https://gateway.kilo.ai",
-          npm: "@kilocode/kilo-gateway",
+          npm: "@takedeep/gateway",
         },
       })
       const result = ProviderTransform.variants(model)
@@ -2337,7 +2337,7 @@ describe("ProviderTransform.variants", () => {
         api: {
           id: "x-ai/grok-3-mini",
           url: "https://gateway.kilo.ai",
-          npm: "@kilocode/kilo-gateway",
+          npm: "@takedeep/gateway",
         },
       })
       const result = ProviderTransform.variants(model)
@@ -2353,7 +2353,7 @@ describe("ProviderTransform.variants", () => {
         api: {
           id: "openai/gpt-5.2-codex",
           url: "https://gateway.kilo.ai",
-          npm: "@kilocode/kilo-gateway",
+          npm: "@takedeep/gateway",
         },
       })
       const result = ProviderTransform.variants(model)
@@ -2376,7 +2376,7 @@ describe("ProviderTransform.variants", () => {
         api: {
           id: "inception/mercury-2",
           url: "https://gateway.kilo.ai",
-          npm: "@kilocode/kilo-gateway",
+          npm: "@takedeep/gateway",
         },
         variants: serverVariants,
       })
@@ -3344,7 +3344,7 @@ describe("ProviderTransform.variants", () => {
 
   // kilocode_change start
   describe("ProviderTransform.smallOptions", () => {
-    describe("@kilocode/kilo-gateway", () => {
+    describe("@takedeep/gateway", () => {
       test("claude models return reasoningEffort minimal", () => {
         const model = createMockModel({
           id: "kilo/anthropic/claude-sonnet-4",
@@ -3352,7 +3352,7 @@ describe("ProviderTransform.variants", () => {
           api: {
             id: "anthropic/claude-sonnet-4",
             url: "https://gateway.kilo.ai",
-            npm: "@kilocode/kilo-gateway",
+            npm: "@takedeep/gateway",
           },
         })
         const result = ProviderTransform.smallOptions(model)
@@ -3366,7 +3366,7 @@ describe("ProviderTransform.variants", () => {
           api: {
             id: "openai/gpt-4",
             url: "https://gateway.kilo.ai",
-            npm: "@kilocode/kilo-gateway",
+            npm: "@takedeep/gateway",
           },
         })
         const result = ProviderTransform.smallOptions(model)
@@ -3380,7 +3380,7 @@ describe("ProviderTransform.variants", () => {
           api: {
             id: "google/gemini-2.0-flash",
             url: "https://gateway.kilo.ai",
-            npm: "@kilocode/kilo-gateway",
+            npm: "@takedeep/gateway",
           },
         })
         const result = ProviderTransform.smallOptions(model)

@@ -123,7 +123,7 @@ Create a file in your plugin directory:
 
 ```ts
 // .kilo/plugin/hello.ts
-import type { Plugin } from "@kilocode/plugin"
+import type { Plugin } from "@takedeep/plugin"
 
 const hello: Plugin = async ({ project, client, $, directory, worktree }) => {
   console.log("hello plugin loaded")
@@ -143,7 +143,7 @@ The plugin function receives a context object:
 | `project` | Current project metadata. |
 | `directory` | Current working directory for this session. |
 | `worktree` | Git worktree root for this session. |
-| `client` | A Kilo SDK client (`@kilocode/sdk`) for calling the local server. |
+| `client` | A Kilo SDK client (`@takedeep/sdk`) for calling the local server. |
 | `$` | [Bun's shell API](https://bun.com/docs/runtime/shell). |
 | `serverUrl` | URL of the local Kilo server. |
 | `experimental_workspace` | Register workspace adaptors (used by Agent Manager). |
@@ -155,7 +155,7 @@ The function returns a `Hooks` object. Any second argument is the options object
 Workspace adaptors let plugins add custom workspace targets to Kilo's workspace creation flow. This API is experimental and may change.
 
 ```ts
-import type { Plugin } from "@kilocode/plugin"
+import type { Plugin } from "@takedeep/plugin"
 import { mkdir, rm } from "node:fs/promises"
 
 const WorkspacePlugin: Plugin = async ({ experimental_workspace }) => {
@@ -189,7 +189,7 @@ An adaptor implements `configure(config)`, `create(config, env, from?)`, `remove
 Plugins must default-export a module descriptor. `id` is required for local-file plugins and inferred from `package.json#name` for npm plugins.
 
 ```ts
-import type { Plugin } from "@kilocode/plugin"
+import type { Plugin } from "@takedeep/plugin"
 
 const server: Plugin = async (ctx) => ({
   /* hooks */
@@ -251,15 +251,15 @@ Theme-only packages can omit code entrypoints and provide package-relative theme
 Install the plugin package locally and import its types:
 
 ```bash
-bun add -d @kilocode/plugin
+bun add -d @takedeep/plugin
 ```
 
 ```ts
-import type { Plugin } from "@kilocode/plugin"
-import { tool } from "@kilocode/plugin/tool"
+import type { Plugin } from "@takedeep/plugin"
+import { tool } from "@takedeep/plugin/tool"
 ```
 
-Kilo automatically creates a `package.json` in config directories that contain a `plugin/` folder and installs `@kilocode/plugin` so types resolve out of the box.
+Kilo automatically creates a `package.json` in config directories that contain a `plugin/` folder and installs `@takedeep/plugin` so types resolve out of the box.
 
 ### Engine compatibility
 
@@ -292,7 +292,7 @@ Kilo runs `bun install` at startup so your plugins can import the packages:
 ```ts
 // .kilo/plugin/escape-bash.ts
 import { escape } from "shescape"
-import type { Plugin } from "@kilocode/plugin"
+import type { Plugin } from "@takedeep/plugin"
 
 const EscapeBash: Plugin = async () => ({
   "tool.execute.before": async (input, output) => {
@@ -348,7 +348,7 @@ Every hook is optional. Return only the ones you care about.
 Provider hooks can replace or refresh the model catalog for a provider. The hook receives the provider definition and auth context, and returns a map of model ID to model metadata:
 
 ```ts
-import type { Plugin } from "@kilocode/plugin"
+import type { Plugin } from "@takedeep/plugin"
 
 const ProviderPlugin: Plugin = async () => ({
   provider: {
@@ -413,8 +413,8 @@ Plugins can register tools the model can call alongside the built-in ones. Use t
 
 ```ts
 // .kilo/plugin/database.ts
-import type { Plugin } from "@kilocode/plugin"
-import { tool } from "@kilocode/plugin/tool"
+import type { Plugin } from "@takedeep/plugin"
+import { tool } from "@takedeep/plugin/tool"
 
 const DatabasePlugin: Plugin = async () => ({
   tool: {
@@ -456,7 +456,7 @@ For tools that don't need the full plugin context, drop them in a `tool/` or `to
 
 ```ts
 // .kilo/plugin/notify.ts
-import type { Plugin } from "@kilocode/plugin"
+import type { Plugin } from "@takedeep/plugin"
 
 const Notify: Plugin = async ({ $ }) => ({
   event: async ({ event }) => {
@@ -477,7 +477,7 @@ The VS Code extension already emits system notifications when a session finishes
 
 ```ts
 // .kilo/plugin/env-guard.ts
-import type { Plugin } from "@kilocode/plugin"
+import type { Plugin } from "@takedeep/plugin"
 
 const EnvGuard: Plugin = async () => ({
   "tool.execute.before": async (input, output) => {
@@ -494,7 +494,7 @@ export default { id: "env-guard", server: EnvGuard }
 
 ```ts
 // .kilo/plugin/inject-env.ts
-import type { Plugin } from "@kilocode/plugin"
+import type { Plugin } from "@takedeep/plugin"
 
 const InjectEnv: Plugin = async () => ({
   "shell.env": async (input, output) => {
@@ -511,7 +511,7 @@ export default { id: "inject-env", server: InjectEnv }
 Prefer `client.app.log()` over `console.log` so entries land in Kilo's log pipeline:
 
 ```ts
-import type { Plugin } from "@kilocode/plugin"
+import type { Plugin } from "@takedeep/plugin"
 
 const Logger: Plugin = async ({ client }) => {
   await client.app.log({
@@ -534,7 +534,7 @@ Levels: `debug`, `info`, `warn`, `error`.
 
 ```ts
 // .kilo/plugin/compaction.ts
-import type { Plugin } from "@kilocode/plugin"
+import type { Plugin } from "@takedeep/plugin"
 
 const Compaction: Plugin = async () => ({
   "experimental.session.compacting": async (input, output) => {
@@ -569,7 +569,7 @@ The hook receives the `sessionID`, `agent`, `model`, `provider`, compacted `mess
 
 Plugins can also target the Kilo TUI itself — registering slash commands, routes, slots, dialogs, and keybinds. TUI plugins are SolidJS modules exported from `"./tui"` in your plugin package, or theme-only packages declared with `oc-themes`.
 
-TUI plugins live in a separate module namespace (`@kilocode/plugin/tui`) and have their own API surface (`TuiPluginApi`). Because the TUI API is larger and still evolving, this guide doesn't cover it exhaustively — use the types in `@kilocode/plugin/tui` as the reference, and look at the built-in TUI plugins under `packages/opencode/src/cli/cmd/tui/feature-plugins/` for working examples.
+TUI plugins live in a separate module namespace (`@takedeep/plugin/tui`) and have their own API surface (`TuiPluginApi`). Because the TUI API is larger and still evolving, this guide doesn't cover it exhaustively — use the types in `@takedeep/plugin/tui` as the reference, and look at the built-in TUI plugins under `packages/opencode/src/cli/cmd/tui/feature-plugins/` for working examples.
 
 Common TUI APIs include:
 
@@ -603,7 +603,7 @@ Host slots include `home_prompt_right`, `session_prompt`, `session_prompt_right`
 
 ## Reference
 
-- Types: [`@kilocode/plugin`](https://github.com/Kilo-Org/kilocode/tree/main/packages/plugin) — `Plugin`, `Hooks`, `PluginInput`, `ToolDefinition`, `AuthHook`, `ProviderHook`.
+- Types: [`@takedeep/plugin`](https://github.com/Kilo-Org/kilocode/tree/main/packages/plugin) — `Plugin`, `Hooks`, `PluginInput`, `ToolDefinition`, `AuthHook`, `ProviderHook`.
 - Example plugin: [`packages/plugin/src/example.ts`](https://github.com/Kilo-Org/kilocode/blob/main/packages/plugin/src/example.ts)
 - CLI command: [`kilo plugin`](/docs/code-with-ai/platforms/cli-reference#kilo-plugin)
 - Upstream docs (behavior is identical to OpenCode): [opencode.ai/docs/plugins](https://opencode.ai/docs/plugins) and [opencode.ai/docs/custom-tools](https://opencode.ai/docs/custom-tools)

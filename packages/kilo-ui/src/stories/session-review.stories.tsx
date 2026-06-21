@@ -1,8 +1,8 @@
 /** @jsxImportSource solid-js */
 import type { Meta, StoryObj } from "storybook-solidjs-vite"
 import { SessionReview } from "@opencode-ai/ui/session-review"
-import { FileComponentProvider } from "@kilocode/kilo-ui/context/file"
-import { File } from "@kilocode/kilo-ui/file"
+import { FileComponentProvider } from "@takedeep/ui/context/file"
+import { File } from "@takedeep/ui/file"
 
 const meta: Meta = {
   title: "Components/SessionReview",

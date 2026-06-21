@@ -1,8 +1,8 @@
 import { Component, Show, createMemo, createSignal, For } from "solid-js"
-import { TextField } from "@kilocode/kilo-ui/text-field"
-import { Card } from "@kilocode/kilo-ui/card"
-import { Button } from "@kilocode/kilo-ui/button"
-import { IconButton } from "@kilocode/kilo-ui/icon-button"
+import { TextField } from "@takedeep/ui/text-field"
+import { Card } from "@takedeep/ui/card"
+import { Button } from "@takedeep/ui/button"
+import { IconButton } from "@takedeep/ui/icon-button"
 
 import { useConfig } from "../../context/config"
 import { useLanguage } from "../../context/language"

@@ -1,19 +1,19 @@
 export const dict = {
-  // Kilo Gateway provider translations
+  // TakeDeep Gateway provider translations
   "provider.connect.kiloGateway.line1":
-    "Kilo Gateway bietet Ihnen Zugang zu einer kuratierten Auswahl zuverlässiger, optimierter Modelle für Coding-Agenten.",
+    "TakeDeep Gateway bietet Ihnen Zugang zu einer kuratierten Auswahl zuverlÃ¤ssiger, optimierter Modelle fÃ¼r Coding-Agenten.",
   "provider.connect.kiloGateway.line2":
-    "Mit einem einzigen API-Schlüssel erhalten Sie Zugang zu Modellen wie Claude, GPT, Gemini, GLM und mehr.",
+    "Mit einem einzigen API-SchlÃ¼ssel erhalten Sie Zugang zu Modellen wie Claude, GPT, Gemini, GLM und mehr.",
   "provider.connect.kiloGateway.visit.prefix": "Besuchen Sie ",
-  "provider.connect.kiloGateway.visit.link": "kilo.ai",
-  "provider.connect.kiloGateway.visit.suffix": ", um Ihren API-Schlüssel zu erhalten.",
+  "provider.connect.kiloGateway.visit.link": "deeper-api.takedeep.ai",
+  "provider.connect.kiloGateway.visit.suffix": ", um Ihren API-SchlÃ¼ssel zu erhalten.",
 
   // Provider dialog translations
   "dialog.provider.group.recommended": "Empfohlen",
   "dialog.provider.kilo.note": "Zugriff auf 500+ KI-Modelle",
 
   // Reasoning block label
-  "ui.permission.run": "Ausführen",
+  "ui.permission.run": "AusfÃ¼hren",
   "ui.reasoning.label": "Denken",
 
   // Marketplace
@@ -38,10 +38,10 @@ export const dict = {
   "marketplace.install.success": "Erfolgreich installiert!",
   "marketplace.install.failed": "Installation fehlgeschlagen",
   "marketplace.install.done": "Fertig",
-  "marketplace.install.close": "Schließen",
+  "marketplace.install.close": "SchlieÃŸen",
   "marketplace.remove.title": "{{name}} entfernen?",
   "marketplace.remove.confirm":
-    "Sind Sie sicher, dass Sie diese {{type}} entfernen möchten? Dadurch wird sie aus Ihrer {{scope}}-Konfiguration entfernt.",
+    "Sind Sie sicher, dass Sie diese {{type}} entfernen mÃ¶chten? Dadurch wird sie aus Ihrer {{scope}}-Konfiguration entfernt.",
   "marketplace.remove.cancel": "Abbrechen",
   "marketplace.remove.confirm.button": "Entfernen",
   "marketplace.tab.mcp": "MCP",
@@ -65,7 +65,7 @@ export const dict = {
   "marketplace.install": "Installieren",
   "marketplace.filter.installed": "Installiert",
   "marketplace.error.dismiss": "Verwerfen",
-  "marketplace.warning.busyOne": "Eine Sitzung läuft und wird unterbrochen",
+  "marketplace.warning.busyOne": "Eine Sitzung lÃ¤uft und wird unterbrochen",
   "marketplace.warning.busyMany": "Mehrere Sitzungen laufen und werden unterbrochen",
   "marketplace.warning.installAnyway": "Trotzdem installieren",
   "marketplace.warning.cancel": "Abbrechen",

@@ -8,10 +8,11 @@
 
 import { Show, createSignal, onMount, onCleanup } from "solid-js"
 import type { Component, JSX } from "solid-js"
-import { useDialog } from "@kilocode/kilo-ui/context/dialog"
-import { showToast } from "@kilocode/kilo-ui/toast"
+import { useDialog } from "@takedeep/ui/context/dialog"
+import { showToast } from "@takedeep/ui/toast"
 import { useVSCode } from "../../context/vscode"
 import { useLanguage } from "../../context/language"
+import { BRAND } from "../../brand"
 import SessionMigrationProgress, { type SessionMigrationProgressState } from "./SessionMigrationProgress"
 import SessionMigrationSummary from "./SessionMigrationSummary"
 import ForceReimportDialog from "./ForceReimportDialog"
@@ -43,12 +44,9 @@ import "./migration.css"
 
 const KiloLogo = (): JSX.Element => {
   const iconsBaseUri = (window as { ICONS_BASE_URI?: string }).ICONS_BASE_URI || ""
-  const isLight =
-    document.body.classList.contains("vscode-light") || document.body.classList.contains("vscode-high-contrast-light")
-  const icon = isLight ? "kilo-light.svg" : "kilo-dark.svg"
   return (
     <div class="migration-wizard__logo">
-      <img src={`${iconsBaseUri}/${icon}`} alt="Kilo Code" />
+      <img src={`${iconsBaseUri}/${BRAND.logoIcon}`} alt={BRAND.name} />
     </div>
   )
 }
@@ -640,10 +638,10 @@ const MigrationWizard: Component<MigrationWizardProps> = (props) => {
           </div>
 
           <div class="migration-wizard__blog-link">
-            <a href="https://blog.kilo.ai/p/new-kilo-for-vs-code-is-live">
+            <a href={BRAND.docsUrl}>
               {language.t("migration.whatsNew.blogLink")} <span>&rarr;</span>
             </a>
-            <a href="https://kilo.ai/docs/code-with-ai/platforms/vscode/whats-new">
+            <a href={`${BRAND.docsUrl}/platforms/vscode`}>
               {language.t("migration.whatsNew.docsLink")} <span>&rarr;</span>
             </a>
           </div>

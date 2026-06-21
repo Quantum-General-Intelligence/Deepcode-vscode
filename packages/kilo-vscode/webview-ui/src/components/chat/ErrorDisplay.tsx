@@ -1,9 +1,9 @@
 import { Component, createMemo, Switch, Match } from "solid-js"
-import { Card } from "@kilocode/kilo-ui/card"
-import { Collapsible } from "@kilocode/kilo-ui/collapsible"
-import { ErrorDetails } from "@kilocode/kilo-ui/error-details"
-import { Button } from "@kilocode/kilo-ui/button"
-import type { AssistantMessage } from "@kilocode/sdk/v2"
+import { Card } from "@takedeep/ui/card"
+import { Collapsible } from "@takedeep/ui/collapsible"
+import { ErrorDetails } from "@takedeep/ui/error-details"
+import { Button } from "@takedeep/ui/button"
+import type { AssistantMessage } from "@takedeep/sdk/v2"
 import { useLanguage } from "../../context/language"
 import {
   unwrapError,

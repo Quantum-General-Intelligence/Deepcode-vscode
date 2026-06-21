@@ -141,7 +141,7 @@ describe("tool.registry", () => {
             JSON.stringify({
               name: "custom-tools",
               dependencies: {
-                "@kilocode/plugin": "^0.0.0",
+                "@takedeep/plugin": "^0.0.0",
                 cowsay: "^1.6.0",
               },
             }),
@@ -156,7 +156,7 @@ describe("tool.registry", () => {
               packages: {
                 "": {
                   dependencies: {
-                    "@kilocode/plugin": "^0.0.0",
+                    "@takedeep/plugin": "^0.0.0",
                     cowsay: "^1.6.0",
                   },
                 },

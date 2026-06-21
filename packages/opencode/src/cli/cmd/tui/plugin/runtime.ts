@@ -9,7 +9,7 @@ import {
   type TuiPluginStatus,
   type TuiSlotPlugin,
   type TuiTheme,
-} from "@kilocode/plugin/tui"
+} from "@takedeep/plugin/tui"
 import path from "path"
 import { fileURLToPath } from "url"
 import { TuiConfig } from "@/cli/cmd/tui/config/tui"

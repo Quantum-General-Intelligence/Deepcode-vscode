@@ -6,14 +6,14 @@
  */
 
 import * as vscode from "vscode"
-import type { KiloClient } from "@kilocode/sdk/v2/client"
+import type { KiloClient } from "@takedeep/sdk/v2/client"
 import type {
   McpLocalConfig,
   McpRemoteConfig,
   AgentConfig,
   PermissionConfig,
   PermissionObjectConfig,
-} from "@kilocode/sdk/v2/client"
+} from "@takedeep/sdk/v2/client"
 import { PROVIDER_MAP, UNSUPPORTED_PROVIDERS, DEFAULT_MODE_SLUGS } from "./provider-mapping"
 import type { ProviderMapping } from "./provider-mapping"
 import { NATIVE_MODE_DEFAULTS } from "./native-mode-defaults"
@@ -727,7 +727,7 @@ async function migrateAutoApproval(
 
 async function migrateAutocomplete(settings: LegacyAutocompleteSettings): Promise<MigrationResultItem> {
   try {
-    const config = vscode.workspace.getConfiguration("kilo-code.new.autocomplete")
+    const config = vscode.workspace.getConfiguration("takedeep.autocomplete")
     if (settings.enableAutoTrigger !== undefined) {
       await config.update("enableAutoTrigger", settings.enableAutoTrigger, vscode.ConfigurationTarget.Global)
     }
@@ -787,7 +787,7 @@ async function migrateLanguage(language: string): Promise<MigrationResultItem> {
     }
   }
   try {
-    const config = vscode.workspace.getConfiguration("kilo-code.new")
+    const config = vscode.workspace.getConfiguration("takedeep")
     await config.update("language", mapped, vscode.ConfigurationTarget.Global)
     return { item: "Language preference", category: "settings", status: "success" }
   } catch (err) {

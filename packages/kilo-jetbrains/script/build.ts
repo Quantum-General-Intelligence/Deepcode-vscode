@@ -50,7 +50,7 @@ function log(msg: string) {
 }
 
 function distBinPath(os: string, exe: string): string {
-  return join(distDir, `@kilocode/cli-${os}`, "bin", exe)
+  return join(distDir, `@takedeep/cli-${os}`, "bin", exe)
 }
 
 function hasDist(): boolean {

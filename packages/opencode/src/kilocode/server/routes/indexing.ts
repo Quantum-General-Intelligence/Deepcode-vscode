@@ -1,5 +1,5 @@
 import { lazy } from "@/util/lazy"
-import { createIndexingRoutes } from "@kilocode/kilo-indexing/server"
+import { createIndexingRoutes } from "@takedeep/indexing/server"
 
 export const IndexingRoutes = lazy(() =>
   createIndexingRoutes({

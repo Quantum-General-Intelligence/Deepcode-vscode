@@ -1,5 +1,5 @@
 /// <reference path="../env.d.ts" />
-import { tool } from "@kilocode/plugin"
+import { tool } from "@takedeep/plugin"
 const TEAM = {
   desktop: ["adamdotdevin", "iamdavidhill", "Brendonovich", "nexxeln"],
   zen: ["fwang", "MrMushrooooom"],

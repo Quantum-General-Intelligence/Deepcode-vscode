@@ -20,11 +20,11 @@ import { Wildcard } from "@/util"
 import { SessionID } from "@/session/schema"
 import { Auth } from "@/auth"
 // kilocode_change start
-import { Telemetry } from "@kilocode/kilo-telemetry"
+import { Telemetry } from "@takedeep/telemetry"
 import { DEFAULT_HEADERS } from "@/kilocode/const"
 import { getKiloProjectId } from "@/kilocode/project-id"
-import { HEADER_PROJECTID, HEADER_MACHINEID, HEADER_TASKID } from "@kilocode/kilo-gateway"
-import { Identity } from "@kilocode/kilo-telemetry"
+import { HEADER_PROJECTID, HEADER_MACHINEID, HEADER_TASKID } from "@takedeep/gateway"
+import { Identity } from "@takedeep/telemetry"
 import { makeRuntime } from "@/effect/run-service"
 // kilocode_change end
 import { Installation } from "@/installation"
@@ -208,7 +208,7 @@ const live: Layer.Layer<
       )
 
       // kilocode_change start - resolve project ID and machine ID for kilo provider
-      const isKilo = input.model.api.npm === "@kilocode/kilo-gateway"
+      const isKilo = input.model.api.npm === "@takedeep/gateway"
       const kiloProjectId = yield* isKilo
         ? Effect.promise(() => getKiloProjectId().catch(() => undefined))
         : Effect.succeed(undefined)

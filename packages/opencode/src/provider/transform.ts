@@ -43,7 +43,9 @@ function sdkKey(npm: string): string | undefined {
       return "gateway"
     case "@openrouter/ai-sdk-provider":
       return "openrouter"
-    case "@kilocode/kilo-gateway": // kilocode_change
+    case "@ai-sdk/openai-compatible":
+      return "openaiCompatible"
+    case "@takedeep/gateway": // kilocode_change
       return "openrouter"
   }
   return undefined
@@ -435,7 +437,7 @@ function anthropicAdaptiveEfforts(apiId: string): string[] | null {
 export function variants(model: Provider.Model): Record<string, Record<string, any>> {
   // kilocode_change start
   if (
-    ["@kilocode/kilo-gateway", "@ai-sdk/openai-compatible"].includes(model.api.npm) &&
+    ["@takedeep/gateway", "@ai-sdk/openai-compatible"].includes(model.api.npm) &&
     model.variants &&
     Object.keys(model.variants).length > 0
   ) {
@@ -465,7 +467,7 @@ export function variants(model: Provider.Model): Record<string, Record<string, a
 
   // see: https://docs.x.ai/docs/guides/reasoning#control-how-hard-the-model-thinks
   if (id.includes("grok") && id.includes("grok-3-mini")) {
-    if (model.api.npm === "@openrouter/ai-sdk-provider" || model.api.npm === "@kilocode/kilo-gateway") {
+    if (model.api.npm === "@openrouter/ai-sdk-provider" || model.api.npm === "@takedeep/gateway") {
       // kilocode_change - add Kilo Gateway support
       return {
         low: { reasoning: { effort: "low" } },
@@ -480,7 +482,7 @@ export function variants(model: Provider.Model): Record<string, Record<string, a
   if (id.includes("grok")) return {}
 
   switch (model.api.npm) {
-    case "@kilocode/kilo-gateway": // kilocode_change
+    case "@takedeep/gateway": // kilocode_change
     case "@openrouter/ai-sdk-provider":
       // kilocode_change start
       if (id.includes("glm") || id.includes("kimi") || id.includes("qwen")) {
@@ -892,7 +894,7 @@ export function options(input: {
   if (
     input.model.api.npm === "@openrouter/ai-sdk-provider" ||
     input.model.api.npm === "@llmgateway/ai-sdk-provider" ||
-    input.model.api.npm === "@kilocode/kilo-gateway" // kilocode_change
+    input.model.api.npm === "@takedeep/gateway" // kilocode_change
   ) {
     result["usage"] = {
       include: true,
@@ -1006,6 +1008,16 @@ export function options(input: {
     }
   }
 
+  // kilocode_change start - iridtron/vLLM via LiteLLM returns content=null unless thinking is off
+  if (input.model.providerID === "litellm") {
+    result["reasoningEffort"] = "none"
+    result["extra_body"] = {
+      ...(result["extra_body"] ?? {}),
+      chat_template_kwargs: { enable_thinking: false },
+    }
+  }
+  // kilocode_change end
+
   return result
 }
 
@@ -1033,7 +1045,7 @@ export function smallOptions(model: Provider.Model) {
   if (
     model.providerID === "openrouter" ||
     model.providerID === "llmgateway" ||
-    model.api.npm === "@kilocode/kilo-gateway" // kilocode_change
+    model.api.npm === "@takedeep/gateway" // kilocode_change
   ) {
     if (model.api.id.includes("google")) {
       return { reasoning: { enabled: false } }
@@ -1086,7 +1098,7 @@ export function providerOptions(model: Provider.Model, options: { [x: string]: a
   }
 
   // kilocode_change start
-  if (model.api.npm === "@kilocode/kilo-gateway") {
+  if (model.api.npm === "@takedeep/gateway") {
     return kiloProviderOptions(options)
   }
   // kilocode_change end

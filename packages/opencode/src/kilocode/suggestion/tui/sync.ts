@@ -1,5 +1,5 @@
 import { Binary } from "@opencode-ai/shared/util/binary"
-import type { SuggestionRequest } from "@kilocode/sdk/v2"
+import type { SuggestionRequest } from "@takedeep/sdk/v2"
 
 type RemovedEvent = {
   type: "suggestion.accepted" | "suggestion.dismissed"

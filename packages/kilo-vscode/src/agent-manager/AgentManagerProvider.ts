@@ -1,6 +1,6 @@
 import * as fs from "fs"
 import * as path from "path"
-import type { KiloClient, Session } from "@kilocode/sdk/v2/client"
+import type { KiloClient, Session } from "@takedeep/sdk/v2/client"
 import type { KiloConnectionService } from "../services/cli-backend"
 import { getErrorMessage } from "../kilo-provider-utils"
 import { resolveLocalDiffTarget } from "../review-utils"
@@ -46,7 +46,7 @@ import type { Host, PanelContext, OutputHandle, Disposable } from "./host"
  * SESSIONS (bottom) with unassociated local sessions.
  */
 export class AgentManagerProvider implements Disposable {
-  public static readonly viewType = "kilo-code.new.AgentManagerPanel"
+  public static readonly viewType = "takedeep.AgentManagerPanel"
 
   private panel: PanelContext | undefined
   private outputChannel: OutputHandle

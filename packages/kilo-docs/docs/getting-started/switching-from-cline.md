@@ -131,7 +131,7 @@ Supports IntelliJ, PyCharm, WebStorm, and all JetBrains IDEs.
 ### CLI
 
 ```shell
-npm install -g @kilocode/cli
+npm install -g @takedeep/cli
 kilo
 ```
 
@@ -311,5 +311,5 @@ In-line ghost-text completions with tab to complete. Works alongside the agent m
    - **Architect:** "Design a logging system"
    - **Orchestrator:** "Build an app, end-to-end, that…"
 3. Try Cloud Agents at [app.kilo.ai](https://app.kilo.ai/)
-4. Install the Kilo CLI with `npm install -g @kilocode/cli`
+4. Install the Kilo CLI with `npm install -g @takedeep/cli`
 5. Enable Autocomplete for inline suggestions

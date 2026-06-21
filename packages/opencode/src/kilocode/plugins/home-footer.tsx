@@ -6,7 +6,7 @@
  * to inject the RemoteIndicator alongside the standard directory, MCP,
  * and version information.
  */
-import type { TuiPlugin, TuiPluginApi, TuiPluginModule } from "@kilocode/plugin/tui"
+import type { TuiPlugin, TuiPluginApi, TuiPluginModule } from "@takedeep/plugin/tui"
 import { createMemo, createSignal, Match, onCleanup, onMount, Show, Switch } from "solid-js"
 import { Global } from "@/global"
 import { indexingEnabled } from "../indexing-feature"

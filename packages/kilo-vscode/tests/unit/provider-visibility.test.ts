@@ -30,7 +30,7 @@ describe("disabledProviderOptions", () => {
   it("includes Kilo and excludes already disabled providers", () => {
     const options = disabledProviderOptions(
       {
-        kilo: { id: "kilo", name: "Kilo Gateway", env: [], models: {} },
+        kilo: { id: "kilo", name: "TakeDeep Gateway", env: [], models: {} },
         openai: { id: "openai", name: "OpenAI", env: [], models: {} },
         anthropic: { id: "anthropic", name: "Anthropic", env: [], models: {} },
       },
@@ -39,7 +39,7 @@ describe("disabledProviderOptions", () => {
 
     expect(options).toEqual([
       { value: "anthropic", label: "Anthropic" },
-      { value: "kilo", label: "Kilo Gateway" },
+      { value: "kilo", label: "TakeDeep Gateway" },
     ])
   })
 
@@ -65,15 +65,15 @@ describe("providersWithKiloFallback", () => {
       anthropic: { id: "anthropic", name: "Anthropic", env: [], models: {} },
     })
 
-    expect(providers.kilo?.name).toBe("Kilo Gateway")
+    expect(providers.kilo?.name).toBe("TakeDeep Gateway")
     expect(providers.anthropic?.name).toBe("Anthropic")
   })
 
   it("keeps the backend Kilo provider when present", () => {
     const providers = providersWithKiloFallback({
-      kilo: { id: "kilo", name: "Custom Kilo Name", env: [], models: {} },
+      kilo: { id: "kilo", name: "Custom TakeDeep Name", env: [], models: {} },
     })
 
-    expect(providers.kilo?.name).toBe("Custom Kilo Name")
+    expect(providers.kilo?.name).toBe("Custom TakeDeep Name")
   })
 })

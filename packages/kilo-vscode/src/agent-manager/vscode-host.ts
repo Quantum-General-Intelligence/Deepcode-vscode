@@ -6,6 +6,7 @@
  */
 
 import * as vscode from "vscode"
+import { EXTENSION_ID } from "../constants"
 import type { Host, PanelContext, OutputHandle, SessionProvider, Disposable } from "./host"
 import type { KiloConnectionService } from "../services/cli-backend"
 import { KiloProvider } from "../KiloProvider"
@@ -37,7 +38,7 @@ export class VscodeHost implements Host {
     onBeforeMessage: (msg: Record<string, unknown>) => Promise<Record<string, unknown> | null>
   }): PanelContext {
     const panel = vscode.window.createWebviewPanel(
-      "kilo-code.new.AgentManagerPanel",
+      "takedeep.AgentManagerPanel",
       "Agent Manager",
       vscode.ViewColumn.One,
       {
@@ -182,7 +183,7 @@ export class VscodeHost implements Host {
   }
 
   extensionKeybindings(): Array<{ command: string; key?: string; mac?: string }> {
-    const ext = vscode.extensions.getExtension("kilocode.kilo-code")
+    const ext = vscode.extensions.getExtension(EXTENSION_ID)
     return ext?.packageJSON?.contributes?.keybindings ?? []
   }
 

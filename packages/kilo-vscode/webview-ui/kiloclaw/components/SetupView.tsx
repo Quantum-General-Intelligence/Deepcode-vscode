@@ -1,7 +1,7 @@
 // KiloClaw setup view — shown when no instance is provisioned
 
-import { Button } from "@kilocode/kilo-ui/button"
-import { Card, CardTitle, CardDescription, CardActions } from "@kilocode/kilo-ui/card"
+import { Button } from "@takedeep/ui/button"
+import { Card, CardTitle, CardDescription, CardActions } from "@takedeep/ui/card"
 import { useClaw } from "../context/claw"
 import { useKiloClawLanguage } from "../context/language"
 

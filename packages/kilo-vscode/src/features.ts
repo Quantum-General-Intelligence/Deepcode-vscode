@@ -1,4 +1,4 @@
-import { hasIndexingPlugin } from "@kilocode/kilo-indexing/detect"
+import { hasIndexingPlugin } from "@takedeep/indexing/detect"
 
 type PluginSpec = string | [string, Record<string, unknown>]
 

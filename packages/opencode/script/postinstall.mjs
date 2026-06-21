@@ -76,7 +76,7 @@ function isMusl() {
 
 function getPackageNames() {
   const { platform, arch } = detectPlatformAndArch()
-  const base = `@kilocode/cli-${platform}-${arch}`
+  const base = `@takedeep/cli-${platform}-${arch}`
   const avx2 = supportsAvx2()
   const baseline = arch === "x64" && !avx2
 

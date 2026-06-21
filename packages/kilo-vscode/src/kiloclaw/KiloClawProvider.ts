@@ -8,7 +8,7 @@
 import * as vscode from "vscode"
 import { homedir } from "os"
 import type { KiloConnectionService } from "../services/cli-backend"
-import type { KiloClient } from "@kilocode/sdk/v2/client"
+import type { KiloClient } from "@takedeep/sdk/v2/client"
 import { buildWebviewHtml } from "../utils"
 import { connect, history, presence, type ClawChatClient } from "./chat-client"
 import type {
@@ -24,7 +24,7 @@ const MAX_MESSAGES = 500
 const STATUS_POLL_MS = 10_000
 
 export class KiloClawProvider implements vscode.Disposable {
-  static readonly viewType = "kilo-code.new.KiloClawPanel"
+  static readonly viewType = "takedeep.KiloClawPanel"
 
   private panel: vscode.WebviewPanel | null = null
   private chat: ClawChatClient | null = null
@@ -142,7 +142,7 @@ export class KiloClawProvider implements vscode.Disposable {
   }
 
   private get locale(): string {
-    const override = vscode.workspace.getConfiguration("kilo-code.new").get<string>("language")
+    const override = vscode.workspace.getConfiguration("takedeep").get<string>("language")
     return override || vscode.env.language
   }
 

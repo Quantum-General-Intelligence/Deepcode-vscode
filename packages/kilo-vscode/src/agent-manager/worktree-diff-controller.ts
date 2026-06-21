@@ -1,4 +1,4 @@
-import type { KiloClient } from "@kilocode/sdk/v2/client"
+import type { KiloClient } from "@takedeep/sdk/v2/client"
 import { hashFileDiffs, resolveLocalDiffTarget } from "../review-utils"
 import { WorktreeDiffClient } from "../worktree-diff-client"
 import type { ApplyConflict, GitOps } from "./GitOps"

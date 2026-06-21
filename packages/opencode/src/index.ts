@@ -37,9 +37,9 @@ import { SessionCommand } from "./cli/cmd/session"
 import { RemoteCommand } from "./cli/cmd/remote" // kilocode_change
 import { DevSetupCommand, DevAliasCommand } from "./kilocode/cli/dev-setup" // kilocode_change
 // kilocode_change start - Import telemetry, instance disposal, and legacy migration
-import { Telemetry } from "@kilocode/kilo-telemetry"
+import { Telemetry } from "@takedeep/telemetry"
 import { Instance } from "./project/instance" // kilocode_change
-import { migrateLegacyKiloAuth, ENV_FEATURE, ENV_VERSION } from "@kilocode/kilo-gateway"
+import { migrateLegacyKiloAuth, ENV_FEATURE, ENV_VERSION } from "@takedeep/gateway"
 
 // kilocode_change - set feature for tracking. 'serve' is spawned by other services
 // (extension, cloud) which set their own KILOCODE_FEATURE env var. Direct CLI use

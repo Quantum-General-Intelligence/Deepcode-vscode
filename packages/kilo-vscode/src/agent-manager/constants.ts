@@ -1,8 +1,6 @@
 import * as fs from "node:fs"
 import * as path from "node:path"
-
-// TODO: Remove the legacy .kilocode -> .kilo migration helpers below after the
-// GA release cleanup tracked in https://github.com/Kilo-Org/kilocode/issues/6986.
+import { CONFIG_DIR } from "../constants"
 
 /**
  * Maximum number of parallel worktree versions for multi-version mode.
@@ -13,11 +11,14 @@ export const MAX_MULTI_VERSIONS = 4
 /** Telemetry source identifier for all Agent Manager events. */
 export const PLATFORM = "agent-manager" as const
 
-/** Kilo config directory name (project-level and inside worktrees). */
-export const KILO_DIR = ".kilo"
+/** TakeDeep config directory name (project-level and inside worktrees). */
+export const KILO_DIR = CONFIG_DIR
 
-/** Legacy config directory name for backward compatibility reads. */
-export const LEGACY_DIR = ".kilocode"
+/** Legacy config directory names for backward compatibility reads. */
+export const LEGACY_DIRS = [".kilocode", ".kilo"] as const
+
+/** @deprecated Use LEGACY_DIRS */
+export const LEGACY_DIR = LEGACY_DIRS[0]
 
 /** Agent Manager files that should be migrated from .kilocode/ to .kilo/. */
 const AGENT_MANAGER_ITEMS = [
@@ -50,7 +51,16 @@ export interface MigrationResult {
  * Idempotent: safe to call on every startup.
  */
 export async function migrateAgentManagerData(root: string, log: (msg: string) => void): Promise<MigrationResult> {
-  const legacy = path.join(root, LEGACY_DIR)
+  let refsFixed = 0
+  for (const legacyName of LEGACY_DIRS) {
+    const result = await migrateFromLegacy(root, legacyName, log)
+    refsFixed += result.refsFixed
+  }
+  return { refsFixed }
+}
+
+async function migrateFromLegacy(root: string, legacyName: string, log: (msg: string) => void): Promise<MigrationResult> {
+  const legacy = path.join(root, legacyName)
   const target = path.join(root, KILO_DIR)
 
   if (await isDirectory(legacy)) {
@@ -74,7 +84,7 @@ export async function migrateAgentManagerData(root: string, log: (msg: string) =
 
       try {
         await fs.promises.rename(src, dst)
-        log(`Migrated ${item} from ${LEGACY_DIR} to ${KILO_DIR}`)
+        log(`Migrated ${item} from ${legacyName} to ${KILO_DIR}`)
       } catch (err) {
         // On Windows, rename can fail with EPERM/EBUSY if files are held open.
         // Will succeed on next startup.
@@ -85,7 +95,7 @@ export async function migrateAgentManagerData(root: string, log: (msg: string) =
 
   let refsFixed = 0
   if (await isDirectory(path.join(target, "worktrees"))) {
-    refsFixed = await fixGitWorktreeRefs(root, log)
+    refsFixed = await fixGitWorktreeRefs(root, legacyName, log)
   }
 
   return { refsFixed }
@@ -141,7 +151,7 @@ async function resolveGitDir(root: string): Promise<string | undefined> {
  * Returns the number of refs that were successfully fixed so callers can
  * tell whether a VS Code git refresh is warranted.
  */
-async function fixGitWorktreeRefs(root: string, log: (msg: string) => void): Promise<number> {
+async function fixGitWorktreeRefs(root: string, legacyName: string, log: (msg: string) => void): Promise<number> {
   const gitDir = await resolveGitDir(root)
   if (!gitDir) {
     log("fixGitWorktreeRefs: could not resolve git directory")
@@ -157,7 +167,7 @@ async function fixGitWorktreeRefs(root: string, log: (msg: string) => void): Pro
     return 0
   }
 
-  const oldSegment = path.join(root, LEGACY_DIR) + path.sep
+  const oldSegment = path.join(root, legacyName) + path.sep
   const newSegment = path.join(root, KILO_DIR) + path.sep
   let fixed = 0
 

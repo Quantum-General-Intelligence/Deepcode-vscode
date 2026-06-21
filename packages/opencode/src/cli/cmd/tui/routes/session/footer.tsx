@@ -8,7 +8,7 @@ import { createStore } from "solid-js/store"
 import { useRoute } from "../../context/route"
 import { RemoteIndicator } from "@/kilocode/remote-tui" // kilocode_change
 import { formatIndexingLabel } from "@/kilocode/indexing-label" // kilocode_change
-import type { IndexingStatusState } from "@kilocode/kilo-indexing/status" // kilocode_change
+import type { IndexingStatusState } from "@takedeep/indexing/status" // kilocode_change
 import { indexingEnabled } from "@/kilocode/indexing-feature" // kilocode_change
 
 // kilocode_change start

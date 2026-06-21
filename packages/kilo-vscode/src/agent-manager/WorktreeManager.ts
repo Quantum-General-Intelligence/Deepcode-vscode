@@ -3,7 +3,7 @@
  *
  * Ported from kilocode/src/core/kilocode/agent-manager/WorktreeManager.ts.
  * Handles creation, discovery, and cleanup of worktrees stored in
- * {projectRoot}/.kilo/worktrees/
+ * {projectRoot}/.takedeep/worktrees/
  */
 
 import * as path from "path"
@@ -26,8 +26,10 @@ import {
   type PRInfo,
   type BranchListItem,
 } from "./git-import"
+import { KILO_DIR, LEGACY_DIR, migrateAgentManagerData } from "./constants"
+import { EXTENSION_DISPLAY_NAME } from "../constants"
 
-const TEMP_PREFIX = ".kilo-delete-"
+const TEMP_PREFIX = `${KILO_DIR}-delete-`
 const RM_OPTS: fs.RmOptions = { recursive: true, force: true, maxRetries: 3, retryDelay: 200 }
 
 interface WorktreeInfo {
@@ -81,7 +83,6 @@ function stripRemotePrefix(ref: string): { branch: string; remote?: string } {
   return { branch: ref }
 }
 
-import { KILO_DIR, LEGACY_DIR, migrateAgentManagerData } from "./constants"
 
 const SESSION_ID_FILE = "session-id"
 const METADATA_FILE = "metadata.json"
@@ -370,7 +371,7 @@ export class WorktreeManager {
 
     // 1. Atomic rename — makes the worktree instantly invisible to git and pollers.
     //    rename() is near-instant on the same filesystem (same parent dir guarantees this).
-    const temp = path.join(path.dirname(worktreePath), `.kilo-delete-${randomUUID()}`)
+    const temp = path.join(path.dirname(worktreePath), `${TEMP_PREFIX}${randomUUID()}`)
     try {
       await fs.promises.rename(worktreePath, temp)
     } catch {
@@ -410,7 +411,10 @@ export class WorktreeManager {
       .readdir(this.dir, { withFileTypes: true })
       .then((entries) => {
         for (const e of entries) {
-          if (e.isDirectory() && e.name.startsWith(TEMP_PREFIX)) {
+          if (
+            e.isDirectory() &&
+            (e.name.startsWith(TEMP_PREFIX) || e.name.startsWith(".kilo-delete-"))
+          ) {
             const stale = path.join(this.dir, e.name)
             fs.promises.rm(stale, RM_OPTS).catch((err) => {
               this.log(`Failed to clean orphaned temp dir ${stale}: ${err}`)
@@ -502,22 +506,21 @@ export class WorktreeManager {
   async ensureGitExclude(): Promise<void> {
     const gitDir = await this.resolveGitDir()
     const excludePath = path.join(gitDir, "info", "exclude")
-    const items = [
-      [".kilo/worktrees/", "Kilo Code agent worktrees"],
-      [".kilo/agent-manager.json", "Kilo Agent Manager state"],
-      [".kilo/setup-script", "Kilo Code worktree setup script"],
-      [".kilo/setup-script.sh", "Kilo Code worktree setup script"],
-      [".kilo/setup-script.ps1", "Kilo Code worktree setup script"],
-      [".kilo/setup-script.cmd", "Kilo Code worktree setup script"],
-      [".kilo/setup-script.bat", "Kilo Code worktree setup script"],
-      [".kilocode/worktrees/", "Kilo Code legacy agent worktrees"],
-      [".kilocode/agent-manager.json", "Kilo Agent Manager legacy state"],
-      [".kilocode/setup-script", "Kilo Code legacy worktree setup script"],
-      [".kilocode/setup-script.sh", "Kilo Code legacy worktree setup script"],
-      [".kilocode/setup-script.ps1", "Kilo Code legacy worktree setup script"],
-      [".kilocode/setup-script.cmd", "Kilo Code legacy worktree setup script"],
-      [".kilocode/setup-script.bat", "Kilo Code legacy worktree setup script"],
+    const script = "setup-script"
+    const dirs = [
+      { dir: KILO_DIR, label: EXTENSION_DISPLAY_NAME },
+      { dir: ".kilo", label: "Legacy Kilo" },
+      { dir: ".kilocode", label: "Legacy Kilo Code" },
     ] as const
+    const items = dirs.flatMap(({ dir, label }) => [
+      [`${dir}/worktrees/`, `${label} agent worktrees`],
+      [`${dir}/agent-manager.json`, `${label} Agent Manager state`],
+      [`${dir}/${script}`, `${label} worktree setup script`],
+      [`${dir}/${script}.sh`, `${label} worktree setup script`],
+      [`${dir}/${script}.ps1`, `${label} worktree setup script`],
+      [`${dir}/${script}.cmd`, `${label} worktree setup script`],
+      [`${dir}/${script}.bat`, `${label} worktree setup script`],
+    ] as const)
 
     for (const [entry, comment] of items) {
       await this.addExcludeEntry(excludePath, entry, comment)
@@ -532,7 +535,7 @@ export class WorktreeManager {
 
       const worktreeGitDir = path.resolve(worktreePath, match[1].trim())
       const mainGitDir = path.dirname(path.dirname(worktreeGitDir))
-      await this.addExcludeEntry(path.join(mainGitDir, "info", "exclude"), `${KILO_DIR}/`, "Kilo Code session metadata")
+      await this.addExcludeEntry(path.join(mainGitDir, "info", "exclude"), `${KILO_DIR}/`, `${EXTENSION_DISPLAY_NAME} session metadata`)
     } catch (error) {
       this.log(`Warning: Failed to update git exclude for worktree: ${error}`)
     }

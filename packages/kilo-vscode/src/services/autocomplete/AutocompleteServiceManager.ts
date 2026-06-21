@@ -1,5 +1,6 @@
 import crypto from "crypto"
 import * as vscode from "vscode"
+import { APP_URL } from "../../constants"
 import { t } from "./shims/i18n"
 import { TelemetryProxy, TelemetryEventName } from "../telemetry"
 import { AutocompleteModel } from "./AutocompleteModel"
@@ -10,7 +11,7 @@ import { AutocompleteTelemetry } from "./classic-auto-complete/AutocompleteTelem
 import type { KiloConnectionService } from "../cli-backend"
 import { getAutocompleteModel } from "../../shared/autocomplete-models"
 
-const CONFIG_SECTION = "kilo-code.new.autocomplete"
+const CONFIG_SECTION = "takedeep.autocomplete"
 
 export interface AutocompleteServiceSettings {
   enableAutoTrigger?: boolean
@@ -303,7 +304,7 @@ export class AutocompleteServiceManager {
   private async updateGlobalContext() {
     await vscode.commands.executeCommand(
       "setContext",
-      "kilocode.autocomplete.enableSmartInlineTaskKeybinding",
+      "takedeep.autocomplete.enableSmartInlineTaskKeybinding",
       this.settings?.enableSmartInlineTaskKeybinding || false,
     )
   }
@@ -344,7 +345,7 @@ export class AutocompleteServiceManager {
     if (status === 402) {
       vscode.window.showWarningMessage(msg, t("kilocode:autocomplete.creditsExhausted.addCredits")).then((choice) => {
         if (choice === t("kilocode:autocomplete.creditsExhausted.addCredits")) {
-          vscode.env.openExternal(vscode.Uri.parse("https://app.kilo.ai/credits"))
+          vscode.env.openExternal(vscode.Uri.parse(`${APP_URL}/credits`))
         }
       })
     } else {
@@ -385,7 +386,7 @@ export class AutocompleteServiceManager {
     if (response === disableCopilot) {
       await vscode.commands.executeCommand("github.copilot.completions.disable")
     } else if (response === disableInlineAssist) {
-      await vscode.commands.executeCommand("kilo-code.new.autocomplete.disable")
+      await vscode.commands.executeCommand("takedeep.autocomplete.disable")
     }
   }
 

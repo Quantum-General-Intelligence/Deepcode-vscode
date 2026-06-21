@@ -1,6 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/package.json",
-  "name": "@kilocode/kilo-gateway",
+  "name": "@takedeep/gateway",
   "version": "7.2.31",
   "type": "module",
   "license": "MIT",
@@ -17,6 +17,7 @@
   ],
   "exports": {
     ".": "./src/index.ts",
+    "./brand": "./src/brand.ts",
     "./tui": "./src/tui.ts"
   },
   "files": [
@@ -27,8 +28,8 @@
     "build": "tsc"
   },
   "dependencies": {
-    "@kilocode/plugin": "workspace:*",
-    "@kilocode/sdk": "workspace:*",
+    "@takedeep/plugin": "workspace:*",
+    "@takedeep/sdk": "workspace:*",
     "@ai-sdk/alibaba": "1.0.17",
     "@ai-sdk/anthropic": "3.0.71",
     "@ai-sdk/openai": "3.0.48",

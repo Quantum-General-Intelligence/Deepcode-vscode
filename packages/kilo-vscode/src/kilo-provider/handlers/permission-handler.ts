@@ -5,7 +5,7 @@
  * pending permissions after SSE reconnections. No vscode dependency.
  */
 
-import type { KiloClient, PermissionRequest } from "@kilocode/sdk/v2/client"
+import type { KiloClient, PermissionRequest } from "@takedeep/sdk/v2/client"
 
 export type RecoverablePermission = PermissionRequest
 

@@ -6,12 +6,12 @@
  */
 
 import { type Component, Show, createEffect, createMemo, createSignal, on, onCleanup, onMount } from "solid-js"
-import { Button } from "@kilocode/kilo-ui/button"
-import { Icon } from "@kilocode/kilo-ui/icon"
-import { Spinner } from "@kilocode/kilo-ui/spinner"
-import { Tooltip } from "@kilocode/kilo-ui/tooltip"
-import { showToast } from "@kilocode/kilo-ui/toast"
-import { DropdownMenu } from "@kilocode/kilo-ui/dropdown-menu"
+import { Button } from "@takedeep/ui/button"
+import { Icon } from "@takedeep/ui/icon"
+import { Spinner } from "@takedeep/ui/spinner"
+import { Tooltip } from "@takedeep/ui/tooltip"
+import { showToast } from "@takedeep/ui/toast"
+import { DropdownMenu } from "@takedeep/ui/dropdown-menu"
 import { TaskHeader } from "./TaskHeader"
 import { MessageList } from "./MessageList"
 import { PromptInput } from "./PromptInput"

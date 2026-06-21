@@ -1,3 +1,5 @@
+import { EXTENSION_DISPLAY_NAME } from "../constants"
+
 export const KILO_PROVIDER_ID = "kilo"
 export const KILO_AUTO = { providerID: KILO_PROVIDER_ID, modelID: "kilo-auto/free" } as const
 export const CUSTOM_PROVIDER_PACKAGE = "@ai-sdk/openai-compatible"
@@ -28,7 +30,7 @@ export function providerOrderIndex(providerID: string, order = PROVIDER_PRIORITY
 export function createKiloFallbackProvider() {
   return {
     id: KILO_PROVIDER_ID,
-    name: "Kilo Gateway",
+    name: `${EXTENSION_DISPLAY_NAME} Gateway`,
     source: "custom" as const,
     env: ["KILO_API_KEY"],
     models: {},

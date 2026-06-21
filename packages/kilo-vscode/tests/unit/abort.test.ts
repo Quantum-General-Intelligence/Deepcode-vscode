@@ -1,5 +1,5 @@
 import { describe, expect, it } from "bun:test"
-import type { KiloClient } from "@kilocode/sdk/v2/client"
+import type { KiloClient } from "@takedeep/sdk/v2/client"
 import { abortSession } from "../../src/kilo-provider/abort"
 
 function client(calls: unknown[], fail = false) {

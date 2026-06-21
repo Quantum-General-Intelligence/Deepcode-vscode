@@ -1,8 +1,8 @@
 /** @jsxImportSource solid-js */
 import type { Meta, StoryObj } from "storybook-solidjs-vite"
-import { Part } from "@kilocode/kilo-ui/message-part"
+import { Part } from "@takedeep/ui/message-part"
 import { StoryProviders } from "./StoryProviders"
-import type { AssistantMessage, ToolPart } from "@kilocode/sdk/v2"
+import type { AssistantMessage, ToolPart } from "@takedeep/sdk/v2"
 
 const SESSION_ID = "shell-story-001"
 const MSG_ID = "shell-msg-001"

@@ -120,7 +120,7 @@ export const dict = {
   "dialog.model.expand": "Expandir",
   "dialog.model.collapse": "Recolher",
 
-  "dialog.model.unpaid.freeModels.title": "Modelos gratuitos fornecidos pelo Kilo",
+  "dialog.model.unpaid.freeModels.title": "Modelos gratuitos fornecidos pelo TakeDeep",
   "dialog.model.unpaid.addMore.title": "Adicionar mais modelos de provedores populares",
 
   "dialog.provider.viewAll": "Ver mais provedores",
@@ -133,7 +133,7 @@ export const dict = {
   "provider.connect.status.waiting": "Aguardando autorização...",
   "provider.connect.status.failed": "Autorização falhou: {{error}}",
   "provider.connect.apiKey.description":
-    "Digite sua chave de API do {{provider}} para conectar sua conta e usar modelos do {{provider}} no Kilo.",
+    "Digite sua chave de API do {{provider}} para conectar sua conta e usar modelos do {{provider}} no TakeDeep.",
   "provider.connect.apiKey.label": "Chave de API do {{provider}}",
   "provider.connect.apiKey.placeholder": "Chave de API",
   "provider.connect.apiKey.required": "A chave de API é obrigatória",
@@ -147,7 +147,7 @@ export const dict = {
   "provider.connect.oauth.code.visit.prefix": "Visite ",
   "provider.connect.oauth.code.visit.link": "este link",
   "provider.connect.oauth.code.visit.suffix":
-    " para obter seu código de autorização e conectar sua conta para usar modelos do {{provider}} no Kilo.",
+    " para obter seu código de autorização e conectar sua conta para usar modelos do {{provider}} no TakeDeep.",
   "provider.connect.oauth.code.label": "Código de autorização {{method}}",
   "provider.connect.oauth.code.placeholder": "Código de autorização",
   "provider.connect.oauth.code.required": "O código de autorização é obrigatório",
@@ -155,7 +155,7 @@ export const dict = {
   "provider.connect.oauth.auto.visit.prefix": "Visite ",
   "provider.connect.oauth.auto.visit.link": "este link",
   "provider.connect.oauth.auto.visit.suffix":
-    " e digite o código abaixo para conectar sua conta e usar modelos do {{provider}} no Kilo.",
+    " e digite o código abaixo para conectar sua conta e usar modelos do {{provider}} no TakeDeep.",
   "provider.connect.oauth.auto.confirmationCode": "Código de confirmação",
   "provider.connect.toast.connected.title": "{{provider}} conectado",
   "provider.connect.toast.connected.description": "Modelos do {{provider}} agora estão disponíveis para uso.",
@@ -300,7 +300,7 @@ export const dict = {
   "dialog.directory.empty": "Nenhuma pasta encontrada",
 
   "dialog.server.title": "Servidores",
-  "dialog.server.description": "Trocar para qual servidor Kilo este aplicativo se conecta.",
+  "dialog.server.description": "Trocar para qual servidor TakeDeep este aplicativo se conecta.",
   "dialog.server.search.placeholder": "Buscar servidores",
   "dialog.server.empty": "Nenhum servidor ainda",
   "dialog.server.add.title": "Adicionar um servidor",
@@ -425,7 +425,7 @@ export const dict = {
   "toast.session.listFailed.title": "Falha ao carregar sessões para {{project}}",
 
   "toast.update.title": "Atualização disponível",
-  "toast.update.description": "Uma nova versão do Kilo ({{version}}) está disponível para instalação.",
+  "toast.update.description": "Uma nova versão do TakeDeep ({{version}}) está disponível para instalação.",
   "toast.update.action.installRestart": "Instalar e reiniciar",
   "toast.update.action.notYet": "Agora não",
 
@@ -436,7 +436,7 @@ export const dict = {
   "error.page.action.checking": "Verificando...",
   "error.page.action.checkUpdates": "Verificar atualizações",
   "error.page.action.updateTo": "Atualizar para {{version}}",
-  "error.page.report.prefix": "Por favor, reporte este erro para a equipe do Kilo",
+  "error.page.report.prefix": "Por favor, reporte este erro para a equipe do TakeDeep",
   "error.page.report.discord": "no Discord",
   "error.page.version": "Versão: {{version}}",
 
@@ -465,7 +465,7 @@ export const dict = {
   "error.chain.didYouMean": "Você quis dizer: {{suggestions}}",
   "error.chain.modelNotFound": "Modelo não encontrado: {{provider}}/{{model}}",
   "error.chain.checkConfig": "Verifique os nomes de provedor/modelo na sua configuração (opencode.json)",
-  "error.chain.mcpFailed": 'Servidor MCP "{{name}}" falhou. Nota: Kilo ainda não suporta autenticação MCP.',
+  "error.chain.mcpFailed": 'Servidor MCP "{{name}}" falhou. Nota: TakeDeep ainda não suporta autenticação MCP.',
   "error.chain.providerAuthFailed": "Autenticação do provedor falhou ({{provider}}): {{message}}",
   "error.chain.providerInitFailed":
     'Falha ao inicializar provedor "{{provider}}". Verifique credenciais e configuração.',
@@ -639,12 +639,12 @@ export const dict = {
   "sidebar.workspaces.enable": "Habilitar espaços de trabalho",
   "sidebar.workspaces.disable": "Desabilitar espaços de trabalho",
   "sidebar.gettingStarted.title": "Começando",
-  "sidebar.gettingStarted.line1": "Kilo inclui modelos gratuitos para você começar imediatamente.",
+  "sidebar.gettingStarted.line1": "TakeDeep inclui modelos gratuitos para você começar imediatamente.",
   "sidebar.gettingStarted.line2": "Conecte qualquer provedor para usar modelos, incluindo Claude, GPT, Gemini etc.",
   "sidebar.project.recentSessions": "Sessões recentes",
   "sidebar.project.viewAllSessions": "Ver todas as sessões",
 
-  "app.name.desktop": "Kilo Desktop",
+  "app.name.desktop": "TakeDeep Desktop",
   "settings.section.desktop": "Desktop",
   "settings.section.server": "Servidor",
   "settings.tab.general": "Geral",
@@ -656,11 +656,11 @@ export const dict = {
   "settings.general.section.sounds": "Efeitos sonoros",
 
   "settings.general.row.language.title": "Idioma",
-  "settings.general.row.language.description": "Alterar o idioma de exibição do Kilo",
+  "settings.general.row.language.description": "Alterar o idioma de exibição do TakeDeep",
   "settings.general.row.appearance.title": "Aparência",
-  "settings.general.row.appearance.description": "Personalize como o Kilo aparece no seu dispositivo",
+  "settings.general.row.appearance.description": "Personalize como o TakeDeep aparece no seu dispositivo",
   "settings.general.row.theme.title": "Tema",
-  "settings.general.row.theme.description": "Personalize como o Kilo é tematizado.",
+  "settings.general.row.theme.description": "Personalize como o TakeDeep é tematizado.",
   "settings.general.row.font.title": "Fonte",
   "settings.general.row.font.description": "Personalize a fonte monoespaçada usada em blocos de código",
 
@@ -668,13 +668,13 @@ export const dict = {
   "settings.general.row.releaseNotes.description": 'Mostrar pop-ups de "Novidades" após atualizações',
 
   "settings.updates.row.startup.title": "Verificar atualizações ao iniciar",
-  "settings.updates.row.startup.description": "Verificar atualizações automaticamente quando o Kilo iniciar",
+  "settings.updates.row.startup.description": "Verificar atualizações automaticamente quando o TakeDeep iniciar",
   "settings.updates.row.check.title": "Verificar atualizações",
   "settings.updates.row.check.description": "Verificar atualizações manualmente e instalar se houver",
   "settings.updates.action.checkNow": "Verificar agora",
   "settings.updates.action.checking": "Verificando...",
   "settings.updates.toast.latest.title": "Você está atualizado",
-  "settings.updates.toast.latest.description": "Você está usando a versão mais recente do Kilo.",
+  "settings.updates.toast.latest.description": "Você está usando a versão mais recente do TakeDeep.",
   "font.option.ibmPlexMono": "IBM Plex Mono",
   "font.option.cascadiaCode": "Cascadia Code",
   "font.option.firaCode": "Fira Code",
@@ -770,7 +770,7 @@ export const dict = {
   "settings.providers.title": "Provedores",
   "settings.providers.description": "Configurações de provedores estarão disponíveis aqui.",
   "settings.providers.betaNotice":
-    "Atualmente, apenas o provedor Kilo Gateway pode ser configurado na interface de configurações. O suporte para a configuração de outros provedores estará disponível em breve durante o período beta. Enquanto isso, você pode configurar provedores usando a CLI ou o arquivo de configuração. Estamos comprometidos em manter o Kilo aberto, sem lock-in.",
+    "Atualmente, apenas o provedor TakeDeep Gateway pode ser configurado na interface de configurações. O suporte para a configuração de outros provedores estará disponível em breve durante o período beta. Enquanto isso, você pode configurar provedores usando a CLI ou o arquivo de configuração. Estamos comprometidos em manter o TakeDeep aberto, sem lock-in.",
   "settings.providers.section.connected": "Provedores conectados",
   "settings.providers.connected.empty": "Nenhum provedor conectado",
   "settings.providers.section.popular": "Provedores populares",
@@ -876,20 +876,20 @@ export const dict = {
   "settings.config.status.loadedLegacy": "configuração legada carregada",
   "settings.config.status.notLoaded": "não carregado",
   "settings.config.status.create": "não encontrado - criar este arquivo",
-  "settings.config.title": "Abrir arquivo de configuração {{scope}} do Kilo",
+  "settings.config.title": "Abrir arquivo de configuração {{scope}} do TakeDeep",
   "settings.config.placeholder":
     "Os arquivos de configuração são mesclados em ordem; os arquivos marcados como carregados afetam atualmente as configurações.",
   "settings.config.noWorkspace":
-    "Abra uma pasta de espaço de trabalho para editar o arquivo de configuração local do Kilo.",
-  "settings.config.openFailed": "Falha ao abrir o arquivo de configuração {{scope}} do Kilo: {{message}}",
+    "Abra uma pasta de espaço de trabalho para editar o arquivo de configuração local do TakeDeep.",
+  "settings.config.openFailed": "Falha ao abrir o arquivo de configuração {{scope}} do TakeDeep: {{message}}",
   "settings.config.source.xdg": "Configuração global do XDG",
-  "settings.config.source.homeKilo": "Configuração .kilo da Home",
+  "settings.config.source.homeKilo": "Configuração .takedeep da Home",
   "settings.config.source.homeKilocode": "Configuração .kilocode da Home",
   "settings.config.source.homeOpencode": "Configuração .opencode da Home",
   "settings.config.source.envFile": "Arquivo de ambiente KILO_CONFIG",
   "settings.config.source.envDir": "KILO_CONFIG_DIR",
   "settings.config.source.envContent": "Configuração de ambiente embutida",
-  "settings.config.source.projectKilo": "Configuração .kilo do projeto",
+  "settings.config.source.projectKilo": "Configuração .takedeep do projeto",
   "settings.config.source.projectRoot": "Configuração raiz do projeto",
   "settings.config.source.projectKilocode": "Configuração .kilocode legada",
   "settings.config.source.projectOpencode": "Configuração .opencode legada",
@@ -1001,7 +1001,7 @@ export const dict = {
   "deviceAuth.toast.codeCopied": "Código copiado para a área de transferência",
   "deviceAuth.toast.errorCopied": "Erro copiado para a área de transferência",
   "deviceAuth.status.initiating": "Iniciando login...",
-  "deviceAuth.title": "Entrar no Kilo Code",
+  "deviceAuth.title": "Entrar no TakeDeep",
   "deviceAuth.step1": "Passo 1: Abra esta URL",
   "deviceAuth.action.copyUrl": "Copiar URL",
   "deviceAuth.action.openBrowser": "Abrir Navegador",
@@ -1022,7 +1022,7 @@ export const dict = {
 
   "profile.title": "Perfil",
   "profile.notLoggedIn": "Não conectado",
-  "profile.action.login": "Entrar com Kilo Code",
+  "profile.action.login": "Entrar com TakeDeep",
   "profile.balance.title": "Saldo",
   "profile.balance.refresh": "Atualizar saldo",
   "profile.action.dashboard": "Painel",
@@ -1067,11 +1067,11 @@ export const dict = {
   "settings.indexing.status.title": "Status",
   "settings.indexing.tuning.description": "Parâmetro avançado de busca e lote.",
   "settings.indexing.providerField.description": "Configuração de conexão específica do provedor.",
-  "settings.aboutKiloCode.title": "Sobre o Kilo Code",
+  "settings.aboutKiloCode.title": "Sobre o TakeDeep",
 
   "session.messages.empty": "Inicie uma conversa digitando uma mensagem abaixo.",
   "session.messages.welcome":
-    "Kilo Code é um assistente de programação com IA. Peça para criar funcionalidades, corrigir bugs ou explicar sua base de código.",
+    "TakeDeep é um assistente de programação com IA. Peça para criar funcionalidades, corrigir bugs ou explicar sua base de código.",
   "session.messages.scrollToBottom": "Rolar para o final",
   "session.messages.initializing": "O teraouiñ...",
   "session.messages.taskStarting": "O kregiñ...",
@@ -1115,7 +1115,7 @@ export const dict = {
   "settings.aboutKiloCode.port.label": "Porta:",
   "settings.aboutKiloCode.versionInfo": "Informações da Versão",
   "settings.aboutKiloCode.version.label": "Versão:",
-  "settings.aboutKiloCode.extensionName": "Extensão Kilo Code",
+  "settings.aboutKiloCode.extensionName": "Extensão TakeDeep",
   "settings.aboutKiloCode.community": "Comunidade e Suporte",
   "settings.aboutKiloCode.feedback.prefix": "Se você tiver perguntas ou feedback, abra uma issue no",
   "settings.aboutKiloCode.feedback.or": "ou",
@@ -1132,11 +1132,11 @@ export const dict = {
   "settings.aboutKiloCode.importSettings": "Importar",
   "settings.aboutKiloCode.importSettings.invalidJson":
     "Arquivo JSON inválido. Selecione um arquivo de configurações válido.",
-  "settings.aboutKiloCode.importSettings.invalidConfig": "O arquivo não contém configurações válidas do Kilo.",
+  "settings.aboutKiloCode.importSettings.invalidConfig": "O arquivo não contém configurações válidas do TakeDeep.",
   "settings.aboutKiloCode.importSettings.tooLarge":
     "O arquivo é muito grande. Arquivos de configurações devem ter menos de 1 MB.",
   "settings.aboutKiloCode.importSettings.newerVersion":
-    "Este arquivo foi exportado de uma versão mais recente do Kilo. Algumas configurações podem ser ignoradas.",
+    "Este arquivo foi exportado de uma versão mais recente do TakeDeep. Algumas configurações podem ser ignoradas.",
   "settings.aboutKiloCode.importSettings.success":
     "Configurações importadas. Revise as alterações acima e clique em Salvar.",
 
@@ -1163,7 +1163,7 @@ export const dict = {
   "settings.browser.headless.description": "Executar em modo headless (sem janela do navegador visível).",
 
   "settings.language.description":
-    'Escolha o idioma da interface do Kilo Code. "Auto" usa o idioma de exibição do VS Code.',
+    'Escolha o idioma da interface do TakeDeep. "Auto" usa o idioma de exibição do VS Code.',
   "settings.language.auto": "Auto (idioma do VS Code)",
   "settings.language.current": "Atual:",
 
@@ -1217,7 +1217,7 @@ export const dict = {
   "settings.experimental.mcpTimeout.description": "Tempo limite para solicitações do servidor MCP em milissegundos",
   "settings.experimental.remote.title": "Controle Remote",
   "settings.experimental.remote.description":
-    "Habilite o controle Remote de sessões via Kilo Cloud. Isso também afetará as CLIs nesta máquina.",
+    "Habilite o controle Remote de sessões via TakeDeep Cloud. Isso também afetará as CLIs nesta máquina.",
   "settings.experimental.remote.current": "Estado atual:",
   "settings.experimental.remote.startup": "Ativar automaticamente na inicialização:",
   "settings.experimental.remote.active": "Ativo",
@@ -1331,7 +1331,7 @@ export const dict = {
   "settings.agentBehaviour.claudeCompat.heading": "Compatibilidade com Claude Code",
   "settings.agentBehaviour.claudeCompat.title": "Carregar Arquivos do Claude Code",
   "settings.agentBehaviour.claudeCompat.description":
-    "Carrega as instruções e skills do CLAUDE.md a partir do seu diretório de configuração do Claude Code para as sessões. Ative esta opção se deseja que o Kilo utilize suas instruções e skills do Claude Code. Requer reinicialização.",
+    "Carrega as instruções e skills do CLAUDE.md a partir do seu diretório de configuração do Claude Code para as sessões. Ative esta opção se deseja que o TakeDeep utilize suas instruções e skills do Claude Code. Requer reinicialização.",
   "settings.agentBehaviour.mcpDetail.command": "Comando",
   "settings.agentBehaviour.mcpDetail.args": "Argumentos",
   "settings.agentBehaviour.mcpDetail.env": "Ambiente",
@@ -1434,10 +1434,10 @@ export const dict = {
   "settings.legacyMigration.link": "Migrar da Versão Legada",
   "settings.aboutKiloCode.legacyMigration.title": "Migração Legada",
   "settings.aboutKiloCode.legacyMigration.description":
-    "Migre as configurações de uma instalação anterior do Kilo Code, incluindo chaves de API de provedor e modelo padrão.",
+    "Migre as configurações de uma instalação anterior do TakeDeep, incluindo chaves de API de provedor e modelo padrão.",
 
   // Screen 1 — What's New
-  "migration.whatsNew.title": "O Que Há de Novo no Kilo Code",
+  "migration.whatsNew.title": "O Que Há de Novo no TakeDeep",
   "migration.whatsNew.subtitle": "Reconstruímos a extensão sobre uma base mais rápida e eficiente.",
   "migration.whatsNew.features.performance.title": "Desempenho de Agente Mais Rápido",
   "migration.whatsNew.features.performance.detail":
@@ -1449,7 +1449,7 @@ export const dict = {
     "Uma interface unificada para executar múltiplos agentes em paralelo, cada um em sua própria worktree — monitore o progresso, troque de contexto e revise alterações em um só lugar.",
   "migration.whatsNew.features.foundation.title": "Base Compartilhada",
   "migration.whatsNew.features.foundation.detail":
-    "Um núcleo pequeno e eficiente em todos os produtos Kilo. Uma experiência familiar independentemente de como você escolha trabalhar.",
+    "Um núcleo pequeno e eficiente em todos os produtos TakeDeep. Uma experiência familiar independentemente de como você escolha trabalhar.",
   "migration.whatsNew.blogLink": "Leia o anúncio completo",
   "migration.whatsNew.docsLink": "Novidades e perguntas frequentes",
   "migration.whatsNew.continue": "Continuar",

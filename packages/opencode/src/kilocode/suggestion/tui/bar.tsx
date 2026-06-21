@@ -1,7 +1,7 @@
 /** @jsxImportSource @opentui/solid */
 // kilocode_change - new file
 
-import type { SuggestionRequest } from "@kilocode/sdk/v2"
+import type { SuggestionRequest } from "@takedeep/sdk/v2"
 import { createMemo, createSignal, For } from "solid-js"
 import { useSDK } from "../../../cli/cmd/tui/context/sdk"
 import { selectedForeground, useTheme } from "../../../cli/cmd/tui/context/theme"

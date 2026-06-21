@@ -1,4 +1,4 @@
-import type { Event } from "@kilocode/sdk/v2"
+import type { Event } from "@takedeep/sdk/v2"
 import { useProject } from "./project"
 import { useSDK } from "./sdk"
 

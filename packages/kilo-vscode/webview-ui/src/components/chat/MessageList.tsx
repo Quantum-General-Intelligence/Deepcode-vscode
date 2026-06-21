@@ -10,14 +10,15 @@
  */
 
 import { type Component, For, Show, createEffect, createMemo, createSignal, on, onCleanup, JSX } from "solid-js"
-import { Icon } from "@kilocode/kilo-ui/icon"
-import { Spinner } from "@kilocode/kilo-ui/spinner"
-import { useDialog } from "@kilocode/kilo-ui/context/dialog"
-import { createAutoScroll } from "@kilocode/kilo-ui/hooks"
+import { Icon } from "@takedeep/ui/icon"
+import { Spinner } from "@takedeep/ui/spinner"
+import { useDialog } from "@takedeep/ui/context/dialog"
+import { createAutoScroll } from "@takedeep/ui/hooks"
 import { useSession } from "../../context/session"
 import { useServer } from "../../context/server"
 import { useLanguage } from "../../context/language"
 import { formatRelativeDate } from "../../utils/date"
+import { BRAND } from "../../brand"
 import { FeedbackDialog } from "./FeedbackDialog"
 import { VscodeSessionTurn } from "./VscodeSessionTurn"
 import { RevertBanner } from "./RevertBanner"
@@ -38,13 +39,10 @@ import type { QuestionRequest, SuggestionRequest } from "../../types/messages"
 
 const KiloLogo = (): JSX.Element => {
   const iconsBaseUri = (window as { ICONS_BASE_URI?: string }).ICONS_BASE_URI || ""
-  const isLight =
-    document.body.classList.contains("vscode-light") || document.body.classList.contains("vscode-high-contrast-light")
-  const iconFile = isLight ? "kilo-light.svg" : "kilo-dark.svg"
 
   return (
     <div class="kilo-logo">
-      <img src={`${iconsBaseUri}/${iconFile}`} alt="Kilo Code" />
+      <img src={`${iconsBaseUri}/${BRAND.logoIcon}`} alt={BRAND.name} />
     </div>
   )
 }

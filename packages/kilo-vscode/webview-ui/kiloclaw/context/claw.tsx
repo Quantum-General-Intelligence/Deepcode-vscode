@@ -4,7 +4,7 @@
 // The webview has no direct network access.
 
 import { createContext, createSignal, onMount, onCleanup, useContext, type JSX } from "solid-js"
-import { showToast } from "@kilocode/kilo-ui/toast"
+import { showToast } from "@takedeep/ui/toast"
 import type { ClawStatus, ChatMessage, KiloClawOutMessage } from "../lib/types"
 
 type VSCodeAPI = {

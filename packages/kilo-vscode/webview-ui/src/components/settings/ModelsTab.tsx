@@ -1,6 +1,6 @@
 import { Component, For, createMemo, createSignal, onCleanup } from "solid-js"
-import { Card } from "@kilocode/kilo-ui/card"
-import { Select } from "@kilocode/kilo-ui/select"
+import { Card } from "@takedeep/ui/card"
+import { Select } from "@takedeep/ui/select"
 import { useConfig } from "../../context/config"
 import { useLanguage } from "../../context/language"
 import { useSession } from "../../context/session"

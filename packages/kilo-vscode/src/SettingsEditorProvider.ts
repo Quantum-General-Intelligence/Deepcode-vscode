@@ -7,9 +7,9 @@ import type { RemoteStatusService } from "./services/RemoteStatusService"
 type PanelView = "settings" | "profile" | "marketplace" | "indexing"
 
 const PANEL_TITLES: Record<PanelView, string> = {
-  settings: "Kilo Settings",
-  profile: "Kilo Profile",
-  marketplace: "Kilo Marketplace",
+  settings: "TakeDeep Settings",
+  profile: "TakeDeep Profile",
+  marketplace: "TakeDeep Marketplace",
   indexing: "Codebase Indexing",
 }
 
@@ -45,9 +45,9 @@ export class SettingsEditorProvider implements vscode.Disposable {
     return resolvePanelProjectDirectory(active, vscode.workspace.workspaceFolders)
   }
 
-  /** Extract the PanelView from a viewType string like "kilo-code.new.settingsPanel". */
+  /** Extract the PanelView from a viewType string like "takedeep.settingsPanel". */
   static viewFromType(type: string): PanelView | undefined {
-    const match = type.match(/^kilo-code\.new\.(\w+)Panel$/)
+    const match = type.match(/^takedeep.(\w+)Panel$/)
     if (!match) return undefined
     const view = match[1] as PanelView
     if (!(view in PANEL_TITLES)) return undefined
@@ -71,7 +71,7 @@ export class SettingsEditorProvider implements vscode.Disposable {
     }
 
     const panel = vscode.window.createWebviewPanel(
-      `kilo-code.new.${view}Panel`,
+      `takedeep.${view}Panel`,
       PANEL_TITLES[view],
       vscode.ViewColumn.One,
       {

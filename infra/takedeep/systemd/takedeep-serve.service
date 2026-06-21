@@ -1,0 +1,16 @@
+[Unit]
+Description=TakeDeep CLI server (deeper serve)
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/takedeep/Deepcode-vscode/packages/opencode
+EnvironmentFile=/opt/takedeep/.env
+Environment=PATH=/root/.bun/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/root/.bun/bin/bun run --conditions=browser src/index.ts serve --hostname 127.0.0.1 --port 4096
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

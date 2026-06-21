@@ -13,7 +13,7 @@ describe("indexing plugin helpers", () => {
     expect(indexingEnabled({ plugin: [INDEXING_PLUGIN], experimental: { semantic_indexing: false } })).toBe(false)
     expect(indexingEnabled({ plugin: [INDEXING_PLUGIN], experimental: { semantic_indexing: true } })).toBe(true)
     expect(
-      indexingEnabled({ plugin: ["@kilocode/kilo-indexing@1.0.0"], experimental: { semantic_indexing: true } }),
+      indexingEnabled({ plugin: ["@takedeep/indexing@1.0.0"], experimental: { semantic_indexing: true } }),
     ).toBe(true)
   })
 
@@ -24,8 +24,8 @@ describe("indexing plugin helpers", () => {
   })
 
   test("does not add duplicate indexing plugin", () => {
-    const list = ensureIndexingPlugin(["@kilocode/kilo-indexing@1.0.0"], INDEXING_PLUGIN)
-    expect(list).toEqual(["@kilocode/kilo-indexing@1.0.0"])
+    const list = ensureIndexingPlugin(["@takedeep/indexing@1.0.0"], INDEXING_PLUGIN)
+    expect(list).toEqual(["@takedeep/indexing@1.0.0"])
   })
 
   test("skips hard-enable when plugin package is unavailable", () => {

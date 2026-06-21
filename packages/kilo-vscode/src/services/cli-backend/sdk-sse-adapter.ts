@@ -1,4 +1,4 @@
-import type { KiloClient, GlobalEvent, Event } from "@kilocode/sdk/v2/client"
+import type { KiloClient, GlobalEvent, Event } from "@takedeep/sdk/v2/client"
 
 export type SSEEventHandler = (event: Event, directory?: string) => void
 export type SSEErrorHandler = (error: Error) => void

@@ -7,7 +7,7 @@ import { dict as en } from "@/i18n/en"
 import { dict as uiEn } from "@opencode-ai/ui/i18n/en"
 
 // kilocode_change start
-import { dict as kiloEn } from "@kilocode/kilo-i18n/en"
+import { dict as kiloEn } from "@takedeep/i18n/en"
 // kilocode_change end
 
 export type Locale =

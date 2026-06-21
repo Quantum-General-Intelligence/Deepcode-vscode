@@ -6,7 +6,7 @@ import type {
   SessionStatus,
   SnapshotFileDiff,
   Todo,
-} from "@kilocode/sdk/v2/client"
+} from "@takedeep/sdk/v2/client"
 
 export const SESSION_CACHE_LIMIT = 40
 

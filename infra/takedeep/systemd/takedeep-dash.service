@@ -1,0 +1,16 @@
+[Unit]
+Description=TakeDeep Dashboard
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/opt/takedeep/Deepcode-vscode/packages/takedeep-server
+EnvironmentFile=/opt/takedeep/.env
+Environment=PATH=/root/.bun/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+ExecStart=/root/.bun/bin/bun run start:dash
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

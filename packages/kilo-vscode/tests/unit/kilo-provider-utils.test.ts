@@ -37,7 +37,7 @@ import type {
   EventServerConnected,
   TextPart,
   AssistantMessage,
-} from "@kilocode/sdk/v2/client"
+} from "@takedeep/sdk/v2/client"
 
 function makeSession(overrides: Partial<Session> = {}): Session {
   return {

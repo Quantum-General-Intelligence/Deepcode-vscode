@@ -44,18 +44,28 @@ export default function Layout(props: ParentProps) {
   const params = useParams()
   const language = useLanguage()
   const navigate = useNavigate()
+  const location = useLocation()
   let invalid = ""
 
   const resolved = createMemo(() => {
     if (!params.dir) return ""
-    return decode64(params.dir) ?? ""
+    const dir = decode64(params.dir) ?? ""
+    if (!dir || dir === "/") return ""
+    return dir
   })
 
   createEffect(() => {
     const dir = params.dir
     if (!dir) return
-    if (resolved()) {
+    const path = resolved()
+    if (path) {
       invalid = ""
+      return
+    }
+    const fallback = import.meta.env.VITE_DEFAULT_DIRECTORY
+    if (fallback) {
+      const rest = location.pathname.slice(dir.length + 1)
+      navigate(`/${base64Encode(fallback)}${rest}${location.search}${location.hash}`, { replace: true })
       return
     }
     if (invalid === dir) return

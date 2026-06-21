@@ -24,14 +24,14 @@ if (!existsSync(cliDistDir)) {
 }
 
 const targets = [
-  { target: "linux-x64", cliDir: "@kilocode/cli-linux-x64", binary: "kilo" },
-  { target: "linux-arm64", cliDir: "@kilocode/cli-linux-arm64", binary: "kilo" },
-  { target: "alpine-x64", cliDir: "@kilocode/cli-linux-x64-musl", binary: "kilo" },
-  { target: "alpine-arm64", cliDir: "@kilocode/cli-linux-arm64-musl", binary: "kilo" },
-  { target: "darwin-x64", cliDir: "@kilocode/cli-darwin-x64", binary: "kilo" },
-  { target: "darwin-arm64", cliDir: "@kilocode/cli-darwin-arm64", binary: "kilo" },
-  { target: "win32-x64", cliDir: "@kilocode/cli-windows-x64", binary: "kilo.exe" },
-  { target: "win32-arm64", cliDir: "@kilocode/cli-windows-arm64", binary: "kilo.exe" },
+  { target: "linux-x64", cliDir: "@takedeep/cli-linux-x64", binary: "deeper" },
+  { target: "linux-arm64", cliDir: "@takedeep/cli-linux-arm64", binary: "deeper" },
+  { target: "alpine-x64", cliDir: "@takedeep/cli-linux-x64-musl", binary: "deeper" },
+  { target: "alpine-arm64", cliDir: "@takedeep/cli-linux-arm64-musl", binary: "deeper" },
+  { target: "darwin-x64", cliDir: "@takedeep/cli-darwin-x64", binary: "deeper" },
+  { target: "darwin-arm64", cliDir: "@takedeep/cli-darwin-arm64", binary: "deeper" },
+  { target: "win32-x64", cliDir: "@takedeep/cli-windows-x64", binary: "deeper.exe" },
+  { target: "win32-arm64", cliDir: "@takedeep/cli-windows-arm64", binary: "deeper.exe" },
 ]
 
 const binDir = join(import.meta.dir, "..", "bin")

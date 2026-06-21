@@ -1,10 +1,10 @@
-import { Button } from "@kilocode/kilo-ui/button"
-import { Card } from "@kilocode/kilo-ui/card"
-import { useDialog } from "@kilocode/kilo-ui/context/dialog"
-import { ProviderIcon } from "@kilocode/kilo-ui/provider-icon"
-import { Select } from "@kilocode/kilo-ui/select"
-import { Tag } from "@kilocode/kilo-ui/tag"
-import { showToast } from "@kilocode/kilo-ui/toast"
+import { Button } from "@takedeep/ui/button"
+import { Card } from "@takedeep/ui/card"
+import { useDialog } from "@takedeep/ui/context/dialog"
+import { ProviderIcon } from "@takedeep/ui/provider-icon"
+import { Select } from "@takedeep/ui/select"
+import { Tag } from "@takedeep/ui/tag"
+import { showToast } from "@takedeep/ui/toast"
 import { Component, For, Show, createMemo, createSignal, onCleanup } from "solid-js"
 import { useConfig } from "../../context/config"
 import { useLanguage } from "../../context/language"
@@ -19,6 +19,7 @@ import { CUSTOM_PROVIDER_ID, isPopularProvider, providerIcon, providerNoteKey, s
 import { disabledProviderOptions, providersWithKiloFallback, visibleConnectedIds } from "./provider-visibility"
 import { KILO_PROVIDER_ID, CUSTOM_PROVIDER_PACKAGE } from "../../../../src/shared/provider-model"
 import { createProviderAction } from "../../utils/provider-action"
+import { BRAND } from "../../brand"
 
 type ProviderSource = "env" | "api" | "config" | "custom"
 type ProviderOption = { value: string; label: string }
@@ -172,7 +173,7 @@ const ProvidersTab: Component = () => {
           >
             <ProviderIcon id="synthetic" width={20} height={20} />
             <span style={{ "font-size": "14px", "font-weight": "500", color: "var(--vscode-foreground)" }}>
-              Kilo Gateway
+              {BRAND.gateway}
             </span>
             <Show
               when={kiloLoggedIn()}

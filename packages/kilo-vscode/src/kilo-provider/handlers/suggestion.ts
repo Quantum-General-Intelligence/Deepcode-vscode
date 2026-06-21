@@ -5,7 +5,7 @@
  * No vscode dependency.
  */
 
-import type { KiloClient, SuggestionRequest } from "@kilocode/sdk/v2/client"
+import type { KiloClient, SuggestionRequest } from "@takedeep/sdk/v2/client"
 import { recoveryDirs } from "./permission-handler"
 
 export type RecoverableSuggestion = SuggestionRequest

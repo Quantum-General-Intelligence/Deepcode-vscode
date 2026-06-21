@@ -27,12 +27,12 @@ describe("followup-session", () => {
 
   it("matches pending follow-ups by normalized directory before expiry", () => {
     const pending = {
-      dir: "c:/repo/.kilo/worktrees/feature",
+      dir: "c:/repo/.takedeep/worktrees/feature",
       time: 1,
     }
 
-    expect(matchFollowup({ pending, dir: "C:\\repo\\.kilo\\worktrees\\feature\\", now: 2 })).toBe(true)
-    expect(matchFollowup({ pending, dir: "c:/repo/.kilo/worktrees/other", now: 2 })).toBe(false)
-    expect(matchFollowup({ pending, dir: "c:/repo/.kilo/worktrees/feature", now: 30_002 })).toBe(false)
+    expect(matchFollowup({ pending, dir: "C:\\repo\\.takedeep\\worktrees\\feature\\", now: 2 })).toBe(true)
+    expect(matchFollowup({ pending, dir: "c:/repo/.takedeep/worktrees/other", now: 2 })).toBe(false)
+    expect(matchFollowup({ pending, dir: "c:/repo/.takedeep/worktrees/feature", now: 30_002 })).toBe(false)
   })
 })

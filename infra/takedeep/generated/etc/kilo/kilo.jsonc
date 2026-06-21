@@ -1,0 +1,19 @@
+{
+  "$schema": "https://deeper-api.takedeep.ai/config.json",
+  "model": "litellm/Qualtron-420B",
+  "enabled_providers": ["litellm", "kilo"],
+  "disabled_providers": ["opencode", "opencode-go"],
+  "provider": {
+    "litellm": {
+      "env": ["LITELLM_QUALTRON_MASTER_KEY"],
+      "options": {
+        "baseURL": "http://127.0.0.1:14000/v1"
+      }
+    },
+    "kilo": {
+      "options": {
+        "baseURL": "https://deeper-api.takedeep.ai"
+      }
+    }
+  }
+}

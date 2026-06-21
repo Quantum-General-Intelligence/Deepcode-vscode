@@ -1,4 +1,4 @@
-import { createKiloClient } from "@kilocode/sdk/v2"
+import { createKiloClient } from "@takedeep/sdk/v2"
 import { RGBA, type CliRenderer } from "@opentui/core"
 import { createPluginKeybind } from "../../src/cli/cmd/tui/context/plugin-keybinds"
 import type { HostPluginApi } from "../../src/cli/cmd/tui/plugin/slots"

@@ -9,14 +9,14 @@
 
 import { Component, For, Show, createMemo } from "solid-js"
 import { Dynamic } from "solid-js/web"
-import { Part, PART_MAPPING, ToolRegistry } from "@kilocode/kilo-ui/message-part"
+import { Part, PART_MAPPING, ToolRegistry } from "@takedeep/ui/message-part"
 import type {
   AssistantMessage as SDKAssistantMessage,
   Part as SDKPart,
   Message as SDKMessage,
   ToolPart,
-} from "@kilocode/sdk/v2"
-import { useData } from "@kilocode/kilo-ui/context/data"
+} from "@takedeep/sdk/v2"
+import { useData } from "@takedeep/ui/context/data"
 import { useSession } from "../../context/session"
 import { QuestionDock } from "./QuestionDock"
 import { SuggestBar } from "./SuggestBar"

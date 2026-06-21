@@ -1,4 +1,4 @@
-import type { KiloClient, Session } from "@kilocode/sdk/v2/client"
+import type { KiloClient, Session } from "@takedeep/sdk/v2/client"
 import type { CreateWorktreeResult } from "./WorktreeManager"
 import type { WorktreeStateManager } from "./WorktreeStateManager"
 import { capture as captureGitState, apply as applyGitState, type GitSnapshot } from "./git-transfer"

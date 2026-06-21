@@ -2,10 +2,10 @@
 // Local types — NOT from the SDK / API
 // ============================================
 // These types are specific to the VS Code extension and don't have
-// equivalents in @kilocode/sdk. All API types (Session, Event, Agent,
-// McpStatus, Config, etc.) should be imported from "@kilocode/sdk/v2/client".
+// equivalents in @takedeep/sdk. All API types (Session, Event, Agent,
+// McpStatus, Config, etc.) should be imported from "@takedeep/sdk/v2/client".
 
-import type { IndexingStatus as SdkIndexingStatus } from "@kilocode/sdk/v2/client"
+import type { IndexingStatus as SdkIndexingStatus } from "@takedeep/sdk/v2/client"
 
 /** Connection config used by the extension to reach the local CLI server */
 export interface ServerConfig {

@@ -33,7 +33,7 @@ export function registerCommitMessageService(
   connectionService: KiloConnectionService,
 ): vscode.Disposable[] {
   const command = vscode.commands.registerCommand(
-    "kilo-code.new.generateCommitMessage",
+    "takedeep.generateCommitMessage",
     async (arg?: vscode.SourceControl) => {
       const extension = vscode.extensions.getExtension<GitExtensionExports>("vscode.git")
       if (!extension) {

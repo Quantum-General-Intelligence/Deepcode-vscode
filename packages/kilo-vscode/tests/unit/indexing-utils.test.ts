@@ -2,7 +2,7 @@ import { describe, expect, it } from "bun:test"
 import { formatIndexingLabel, indexingTone } from "../../webview-ui/src/context/indexing-utils"
 import { mapSSEEventToWebviewMessage } from "../../src/kilo-provider-utils"
 import { configFeatures } from "../../src/features"
-import type { EventIndexingStatus, IndexingStatus } from "@kilocode/sdk/v2/client"
+import type { EventIndexingStatus, IndexingStatus } from "@takedeep/sdk/v2/client"
 
 function makeStatus(overrides: Partial<IndexingStatus> = {}): IndexingStatus {
   return {
@@ -95,10 +95,10 @@ describe("indexing feature detection", () => {
       configFeatures({ plugin: ["kilo-indexing@1.2.3"], experimental: { semantic_indexing: true } }).indexing,
     ).toBe(true)
     expect(
-      configFeatures({ plugin: ["@kilocode/kilo-indexing"], experimental: { semantic_indexing: true } }).indexing,
+      configFeatures({ plugin: ["@takedeep/indexing"], experimental: { semantic_indexing: true } }).indexing,
     ).toBe(true)
     expect(
-      configFeatures({ plugin: ["@kilocode/kilo-indexing@1.2.3"], experimental: { semantic_indexing: true } }).indexing,
+      configFeatures({ plugin: ["@takedeep/indexing@1.2.3"], experimental: { semantic_indexing: true } }).indexing,
     ).toBe(true)
     expect(
       configFeatures({
@@ -108,14 +108,14 @@ describe("indexing feature detection", () => {
     ).toBe(true)
     expect(
       configFeatures({
-        plugin: ["file:///tmp/node_modules/@kilocode/kilo-indexing/index.js"],
+        plugin: ["file:///tmp/node_modules/@takedeep/indexing/index.js"],
         experimental: { semantic_indexing: true },
       }).indexing,
     ).toBe(true)
   })
 
   it("ignores unrelated plugin lists", () => {
-    expect(configFeatures({ plugin: ["@kilocode/kilo-gateway"] }).indexing).toBe(false)
+    expect(configFeatures({ plugin: ["@takedeep/gateway"] }).indexing).toBe(false)
     expect(configFeatures({ plugin: ["file:///tmp/.opencode/plugin/index.js"] }).indexing).toBe(false)
     expect(configFeatures({}).indexing).toBe(false)
   })

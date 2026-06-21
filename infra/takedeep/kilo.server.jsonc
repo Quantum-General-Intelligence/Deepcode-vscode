@@ -1,0 +1,160 @@
+{
+  "$schema": "https://deeper-api.takedeep.ai/config.json",
+  "model": "litellm/Qualtron 4B",
+  "enabled_providers": [
+    "litellm",
+    "kilo"
+  ],
+  "disabled_providers": [
+    "opencode",
+    "opencode-go"
+  ],
+  "provider": {
+    "litellm": {
+      "name": "LiteLLM",
+      "env": [
+        "LITELLM_QUALTRON_MASTER_KEY",
+        "CF_ACCESS_SERVICE_TOKEN_ID",
+        "CF_ACCESS_SERVICE_TOKEN_SECRET"
+      ],
+      "options": {
+        "baseURL": "https://llm.qgi.dev/v1",
+        "litellmProxy": true
+      },
+      "models": {
+        "Qualtron 4B": {
+          "name": "Qualtron 4B",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        },
+        "Qulatron 4B": {
+          "name": "Qulatron 4B",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        },
+        "Qualtron-420B": {
+          "name": "Qualtron-420B",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        },
+        "Qulatron Ultra": {
+          "name": "Qulatron Ultra",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        },
+        "Opus 4.8 (AWS)": {
+          "name": "Opus 4.8 (AWS)",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        },
+        "Qulatron-Builder": {
+          "name": "Qulatron-Builder",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        },
+        "Qualtron GLM": {
+          "name": "Qualtron GLM",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        },
+        "Qualtron Pro": {
+          "name": "Qualtron Pro",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        },
+        "Qualtron-k2.7": {
+          "name": "Qualtron-k2.7",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        },
+        "Qualtron 550B": {
+          "name": "Qualtron 550B",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        },
+        "Qualtron-m2.7": {
+          "name": "Qualtron-m2.7",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        },
+        "Quatron-Mimo-pro": {
+          "name": "Quatron-Mimo-pro",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        },
+        "Qulatron-Max": {
+          "name": "Qulatron-Max",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        },
+        "Qualtron-k2.6": {
+          "name": "Qualtron-k2.6",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true,
+          "temperature": true
+        }
+      }
+    },
+    "kilo": {
+      "name": "TakeDeep Gateway",
+      "options": {
+        "baseURL": "https://deeper-api.takedeep.ai"
+      }
+    }
+  }
+}

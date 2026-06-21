@@ -15,7 +15,7 @@ Kilo CLI is an open source AI coding agent that generates code from natural lang
 - **Typecheck**: `bun turbo typecheck` (uses `tsgo`, not `tsc`)
 - **Test**: `bun test` from `packages/opencode/` (NOT from root -- root blocks tests)
 - **Single test**: `bun test ./test/tool/tool-define.test.ts` from `packages/opencode/`
-- **CLI build artifact size check**: after `bun run script/build.ts --single --skip-install` in `packages/opencode/`, use `du -h dist/*/*/bin/kilo` (scoped package output lives under `dist/@kilocode/`)
+- **CLI build artifact size check**: after `bun run script/build.ts --single --skip-install` in `packages/opencode/`, use `du -h dist/*/*/bin/deeper` (scoped package output lives under `dist/@takedeep/`)
 - **SDK regen**: After changing server endpoints in `packages/opencode/src/server/`, run `./script/generate.ts` from root to regenerate `packages/sdk/js/`
 - **Knip** (unused exports): `bun run knip` from `packages/kilo-vscode/`. CI runs this — all exported types/functions must be imported somewhere. Remove or unexport unused exports before pushing.
 - **Source links**: After adding or changing URLs in `packages/kilo-vscode/`, `packages/kilo-vscode/webview-ui/`, or `packages/opencode/src/`, run `bun run script/extract-source-links.ts` from the repo root and commit the updated `packages/kilo-docs/source-links.md`. CI runs this check — the build fails if the file is stale.
@@ -39,7 +39,7 @@ Never run root `bun test`; the root script prints `do not run tests from root` a
 
 ## Products
 
-All products are clients of the **CLI** (`packages/opencode/`), which contains the AI agent runtime, HTTP server, and session management. Each client spawns or connects to a `kilo serve` process and communicates via HTTP + SSE using `@kilocode/sdk`.
+All products are clients of the **CLI** (`packages/opencode/`), which contains the AI agent runtime, HTTP server, and session management. Each client spawns or connects to a `kilo serve` process and communicates via HTTP + SSE using `@takedeep/sdk`.
 
 | Product | Package | Description |
 |---|---|---|
@@ -58,17 +58,17 @@ Turborepo + Bun workspaces. The packages you'll work with most:
 
 | Package | Name | Purpose |
 |---|---|---|
-| `packages/opencode/` | `@kilocode/cli` | Core CLI -- agents, tools, sessions, server, TUI. This is where most work happens. |
-| `packages/sdk/js/` | `@kilocode/sdk` | Auto-generated TypeScript SDK (client for the server API). Do not edit `src/gen/` by hand. |
+| `packages/opencode/` | `@takedeep/cli` | Core CLI -- agents, tools, sessions, server, TUI. This is where most work happens. |
+| `packages/sdk/js/` | `@takedeep/sdk` | Auto-generated TypeScript SDK (client for the server API). Do not edit `src/gen/` by hand. |
 | `packages/kilo-vscode/` | `kilo-code` | VS Code extension with sidebar chat + Agent Manager. See its own `AGENTS.md` for details. |
-| `packages/kilo-gateway/` | `@kilocode/kilo-gateway` | Kilo auth, provider routing, API integration |
-| `packages/kilo-telemetry/` | `@kilocode/kilo-telemetry` | PostHog analytics + OpenTelemetry |
-| `packages/kilo-i18n/` | `@kilocode/kilo-i18n` | Internationalization / translations |
-| `packages/kilo-ui/` | `@kilocode/kilo-ui` | SolidJS component library shared by the extension webview and `packages/app/` |
+| `packages/kilo-gateway/` | `@takedeep/gateway` | Kilo auth, provider routing, API integration |
+| `packages/kilo-telemetry/` | `@takedeep/telemetry` | PostHog analytics + OpenTelemetry |
+| `packages/kilo-i18n/` | `@takedeep/i18n` | Internationalization / translations |
+| `packages/kilo-ui/` | `@takedeep/ui` | SolidJS component library shared by the extension webview and `packages/app/` |
 | `packages/app/` | `@opencode-ai/app` | Shared SolidJS web UI for desktop app and `kilo web` |
 | `packages/desktop/` | `@opencode-ai/desktop` | Tauri desktop app shell |
 | `packages/util/` | `@opencode-ai/util` | Shared utilities (error, path, retry, slug, etc.) |
-| `packages/plugin/` | `@kilocode/plugin` | Plugin/tool interface definitions |
+| `packages/plugin/` | `@takedeep/plugin` | Plugin/tool interface definitions |
 
 ## Style Guide
 

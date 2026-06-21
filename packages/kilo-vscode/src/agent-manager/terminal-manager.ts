@@ -13,7 +13,7 @@
  * architecture test happy and makes the manager easy to unit test.
  */
 
-import type { KiloClient } from "@kilocode/sdk/v2/client"
+import type { KiloClient } from "@takedeep/sdk/v2/client"
 
 /**
  * Everything the manager needs from the surrounding AgentManagerProvider.

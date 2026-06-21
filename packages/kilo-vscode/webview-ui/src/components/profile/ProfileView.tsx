@@ -1,11 +1,12 @@
 import { Component, Show, createSignal, createMemo, createEffect, onMount } from "solid-js"
-import { Button } from "@kilocode/kilo-ui/button"
-import { Card } from "@kilocode/kilo-ui/card"
-import { Icon } from "@kilocode/kilo-ui/icon"
-import { Select } from "@kilocode/kilo-ui/select"
-import { Tooltip } from "@kilocode/kilo-ui/tooltip"
+import { Button } from "@takedeep/ui/button"
+import { Card } from "@takedeep/ui/card"
+import { Icon } from "@takedeep/ui/icon"
+import { Select } from "@takedeep/ui/select"
+import { Tooltip } from "@takedeep/ui/tooltip"
 import { useVSCode } from "../../context/vscode"
 import { useLanguage } from "../../context/language"
+import { BRAND } from "../../brand"
 import DeviceAuthCard from "./DeviceAuthCard"
 import type { ProfileData, DeviceAuthState } from "../../types/messages"
 
@@ -90,7 +91,7 @@ const ProfileView: Component<ProfileViewProps> = (props) => {
   }
 
   const handleDashboard = () => {
-    vscode.postMessage({ type: "openExternal", url: "https://app.kilo.ai/profile" })
+    vscode.postMessage({ type: "openExternal", url: `${BRAND.appUrl}/profile` })
   }
 
   const handleCancelLogin = () => {

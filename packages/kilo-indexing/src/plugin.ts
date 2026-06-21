@@ -1,4 +1,4 @@
-import type { Plugin } from "@kilocode/plugin"
+import type { Plugin } from "@takedeep/plugin"
 
 // RATIONALE: The host runtime owns lifecycle, routes, and native tool wiring.
 // The plugin entry exists so workspaces can opt into indexing with a normal

@@ -1,7 +1,7 @@
 // kilocode_change - new file
 //
 // Tests that the kilo custom loader keeps paid models visible without authentication.
-// Mocks fetchKiloModels from @kilocode/kilo-gateway to avoid real network
+// Mocks fetchKiloModels from @takedeep/gateway to avoid real network
 // calls (which fail on Windows CI).
 
 import { test, expect, mock } from "bun:test"
@@ -10,11 +10,11 @@ import { unlink } from "fs/promises"
 
 // Bun's mock.module() is process-wide and permanent — it replaces the module
 // for ALL test files in the same runner process. To avoid breaking other tests
-// that import @kilocode/kilo-gateway, we spread the real exports and only
+// that import @takedeep/gateway, we spread the real exports and only
 // override fetchKiloModels with a stub that returns both free and paid models.
-const real = await import("@kilocode/kilo-gateway")
+const real = await import("@takedeep/gateway")
 
-mock.module("@kilocode/kilo-gateway", () => ({
+mock.module("@takedeep/gateway", () => ({
   ...real,
   fetchKiloModels: async () => ({
     "free-model": {

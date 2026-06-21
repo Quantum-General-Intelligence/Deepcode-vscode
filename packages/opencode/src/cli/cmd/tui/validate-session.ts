@@ -1,4 +1,4 @@
-import { createKiloClient } from "@kilocode/sdk/v2"
+import { createKiloClient } from "@takedeep/sdk/v2"
 import { SessionID } from "@/session/schema"
 
 export async function validateSession(input: {

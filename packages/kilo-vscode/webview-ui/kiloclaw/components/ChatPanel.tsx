@@ -1,7 +1,7 @@
 // KiloClaw chat panel — message list + input
 
 import { createSignal, createEffect, For, Show, createMemo, onMount } from "solid-js"
-import { Button } from "@kilocode/kilo-ui/button"
+import { Button } from "@takedeep/ui/button"
 import { useClaw } from "../context/claw"
 import { useKiloClawLanguage } from "../context/language"
 import { MessageBubble } from "./MessageBubble"

@@ -56,12 +56,12 @@ async function defaultModel() {
   return run((provider) => provider.defaultModel())
 }
 
-// kilocode_change start - upstream #24416 fixture adapted for @kilocode/plugin
+// kilocode_change start - upstream #24416 fixture adapted for @takedeep/plugin
 async function markPluginDependenciesReady(dir: string) {
   await mkdir(path.join(dir, "node_modules"), { recursive: true })
   await Bun.write(
     path.join(dir, "package-lock.json"),
-    JSON.stringify({ packages: { "": { dependencies: { "@kilocode/plugin": "0.0.0" } } } }),
+    JSON.stringify({ packages: { "": { dependencies: { "@takedeep/plugin": "0.0.0" } } } }),
   )
 }
 // kilocode_change end

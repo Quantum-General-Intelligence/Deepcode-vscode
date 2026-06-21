@@ -9,7 +9,7 @@ import type {
   QuestionRequest,
   Session,
   Todo,
-} from "@kilocode/sdk/v2/client"
+} from "@takedeep/sdk/v2/client"
 import { showToast } from "@opencode-ai/ui/toast"
 import { getFilename } from "@opencode-ai/shared/util/path"
 import { retry } from "@opencode-ai/shared/util/retry"

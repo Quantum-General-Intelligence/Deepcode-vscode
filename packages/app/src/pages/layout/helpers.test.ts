@@ -6,7 +6,7 @@ import {
   parseDeepLink,
   parseNewSessionDeepLink,
 } from "./deep-links"
-import { type Session } from "@kilocode/sdk/v2/client"
+import { type Session } from "@takedeep/sdk/v2/client"
 import {
   childSessionOnPath,
   displayName,

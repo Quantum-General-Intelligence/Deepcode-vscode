@@ -1,5 +1,5 @@
-import { createKiloClient } from "@kilocode/sdk/v2"
-import type { GlobalEvent } from "@kilocode/sdk/v2"
+import { createKiloClient } from "@takedeep/sdk/v2"
+import type { GlobalEvent } from "@takedeep/sdk/v2"
 import { createSimpleContext } from "./helper"
 import { createGlobalEmitter } from "@solid-primitives/event-bus"
 import { Flag } from "@/flag/flag"

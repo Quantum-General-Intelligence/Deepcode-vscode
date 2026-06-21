@@ -12,7 +12,7 @@ import { useServer } from "./server"
 import { useProvider } from "./provider"
 import { useConfig } from "./config"
 import { useLanguage } from "./language"
-import { showToast } from "@kilocode/kilo-ui/toast"
+import { showToast } from "@takedeep/ui/toast"
 import type {
   SessionInfo,
   Message,

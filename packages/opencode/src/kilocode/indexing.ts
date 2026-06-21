@@ -5,16 +5,16 @@ import {
   CodeIndexManager,
   type IndexingTelemetryEvent,
   type VectorStoreSearchResult,
-} from "@kilocode/kilo-indexing/engine"
-import { toIndexingConfigInput } from "@kilocode/kilo-indexing/config"
-import { hasIndexingPlugin } from "@kilocode/kilo-indexing/detect"
+} from "@takedeep/indexing/engine"
+import { toIndexingConfigInput } from "@takedeep/indexing/config"
+import { hasIndexingPlugin } from "@takedeep/indexing/detect"
 import {
   IndexingStatus,
   INDEXING_STATUS_STATES,
   disabledIndexingStatus,
   normalizeIndexingStatus,
-} from "@kilocode/kilo-indexing/status"
-import { Telemetry } from "@kilocode/kilo-telemetry"
+} from "@takedeep/indexing/status"
+import { Telemetry } from "@takedeep/telemetry"
 import { Instance } from "@/project/instance"
 import { Bus } from "@/bus"
 import { BusEvent } from "@/bus/bus-event"

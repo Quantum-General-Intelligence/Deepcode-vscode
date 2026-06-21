@@ -1,7 +1,7 @@
 #!/usr/bin/env bun
 /**
  * Watches packages/opencode/src/ for changes and rebuilds the CLI binary,
- * then copies it into packages/kilo-vscode/bin/kilo.
+ * then copies it into packages/kilo-vscode/bin/deeper.
  *
  * Used during development so the VS Code extension always has an up-to-date
  * CLI backend without manual rebuild steps.
@@ -15,7 +15,7 @@ const packagesDir = join(kiloVscodeDir, "..")
 const opencodeDir = join(packagesDir, "opencode")
 const opencodeSrcDir = join(opencodeDir, "src")
 const targetBinDir = join(kiloVscodeDir, "bin")
-const targetBinPath = join(targetBinDir, "kilo")
+const targetBinPath = join(targetBinDir, process.platform === "win32" ? "deeper.exe" : "deeper")
 
 let building = false
 let pending = false
@@ -26,7 +26,7 @@ function log(msg: string) {
 }
 
 function sourceBinaryPath(): string {
-  return join(opencodeDir, "dist", `@kilocode/cli-${process.platform}-${process.arch}`, "bin", "kilo")
+  return join(opencodeDir, "dist", `@takedeep/cli-${process.platform}-${process.arch}`, "bin", process.platform === "win32" ? "deeper.exe" : "deeper")
 }
 
 async function rebuild() {

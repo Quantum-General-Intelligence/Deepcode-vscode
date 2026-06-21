@@ -19,7 +19,6 @@ import {
   ErrorBoundary,
   For,
   type JSX,
-  lazy,
   onCleanup,
   type ParentProps,
   Show,
@@ -42,18 +41,14 @@ import { ServerConnection, ServerProvider, serverName, useServer } from "@/conte
 import { SettingsProvider } from "@/context/settings"
 import { TerminalProvider } from "@/context/terminal"
 import DirectoryLayout from "@/pages/directory-layout"
+import Home from "@/pages/home"
 import Layout from "@/pages/layout"
+import SessionPage from "@/pages/session"
 import { ErrorPage } from "./pages/error"
 import { useCheckServerHealth } from "./utils/server-health"
 
-const HomeRoute = lazy(() => import("@/pages/home"))
-const loadSession = () => import("@/pages/session")
-const Session = lazy(loadSession)
-const Loading = () => <div class="size-full" />
-
-if (typeof location === "object" && /\/session(?:\/|$)/.test(location.pathname)) {
-  void loadSession()
-}
+const HomeRoute = Home
+const Session = SessionPage
 
 const SessionRoute = () => (
   <SessionProviders>
@@ -121,10 +116,8 @@ function SessionProviders(props: ParentProps) {
 function RouterRoot(props: ParentProps<{ appChildren?: JSX.Element }>) {
   return (
     <AppShellProviders>
-      {/*<Suspense fallback={<Loading />}>*/}
       {props.appChildren}
       {props.children}
-      {/*</Suspense>*/}
     </AppShellProviders>
   )
 }

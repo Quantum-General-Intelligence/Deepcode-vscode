@@ -3,7 +3,7 @@
  *
  * Shared between extension code (src/) and webview code (webview-ui/).
  * When adding a new model, update ONLY this file and package.json's
- * `kilo-code.new.autocomplete.model` enum.
+ * `takedeep.autocomplete.model` enum.
  */
 
 export interface AutocompleteModelDef {

@@ -99,7 +99,7 @@ export namespace KiloProjectID {
     readonly get: () => Effect.Effect<string | undefined>
   }
 
-  export class Service extends Context.Service<Service, Interface>()("@kilocode/KiloProjectID") {}
+  export class Service extends Context.Service<Service, Interface>()("@takedeep/ProjectID") {}
 
   export const layer = Layer.effect(
     Service,

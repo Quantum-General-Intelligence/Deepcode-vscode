@@ -13,7 +13,7 @@
  */
 
 import { Component, Index, createMemo, createEffect, on, onCleanup } from "solid-js"
-import { Tooltip } from "@kilocode/kilo-ui/tooltip"
+import { Tooltip } from "@takedeep/ui/tooltip"
 import { useSession } from "../../context/session"
 import { color, label } from "../../utils/timeline/colors"
 import { sizes, MAX_HEIGHT } from "../../utils/timeline/sizes"
