@@ -5,6 +5,7 @@ node_modules
 .sst
 .env
 .env-local
+.env.production.local
 .idea/*
 !.idea/gradle.xml
 !.idea/.run
