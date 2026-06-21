@@ -5,7 +5,7 @@ description: "Browse and switch models from the Control UI chat"
 
 # Changing Models
 
-The Control UI Chat tab doubles as a command line for model management. KiloClaw exposes 335+ models through the `kilocode` provider and you can browse and switch between them without leaving the chat.
+The Control UI Chat tab doubles as a command line for model management. TakeDeep Claw exposes 335+ models through the `kilocode` provider and you can browse and switch between them without leaving the chat.
 
 | Command | Description |
 |---|---|
@@ -17,6 +17,6 @@ The Control UI Chat tab doubles as a command line for model management. KiloClaw
 
 Each `/models` response includes helper text at the bottom with shortcuts for switching, paging, and listing all models.
 
-To change the default model for all new sessions, edit `agents.defaults.model.primary` in your `openclaw.json` via **Config** in the Control UI (or the [KiloClaw Dashboard](/docs/kiloclaw/dashboard#changing-the-model) for a quick dropdown pick).
+To change the default model for all new sessions, edit `agents.defaults.model.primary` in your `openclaw.json` via **Config** in the Control UI (or the [TakeDeep Claw Dashboard](/docs/kiloclaw/dashboard#changing-the-model) for a quick dropdown pick).
 
 For the full list of providers, advanced configuration, and CLI commands, see the [OpenClaw Model Providers documentation](https://docs.openclaw.ai/providers).

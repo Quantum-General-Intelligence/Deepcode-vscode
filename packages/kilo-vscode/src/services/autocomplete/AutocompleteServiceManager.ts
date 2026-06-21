@@ -339,12 +339,12 @@ export class AutocompleteServiceManager {
   private handleFatalAutocompleteError(status: number | null): void {
     const msg =
       status === 402
-        ? t("kilocode:autocomplete.creditsExhausted.message")
-        : t("kilocode:autocomplete.authError.message")
+        ? t("takedeep:autocomplete.creditsExhausted.message")
+        : t("takedeep:autocomplete.authError.message")
 
     if (status === 402) {
-      vscode.window.showWarningMessage(msg, t("kilocode:autocomplete.creditsExhausted.addCredits")).then((choice) => {
-        if (choice === t("kilocode:autocomplete.creditsExhausted.addCredits")) {
+      vscode.window.showWarningMessage(msg, t("takedeep:autocomplete.creditsExhausted.addCredits")).then((choice) => {
+        if (choice === t("takedeep:autocomplete.creditsExhausted.addCredits")) {
           vscode.env.openExternal(vscode.Uri.parse(`${APP_URL}/credits`))
         }
       })
@@ -378,9 +378,9 @@ export class AutocompleteServiceManager {
   }
 
   public async showIncompatibilityExtensionPopup() {
-    const message = t("kilocode:autocomplete.incompatibilityExtensionPopup.message")
-    const disableCopilot = t("kilocode:autocomplete.incompatibilityExtensionPopup.disableCopilot")
-    const disableInlineAssist = t("kilocode:autocomplete.incompatibilityExtensionPopup.disableInlineAssist")
+    const message = t("takedeep:autocomplete.incompatibilityExtensionPopup.message")
+    const disableCopilot = t("takedeep:autocomplete.incompatibilityExtensionPopup.disableCopilot")
+    const disableInlineAssist = t("takedeep:autocomplete.incompatibilityExtensionPopup.disableInlineAssist")
     const response = await vscode.window.showErrorMessage(message, disableCopilot, disableInlineAssist)
 
     if (response === disableCopilot) {

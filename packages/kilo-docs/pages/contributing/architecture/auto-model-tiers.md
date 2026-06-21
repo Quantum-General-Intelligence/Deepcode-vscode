@@ -109,7 +109,7 @@ Auto Model uses a split client/server architecture. The actual model-to-mode map
 
 ### Server side (Kilo API)
 
-The Kilo API at `api.kilo.ai` defines which underlying models each `kilo-auto/*` tier routes to per mode. Each auto model is returned with an `opencode.variants` field — a map of mode-specific provider options:
+The TakeDeep API at `deeper-api.takedeep.ai` defines which underlying models each `kilo-auto/*` tier routes to per mode. Each auto model is returned with an `opencode.variants` field — a map of mode-specific provider options:
 
 ```json
 {
@@ -128,9 +128,9 @@ This is fetched via `packages/kilo-gateway/src/api/models.ts` which parses the `
 
 The client-side chain works as follows:
 
-1. **Model fetching**: `packages/opencode/src/provider/model-cache.ts` caches Kilo Gateway models with a 5-minute TTL, fetching from the Kilo API.
+1. **Model fetching**: `packages/opencode/src/provider/model-cache.ts` caches TakeDeep Gateway models with a 5-minute TTL, fetching from the Kilo API.
 
-2. **Variant passthrough**: `packages/opencode/src/provider/transform.ts` — the `variants()` function passes through server-defined variants for Kilo Gateway models directly, rather than computing them locally.
+2. **Variant passthrough**: `packages/opencode/src/provider/transform.ts` — the `variants()` function passes through server-defined variants for TakeDeep Gateway models directly, rather than computing them locally.
 
 3. **Variant storage**: `packages/opencode/src/provider/provider.ts` stores `variants` on the model object when the provider is `kilo`.
 
@@ -144,9 +144,9 @@ The client-side chain works as follows:
 |---|---|
 | `packages/kilo-gateway/src/api/constants.ts` | Default model constants (`DEFAULT_MODEL`, `DEFAULT_FREE_MODEL`) |
 | `packages/kilo-gateway/src/api/models.ts` | Fetches models from Kilo API, parses `opencode.variants` |
-| `packages/opencode/src/provider/model-cache.ts` | Caches Kilo Gateway models with 5-min TTL |
+| `packages/opencode/src/provider/model-cache.ts` | Caches TakeDeep Gateway models with 5-min TTL |
 | `packages/opencode/src/provider/provider.ts` | Preserves variants for kilo provider; `getSmallModel()` prioritizes `kilo-auto/small` |
-| `packages/opencode/src/provider/transform.ts` | Passes through server-defined variants for Kilo Gateway models |
+| `packages/opencode/src/provider/transform.ts` | Passes through server-defined variants for TakeDeep Gateway models |
 | `packages/opencode/src/session/prompt.ts` | Resolves variant from agent config, attaches to user messages |
 | `packages/opencode/src/session/llm.ts` | Merges variant options into LLM call parameters |
 | `packages/opencode/src/config/config.ts` | Agent config schema includes `variant` field |

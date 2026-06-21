@@ -1,15 +1,15 @@
 ---
 title: "Pre-installed Software"
-description: "Default system utilities, languages, and CLI tools included in the KiloClaw Docker image"
+description: "Default system utilities, languages, and CLI tools included in the TakeDeep Claw Docker image"
 ---
 
 # Pre-installed Software
 
-Every KiloClaw instance ships with a curated set of system utilities, language runtimes, package managers, and CLI tools. This page documents everything that comes pre-installed in the KiloClaw Docker image so you know what's available out of the box. Where a specific version is listed it reflects the pin in the Dockerfile as of March 2026. Entries marked **unpinned** install the latest available version at image build time and may differ between releases.
+Every TakeDeep Claw instance ships with a curated set of system utilities, language runtimes, package managers, and CLI tools. This page documents everything that comes pre-installed in the TakeDeep Claw Docker image so you know what's available out of the box. Where a specific version is listed it reflects the pin in the Dockerfile as of March 2026. Entries marked **unpinned** install the latest available version at image build time and may differ between releases.
 
 ## Base Image
 
-KiloClaw is built on **Debian Bookworm** (`debian:bookworm-slim`). Since it's Debian-based, you can use `apt` to install additional packages at any time:
+TakeDeep Claw is built on **Debian Bookworm** (`debian:bookworm-slim`). Since it's Debian-based, you can use `apt` to install additional packages at any time:
 
 ```bash
 apt update && apt install -y <package>
@@ -101,12 +101,12 @@ Your agent can install additional tools at runtime:
 - **Python packages:** `pip install <package>`
 
 {% callout type="tip" %}
-These tools receive updates when you **Upgrade & Redeploy** your instance from the [KiloClaw Dashboard](/docs/kiloclaw/dashboard#redeploy). Check the changelog for image update announcements.
+These tools receive updates when you **Upgrade & Redeploy** your instance from the [TakeDeep Claw Dashboard](/docs/kiloclaw/dashboard#redeploy). Check the changelog for image update announcements.
 {% /callout %}
 
 ## Related
 
-- [KiloClaw Overview](/docs/kiloclaw/overview)
+- [TakeDeep Claw Overview](/docs/kiloclaw/overview)
 - [Dashboard Reference](/docs/kiloclaw/dashboard)
 - [Machine Specs](/docs/kiloclaw/dashboard#machine-specs)
 - [Troubleshooting](/docs/kiloclaw/troubleshooting)

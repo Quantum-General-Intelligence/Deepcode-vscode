@@ -24,9 +24,14 @@ export type ShareData =
   | { type: "model"; data: unknown }
 
 // kilocode_change start
-/** Extract share ID from a Kilo share URL like https://app.kilo.ai/s/abc123 */
+import { BRAND } from "@/takedeep/brand"
+
+/** Extract share ID from a TakeDeep share URL like https://deeper-dash.takedeep.ai/s/abc123 */
 export function parseShareUrl(url: string): string | null {
-  const match = url.match(/^https?:\/\/app\.kilo\.ai\/s\/([a-zA-Z0-9_-]+)$/)
+  const legacy = url.match(/^https?:\/\/app\.kilo\.ai\/s\/([a-zA-Z0-9_-]+)$/)
+  if (legacy) return legacy[1]
+  const host = BRAND.shareUrl.replace(/\/s\/?$/, "")
+  const match = url.match(new RegExp(`^${host.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}/s/([a-zA-Z0-9_-]+)$`))
   return match ? match[1] : null
 }
 // kilocode_change end
@@ -145,7 +150,7 @@ export const ImportCommand = cmd({
         // kilocode_change start
         const slug = parseShareUrl(args.file)
         if (!slug) {
-          process.stdout.write(`Invalid URL format. Expected: https://app.kilo.ai/s/<id>`)
+          process.stdout.write(`Invalid URL format. Expected: ${BRAND.shareUrl}/<id>`)
           process.stdout.write(EOL)
           return
         }

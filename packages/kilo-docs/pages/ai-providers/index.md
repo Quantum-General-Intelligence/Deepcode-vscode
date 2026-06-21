@@ -1,15 +1,15 @@
 ---
 title: "AI Providers"
-description: "Configure and connect different AI model providers to Kilo Code"
+description: "Configure and connect different AI model providers to TakeDeep"
 ---
 
 # AI Providers
 
-Kilo Code supports a wide variety of AI providers, giving you flexibility in how you power your AI-assisted development workflow. Choose from cloud providers, local models, or AI gateways based on your needs.
+TakeDeep supports a wide variety of AI providers, giving you flexibility in how you power your AI-assisted development workflow. Choose from cloud providers, local models, or AI gateways based on your needs.
 
 ## Getting Started
 
-The fastest way to get started is with **Kilo Code's built-in provider**, which requires no configuration. Simply sign in and start coding.
+The fastest way to get started is with **TakeDeep's built-in provider**, which requires no configuration. Simply sign in and start coding.
 
 For users who want to use their own API keys or need specific models, we support over 30 providers.
 
@@ -50,7 +50,7 @@ Route requests through unified APIs with additional features:
 
 | Priority | Recommended Provider |
 |---|---|
-| Ease of use | [Kilo Code (built-in)](/docs/ai-providers/kilocode) |
+| Ease of use | [TakeDeep (built-in)](/docs/ai-providers/kilocode) |
 | Best value | Zhipu AI or Mistral |
 | Privacy/Offline | Ollama or LM Studio |
 | Enterprise | AWS Bedrock or Google Vertex |
@@ -63,16 +63,16 @@ Route requests through unified APIs with additional features:
 - **Regional** - Better latency in certain locations
 
 {% callout type="note" %}
-In the **VSCode (Legacy)** version, API keys use VS Code's Secret Storage. In the current **VSCode & CLI** version, keys are set via environment variables or referenced in `kilo.json` config files. See individual provider pages for setup instructions for each platform.
+In the **VSCode (Legacy)** version, API keys use VS Code's Secret Storage. In the current **VSCode & CLI** version, keys are set via environment variables or referenced in `takedeep.json` config files. See individual provider pages for setup instructions for each platform.
 {% /callout %}
 
 ## Disabling Built-in Providers
 
-You can prevent specific providers from loading using `disabled_providers` in your `kilo.json` (or `kilo.jsonc`). This is useful to hide models from built-in or detected providers that you don't intend to use.
+You can prevent specific providers from loading using `disabled_providers` in your `takedeep.json` (or `takedeep.jsonc`). This is useful to hide models from built-in or detected providers that you don't intend to use.
 
 ```json
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "disabled_providers": ["kilo", "openai"]
 }
 ```
@@ -81,7 +81,7 @@ To allow only specific providers and disable everything else, use `enabled_provi
 
 ```json
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "enabled_providers": ["anthropic"]
 }
 ```
@@ -90,6 +90,6 @@ Both fields accept provider IDs — the lowercase identifier used in the `provid
 
 ## Next Steps
 
-- **New to Kilo Code?** Start with the [Kilo Code provider](/docs/ai-providers/kilocode) - no setup required
+- **New to TakeDeep?** Start with the [TakeDeep provider](/docs/ai-providers/kilocode) - no setup required
 - **Have an API key?** Jump to your provider's page for configuration instructions
 - **Want to compare?** Check out [Model Selection](/docs/code-with-ai/agents/model-selection) for guidance on choosing models

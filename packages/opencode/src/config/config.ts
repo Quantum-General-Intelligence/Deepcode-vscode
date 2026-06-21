@@ -49,7 +49,10 @@ import { KilocodeDefaultPlugins } from "@/kilocode/config/default-plugins" // ki
 import { IndexingConfig as KiloIndexingConfig } from "@takedeep/indexing/config" // kilocode_change
 import { makeRuntime } from "@/effect/run-service"
 import { unique } from "remeda"
+import { BRAND } from "@/takedeep/brand"
 // kilocode_change end
+
+const CONFIG_SCHEMA = BRAND.configSchemaUrl // kilocode_change
 
 const log = Log.create({ service: "config" })
 
@@ -163,7 +166,7 @@ export const Info = Schema.Struct({
   // kilocode_change start
   // NOTE: Any new kilocode_change key added to Config.Info must also be mirrored in
   // apps/web/src/app/config.json/extras.ts in the cloud repo, otherwise
-  // $schema: https://app.kilo.ai/config.json will not recognize it.
+  // $schema: TakeDeep config schema URL.
   remote_control: Schema.optional(Schema.Boolean).annotate({
     description: "Enable remote control of sessions via Kilo Cloud. Equivalent to running /remote on startup.",
   }),
@@ -344,7 +347,7 @@ export class Service extends Context.Service<Service, Interface>()("@opencode/Co
 
 function globalConfigFile() {
   // kilocode_change start
-  const candidates = ["kilo.jsonc", "kilo.json", "opencode.jsonc", "opencode.json", "config.json"].map((file) =>
+  const candidates = ["takedeep.jsonc", "takedeep.json", "kilo.jsonc", "kilo.json", "opencode.jsonc", "opencode.json", "config.json"].map((file) =>
     // kilocode_change end
     path.join(Global.Path.config, file),
   )
@@ -441,8 +444,8 @@ export const layer = Layer.effect(
 
       yield* Effect.promise(() => resolveLoadedPlugins(data, options.path))
       if (!data.$schema) {
-        data.$schema = "https://app.kilo.ai/config.json" // kilocode_change
-        const updated = text.replace(/^\s*\{/, '{\n  "$schema": "https://app.kilo.ai/config.json",') // kilocode_change
+        data.$schema = CONFIG_SCHEMA // kilocode_change
+        const updated = text.replace(/^\s*\{/, `{\n  "$schema": "${CONFIG_SCHEMA}",`) // kilocode_change
         yield* fs.writeFileString(options.path, updated).pipe(Effect.catch(() => Effect.void))
       }
       return data
@@ -475,7 +478,7 @@ export const layer = Layer.effect(
             .then(async (mod) => {
               const { provider, model, ...rest } = mod.default
               if (provider && model) result.model = `${provider}/${model}`
-              result["$schema"] = "https://app.kilo.ai/config.json" // kilocode_change
+              result["$schema"] = CONFIG_SCHEMA // kilocode_change
               result = mergeDeep(result, rest)
               await fsNode.writeFile(path.join(Global.Path.config, "config.json"), JSON.stringify(result, null, 2))
               await fsNode.unlink(legacy)
@@ -603,7 +606,7 @@ export const layer = Layer.effect(
                 }
                 const wellknown = (await response.json()) as { config?: Record<string, unknown> }
                 const remoteConfig = wellknown.config ?? {}
-                if (!remoteConfig.$schema) remoteConfig.$schema = "https://app.kilo.ai/config.json"
+                if (!remoteConfig.$schema) remoteConfig.$schema = CONFIG_SCHEMA
                 return remoteConfig
               },
               catch: (err) => err,

@@ -1,12 +1,12 @@
 ---
 title: "Account and Integration"
-description: "Questions about accounts and integrations in Kilo Code"
+description: "Questions about accounts and integrations in TakeDeep"
 tocDepth: 2
 ---
 
 # Account and Integration
 
-This section contains questions about accounts and integrations in Kilo Code.
+This section contains questions about accounts and integrations in TakeDeep.
 
 ## Account
 
@@ -40,5 +40,5 @@ To unlink your GitHub account, follow these steps:
    - **Edit** which repositories are connected
 
 {% callout type="tip" %}
-If you'd like to reconnect GitHub later, simply open your Kilo Code profile, go to **Integrations**, and connect GitHub again.
+If you'd like to reconnect GitHub later, simply open your TakeDeep profile, go to **Integrations**, and connect GitHub again.
 {% /callout %}

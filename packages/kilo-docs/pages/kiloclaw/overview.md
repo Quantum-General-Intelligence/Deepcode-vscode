@@ -1,41 +1,41 @@
 ---
-title: "KiloClaw"
+title: "TakeDeep Claw"
 description: "One-click deployment of your personal AI agent with OpenClaw"
 ---
 
-# KiloClaw 🦀
+# TakeDeep Claw 🦀
 
-KiloClaw is Kilo's hosted [OpenClaw](https://openclaw.ai) service — a one-click deployment that gives you a personal AI agent without the complexity of self-hosting. OpenClaw is a 24/7, open source AI agent that connects to chat platforms like Telegram, Discord, and Slack so it can take real actions automatically, not just chat.
+TakeDeep Claw is Kilo's hosted [OpenClaw](https://openclaw.ai) service — a one-click deployment that gives you a personal AI agent without the complexity of self-hosting. OpenClaw is a 24/7, open source AI agent that connects to chat platforms like Telegram, Discord, and Slack so it can take real actions automatically, not just chat.
 
-KiloClaw is powered by KiloCode. The API key is platform-managed, so you never need to bring your own. KiloClaw is currently in **Beta**.
+TakeDeep Claw is powered by KiloCode. The API key is platform-managed, so you never need to bring your own. TakeDeep Claw is currently in **Beta**.
 
-## Why KiloClaw?
+## Why TakeDeep Claw?
 
 - **No infrastructure setup** — Skip Docker, servers, and configuration files
 - **Instant provisioning** — Your agent is ready in seconds
 - **Powered by KiloCode** — API key is automatically generated and refreshed
-- **Uses existing credits** — Runs on your Kilo Gateway balance
+- **Uses existing credits** — Runs on your TakeDeep Gateway balance
 - **Multiple free models** — Choose from several models at no additional cost
 - **Web UI included** — Access your agent's web interface directly from the dashboard
 
 ## Prerequisites
 
-- **Kilo account** — Sign up at [kilo.ai](https://kilo.ai) if you haven't already
-- **Model access** — KiloClaw uses **Kilo Gateway by default**, which provides access to **500+ AI models** through a single integration.
+- **TakeDeep account** — Sign up at [deeper-api.takedeep.ai](https://deeper-api.takedeep.ai) if you haven't already
+- **Model access** — TakeDeep Claw uses **TakeDeep Gateway by default**, which provides access to **500+ AI models** through a single integration.
 
-You can also run KiloClaw using:
+You can also run TakeDeep Claw using:
 
 - **Your own provider API keys (BYOK)** such as Anthropic, OpenAI, Google, or other supported providers.
 
 ## Creating an Instance
 
-1. Navigate to your [Kilo profile](https://app.kilo.ai/profile)
+1. Navigate to your [Kilo profile](https://deeper-dash.takedeep.ai/profile)
 2. Click **Claw** in the left navigation
 
 {% image src="/docs/img/kiloclaw/profile-claw-nav.png" alt="Profile page showing Claw navigation" width="400" caption="Claw navigation in profile sidebar" /%}
 
 3. Click **Create Instance**
-4. Select your preferred model from the dropdown. See all available models at the [Kilo Leaderboard](https://kilo.ai/leaderboard#all-models).
+4. Select your preferred model from the dropdown. See all available models at the [Kilo Leaderboard](https://deeper-api.takedeep.ai/leaderboard#all-models).
 
 {% image src="/docs/img/kiloclaw/create-instance.png" alt="Create instance modal with model selection" width="600" caption="Model selection during instance creation" /%}
 
@@ -46,7 +46,7 @@ Your instance will be provisioned in seconds. Each instance runs on a dedicated 
 
 ## Managing Your Instance
 
-The KiloClaw dashboard gives you full control over your instance.
+The TakeDeep Claw dashboard gives you full control over your instance.
 
 {% image src="/docs/img/kiloclaw/instance-dashboard.png" alt="Instance dashboard with controls and status" width="800" caption="Instance management dashboard" /%}
 
@@ -79,11 +79,11 @@ OpenClaw lets you customize your own AI assistant that can actually take action 
 
 ### Browser Tool
 
-KiloClaw includes a headless Chromium browser, enabling your agent to browse the web, take screenshots, and automate web interactions using the OpenClaw browser tool. This works out of the box with the "full" tool profile — no additional setup needed.
+TakeDeep Claw includes a headless Chromium browser, enabling your agent to browse the web, take screenshots, and automate web interactions using the OpenClaw browser tool. This works out of the box with the "full" tool profile — no additional setup needed.
 
 ### Default Tool Profile
 
-New KiloClaw instances deploy with the **full** tool profile by default, giving your agent unrestricted access to all available tools — filesystem operations, shell execution, web search, browser automation, messaging, memory, sub-agents, and more.
+New TakeDeep Claw instances deploy with the **full** tool profile by default, giving your agent unrestricted access to all available tools — filesystem operations, shell execution, web search, browser automation, messaging, memory, sub-agents, and more.
 
 For more information on use cases:
 
@@ -96,7 +96,7 @@ For more information on use cases:
 - [Dashboard Reference](/docs/kiloclaw/dashboard)
 - [Connecting Chat Platforms](/docs/kiloclaw/chat-platforms)
 - [Troubleshooting](/docs/kiloclaw/troubleshooting)
-- [KiloClaw Pricing](/docs/kiloclaw/faq/pricing)
+- [TakeDeep Claw Pricing](/docs/kiloclaw/faq/pricing)
 - [Gateway Usage and Billing](/docs/gateway/usage-and-billing)
 - [Agent Manager](/docs/automate/agent-manager)
 - [OpenClaw Documentation](https://docs.openclaw.ai)

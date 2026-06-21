@@ -1,17 +1,17 @@
 ---
 title: "Slack"
-description: "Using KiloClaw with Slack"
+description: "Using TakeDeep Claw with Slack"
 ---
 
 # Slack
 
-This page covers everything you need to use KiloClaw with Slack: connecting your bot, controlling who can DM it, and adding it to channels.
+This page covers everything you need to use TakeDeep Claw with Slack: connecting your bot, controlling who can DM it, and adding it to channels.
 
-## Connecting KiloClaw to Slack
+## Connecting TakeDeep Claw to Slack
 
-{% youtube url="https://youtu.be/Q5bt-qH-_pY" title="Slack Setup Guide" caption="How to connect your KiloClaw agent to Slack" /%}
+{% youtube url="https://youtu.be/Q5bt-qH-_pY" title="Slack Setup Guide" caption="How to connect your TakeDeep Claw agent to Slack" /%}
 
-Create a Slack app from the OpenClaw manifest and link it to your KiloClaw dashboard.
+Create a Slack app from the OpenClaw manifest and link it to your TakeDeep Claw dashboard.
 
 ### Step 1: Create a Slack App from the OpenClaw Manifest
 
@@ -40,29 +40,29 @@ You need two tokens from Slack:
 2. Install the app to your workspace
 3. Copy the **Bot User OAuth Token** (starts with `xoxb-`)
 
-### Step 3: Connect Slack to KiloClaw
+### Step 3: Connect Slack to TakeDeep Claw
 
-1. In the [KiloClaw UI](https://app.kilo.ai/claw), find the Slack integration section (may show "not configured")
+1. In the [TakeDeep Claw UI](https://deeper-dash.takedeep.ai/claw), find the Slack integration section (may show "not configured")
 2. Enter both tokens:
    - The `xapp-` app-level token
    - The `xoxb-` bot user OAuth token
 3. Click **Save**
-4. Scroll to the top of the KiloClaw UI and click **Redeploy**. Wait for the instance to come back up
+4. Scroll to the top of the TakeDeep Claw UI and click **Redeploy**. Wait for the instance to come back up
 
-### Step 4: Pair Slack with KiloClaw
+### Step 4: Pair Slack with TakeDeep Claw
 
 1. In Slack, DM the app and send any message — this triggers the pairing flow
 2. The app will return a pairing code
-3. Return to [app.kilo.ai/claw](https://app.kilo.ai/claw) and confirm the pairing code and approve
+3. Return to [deeper-dash.takedeep.ai/claw](https://deeper-dash.takedeep.ai/claw) and confirm the pairing code and approve
 4. You should now be able to DM the bot from Slack. You will need to add the bot to any individual channels and tell it to update its config for any channels you want it to participate in.
 
 ## Changing Response Behavior
 
-By default, KiloClaw can respond to any DMs and will not respond in Slack channels, even if added.
+By default, TakeDeep Claw can respond to any DMs and will not respond in Slack channels, even if added.
 
-## Making KiloClaw DM-Only (from you)
+## Making TakeDeep Claw DM-Only (from you)
 
-By default, KiloClaw will respond to DMs from any user in Slack.
+By default, TakeDeep Claw will respond to DMs from any user in Slack.
 
 ### Step 1: Find your Slack user ID
 
@@ -74,7 +74,7 @@ Your user ID starts with `U` (e.g. `U12345678`).
 
 ### Step 2: Configure DM-only access
 
-Tell your KiloClaw agent:
+Tell your TakeDeep Claw agent:
 
 > "Set my Slack DM policy to allowlist with my user ID `U12345678` and disable group/channel responses."
 
@@ -94,9 +94,9 @@ Or configure it directly in the OpenClaw Control UI config:
 
 This allows only your user ID to DM the bot and blocks it from responding in any channels.
 
-## Adding KiloClaw to a Slack Channel
+## Adding TakeDeep Claw to a Slack Channel
 
-By default, KiloClaw will not respond in Slack channels, even if added. To have KiloClaw participate in a Slack channel:
+By default, TakeDeep Claw will not respond in Slack channels, even if added. To have TakeDeep Claw participate in a Slack channel:
 
 ### Step 1: Invite the bot to the channel
 
@@ -114,7 +114,7 @@ Channel IDs are more reliable than names. To find a channel's ID:
 
 ### Step 3: Configure the channel
 
-Tell your KiloClaw agent (via DM):
+Tell your TakeDeep Claw agent (via DM):
 
 > "Allow responses in Slack channel `C01234567`. Require an @mention to respond."
 

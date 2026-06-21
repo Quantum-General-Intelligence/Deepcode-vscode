@@ -1,15 +1,15 @@
 ---
 title: "Cloud Agent"
-description: "Using Kilo Code in the browser"
+description: "Using TakeDeep in the browser"
 ---
 
 # {% $markdoc.frontmatter.title %}
 
-Cloud Agents let you run Kilo Code in the cloud from any device, without relying on your local machine. They provide a remote development environment that can read and modify your GitHub and GitLab repositories, run commands, and auto-commit changes as work progresses.
+Cloud Agents let you run TakeDeep in the cloud from any device, without relying on your local machine. They provide a remote development environment that can read and modify your GitHub and GitLab repositories, run commands, and auto-commit changes as work progresses.
 
 ## What Cloud Agents Enable
 
-- Run Kilo Code remotely from a browser
+- Run TakeDeep remotely from a browser
 - Auto-create branches and push work continuously
 - Use env vars + startup commands to shape the workspace
 - Work from anywhere while keeping your repo in sync
@@ -19,20 +19,20 @@ Cloud Agents let you run Kilo Code in the cloud from any device, without relying
 Before using Cloud Agents:
 
 - **GitHub or GitLab Integration must be configured**
-  Connect your account via the [Integrations tab](https://app.kilo.ai/integrations) so that Cloud Agents can access your repositories.
+  Connect your account via the [Integrations tab](https://deeper-dash.takedeep.ai/integrations) so that Cloud Agents can access your repositories.
 
 ## Cost
 
 - **Compute is free during limited beta**
-  - Please provide any feedback in our Cloud Agents beta Discord channel: [Kilo Discord](https://kilo.ai/discord)
-- **Kilo Code credits are still used** when the agent performs work (model usage, operations, etc.).
+  - Please provide any feedback in our Cloud Agents beta Discord channel: [Kilo Discord](https://deeper-api.takedeep.ai/discord)
+- **TakeDeep credits are still used** when the agent performs work (model usage, operations, etc.).
 
 ## How to Use
 
-1. **Connect your GitHub or GitLab account** in the [Integrations](https://app.kilo.ai/integrations) tab of your personal or organization dashboard.
+1. **Connect your GitHub or GitLab account** in the [Integrations](https://deeper-dash.takedeep.ai/integrations) tab of your personal or organization dashboard.
 2. **Select a repository** to use as your workspace.
 3. **Add environment variables** (secrets supported) and set optional startup commands.
-4. **Start chatting with Kilo Code.**
+4. **Start chatting with TakeDeep.**
 
 Your work is always pushed to GitHub, ensuring nothing is lost.
 
@@ -121,22 +121,22 @@ Remote mode must be enabled from the CLI. See [CLI Remote Connections](/docs/cod
 
 ### Requirements
 
-- Same Kilo account on both CLI and Cloud Agent
+- Same TakeDeep account on both CLI and Cloud Agent
 - Active internet connection on the local machine
 - CLI must remain running
 
 {% callout type="warning" title="Security Warning" %}
-Anyone with access to your Kilo account can send messages to your computer when remote mode is enabled.
+Anyone with access to your TakeDeep account can send messages to your computer when remote mode is enabled.
 {% /callout %}
 
 ## Perfect For
 
 Cloud Agents are great for:
 
-- **Remote debugging** using Kilo Code debug mode
+- **Remote debugging** using TakeDeep debug mode
 - **Exploration of unfamiliar codebases** without touching your local machine
 - **Architect-mode brainstorming** while on the go
-- **Automated refactors or tech debt cleanup** driven by Kilo Code
+- **Automated refactors or tech debt cleanup** driven by TakeDeep
 - **Offloading CI-like tasks**, experiments, or batch updates
 
 ## Triggers
@@ -149,7 +149,7 @@ Triggers are currently in beta and subject to change.
 
 ### Accessing Triggers
 
-Triggers are accessible from the main sidebar under **Webhooks / Triggers** and link to [https://app.kilo.ai/cloud/triggers](https://app.kilo.ai/cloud/triggers) for personal accounts. Organization-level trigger configurations are available through your organization's sidebar.
+Triggers are accessible from the main sidebar under **Webhooks / Triggers** and link to [https://deeper-dash.takedeep.ai/cloud/triggers](https://deeper-dash.takedeep.ai/cloud/triggers) for personal accounts. Organization-level trigger configurations are available through your organization's sidebar.
 
 ### Activation Modes
 
@@ -215,7 +215,7 @@ Care should be taken when deciding to use webhooks as they are susceptible to pr
 - Each message can run for **up to 15 minutes**.
   Break large tasks into smaller steps; use a `plan.md` or `todo.md` file to keep scope clear.
 - **Context is persistent across messages.**
-  Kilo Code remembers previous turns within the same session.
+  TakeDeep remembers previous turns within the same session.
 - **Auto/YOLO mode is always on.**
   The agent will modify code without prompting for confirmation.
 - **Sessions are restorable locally** and local sessions can be resumed in Cloud Agent.

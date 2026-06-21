@@ -54,7 +54,7 @@ Every triage run is recorded as a ticket in the Kilo dashboard. You can:
 
 ### Prerequisites
 
-- A GitHub integration connected to your Kilo account or organisation.
+- A GitHub integration connected to your TakeDeep account or organisation.
 - The repositories you want to triage must be accessible via that integration.
 
 ### Steps

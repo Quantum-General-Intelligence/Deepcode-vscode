@@ -9,9 +9,9 @@ Kilo's Code Reviews integrate with GitHub via a **GitHub App** to automatically 
 
 ## Prerequisites
 
-- A Kilo Code account at [app.kilo.ai](https://app.kilo.ai)
+- A TakeDeep account at [deeper-dash.takedeep.ai](https://deeper-dash.takedeep.ai)
 - A GitHub account with access to the repositories you want to review
-- Kilo Code credits for AI model usage
+- TakeDeep credits for AI model usage
 
 ## Setup
 
@@ -31,7 +31,7 @@ The GitHub App requests the following permissions:
 ### Step 2: Configure the Review Agent
 
 1. Go to **Code Reviews**:
-   - **Personal**: [app.kilo.ai/code-reviews](https://app.kilo.ai/code-reviews)
+   - **Personal**: [deeper-dash.takedeep.ai/code-reviews](https://deeper-dash.takedeep.ai/code-reviews)
    - **Organization**: Your organization → Code Reviews
 2. Toggle **Enable AI Code Review** to on
 3. Configure your preferences:
@@ -92,7 +92,7 @@ The repository list is synced from GitHub and can be refreshed from the configur
 ### Reviews are failing
 
 - Check the Code Reviews page for error details on specific reviews
-- Ensure you have sufficient Kilo Code credits
+- Ensure you have sufficient TakeDeep credits
 - Very large PRs may time out — try increasing the max review time
 
 ### The GitHub App is missing permissions

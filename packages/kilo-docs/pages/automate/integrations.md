@@ -1,11 +1,11 @@
 ---
 title: "Integrations"
-description: "Overview of Kilo Code integrations"
+description: "Overview of TakeDeep integrations"
 ---
 
-# Kilo Code Integrations
+# TakeDeep Integrations
 
-Kilo Integrations lets you connect your GitHub or GitLab account (soon Bitbucket) to enable advanced features inside Kilo Code. Once connected, Kilo can access your repositories securely, enabling features like **Code Reviews**, **Cloud Agents**, and **Kilo Deploy**.
+Kilo Integrations lets you connect your GitHub or GitLab account (soon Bitbucket) to enable advanced features inside TakeDeep. Once connected, Kilo can access your repositories securely, enabling features like **Code Reviews**, **Cloud Agents**, and **Kilo Deploy**.
 
 ## Supported Platforms
 
@@ -16,7 +16,7 @@ Kilo Integrations lets you connect your GitHub or GitLab account (soon Bitbucket
 
 ## What You Can Do With Integrations
 
-- **Connect GitHub or GitLab to Kilo Code** in a few clicks
+- **Connect GitHub or GitLab to TakeDeep** in a few clicks
 - **Enable advanced features** like Cloud Agents, Code Reviews, and Kilo Deploy
 - **Authorize repository access** so Kilo can analyze and work with your code
 
@@ -35,7 +35,7 @@ Before connecting:
 
 ### 1. Open the Integrations Page
 
-Go to your **Personal** or **Organization Dashboard**, and navigate to the [Integrations](https://app.kilo.ai/integrations) tab.
+Go to your **Personal** or **Organization Dashboard**, and navigate to the [Integrations](https://deeper-dash.takedeep.ai/integrations) tab.
 
 ### 2. Start the Connection Flow
 
@@ -70,7 +70,7 @@ You can connect GitLab using **OAuth** or a **Personal Access Token (PAT)**. Bot
 {% tab label="OAuth (GitLab.com)" %}
 
 1. Go to the **Integrations** page:
-   - **Personal**: [app.kilo.ai/integrations/gitlab](https://app.kilo.ai/integrations/gitlab)
+   - **Personal**: [deeper-dash.takedeep.ai/integrations/gitlab](https://deeper-dash.takedeep.ai/integrations/gitlab)
    - **Organization**: Your organization → Integrations → GitLab
 2. Click **Connect GitLab**
 3. Authorize the application on GitLab
@@ -83,8 +83,8 @@ For self-hosted GitLab instances using OAuth, you need to register an OAuth appl
 
 1. In your GitLab instance, go to **Admin Area → Applications** (or **User Settings → Applications**)
 2. Create a new application:
-   - **Name**: `Kilo Code`
-   - **Redirect URI**: `https://app.kilo.ai/api/integrations/gitlab/callback`
+   - **Name**: `TakeDeep`
+   - **Redirect URI**: `https://deeper-dash.takedeep.ai/api/integrations/gitlab/callback`
    - **Scopes**: `api`, `read_user`, `read_repository`, `write_repository`
    - **Confidential**: Yes
 3. Copy the **Application ID** and **Secret**
@@ -115,7 +115,7 @@ Once your Git provider is connected, the following features are enabled in Kilo:
 
 ### Cloud Agents
 
-- Run Kilo Code in the cloud from any device
+- Run TakeDeep in the cloud from any device
 - Auto-create branches and push work continuously
 - Work from anywhere while keeping your repo in sync
 
@@ -190,4 +190,4 @@ You need **Maintainer role** on the GitLab project for webhook and bot token cre
 - Verify your instance URL is accessible from the internet
 - Ensure HTTPS is configured
 - Check that OAuth application scopes include all required scopes
-- Verify the redirect URI matches: `https://app.kilo.ai/api/integrations/gitlab/callback`
+- Verify the redirect URI matches: `https://deeper-dash.takedeep.ai/api/integrations/gitlab/callback`

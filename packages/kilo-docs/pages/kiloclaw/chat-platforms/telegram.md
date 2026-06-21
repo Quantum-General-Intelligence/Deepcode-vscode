@@ -1,34 +1,34 @@
 ---
 title: "Telegram"
-description: "Use KiloClaw with Telegram: setup, DM access control, and group chat configuration"
+description: "Use TakeDeep Claw with Telegram: setup, DM access control, and group chat configuration"
 ---
 
 # Telegram
 
-This page covers everything you need to use KiloClaw with Telegram: connecting your bot and adding it to group chats.
+This page covers everything you need to use TakeDeep Claw with Telegram: connecting your bot and adding it to group chats.
 
-## Connecting KiloClaw to Telegram
+## Connecting TakeDeep Claw to Telegram
 
-{% youtube url="https://youtu.be/hIfKz073hGw" title="Telegram Setup Guide" caption="How to connect your KiloClaw agent to Telegram" /%}
+{% youtube url="https://youtu.be/hIfKz073hGw" title="Telegram Setup Guide" caption="How to connect your TakeDeep Claw agent to Telegram" /%}
 
-Create a bot via BotFather and link it to your KiloClaw dashboard.
+Create a bot via BotFather and link it to your TakeDeep Claw dashboard.
 
 1. Open Telegram and search for [@BotFather](https://t.me/BotFather)
 2. Send `/newbot` and follow the prompts to create your bot
 3. Copy the **Bot Token** that BotFather gives you
-4. Go to the **Settings** tab on your [KiloClaw dashboard](/docs/kiloclaw/dashboard)
+4. Go to the **Settings** tab on your [TakeDeep Claw dashboard](/docs/kiloclaw/dashboard)
 5. Paste the token into the **Telegram Bot Token** field
 6. Click **Save**
-7. Redeploy your KiloClaw instance
+7. Redeploy your TakeDeep Claw instance
 8. Send a direct message to your bot in Telegram: `/start`
 
 {% image src="/docs/img/kiloclaw/telegram.png" alt="Connect account screen" width="800" caption="Telegram bot token entry" /%}
 
 You can remove or replace a configured token at any time.
 
-## Adding KiloClaw to a Telegram Group Chat
+## Adding TakeDeep Claw to a Telegram Group Chat
 
-By default, KiloClaw will not participate in a group chat, even if added. If you would like to use your KiloClaw in a group chat, you must configure the KiloClaw settings.
+By default, TakeDeep Claw will not participate in a group chat, even if added. If you would like to use your TakeDeep Claw in a group chat, you must configure the TakeDeep Claw settings.
 
 ### Step 1: Add the bot to your group
 
@@ -57,7 +57,7 @@ Group and supergroup IDs are negative numbers (e.g. `-1001234567890`).
 
 ### Step 4: Configure the group in OpenClaw
 
-Tell your KiloClaw bot to add the group to its configuration. You can do this via DM:
+Tell your TakeDeep Claw bot to add the group to its configuration. You can do this via DM:
 
 > "Add Telegram group `-1001234567890` to my allowed groups. Require a @mention to respond."
 

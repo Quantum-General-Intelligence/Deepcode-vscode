@@ -2,9 +2,9 @@
 sidebar_label: OpenAI Compatible
 ---
 
-# Using OpenAI Compatible Providers With Kilo Code
+# Using OpenAI Compatible Providers With TakeDeep
 
-Kilo Code supports a wide range of AI model providers that offer APIs compatible with the OpenAI API standard. This means you can use models from providers _other than_ OpenAI, while still using a familiar API interface. This includes providers like:
+TakeDeep supports a wide range of AI model providers that offer APIs compatible with the OpenAI API standard. This means you can use models from providers _other than_ OpenAI, while still using a familiar API interface. This includes providers like:
 
 - **Local models** running through tools like Ollama and LM Studio (covered in separate sections).
 - **Cloud providers** like Perplexity, Together AI, Anyscale, and others.
@@ -23,7 +23,7 @@ The key to using an OpenAI-compatible provider is to configure two main settings
 2.  **API Key:** This is the secret key you obtain from the provider.
 3.  **Model ID:** This is the model name of the specific model.
 
-You'll find these settings in the Kilo Code settings panel (click the {% codicon name="gear" /%} icon):
+You'll find these settings in the TakeDeep settings panel (click the {% codicon name="gear" /%} icon):
 
 - **API Provider:** Select "OpenAI Compatible".
 - **Base URL:** Enter the base URL provided by your chosen provider. **This is crucial.**
@@ -58,13 +58,13 @@ You'll find these settings in the Kilo Code settings panel (click the {% codicon
 
 4. Click **Submit** to save. The provider's models appear in the model picker.
 
-For additional model configuration (token limits, tool calling, variants), edit the `kilo.jsonc` config file directly — see the **CLI** tab or the [Custom Models](/docs/code-with-ai/agents/custom-models) guide.
+For additional model configuration (token limits, tool calling, variants), edit the `takedeep.jsonc` config file directly — see the **CLI** tab or the [Custom Models](/docs/code-with-ai/agents/custom-models) guide.
 
 ### Automatic Model Detection
 
-When configuring a custom OpenAI-compatible provider, Kilo Code can automatically detect available models from your provider's `/v1/models` endpoint.
+When configuring a custom OpenAI-compatible provider, TakeDeep can automatically detect available models from your provider's `/v1/models` endpoint.
 
-Once you enter a valid **Base URL** and **API Key**, Kilo Code will query the provider and present a searchable model picker with all available models. You can:
+Once you enter a valid **Base URL** and **API Key**, TakeDeep will query the provider and present a searchable model picker with all available models. You can:
 
 - **Search** with fuzzy matching (e.g., typing "gpt4o" finds "gpt-4o-mini")
 - **Select** individual models to add to the provider configuration
@@ -75,7 +75,7 @@ This eliminates the need to manually look up and type model IDs. If auto-detecti
 {% /tab %}
 {% tab label="CLI" %}
 
-Define a custom provider in your `kilo.json` config file (`~/.config/kilo/kilo.json` or `./kilo.json`). The provider key (e.g., `"vllm"`) is your chosen identifier — it can be any name you like.
+Define a custom provider in your `takedeep.json` config file (`~/.config/kilo/takedeep.json` or `./takedeep.json`). The provider key (e.g., `"vllm"`) is your chosen identifier — it can be any name you like.
 
 You must define at least one model. Setting `name` and `limit` (context window and max output tokens) is recommended so the agent can manage context correctly:
 
@@ -141,7 +141,7 @@ You can also set the API key via an environment variable instead of putting it i
 
 ### Full Endpoint URL Support
 
-Kilo Code supports full endpoint URLs in the Base URL field, providing greater flexibility for provider configuration:
+TakeDeep supports full endpoint URLs in the Base URL field, providing greater flexibility for provider configuration:
 
 **Standard Base URL Format:**
 
@@ -172,4 +172,4 @@ This enhancement allows you to:
 - **Connection Errors:** Verify the Base URL is correct and that your provider's API is accessible.
 - **Unexpected Results:** If you're getting unexpected results, try a different model.
 
-By using an OpenAI-compatible provider, you can leverage the flexibility of Kilo Code with a wider range of AI models. Remember to always consult your provider's documentation for the most accurate and up-to-date information.
+By using an OpenAI-compatible provider, you can leverage the flexibility of TakeDeep with a wider range of AI models. Remember to always consult your provider's documentation for the most accurate and up-to-date information.

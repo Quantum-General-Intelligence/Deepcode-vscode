@@ -13,12 +13,12 @@ MCP servers add to your context, so be careful with which ones you enable. Certa
 
 ## Configuration Location
 
-The CLI accepts several config filenames. The recommended file is `kilo.json`:
+The CLI accepts several config filenames. The recommended file is `takedeep.json`:
 
 | Scope | Recommended Path | Also supported |
 |---|---|---|
-| **Global** | `~/.config/kilo/kilo.json` | `kilo.jsonc`, `config.json` |
-| **Project** | `./kilo.json` or `./.kilo/kilo.json` | `kilo.jsonc` |
+| **Global** | `~/.config/kilo/takedeep.json` | `takedeep.jsonc`, `config.json` |
+| **Project** | `./takedeep.json` or `./.takedeep/takedeep.json` | `takedeep.jsonc` |
 
 Project-level configuration takes precedence over global settings.
 
@@ -185,4 +185,4 @@ Use `{env:VARIABLE_NAME}` syntax in config files to reference environment variab
 
 ## Finding MCP Servers
 
-Browse community-contributed MCP server configurations and agent skills in the [Kilo Marketplace](https://github.com/Kilo-Org/kilo-marketplace). The marketplace includes ready-to-use configs for popular tools like Figma, Sentry, and more.
+Browse community-contributed MCP server configurations and agent skills in the [Kilo Marketplace](https://github.com/Quantum-General-Intelligence/kilo-marketplace). The marketplace includes ready-to-use configs for popular tools like Figma, Sentry, and more.

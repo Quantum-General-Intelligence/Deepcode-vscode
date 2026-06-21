@@ -1,11 +1,11 @@
 ---
 title: "Development Tools"
-description: "Connect your KiloClaw agent to development platforms like GitHub and Google Workspace"
+description: "Connect your TakeDeep Claw agent to development platforms like GitHub and Google Workspace"
 ---
 
 # Development Tools
 
-KiloClaw supports integrations with popular development platforms, allowing your agent to interact with repositories, code reviews, calendars, documents, and more — all autonomously.
+TakeDeep Claw supports integrations with popular development platforms, allowing your agent to interact with repositories, code reviews, calendars, documents, and more — all autonomously.
 
 ## Available Integrations
 

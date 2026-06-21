@@ -108,7 +108,7 @@ Select Orchestrator mode → autonomously define subtasks → intelligently dist
 ### VS Code / Cursor
 
 1. Open Extensions (`Cmd/Ctrl + Shift + X`)
-2. Search "Kilo Code"
+2. Search "TakeDeep"
 3. Click Install
 4. Find the Kilo icon in your sidebar
 
@@ -124,7 +124,7 @@ Supports IntelliJ, PyCharm, WebStorm, and all JetBrains IDEs.
 **Install:**
 
 1. Settings → Plugins → Marketplace
-2. Search "Kilo Code"
+2. Search "TakeDeep"
 3. Install and restart
 4. Find Kilo icon in right sidebar
 
@@ -137,7 +137,7 @@ kilo
 
 ### Web (Cloud Agents & App Builder)
 
-Visit [app.kilo.ai](https://app.kilo.ai/) and sign in. This gives you access to:
+Visit [deeper-dash.takedeep.ai](https://deeper-dash.takedeep.ai/) and sign in. This gives you access to:
 
 - **Cloud Agents:** Run Kilo without a local machine
 - **App Builder:** Build and preview apps directly in your browser
@@ -150,16 +150,16 @@ Visit [app.kilo.ai](https://app.kilo.ai/) and sign in. This gives you access to:
 
 ### Create account
 
-1. Click "Try Kilo Code for Free" in the Kilo panel
-2. Sign in with OAuth at kilo.ai
+1. Click "Try TakeDeep for Free" in the Kilo panel
+2. Sign in with OAuth at deeper-dash.takedeep.ai
 3. You'll be redirected back to your IDE
 
 ### Configure your provider
 
-**Option 1: Use Kilo Gateway (easiest)**
+**Option 1: Use TakeDeep Gateway (easiest)**
 
 1. Open settings (⚙️ icon)
-2. Select "Kilo Gateway" as provider
+2. Select "TakeDeep Gateway" as provider
 3. Choose a model (such as Claude Opus 4.5, Gemini 3, MiniMax M2.1)
 
 **Option 2: Bring your own API keys**
@@ -176,7 +176,7 @@ One of the biggest differences from Cline is that Kilo isn't just an IDE extensi
 
 ### Cloud Agents
 
-Run Kilo from [app.kilo.ai/cloud](https://app.kilo.ai/cloud) without needing your local machine. Great for:
+Run TakeDeep from [deeper-dash.takedeep.ai/cloud](https://deeper-dash.takedeep.ai/cloud) without needing your local machine. Great for:
 
 - Working from a tablet or phone
 - Offloading heavy tasks
@@ -310,6 +310,6 @@ In-line ghost-text completions with tab to complete. Works alongside the agent m
    - **Debug:** "Why is this function returning undefined?"
    - **Architect:** "Design a logging system"
    - **Orchestrator:** "Build an app, end-to-end, that…"
-3. Try Cloud Agents at [app.kilo.ai](https://app.kilo.ai/)
+3. Try Cloud Agents at [deeper-dash.takedeep.ai](https://deeper-dash.takedeep.ai/)
 4. Install the Kilo CLI with `npm install -g @takedeep/cli`
 5. Enable Autocomplete for inline suggestions

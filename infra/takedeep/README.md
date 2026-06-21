@@ -18,6 +18,10 @@ LLM traffic is proxied through the API to LiteLLM on Qualtron (`LITELLM_QUALTRON
 4. Run `infra/takedeep/deploy.sh` on the server (or install systemd units manually).
 5. In Stripe TheoSym, add webhook `https://deeper-dash.takedeep.ai/webhooks/stripe` → set `STRIPE_THEOSYM_WEBHOOK_SECRET`.
 
+Validate infra locally: `bash infra/takedeep/validate.sh` (also runs in CI on `infra/takedeep/**` changes).
+
+Rebrand docs after upstream doc sync: `bun infra/takedeep/rebrand-docs.ts`.
+
 ## First admin
 
 First registered user becomes admin. Or set `TAKEDEEP_ADMIN_EMAIL` to force admin on that email.

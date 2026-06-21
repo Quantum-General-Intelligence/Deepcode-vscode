@@ -30,30 +30,30 @@ const mainNavItems: NavItem[] = [
   { label: "Collaborate", href: "/collaborate" },
   { label: "Automate", href: "/automate" },
   { label: "Deploy & Secure", href: "/deploy-secure" },
-  { label: "Kilo Gateway", href: "/gateway" },
-  { label: "KiloClaw", href: "/kiloclaw" },
+  { label: "TakeDeep Gateway", href: "/gateway" },
+  { label: "TakeDeep Claw", href: "/kiloclaw" },
   { label: "Contributing", href: "/contributing" },
 ]
 
 const contributingItems: DropdownItem[] = [
-  { label: "Contributing Guide", href: "/contributing", description: "How to contribute to Kilo Code" },
+  { label: "Contributing Guide", href: "/contributing", description: "How to contribute to TakeDeep" },
   {
     label: "Code of Conduct",
-    href: "https://github.com/Kilo-Org/kilocode?tab=coc-ov-file",
+    href: "https://github.com/Quantum-General-Intelligence/Deepcode-vscode?tab=coc-ov-file",
     description: "Our community guidelines",
   },
-  { label: "GitHub Repository", href: "https://github.com/Kilo-Org/", description: "View source and issues" },
-  { label: "Discord Community", href: "https://kilo.ai/discord", description: "Join our community" },
+  { label: "GitHub Repository", href: "https://github.com/Quantum-General-Intelligence/", description: "View source and issues" },
+  { label: "Discord Community", href: "https://deeper-api.takedeep.ai/discord", description: "Join our community" },
 ]
 
 const helpItems: DropdownItem[] = [
   { label: "Documentation", href: "/", description: "Browse all documentation" },
   { label: "FAQ", href: "/getting-started/faq", description: "Frequently asked questions" },
   { label: "Community Projects", href: "/community", description: "Explore community resources" },
-  { label: "Support", href: "https://kilo.ai/support", description: "Get help from the team" },
+  { label: "Support", href: "https://deeper-api.takedeep.ai/support", description: "Get help from the team" },
   {
     label: "Changelog",
-    href: "https://github.com/Kilo-Org/kilocode/releases",
+    href: "https://github.com/Quantum-General-Intelligence/Deepcode-vscode/releases",
     description: "Latest updates and releases",
   },
 ]
@@ -219,7 +219,7 @@ function preview(url: string) {
   if (typeof window === "undefined" || !URL.canParse(url)) return url
 
   const value = new URL(url)
-  if (value.hostname !== "kilo.ai" || !value.pathname.startsWith("/docs")) return url
+  if (value.hostname !== "deeper-api.takedeep.ai" || !value.pathname.startsWith("/docs")) return url
 
   return `${window.location.origin}${value.pathname}${value.search}${value.hash}`
 }
@@ -284,7 +284,7 @@ export function TopNav({ onMobileMenuToggle, isMobileMenuOpen = false, showMobil
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 100 100"
             className="logo-icon"
-            aria-label="Kilo Code Logo"
+            aria-label="TakeDeep Logo"
           >
             <path
               fill="currentColor"
@@ -292,7 +292,7 @@ export function TopNav({ onMobileMenuToggle, isMobileMenuOpen = false, showMobil
             />
           </svg>
           <div>
-            <span className="logo-text font-brand">Kilo Code</span>
+            <span className="logo-text font-brand">TakeDeep</span>
             <span className="docs-label">DOCS</span>
           </div>
         </Link>
@@ -313,10 +313,10 @@ export function TopNav({ onMobileMenuToggle, isMobileMenuOpen = false, showMobil
             <SearchIcon />
           </button>
           <ThemeToggle />
-          <Link href="https://kilo.ai/github" className="github-link desktop-nav">
+          <Link href="https://deeper-api.takedeep.ai/github" className="github-link desktop-nav">
             GitHub
           </Link>
-          <Link href="https://app.kilo.ai" className="signin-btn desktop-nav">
+          <Link href="https://deeper-dash.takedeep.ai" className="signin-btn desktop-nav">
             Sign in
           </Link>
         </div>
@@ -351,9 +351,9 @@ export function TopNav({ onMobileMenuToggle, isMobileMenuOpen = false, showMobil
       {/* Announcement banner */}
       <div className="announcement-banner">
         <p>
-          The all-new Kilo Code extension is here, rebuilt on the{" "}
+          The all-new TakeDeep extension is here, rebuilt on the{" "}
           <Link href="/code-with-ai/platforms/vscode/whats-new">Kilo CLI</Link> for speed, flexibility, and continued
-          access to 500+ models via the Kilo Gateway →
+          access to 500+ models via the TakeDeep Gateway →
         </p>
       </div>
 

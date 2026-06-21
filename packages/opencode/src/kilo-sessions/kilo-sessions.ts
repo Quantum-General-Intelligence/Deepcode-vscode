@@ -9,6 +9,7 @@ import { ModelID, ProviderID } from "@/provider/schema"
 import { MessageV2 } from "@/session/message-v2"
 import { Storage } from "@/storage"
 import { Log } from "@/util"
+import { BRAND } from "@/takedeep/brand"
 import { Auth } from "@/auth"
 import { IngestQueue } from "@/kilo-sessions/ingest-queue"
 import { clearInFlightCache, withInFlightCache } from "@/kilo-sessions/inflight-cache"
@@ -511,7 +512,7 @@ export namespace KiloSessions {
       throw new Error(`Unable to share session ${sessionId}: server did not return a public id`)
     }
 
-    const url = `https://app.kilo.ai/s/${result.public_id}`
+    const url = `${BRAND.shareUrl}/${result.public_id}`
 
     await Storage.write(["session_share", sessionId], {
       ...current,

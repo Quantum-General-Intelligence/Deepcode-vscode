@@ -140,6 +140,8 @@ export async function load(dir: string, warnings?: Warning[]) {
 
     // kilocode_change start
     const patterns = [
+      "/.takedeep/agent/",
+      "/.takedeep/agents/",
       "/.kilo/agent/",
       "/.kilo/agents/",
       "/.kilocode/agent/",

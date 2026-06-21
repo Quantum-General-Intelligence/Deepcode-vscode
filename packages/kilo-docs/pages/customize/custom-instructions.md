@@ -1,11 +1,11 @@
 ---
 title: "Custom Instructions"
-description: "Provide custom instructions to guide Kilo Code"
+description: "Provide custom instructions to guide TakeDeep"
 ---
 
 # Custom Instructions
 
-Custom Instructions allow you to personalize how Kilo Code behaves, providing specific guidance that shapes responses, coding style, and decision-making processes. Both the **VSCode** and **CLI** versions support custom instructions, though the mechanisms differ.
+Custom Instructions allow you to personalize how TakeDeep behaves, providing specific guidance that shapes responses, coding style, and decision-making processes. Both the **VSCode** and **CLI** versions support custom instructions, though the mechanisms differ.
 
 ## What Are Custom Instructions?
 
@@ -54,7 +54,7 @@ This is useful for providing context-specific guidance for different parts of a 
 
 ## Additional Instruction Sources
 
-The `instructions` key in `kilo.jsonc` accepts an array of paths, globs, or URLs pointing to additional instruction files. You can manage these in **Settings → Agent Behaviour → Rules** subtab.
+The `instructions` key in `takedeep.jsonc` accepts an array of paths, globs, or URLs pointing to additional instruction files. You can manage these in **Settings → Agent Behaviour → Rules** subtab.
 
 ```yaml
 # Examples of instruction sources
@@ -79,10 +79,10 @@ The CLI provides multiple layers of instruction configuration — from per-agent
 
 ## Per-Agent Prompts
 
-Each agent can have its own custom prompt defined in its `.md` file (the markdown body) or via the `agent.<name>.prompt` key in `kilo.jsonc`:
+Each agent can have its own custom prompt defined in its `.md` file (the markdown body) or via the `agent.<name>.prompt` key in `takedeep.jsonc`:
 
 ```jsonc
-// kilo.jsonc
+// takedeep.jsonc
 {
   "agent": {
     "code": {
@@ -92,7 +92,7 @@ Each agent can have its own custom prompt defined in its `.md` file (the markdow
 }
 ```
 
-Or as the markdown body in `.kilo/agents/code.md`:
+Or as the markdown body in `.takedeep/agents/code.md`:
 
 ```markdown
 ---
@@ -131,10 +131,10 @@ This is useful for providing context-specific guidance for different parts of a 
 
 ## Additional Instruction Sources
 
-The `instructions` key in `kilo.jsonc` accepts an array of paths, globs, or URLs pointing to additional instruction files. Configure these in your `kilo.jsonc`:
+The `instructions` key in `takedeep.jsonc` accepts an array of paths, globs, or URLs pointing to additional instruction files. Configure these in your `takedeep.jsonc`:
 
 ```jsonc
-// kilo.jsonc
+// takedeep.jsonc
 {
   "instructions": [
     "./docs/coding-standards.md",
@@ -163,9 +163,9 @@ Custom Instructions are IDE-wide and are applied across all workspaces and maint
 
 **How to set them:**
 
-{% image src="/docs/img/custom-instructions/custom-instructions.png" alt="Kilo Code Modes tab showing global custom instructions interface" width="600" caption="Kilo Code Modes tab showing global custom instructions interface" /%}
+{% image src="/docs/img/custom-instructions/custom-instructions.png" alt="TakeDeep Modes tab showing global custom instructions interface" width="600" caption="TakeDeep Modes tab showing global custom instructions interface" /%}
 
-1.  **Open Modes Tab:** Click the <Codicon name="notebook" /> icon in the Kilo Code top menu bar
+1.  **Open Modes Tab:** Click the <Codicon name="notebook" /> icon in the TakeDeep top menu bar
 2.  **Find Section:** Find the "Custom Instructions for All Modes" section
 3.  **Enter Instructions:** Enter your instructions in the text area
 4.  **Save Changes:** Click "Done" to save your changes
@@ -174,8 +174,8 @@ Custom Instructions are IDE-wide and are applied across all workspaces and maint
 
 Mode-specific instructions can be set using the Modes Tab
 
-    {% image src="/docs/img/custom-instructions/custom-instructions-3.png" alt="Kilo Code Modes tab showing mode-specific custom instructions interface" width="600" caption="Kilo Code Modes tab showing mode-specific custom instructions interface" /%}
-    * **Open Tab:** Click the <Codicon name="notebook" /> icon in the Kilo Code top menu bar
+    {% image src="/docs/img/custom-instructions/custom-instructions-3.png" alt="TakeDeep Modes tab showing mode-specific custom instructions interface" width="600" caption="TakeDeep Modes tab showing mode-specific custom instructions interface" /%}
+    * **Open Tab:** Click the <Codicon name="notebook" /> icon in the TakeDeep top menu bar
     * **Select Mode:** Under the Modes heading, click the button for the mode you want to customize
     * **Enter Instructions:** Enter your instructions in the text area under "Mode-specific Custom Instructions (optional)"
     * **Save Changes:** Click "Done" to save your changes
@@ -189,7 +189,7 @@ If the mode itself is global (not workspace-specific), any custom instructions y
 
 For version-controlled mode instructions, use the mode rules file paths documented in [Custom Modes](/docs/customize/custom-modes#mode-specific-instructions-via-filesdirectories):
 
-- Preferred: `.kilo/rules-{mode-slug}/` (directory)
+- Preferred: `.takedeep/rules-{mode-slug}/` (directory)
 - Fallback: `.kilocoderules-{mode-slug}` (single file)
 
 {% callout type="info" title="Legacy Naming Note" %}

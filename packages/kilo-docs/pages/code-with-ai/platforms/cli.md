@@ -1,6 +1,6 @@
 ---
 title: "Kilo CLI"
-description: "Using Kilo Code from the command line"
+description: "Using TakeDeep from the command line"
 platform: new
 ---
 
@@ -12,9 +12,9 @@ This documentation applies only to Kilo version 1.0 and later. Users running ver
 
 Orchestrate agents from your terminal. Plan, debug, and code fast with keyboard-first navigation on the command line.
 
-The Kilo Code CLI uses the same underlying technology that powers the IDE extensions, so you can expect the same workflow to handle agentic coding tasks from start to finish.
+The TakeDeep CLI uses the same underlying technology that powers the IDE extensions, so you can expect the same workflow to handle agentic coding tasks from start to finish.
 
-**Source code & issues (Kilo CLI 1.0):** [Kilo-Org/kilocode](https://github.com/Kilo-Org/kilocode) · [Report an issue](https://github.com/Kilo-Org/kilocode/issues)
+**Source code & issues (Kilo CLI 1.0):** [Quantum-General-Intelligence/Deepcode-vscode](https://github.com/Quantum-General-Intelligence/Deepcode-vscode) · [Report an issue](https://github.com/Quantum-General-Intelligence/Deepcode-vscode/issues)
 
 ## Getting Started
 
@@ -49,7 +49,7 @@ Or use npm:
 
 `npm update -g @takedeep/cli`
 
-## What you can do with Kilo Code CLI
+## What you can do with TakeDeep CLI
 
 - **Plan and execute code changes without leaving your terminal.** Use your command line to make edits to your project without opening your IDE.
 - **Switch between hundreds of LLMs without constraints.** Other CLI tools only work with one model or curate opinionated lists. With Kilo, you can switch models without booting up another tool.
@@ -119,12 +119,12 @@ For detailed help on every command and subcommand, see the [CLI Command Referenc
 | `/editor` | - | Open external editor |
 | `/exit` | `/quit`, `/q` | Exit the app |
 
-#### Kilo Gateway Commands (when connected)
+#### TakeDeep Gateway Commands (when connected)
 
 | Command | Aliases | Description |
 |---|---|---|
-| `/profile` | `/me`, `/whoami` | View your Kilo Gateway profile |
-| `/teams` | `/team`, `/org`, `/orgs` | Switch between Kilo Gateway teams |
+| `/profile` | `/me`, `/whoami` | View your TakeDeep Gateway profile |
+| `/teams` | `/team`, `/org`, `/orgs` | Switch between TakeDeep Gateway teams |
 | `/remote` | - | Toggle remote mode for Cloud Agent access |
 
 #### Built-in Commands
@@ -151,7 +151,7 @@ Review your code locally before pushing — catch issues early without waiting f
 Configuration is managed through:
 
 - `/connect` command for provider setup (interactive)
-- Config files in **`~/.config/kilo/`**: use **`kilo.jsonc`** for provider, model, permission, and **MCP** settings. Restart the CLI after editing. See [Using MCP in Kilo Code](/docs/automate/mcp/using-in-kilo-code) for MCP config format.
+- Config files in **`~/.config/kilo/`**: use **`takedeep.jsonc`** for provider, model, permission, and **MCP** settings. Restart the CLI after editing. See [Using MCP in TakeDeep](/docs/automate/mcp/using-in-kilo-code) for MCP config format.
 - `kilo auth` for credential management
 
 ## Slash Commands
@@ -164,7 +164,7 @@ The CLI's interactive mode supports slash commands for common operations. The ma
 
 ## Permissions
 
-Kilo Code uses the permission config to decide whether a given action should run automatically, prompt you, or be blocked.
+TakeDeep uses the permission config to decide whether a given action should run automatically, prompt you, or be blocked.
 
 ### Actions
 
@@ -180,7 +180,7 @@ You can set permissions globally (with `*`), and override specific tools.
 
 ```json
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "permission": {
     "*": "ask",
     "bash": "allow",
@@ -193,7 +193,7 @@ You can also set all permissions at once:
 
 ```json
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "permission": "allow"
 }
 ```
@@ -204,7 +204,7 @@ For most permissions, you can use an object to apply different actions based on 
 
 ```json
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "permission": {
     "bash": {
       "*": "ask",
@@ -245,7 +245,7 @@ Use `external_directory` to allow tool calls that touch paths outside the workin
 
 ```json
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "permission": {
     "external_directory": {
       "~/projects/personal/**": "allow"
@@ -258,7 +258,7 @@ Any directory allowed here inherits the same defaults as the current workspace. 
 
 ```json
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "permission": {
     "external_directory": {
       "~/projects/personal/**": "allow"
@@ -274,7 +274,7 @@ Any directory allowed here inherits the same defaults as the current workspace. 
 
 ## Configuration
 
-The Kilo CLI is a fork of [OpenCode](https://opencode.ai) and supports the same configuration options. The CLI you install with `npm install -g @takedeep/cli` (Kilo CLI 1.0) is built from [Kilo-Org/kilocode](https://github.com/Kilo-Org/kilocode). For comprehensive configuration documentation, see the [OpenCode Config documentation](https://opencode.ai/docs/config).
+The Kilo CLI is a fork of [OpenCode](https://opencode.ai) and supports the same configuration options. The CLI you install with `npm install -g @takedeep/cli` (Kilo CLI 1.0) is built from [Quantum-General-Intelligence/Deepcode-vscode](https://github.com/Quantum-General-Intelligence/Deepcode-vscode). For comprehensive configuration documentation, see the [OpenCode Config documentation](https://opencode.ai/docs/config).
 
 ### Config File Location (Kilo CLI 1.0)
 
@@ -289,7 +289,7 @@ Project-level configuration takes precedence over global settings.
 
 ```json
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "model": "anthropic/claude-sonnet-4-20250514",
   "provider": {
     "anthropic": {
@@ -378,9 +378,9 @@ For full details on all configuration options including compaction, file watcher
 
 ## Interactive Mode
 
-Interactive mode is the default mode when running Kilo Code without the `--auto` flag, designed to work interactively with a user through the console.
+Interactive mode is the default mode when running TakeDeep without the `--auto` flag, designed to work interactively with a user through the console.
 
-In interactive mode Kilo Code will request approval for operations which have not been auto-approved, allowing the user to review and approve operations before they are executed, and optionally add them to the auto-approval list.
+In interactive mode TakeDeep will request approval for operations which have not been auto-approved, allowing the user to review and approve operations before they are executed, and optionally add them to the auto-approval list.
 
 ### Interactive Command Approval
 
@@ -405,7 +405,7 @@ This allows you to progressively build your auto-approval rules without manually
 
 ## Autonomous Mode (Non-Interactive)
 
-Autonomous mode allows Kilo Code to run in automated environments like CI/CD pipelines without requiring user interaction.
+Autonomous mode allows TakeDeep to run in automated environments like CI/CD pipelines without requiring user interaction.
 
 ```bash
 # Run in autonomous mode with a message
@@ -443,7 +443,7 @@ This instructs the AI to proceed without user input.
 
 ```yaml
 # GitHub Actions example
-- name: Run Kilo Code
+- name: Run TakeDeep
   run: |
     kilo run "Implement the new feature" --auto
 ```
@@ -488,7 +488,7 @@ kilo --continue
 
 ## Remote Connections
 
-Remote Connections let you access your local CLI sessions from the Cloud Agents web interface. Requires [Kilo Gateway](/docs/gateway) connection.
+Remote Connections let you access your local CLI sessions from the Cloud Agents web interface. Requires [TakeDeep Gateway](/docs/gateway) connection.
 
 ### Enabling Remote Mode
 
@@ -498,7 +498,7 @@ Remote Connections let you access your local CLI sessions from the Cloud Agents 
 /remote
 ```
 
-Requires connection to Kilo Gateway. The `/remote` command appears only when authenticated.
+Requires connection to TakeDeep Gateway. The `/remote` command appears only when authenticated.
 
 **Enable by default:**
 
@@ -512,16 +512,16 @@ Add to `~/.config/kilo/config.json`:
 
 ### Using Remote Mode
 
-Once enabled, start a CLI session and open [Cloud Agents](https://app.kilo.ai/cloud). Your local session appears in the dashboard. See [Cloud Agent Remote Connections](/docs/code-with-ai/platforms/cloud-agent#remote-connections) for details.
+Once enabled, start a CLI session and open [Cloud Agents](https://deeper-dash.takedeep.ai/cloud). Your local session appears in the dashboard. See [Cloud Agent Remote Connections](/docs/code-with-ai/platforms/cloud-agent#remote-connections) for details.
 
 ### Requirements
 
-- Connection to Kilo Gateway
-- Same Kilo account on CLI and Cloud Agent
+- Connection to TakeDeep Gateway
+- Same TakeDeep account on CLI and Cloud Agent
 - CLI must remain running with internet connection
 
 {% callout type="warning" title="Security Warning" %}
-Anyone with access to your Kilo account can send messages to your computer when remote mode is enabled.
+Anyone with access to your TakeDeep account can send messages to your computer when remote mode is enabled.
 {% /callout %}
 
 ## Environment Variable Overrides

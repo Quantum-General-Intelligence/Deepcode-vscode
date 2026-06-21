@@ -88,7 +88,7 @@ Sessions sharing a branch can see each other's commits, so write-heavy work on t
 ## Running and testing
 
 - **Worktree terminal** (`Cmd+/` / `Ctrl+/`) — rooted at the worktree directory, so all commands scope to that branch. Use it for one-off tests, `git status`, reproducing a bug by hand.
-- **Run script** — create `.kilo/run-script` (or `.ps1` / `.cmd` / `.bat` on Windows) and trigger it with `Cmd+E` / `Ctrl+E`. Runs in whichever worktree is selected. Gets `WORKTREE_PATH` and `REPO_PATH` in the environment.
+- **Run script** — create `.takedeep/run-script` (or `.ps1` / `.cmd` / `.bat` on Windows) and trigger it with `Cmd+E` / `Ctrl+E`. Runs in whichever worktree is selected. Gets `WORKTREE_PATH` and `REPO_PATH` in the environment.
 - **Open in its own VS Code window** — right-click a worktree and choose **Open in VS Code** for a full editor rooted at the worktree path.
 
 ### Parallel worktrees need non-shared state

@@ -1,15 +1,15 @@
 ---
 title: "Custom Subagents"
-description: "Create and configure custom subagents in Kilo Code's CLI"
+description: "Create and configure custom subagents in TakeDeep's CLI"
 platform: new
 ---
 
 # Custom Subagents
 
-Kilo Code's CLI supports **custom subagents** — specialized AI assistants that can be invoked by primary agents or manually via `@` mentions. Subagents run in their own isolated sessions with tailored prompts, models, tool access, and permissions, enabling you to build purpose-built workflows for tasks like code review, documentation, security audits, and more.
+TakeDeep's CLI supports **custom subagents** — specialized AI assistants that can be invoked by primary agents or manually via `@` mentions. Subagents run in their own isolated sessions with tailored prompts, models, tool access, and permissions, enabling you to build purpose-built workflows for tasks like code review, documentation, security audits, and more.
 
 {% callout type="info" %}
-Custom subagents are currently configured through the config file (`kilo.jsonc`) or via markdown agent files. UI-based configuration is not yet available.
+Custom subagents are currently configured through the config file (`takedeep.jsonc`) or via markdown agent files. UI-based configuration is not yet available.
 {% /callout %}
 
 ## What Are Subagents?
@@ -25,7 +25,7 @@ Key characteristics of subagents:
 
 ### Built-in Subagents
 
-Kilo Code includes two built-in subagents:
+TakeDeep includes two built-in subagents:
 
 | Name | Description |
 |---|---|
@@ -48,11 +48,11 @@ There are two ways to define custom subagents: through JSON configuration or mar
 
 ### Method 1: JSON Configuration
 
-Add agents to the `agent` section of your `kilo.jsonc` config file. Any key that doesn't match a built-in agent name creates a new custom agent.
+Add agents to the `agent` section of your `takedeep.jsonc` config file. Any key that doesn't match a built-in agent name creates a new custom agent.
 
 ```json
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "agent": {
     "code-reviewer": {
       "description": "Reviews code for best practices and potential issues",
@@ -89,7 +89,7 @@ The file path is relative to the config file location, so this works for both gl
 Define agents as markdown files with YAML frontmatter. Place them in:
 
 - **Global**: `~/.config/kilo/agents/`
-- **Project-specific**: `.kilo/agents/`
+- **Project-specific**: `.takedeep/agents/`
 
 The **filename** (without `.md`) becomes the agent name.
 
@@ -246,9 +246,9 @@ Agent configurations are merged from multiple sources. Later sources override ea
 
 1. **Built-in agent defaults** (native agents defined in the codebase)
 2. **Global config** (`~/.config/kilo/config.json`)
-3. **Project config** (`kilo.jsonc` in the project root)
+3. **Project config** (`takedeep.jsonc` in the project root)
 4. **Global agent markdown files** (`~/.config/kilo/agents/*.md`)
-5. **Project agent markdown files** (`.kilo/agents/*.md`)
+5. **Project agent markdown files** (`.takedeep/agents/*.md`)
 
 When overriding a built-in agent, properties are merged — only the fields you specify are overridden. When creating a new custom agent, unspecified fields use sensible defaults (`mode: "all"`, full permissions inherited from global config).
 

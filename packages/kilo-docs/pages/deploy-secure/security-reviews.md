@@ -19,13 +19,13 @@ You need three things before enabling Security Reviews:
 
 1. The [KiloConnect GitHub App](/docs/automate/integrations#connecting-github) installed with `vulnerability_alerts` permission
 2. [Dependabot alerts](https://docs.github.com/en/code-security/dependabot/dependabot-alerts) enabled on your target repositories
-3. Kilo Code credits for AI model usage
+3. TakeDeep credits for AI model usage
 
 ---
 
 ## Get started
 
-1. Go to the **Security Agent** page — either from your [personal dashboard](https://app.kilo.ai/security-agent) or your organization's dashboard
+1. Go to the **Security Agent** page — either from your [personal dashboard](https://deeper-dash.takedeep.ai/security-agent) or your organization's dashboard
 2. Connect GitHub if you haven't already via the [Integrations page](/docs/automate/integrations)
 3. Choose which repositories the agent should monitor (all or specific ones)
 4. Toggle the agent on — this kicks off an initial sync of your Dependabot alerts
@@ -44,7 +44,7 @@ The Security Agent processes each vulnerability alert through four stages.
 
 **Deep analysis** kicks in for findings that warrant it. The Cloud Agent performs a full codebase search for actual usage of the vulnerable package, checks whether the vulnerable code paths are reachable, and suggests fixes when possible.
 
-**Auto-dismiss** (when enabled) automatically closes non-exploitable findings and syncs that dismissal back to GitHub with a `[Kilo Code auto-dismiss]` prefix.
+**Auto-dismiss** (when enabled) automatically closes non-exploitable findings and syncs that dismissal back to GitHub with a `[TakeDeep auto-dismiss]` prefix.
 
 ---
 
@@ -137,7 +137,7 @@ There are two ways findings get dismissed.
 
 **Manually**, you select a finding and choose **Dismiss**. You'll pick a reason — Fix started, No bandwidth, Tolerable risk, Inaccurate, or Not used — and optionally add a comment. The dismissal syncs back to GitHub and closes the corresponding Dependabot alert.
 
-**Automatically**, when auto-dismiss is enabled, the agent closes findings on its own. After deep analysis, any finding determined to be not exploitable is dismissed immediately. After triage, findings with a "dismiss" recommendation are dismissed if they meet your configured confidence threshold. All auto-dismissed alerts are written back to GitHub with a `[Kilo Code auto-dismiss]` prefix.
+**Automatically**, when auto-dismiss is enabled, the agent closes findings on its own. After deep analysis, any finding determined to be not exploitable is dismissed immediately. After triage, findings with a "dismiss" recommendation are dismissed if they meet your configured confidence threshold. All auto-dismissed alerts are written back to GitHub with a `[TakeDeep auto-dismiss]` prefix.
 
 ---
 

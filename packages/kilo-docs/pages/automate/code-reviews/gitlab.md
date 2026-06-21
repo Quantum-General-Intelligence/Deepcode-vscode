@@ -11,9 +11,9 @@ Both **GitLab.com** and **self-hosted GitLab instances** are supported.
 
 ## Prerequisites
 
-- A Kilo Code account at [app.kilo.ai](https://app.kilo.ai)
+- A TakeDeep account at [deeper-dash.takedeep.ai](https://deeper-dash.takedeep.ai)
 - A GitLab account with **Maintainer** role (or higher) on the projects you want to review
-- Kilo Code credits for AI model usage
+- TakeDeep credits for AI model usage
 
 > **Why Maintainer role?** Kilo creates a bot account (Project Access Token) on each project so that review comments appear from a bot, not your personal account. This requires Maintainer access.
 
@@ -28,7 +28,7 @@ Once connected, return here to configure the Review Agent.
 ### Step 2: Configure the Review Agent
 
 1. Go to **Code Reviews**:
-   - **Personal**: [app.kilo.ai/code-reviews](https://app.kilo.ai/code-reviews)
+   - **Personal**: [deeper-dash.takedeep.ai/code-reviews](https://deeper-dash.takedeep.ai/code-reviews)
    - **Organization**: Your organization → Code Reviews
 2. Toggle **Enable AI Code Review** to on
 3. Configure your preferences:
@@ -74,7 +74,7 @@ When a review triggers:
 
 ## How the Bot Identity Works
 
-Review comments are posted by a **Kilo Code Review Bot** — not by your personal GitLab account. This bot is created automatically as a Project Access Token on each project.
+Review comments are posted by a **TakeDeep Review Bot** — not by your personal GitLab account. This bot is created automatically as a Project Access Token on each project.
 
 - Created automatically the first time a project is reviewed
 - Valid for 365 days and rotated automatically before expiry
@@ -90,7 +90,7 @@ Kilo manages webhooks automatically:
 
 You don't need to set up webhooks manually. If automatic webhook creation fails due to permissions, you can add the webhook manually in **GitLab → Project → Settings → Webhooks**:
 
-- **URL**: `https://app.kilo.ai/api/webhooks/gitlab`
+- **URL**: `https://deeper-dash.takedeep.ai/api/webhooks/gitlab`
 - **Secret token**: Available in your integration settings
 - **Trigger**: Merge request events
 
@@ -119,7 +119,7 @@ You need **Maintainer role** on the GitLab project. Both webhook creation and bo
 ### Reviews are failing
 
 - Check the Code Reviews page for error details
-- Ensure you have sufficient Kilo Code credits
+- Ensure you have sufficient TakeDeep credits
 - Large MRs may time out — increase the max review time setting
 
 ### No projects listed after connecting
@@ -138,4 +138,4 @@ You need **Maintainer role** on the GitLab project. Both webhook creation and bo
 - Verify your instance URL is accessible from the internet
 - Ensure HTTPS is configured
 - Check that OAuth application scopes include all required scopes
-- Verify the redirect URI matches: `https://app.kilo.ai/api/integrations/gitlab/callback`
+- Verify the redirect URI matches: `https://deeper-dash.takedeep.ai/api/integrations/gitlab/callback`

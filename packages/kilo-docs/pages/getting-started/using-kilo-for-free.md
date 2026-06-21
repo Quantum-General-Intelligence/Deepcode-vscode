@@ -1,11 +1,11 @@
 ---
 title: "Using Kilo for Free"
-description: "How to use Kilo Code for free — Auto Model Free, finding free models, free autocomplete, and free background tasks"
+description: "How to use TakeDeep for free — Auto Model Free, finding free models, free autocomplete, and free background tasks"
 ---
 
 # Using Kilo for Free
 
-Kilo Code can be used completely free of charge. There are three places where Kilo uses AI model inference, and each can be configured to use free models.
+TakeDeep can be used completely free of charge. There are three places where Kilo uses AI model inference, and each can be configured to use free models.
 
 ## Where Kilo Uses Models
 
@@ -17,7 +17,7 @@ Each of these consumes credits by default. **To use Kilo entirely for free, conf
 
 ## Free Agentic Usage
 
-Kilo provides free models for coding tasks through the Kilo Gateway and partner providers.
+Kilo provides free models for coding tasks through the TakeDeep Gateway and partner providers.
 
 ### Auto Model Free
 
@@ -48,7 +48,7 @@ Some free models may be rate limited by the upstream provider. If you hit a rate
 Kilo's cloud services — App Builder, Code Reviewer, and others — also support free models. Select any model labeled "(free)" in the model dropdown when configuring a cloud task.
 
 {% callout type="tip" %}
-Available free models change over time as Kilo partners with different inference providers. Subscribe to our blog or join our [Discord](https://kilo.ai/discord) for updates.
+Available free models change over time as Kilo partners with different inference providers. Subscribe to our blog or join our [Discord](https://deeper-api.takedeep.ai/discord) for updates.
 {% /callout %}
 
 ## Free Autocomplete
@@ -59,7 +59,7 @@ By default, autocomplete routes through the Kilo provider and uses credits. If y
 
 ### How to Get It Free
 
-Add your own Mistral AI (Codestral) API key via **BYOK (Bring Your Own Key)** on the Kilo Gateway. Mistral offers a free tier for Codestral. When you configure a BYOK key, autocomplete requests use your key directly — at no cost on your Kilo balance.
+Add your own Mistral AI (Codestral) API key via **BYOK (Bring Your Own Key)** on the TakeDeep Gateway. Mistral offers a free tier for Codestral. When you configure a BYOK key, autocomplete requests use your key directly — at no cost on your Kilo balance.
 
 See the [Mistral Setup Guide](/docs/code-with-ai/features/autocomplete/mistral-setup) for step-by-step instructions.
 

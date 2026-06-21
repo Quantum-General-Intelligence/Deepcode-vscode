@@ -1,15 +1,15 @@
 ---
 title: How Tools Work
-description: Learn how Kilo Code's tools automate your development workflow
+description: Learn how TakeDeep's tools automate your development workflow
 ---
 
 # How Tools Work
 
-Kilo Code uses tools to interact with your code and environment. These specialized helpers perform specific actions like reading files, making edits, running commands, or searching your codebase. Tools provide automation for common development tasks without requiring manual execution.
+TakeDeep uses tools to interact with your code and environment. These specialized helpers perform specific actions like reading files, making edits, running commands, or searching your codebase. Tools provide automation for common development tasks without requiring manual execution.
 
 ## Tool Workflow
 
-Describe what you want to accomplish in natural language, and Kilo Code will:
+Describe what you want to accomplish in natural language, and TakeDeep will:
 
 1. Select the appropriate tool based on your request
 2. Present the tool with its parameters for your review
@@ -56,7 +56,7 @@ When a tool is proposed, you'll see an approval prompt in the **Permission Dock*
 
 **User:** Create a file named `greeting.js` that logs a greeting message
 
-**Kilo Code:** (Proposes the `write` tool)
+**TakeDeep:** (Proposes the `write` tool)
 
 The extension shows the file path and proposed content for review. Click **Approve** to execute or **Deny** to cancel.
 
@@ -69,7 +69,7 @@ When a tool is proposed, you'll see Save and Reject buttons along with an option
 
 **User:** Create a file named `greeting.js` that logs a greeting message
 
-**Kilo Code:** (Proposes the `write_to_file` tool as shown in the image above)
+**TakeDeep:** (Proposes the `write_to_file` tool as shown in the image above)
 
 ```xml
 <write_to_file>
@@ -87,7 +87,7 @@ greet('World');
 
 **User:** (Clicks "Save" in the interface)
 
-**Kilo Code:** (Confirms file creation)
+**TakeDeep:** (Confirms file creation)
 
 {% /tab %}
 {% /tabs %}

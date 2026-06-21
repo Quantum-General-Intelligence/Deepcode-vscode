@@ -1,13 +1,13 @@
 ---
-title: "KiloClaw Dashboard Reference"
-description: "Managing your KiloClaw instance from the dashboard"
+title: "TakeDeep Claw Dashboard Reference"
+description: "Managing your TakeDeep Claw instance from the dashboard"
 ---
 
-# KiloClaw Dashboard
+# TakeDeep Claw Dashboard
 
-This page covers everything you can do from the KiloClaw dashboard. For getting started, see [KiloClaw Overview](/docs/kiloclaw/overview).
+This page covers everything you can do from the TakeDeep Claw dashboard. For getting started, see [TakeDeep Claw Overview](/docs/kiloclaw/overview).
 
-{% image src="/docs/img/kiloclaw/dashboard.png" alt="Connect account screen" width="800" caption="The KiloClaw Dashboard" /%}
+{% image src="/docs/img/kiloclaw/dashboard.png" alt="Connect account screen" width="800" caption="The TakeDeep Claw Dashboard" /%}
 
 ## Instance Status
 
@@ -124,7 +124,7 @@ In **Settings > Danger Zone**, click **Restore Config**. This will:
 Your files, workspace, and persistent data are not affected. Only the OpenClaw configuration file is reset.
 
 > 💡 **Tip**
-> If your instance is in a crash loop and you can't access the Control UI, try **Restore Config** from the KiloClaw dashboard first before redeploying.
+> If your instance is in a crash loop and you can't access the Control UI, try **Restore Config** from the TakeDeep Claw dashboard first before redeploying.
 
 {% callout type="warning" %}
 This action cannot be undone. Make sure you've saved any important changes to your configuration before restoring.
@@ -147,7 +147,7 @@ When your instance is running you can access the [OpenClaw Control UI](/docs/kil
 See the [Control UI reference](/docs/kiloclaw/control-ui) for a full overview of its capabilities.
 
 {% callout type="warning" %}
-Do not use the **Update** feature in the OpenClaw Control UI to update KiloClaw. Use **Redeploy** from the KiloClaw Dashboard instead. Updating via the Control UI will not apply the correct KiloClaw platform image and may break your instance.
+Do not use the **Update** feature in the OpenClaw Control UI to update TakeDeep Claw. Use **Redeploy** from the TakeDeep Claw Dashboard instead. Updating via the Control UI will not apply the correct TakeDeep Claw platform image and may break your instance.
 {% /callout %}
 
 ## Pairing Requests
@@ -161,7 +161,7 @@ You need to **approve** each request before the user or device can interact with
 
 ## Changelog
 
-The dashboard shows recent KiloClaw platform updates. Each entry is tagged as a **feature** or **bugfix**, and some include a deploy hint:
+The dashboard shows recent TakeDeep Claw platform updates. Each entry is tagged as a **feature** or **bugfix**, and some include a deploy hint:
 
 - **Redeploy Required** — You must redeploy for this change to take effect on your instance
 - **Redeploy Suggested** — Redeploying is recommended but not strictly necessary
@@ -195,8 +195,8 @@ These are the beta specifications for machines and subject to change without not
 
 ## Related
 
-- [KiloClaw Overview](/docs/kiloclaw/overview)
+- [TakeDeep Claw Overview](/docs/kiloclaw/overview)
 - [OpenClaw Control UI](/docs/kiloclaw/control-ui)
 - [Connecting Chat Platforms](/docs/kiloclaw/chat-platforms)
 - [Troubleshooting](/docs/kiloclaw/troubleshooting)
-- [KiloClaw Pricing](/docs/kiloclaw/faq/pricing)
+- [TakeDeep Claw Pricing](/docs/kiloclaw/faq/pricing)

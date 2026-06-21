@@ -1,12 +1,12 @@
 ---
 title: "The Chat Interface"
-description: "Learn how to use the Kilo Code chat interface effectively"
+description: "Learn how to use the TakeDeep chat interface effectively"
 ---
 
-# Chatting with Kilo Code
+# Chatting with TakeDeep
 
 {% callout type="tip" %}
-**Bottom line:** Kilo Code is an AI coding assistant. You chat with it in plain English, and it writes, edits, and explains code for you.
+**Bottom line:** TakeDeep is an AI coding assistant. You chat with it in plain English, and it writes, edits, and explains code for you.
 {% /callout %}
 
 {% callout type="note" title="Prefer quick completions?" %}
@@ -18,7 +18,7 @@ If you're typing code in the editor and want AI to finish your line or block, ch
 {% tabs %}
 {% tab label="VSCode" %}
 
-Click the Kilo Code icon ({% kiloCodeIcon /%}) in VS Code's Primary Side Bar to open the sidebar chat. You can also pop it out into an editor tab for a larger workspace.
+Click the TakeDeep icon ({% kiloCodeIcon /%}) in VS Code's Primary Side Bar to open the sidebar chat. You can also pop it out into an editor tab for a larger workspace.
 
 {% /tab %}
 {% tab label="CLI" %}
@@ -28,18 +28,18 @@ Open your terminal and run `kilo` to launch the interactive terminal interface (
 {% /tab %}
 {% tab label="VSCode (Legacy)" %}
 
-Find the Kilo Code icon ({% kiloCodeIcon /%}) in VS Code's Primary Side Bar. Click it to open the chat panel.
+Find the TakeDeep icon ({% kiloCodeIcon /%}) in VS Code's Primary Side Bar. Click it to open the chat panel.
 
-**Lost the panel?** Go to View > Open View... and search for "Kilo Code"
+**Lost the panel?** Go to View > Open View... and search for "TakeDeep"
 
 {% /tab %}
 {% /tabs %}
 
-## How to Talk to Kilo Code
+## How to Talk to TakeDeep
 
 **The key insight:** Just type what you want in normal English. No special commands needed.
 
-{% image src="/docs/img/typing-your-requests/typing-your-requests.png" alt="Example of typing a request in Kilo Code" width="800" caption="Example of typing a request in Kilo Code" /%}
+{% image src="/docs/img/typing-your-requests/typing-your-requests.png" alt="Example of typing a request in TakeDeep" width="800" caption="Example of typing a request in TakeDeep" /%}
 
 **Good requests:**
 
@@ -145,31 +145,31 @@ Reference files and other context directly in your message using `@`:
 | Technical jargon overload | Clear, straightforward language works best |
 | Using chat for tiny code changes. | Use [autocomplete](/docs/code-with-ai/features/autocomplete) for inline completions |
 
-**Why it matters:** Kilo Code works best when you communicate like you're talking to a smart teammate who needs clear direction.
+**Why it matters:** TakeDeep works best when you communicate like you're talking to a smart teammate who needs clear direction.
 
 ## Suggested Responses
 
-When Kilo Code needs more information to complete a task, it asks a follow-up question and often provides suggested answers to make responding faster.
+When TakeDeep needs more information to complete a task, it asks a follow-up question and often provides suggested answers to make responding faster.
 
 **How it works:**
 
-1. **Question Appears** - Kilo Code asks a question using the `question` tool
+1. **Question Appears** - TakeDeep asks a question using the `question` tool
 2. **Options Displayed** - Selectable options are presented that you can choose from
 3. **Selection** - Pick an option or type a custom response
 
 {% callout type="info" title="VSCode (Legacy)" collapsed=true %}
-In the legacy extension, Kilo Code uses the `ask_followup_question` tool instead. Suggestions appear as clickable buttons below the question. You can click a button to send the answer directly, or hold `Shift` and click (or click the pencil icon {% codicon name="edit" /%}) to copy the suggestion into the input box for editing before sending.
+In the legacy extension, TakeDeep uses the `ask_followup_question` tool instead. Suggestions appear as clickable buttons below the question. You can click a button to send the answer directly, or hold `Shift` and click (or click the pencil icon {% codicon name="edit" /%}) to copy the suggestion into the input box for editing before sending.
 
-{% image src="/docs/img/suggested-responses/suggested-responses.png" alt="Example of Kilo Code asking a question with suggested response buttons below it" width="800" caption="Suggested responses appear as clickable buttons below questions" /%}
+{% image src="/docs/img/suggested-responses/suggested-responses.png" alt="Example of TakeDeep asking a question with suggested response buttons below it" width="800" caption="Suggested responses appear as clickable buttons below questions" /%}
 {% /callout %}
 
 **Benefits:**
 
 - **Speed** - Quickly respond without typing full answers
-- **Clarity** - Suggestions often clarify the type of information Kilo Code needs
+- **Clarity** - Suggestions often clarify the type of information TakeDeep needs
 - **Flexibility** - Edit suggestions to provide precise, customized answers when needed
 
-This feature streamlines the interaction when Kilo Code requires clarification, allowing you to guide the task effectively with minimal effort.
+This feature streamlines the interaction when TakeDeep requires clarification, allowing you to guide the task effectively with minimal effort.
 
 ## Tips for Better Workflow
 
@@ -189,9 +189,9 @@ This feature streamlines the interaction when Kilo Code requires clarification, 
 {% /callout %}
 
 {% callout type="tip" %}
-**Move Kilo Code to the Secondary Side Bar** for a better layout. Right-click on the Kilo Code icon in the Activity Bar and select **Move To → Secondary Side Bar**. This lets you see the Explorer, Search, Source Control, etc. alongside Kilo Code.
+**Move TakeDeep to the Secondary Side Bar** for a better layout. Right-click on the TakeDeep icon in the Activity Bar and select **Move To → Secondary Side Bar**. This lets you see the Explorer, Search, Source Control, etc. alongside TakeDeep.
 
-{% image src="/docs/img/move-to-secondary.png" alt="Move to Secondary Side Bar" width="600" caption="Move Kilo Code to the Secondary Side Bar for better workspace organization" /%}
+{% image src="/docs/img/move-to-secondary.png" alt="Move to Secondary Side Bar" width="600" caption="Move TakeDeep to the Secondary Side Bar for better workspace organization" /%}
 {% /callout %}
 
 {% /tab %}
@@ -209,16 +209,16 @@ This feature streamlines the interaction when Kilo Code requires clarification, 
 {% tab label="VSCode (Legacy)" %}
 
 {% callout type="tip" %}
-**Move Kilo Code to the Secondary Side Bar** for a better layout. Right-click on the Kilo Code icon in the Activity Bar and select **Move To → Secondary Side Bar**. This lets you see the Explorer, Search, Source Control, etc. alongside Kilo Code.
+**Move TakeDeep to the Secondary Side Bar** for a better layout. Right-click on the TakeDeep icon in the Activity Bar and select **Move To → Secondary Side Bar**. This lets you see the Explorer, Search, Source Control, etc. alongside TakeDeep.
 
-{% image src="/docs/img/move-to-secondary.png" alt="Move to Secondary Side Bar" width="600" caption="Move Kilo Code to the Secondary Side Bar for better workspace organization" /%}
+{% image src="/docs/img/move-to-secondary.png" alt="Move to Secondary Side Bar" width="600" caption="Move TakeDeep to the Secondary Side Bar for better workspace organization" /%}
 {% /callout %}
 
 {% callout type="tip" %}
-**Drag files directly into chat.** Once you have Kilo Code in a separate sidebar from the file explorer, you can drag files from the explorer into the chat window (even multiple at once). Just hold down the Shift key after you start dragging the files.
+**Drag files directly into chat.** Once you have TakeDeep in a separate sidebar from the file explorer, you can drag files from the explorer into the chat window (even multiple at once). Just hold down the Shift key after you start dragging the files.
 {% /callout %}
 
 {% /tab %}
 {% /tabs %}
 
-Ready to start coding? Start a session in Kilo Code and describe what you want to build!
+Ready to start coding? Start a session in TakeDeep and describe what you want to build!

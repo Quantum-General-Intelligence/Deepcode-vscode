@@ -5,7 +5,7 @@ description: "Save and restore code states with checkpoints"
 
 # Checkpoints
 
-Checkpoints automatically version your workspace files during Kilo Code tasks, enabling non-destructive exploration of AI suggestions and easy recovery from unwanted changes.
+Checkpoints automatically version your workspace files during TakeDeep tasks, enabling non-destructive exploration of AI suggestions and easy recovery from unwanted changes.
 
 Checkpoints let you:
 
@@ -19,7 +19,7 @@ Checkpoints let you:
 {% tabs %}
 {% tab label="VSCode" %}
 
-Checkpoints (called **snapshots** in the new extension) are enabled by default. They are configured via the `snapshot` key in your config file (`kilo.jsonc` or `~/.config/kilo/kilo.jsonc`):
+Checkpoints (called **snapshots** in the new extension) are enabled by default. They are configured via the `snapshot` key in your config file (`takedeep.jsonc` or `~/.config/kilo/takedeep.jsonc`):
 
 ```json
 {
@@ -40,7 +40,7 @@ Unlike the legacy extension which used a separate shadow Git repository, the new
 {% /tab %}
 {% tab label="CLI" %}
 
-Checkpoints are controlled by the `snapshot` boolean in your `kilo.jsonc` configuration file:
+Checkpoints are controlled by the `snapshot` boolean in your `takedeep.jsonc` configuration file:
 
 ```json
 {
@@ -53,12 +53,12 @@ When enabled, the system automatically captures snapshots at each step of a task
 {% /tab %}
 {% tab label="VSCode (Legacy)" %}
 
-Access checkpoint settings in Kilo Code settings under the "Checkpoints" section:
+Access checkpoint settings in TakeDeep settings under the "Checkpoints" section:
 
 1. Open Settings by clicking the gear icon {% codicon name="gear" /%} → Checkpoints
 2. Check or uncheck the "Enable automatic checkpoints" checkbox
 
-   {% image src="/docs/img/checkpoints/checkpoints.png" alt="Checkpoint settings in Kilo Code configuration" width="500" /%}
+   {% image src="/docs/img/checkpoints/checkpoints.png" alt="Checkpoint settings in TakeDeep configuration" width="500" /%}
 
 {% /tab %}
 {% /tabs %}
@@ -101,7 +101,7 @@ Snapshots respect your `.gitignore` rules. Files ignored by Git (such as `node_m
 
 {% /callout %}
 
-Kilo Code captures snapshots of your project's state using a shadow Git repository, separate from your main version control system. These snapshots, called checkpoints, automatically record changes throughout your AI-assisted workflow—whenever tasks begin, files change, or commands run.
+TakeDeep captures snapshots of your project's state using a shadow Git repository, separate from your main version control system. These snapshots, called checkpoints, automatically record changes throughout your AI-assisted workflow—whenever tasks begin, files change, or commands run.
 
 Checkpoints are stored as Git commits in the shadow repository, capturing:
 
@@ -228,7 +228,7 @@ To restore a project to a previous checkpoint state:
 
 ### Limitations and Considerations
 
-- **Scope**: Checkpoints only capture changes made during active Kilo Code tasks
+- **Scope**: Checkpoints only capture changes made during active TakeDeep tasks
 - **External changes**: Modifications made outside of tasks (manual edits, other tools) aren't included
 - **Large files**: Very large binary files may impact performance
 - **Unsaved work**: Restoration will overwrite any unsaved changes in your workspace
@@ -290,7 +290,7 @@ The checkpoint system consists of:
 
 ### Restoration Process
 
-When restoration executes, Kilo Code:
+When restoration executes, TakeDeep:
 
 - Performs a hard reset to the specified checkpoint commit
 - Copies all files from the shadow repository to your workspace

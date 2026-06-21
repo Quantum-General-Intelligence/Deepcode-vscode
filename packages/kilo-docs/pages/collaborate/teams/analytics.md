@@ -5,14 +5,14 @@ description: "Track team usage and performance analytics"
 
 # Analytics
 
-Using Kilo seats with an Enterprise or Teams subscription provides detailed usage analytics to help you monitor and understand your organization’s AI usage patterns, costs, and activity through the Kilo Gateway provider.
+Using Kilo seats with an Enterprise or Teams subscription provides detailed usage analytics to help you monitor and understand your organization’s AI usage patterns, costs, and activity through the TakeDeep Gateway provider.
 
 ## Analytics Dashboard Overview
 
-Access your organization’s usage analytics through the **Usage Details** section in your dashboard. The analytics show comprehensive data about your team's usage of the Kilo Gateway provider.
+Access your organization’s usage analytics through the **Usage Details** section in your dashboard. The analytics show comprehensive data about your team's usage of the TakeDeep Gateway provider.
 
 {% callout type="info" title="Usage Scope" %}
-This usage overview includes all of your usage of the Kilo Gateway provider. It does **NOT** include any usage made via the Kilo Code extension to other, non-Kilo Code providers. You can choose which API provider to use from the extension's main settings page.
+This usage overview includes all of your usage of the TakeDeep Gateway provider. It does **NOT** include any usage made via the TakeDeep extension to other, non-TakeDeep providers. You can choose which API provider to use from the extension's main settings page.
 {% /callout %}
 
 ## Summary Metrics

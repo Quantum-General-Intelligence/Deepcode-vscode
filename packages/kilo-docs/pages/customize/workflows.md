@@ -1,24 +1,24 @@
 ---
 title: "Workflows"
-description: "Create automated workflows with Kilo Code"
+description: "Create automated workflows with TakeDeep"
 platform: new
 ---
 
 # Workflows
 
-Workflows (also called **slash commands** in the new extension) automate repetitive tasks by defining step-by-step instructions for Kilo Code to execute.
+Workflows (also called **slash commands** in the new extension) automate repetitive tasks by defining step-by-step instructions for TakeDeep to execute.
 
-{% image src="/docs/img/screenshot-tests/kilo-vscode/visual-regression/settings/agent-behaviour-workflows-chromium-linux.png" alt="Workflows tab in Kilo Code" width="420" caption="Workflows tab in Kilo Code" /%}
+{% image src="/docs/img/screenshot-tests/kilo-vscode/visual-regression/settings/agent-behaviour-workflows-chromium-linux.png" alt="Workflows tab in TakeDeep" width="420" caption="Workflows tab in TakeDeep" /%}
 
 ## Creating Workflows
 
 {% tabs %}
 {% tab label="VSCode" %}
 
-Workflows are Markdown files stored as **slash commands** in `.kilo/commands/`:
+Workflows are Markdown files stored as **slash commands** in `.takedeep/commands/`:
 
 - **Global commands**: `~/.config/kilo/commands/` (available in all projects)
-- **Project commands**: `[project]/.kilo/commands/` (project-specific)
+- **Project commands**: `[project]/.takedeep/commands/` (project-specific)
 
 ### Basic Setup
 
@@ -26,7 +26,7 @@ Workflows are Markdown files stored as **slash commands** in `.kilo/commands/`:
 2. Save it in your commands directory
 3. Type `/command-name` in the chat (just the filename without `.md` extension) to execute
 
-For example, a file at `.kilo/commands/submit-pr.md` is invoked with `/submit-pr`.
+For example, a file at `.takedeep/commands/submit-pr.md` is invoked with `/submit-pr`.
 
 ### Optional Frontmatter
 
@@ -120,7 +120,7 @@ Let's walk through creating a workflow for submitting a pull request.
 {% tabs %}
 {% tab label="VSCode" %}
 
-Create a file called `submit-pr.md` in your `.kilo/commands` directory:
+Create a file called `submit-pr.md` in your `.takedeep/commands` directory:
 
 ```markdown
 ---
@@ -172,7 +172,7 @@ Trigger this workflow by typing `/submit-pr.md` in the chat.
 {% /tab %}
 {% /tabs %}
 
-Kilo Code will:
+TakeDeep will:
 
 - Scan your code for common issues before committing
 - Run your test suite to catch problems early

@@ -85,7 +85,33 @@ packages/opencode/bin/deeper --version
 - `@takedeep/server`: gateway API + dashboard (device auth, LiteLLM proxy, Stripe TheoSym)
 - Deploy assets in `infra/takedeep/`
 
+## Phase 9 (done)
+
+- `infra/takedeep/deploy.sh` fixed; `validate.sh` + CI workflow `takedeep-infra.yml`
+- Production runbook in `infra/takedeep/README.md` (CF tunnel, Stripe webhook, device auth, e2e)
+- `watch-serve.sh` health watchdog in supervisor
+
+## Phase 10 (done)
+
+- Web app: TakeDeep favicon/notification icon, feedback + changelog URLs
+- `entry.tsx` hostname checks for `takedeep.ai`
+
+## Phase 11 (done)
+
+- VS Code extension: repo URL, `takedeep` command icons, autocomplete i18n namespace `takedeep:autocomplete.*`
+- Removed broken custom icon font contribution
+
+## Phase 12 (done)
+
+- CLI `scriptName("deeper")`, TakeDeep ASCII logo, `BRAND.configSchemaUrl` in config loader
+- `.takedeep/` config dirs + `takedeep.jsonc` precedence; share URLs use `deeper-dash.takedeep.ai`
+
+## Phase 13 (done)
+
+- Bulk docs rebrand via `infra/takedeep/rebrand-docs.ts` (`packages/kilo-docs`)
+
 ## Next phases
 
-- Deploy to symboliq-g6x16 + Cloudflare Tunnel
-- Publish `@takedeep/cli` to npm (optional)
+- Phase 14: Telemetry & ops (PostHog, runbooks)
+- Phase 15: Structural cleanup (folder renames, upstream merge)
+- Phase 16: Publication & distribution (Marketplace, npm, Open VSX)

@@ -6,25 +6,25 @@
 - <https://api.apertis.ai/v1>
   <!-- packages/opencode/src/provider/model-cache.ts -->
   <!-- packages/opencode/src/provider/models.ts -->
-- <https://api.kilo.ai>
+- <https://deeper-api.takedeep.ai>
   <!-- packages/opencode/src/cli/cmd/github.ts -->
-- <https://app.kilo.ai>
+- <https://deeper-dash.takedeep.ai>
   <!-- packages/opencode/src/kilocode/kilo-commands.tsx -->
-- <https://app.kilo.ai/claw>
+- <https://deeper-dash.takedeep.ai/claw>
   <!-- packages/kilo-vscode/webview-ui/kiloclaw/components/SetupView.tsx -->
   <!-- packages/kilo-vscode/webview-ui/kiloclaw/components/UpgradeView.tsx -->
   <!-- packages/opencode/src/kilocode/components/dialog-claw-setup.tsx -->
   <!-- packages/opencode/src/kilocode/components/dialog-claw-upgrade.tsx -->
-- <https://app.kilo.ai/config.json>
+- <https://deeper-dash.takedeep.ai/config.json>
   <!-- packages/kilo-vscode/src/kilo-provider/config-file.ts -->
   <!-- packages/opencode/src/config/config.ts -->
-- <https://app.kilo.ai/credits>
+- <https://deeper-dash.takedeep.ai/credits>
   <!-- packages/kilo-vscode/src/services/autocomplete/AutocompleteServiceManager.ts -->
-- <https://app.kilo.ai/profile>
+- <https://deeper-dash.takedeep.ai/profile>
   <!-- packages/kilo-vscode/webview-ui/src/components/profile/ProfileView.tsx -->
-- <https://app.kilo.ai/usage>
+- <https://deeper-dash.takedeep.ai/usage>
   <!-- packages/opencode/src/kilocode/components/dialog-kilo-profile.tsx -->
-- <https://blog.kilo.ai/p/new-kilo-for-vs-code-is-live>
+- <https://deeper-api.takedeep.ai/p/new-kilo-for-vs-code-is-live>
   <!-- packages/kilo-vscode/webview-ui/src/components/migration/MigrationWizard.tsx -->
 - <https://chatgpt.com/explore/plus>
   <!-- packages/opencode/src/provider/error.ts -->
@@ -56,15 +56,15 @@
   <!-- packages/opencode/src/lsp/server.ts -->
 - <https://github.com/google-gemini/gemini-cli/blob/main/packages/core/src/utils/editCorrector.ts>
   <!-- packages/opencode/src/tool/edit.ts -->
-- <https://github.com/Kilo-Org/kilo-marketplace>
+- <https://github.com/Quantum-General-Intelligence/kilo-marketplace>
   <!-- packages/kilo-vscode/webview-ui/src/components/marketplace/MarketplaceContribute.tsx -->
-- <https://github.com/Kilo-Org/kilocode>
+- <https://github.com/Quantum-General-Intelligence/Deepcode-vscode>
   <!-- packages/kilo-vscode/webview-ui/src/components/settings/AboutKiloCodeTab.tsx -->
-- <https://github.com/Kilo-Org/kilocode/issues/6986>
+- <https://github.com/Quantum-General-Intelligence/Deepcode-vscode/issues/6986>
   <!-- packages/kilo-vscode/src/agent-manager/constants.ts -->
-- <https://github.com/Kilo-Org/kilocode/issues/new?template=bug-report.yml>
+- <https://github.com/Quantum-General-Intelligence/Deepcode-vscode/issues/new?template=bug-report.yml>
   <!-- packages/opencode/src/cli/cmd/tui/app.tsx -->
-- <https://github.com/Kilo-Org/kilocode/issues/new/choose>
+- <https://github.com/Quantum-General-Intelligence/Deepcode-vscode/issues/new/choose>
   <!-- packages/kilo-vscode/webview-ui/src/components/chat/FeedbackDialog.tsx -->
 - <https://github.com/microsoft/vscode-eslint/archive/refs/heads/main.zip>
   <!-- packages/opencode/src/lsp/server.ts -->
@@ -76,29 +76,29 @@
   <!-- packages/opencode/src/provider/provider.ts -->
 - <https://julialang.org/downloads/>
   <!-- packages/opencode/src/lsp/server.ts -->
-- <https://kilo.ai>
+- <https://deeper-api.takedeep.ai>
   <!-- packages/opencode/src/cli/cmd/github.ts -->
   <!-- packages/opencode/src/mcp/oauth-provider.ts -->
-- <https://kilo.ai/>
+- <https://deeper-api.takedeep.ai/>
   <!-- packages/opencode/src/cli/cmd/generate.ts -->
-- <https://kilo.ai/discord>
+- <https://deeper-api.takedeep.ai/discord>
   <!-- packages/kilo-vscode/webview-ui/src/components/chat/FeedbackDialog.tsx -->
   <!-- packages/kilo-vscode/webview-ui/src/components/settings/AboutKiloCodeTab.tsx -->
-- <https://kilo.ai/docs>
+- <https://deeper-api.takedeep.ai/docs>
   <!-- packages/kilo-vscode/webview-ui/src/hooks/useSlashCommand.ts -->
   <!-- packages/opencode/src/kilocode/cli/cmd/tui/app.tsx -->
-- <https://kilo.ai/docs/code-with-ai/platforms/vscode/whats-new>
+- <https://deeper-api.takedeep.ai/docs/code-with-ai/platforms/vscode/whats-new>
   <!-- packages/kilo-vscode/webview-ui/src/components/migration/MigrationWizard.tsx -->
-- <https://kilo.ai/docs/providers/#custom-provider>
+- <https://deeper-api.takedeep.ai/docs/providers/#custom-provider>
   <!-- packages/kilo-vscode/webview-ui/src/components/settings/CustomProviderDialog.tsx -->
-- <https://kilo.ai/gateway>
+- <https://deeper-api.takedeep.ai/gateway>
   <!-- packages/opencode/src/kilocode/cli/cmd/tui/component/dialog-provider.tsx -->
-- <https://kilo.ai/install>
+- <https://deeper-api.takedeep.ai/install>
   <!-- packages/opencode/src/installation/index.ts -->
-- <https://kilo.ai/kiloclaw>
+- <https://deeper-api.takedeep.ai/kiloclaw>
   <!-- packages/kilo-vscode/webview-ui/kiloclaw/components/SetupView.tsx -->
   <!-- packages/opencode/src/kilocode/components/dialog-claw-setup.tsx -->
-- <https://kilo.ai/support>
+- <https://deeper-api.takedeep.ai/support>
   <!-- packages/kilo-vscode/webview-ui/src/components/chat/FeedbackDialog.tsx -->
   <!-- packages/kilo-vscode/webview-ui/src/components/settings/AboutKiloCodeTab.tsx -->
 - <https://kilocode.ai>

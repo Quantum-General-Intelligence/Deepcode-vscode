@@ -40,19 +40,35 @@ export namespace KilocodeConfig {
   // ── Config file constants ────────────────────────────────────────────
 
   /** Kilo-specific config file names (highest-to-lowest precedence within kilo). */
-  export const KILO_CONFIG_FILES = ["kilo.jsonc", "kilo.json"] as const
+  export const KILO_CONFIG_FILES = ["takedeep.jsonc", "takedeep.json", "kilo.jsonc", "kilo.json"] as const
 
   /** All config file names in precedence order (kilo + opencode). */
-  export const ALL_CONFIG_FILES = ["kilo.jsonc", "kilo.json", "opencode.jsonc", "opencode.json"] as const
+  export const ALL_CONFIG_FILES = [
+    "takedeep.jsonc",
+    "takedeep.json",
+    "kilo.jsonc",
+    "kilo.json",
+    "opencode.jsonc",
+    "opencode.json",
+  ] as const
 
   /** Directory suffixes that Kilo recognizes in addition to .opencode. */
-  export const KILO_DIR_SUFFIXES = [".kilo", ".kilocode"] as const
+  export const KILO_DIR_SUFFIXES = [".takedeep", ".kilo", ".kilocode"] as const
 
   /** Path patterns for resolving kilo agent names from file paths. */
-  export const AGENT_PATTERNS = ["/.kilo/agent/", "/.kilo/agents/", "/.kilocode/agent/", "/.kilocode/agents/"] as const
+  export const AGENT_PATTERNS = [
+    "/.takedeep/agent/",
+    "/.takedeep/agents/",
+    "/.kilo/agent/",
+    "/.kilo/agents/",
+    "/.kilocode/agent/",
+    "/.kilocode/agents/",
+  ] as const
 
   /** Path patterns for resolving kilo command names from file paths. */
   export const COMMAND_PATTERNS = [
+    "/.takedeep/command/",
+    "/.takedeep/commands/",
     "/.kilo/command/",
     "/.kilo/commands/",
     "/.kilocode/command/",

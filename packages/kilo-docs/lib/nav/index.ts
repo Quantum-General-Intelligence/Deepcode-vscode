@@ -7,7 +7,7 @@ import { CustomizeNav } from "./customize"
 import { DeploySecureNav } from "./deploy-secure"
 import { GatewayNav } from "./gateway"
 import { GettingStartedNav } from "./getting-started"
-import { KiloClawNav } from "./kiloclaw"
+import { TakeDeep ClawNav } from "./kiloclaw"
 import { ToolsNav } from "./tools"
 
 export const Nav = {
@@ -20,6 +20,6 @@ export const Nav = {
   ContributingNav,
   AiProvidersNav,
   GatewayNav,
-  KiloClawNav,
+  TakeDeep ClawNav,
   ToolsNav,
 }

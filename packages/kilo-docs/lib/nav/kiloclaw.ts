@@ -1,8 +1,8 @@
 import { NavSection } from "../types"
 
-export const KiloClawNav: NavSection[] = [
+export const TakeDeep ClawNav: NavSection[] = [
   {
-    title: "KiloClaw",
+    title: "TakeDeep Claw",
     links: [
       { href: "/kiloclaw/overview", children: "Overview" },
       { href: "/kiloclaw/dashboard", children: "Dashboard" },

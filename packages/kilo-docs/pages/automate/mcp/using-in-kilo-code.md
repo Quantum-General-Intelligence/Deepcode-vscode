@@ -1,11 +1,11 @@
 ---
-title: "Using MCP in Kilo Code"
-description: "How to use MCP servers in Kilo Code"
+title: "Using MCP in TakeDeep"
+description: "How to use MCP servers in TakeDeep"
 ---
 
-# Using MCP in Kilo Code
+# Using MCP in TakeDeep
 
-Model Context Protocol (MCP) extends Kilo Code's capabilities by connecting to external tools and services. This guide covers everything you need to know about using MCP with Kilo Code.
+Model Context Protocol (MCP) extends TakeDeep's capabilities by connecting to external tools and services. This guide covers everything you need to know about using MCP with TakeDeep.
 
 ## Configuring MCP Servers
 
@@ -14,14 +14,14 @@ Model Context Protocol (MCP) extends Kilo Code's capabilities by connecting to e
 
 MCP server configurations are stored inside the main Kilo config file. There are two levels:
 
-1. **Global Configuration**: `~/.config/kilo/kilo.jsonc` — applies to all projects.
-2. **Project-level Configuration**: `kilo.jsonc` in your project root, or `.kilo/kilo.jsonc` for a cleaner setup.
+1. **Global Configuration**: `~/.config/kilo/takedeep.jsonc` — applies to all projects.
+2. **Project-level Configuration**: `takedeep.jsonc` in your project root, or `.takedeep/takedeep.jsonc` for a cleaner setup.
 
 **Precedence**: Project-level configuration takes precedence over global configuration.
 
 ### Editing MCP Settings
 
-You can edit MCP settings from the Kilo Code settings UI:
+You can edit MCP settings from the TakeDeep settings UI:
 
 1. Click the {% codicon name="gear" /%} icon in the sidebar toolbar to open Settings.
 2. Click the `Agent Behaviour` tab on the left side.
@@ -31,7 +31,7 @@ From here you can add, edit, enable/disable, and delete MCP servers. Changes are
 
 ### Config Format
 
-MCP servers are configured under the `mcp` key in `kilo.jsonc`:
+MCP servers are configured under the `mcp` key in `takedeep.jsonc`:
 
 **Local (STDIO) server:**
 
@@ -69,17 +69,17 @@ MCP servers are configured under the `mcp` key in `kilo.jsonc`:
 }
 ```
 
-Remote servers support OAuth 2.0 authentication. If the server supports it, Kilo Code will automatically start the OAuth flow when you connect. You can also disable OAuth with `"oauth": false`.
+Remote servers support OAuth 2.0 authentication. If the server supports it, TakeDeep will automatically start the OAuth flow when you connect. You can also disable OAuth with `"oauth": false`.
 
 {% /tab %}
 {% tab label="CLI" %}
 
-The CLI accepts several config filenames. The recommended file is `kilo.json`:
+The CLI accepts several config filenames. The recommended file is `takedeep.json`:
 
 | Scope | Recommended Path | Also supported |
 |---|---|---|
-| **Global** | `~/.config/kilo/kilo.json` | `kilo.jsonc`, `opencode.json`, `opencode.jsonc`, `config.json` |
-| **Project** | `./kilo.json` or `./.kilo/kilo.json` | `kilo.jsonc`, `opencode.jsonc`, `opencode.json` |
+| **Global** | `~/.config/kilo/takedeep.json` | `takedeep.jsonc`, `opencode.json`, `opencode.jsonc`, `config.json` |
+| **Project** | `./takedeep.json` or `./.takedeep/takedeep.json` | `takedeep.jsonc`, `opencode.jsonc`, `opencode.json` |
 
 {% /tab %}
 {% tab label="VSCode (Legacy)" %}
@@ -89,7 +89,7 @@ MCP server configurations can be managed at two levels: **global** (applies acro
 | Scope | Path | Description |
 |---|---|---|
 | **Global** | `mcp_settings.json` | Accessible via VS Code settings. Applies across all workspaces. |
-| **Project** | `.kilocode/mcp.json` | In your project root. Auto-detected by Kilo Code. |
+| **Project** | `.kilocode/mcp.json` | In your project root. Auto-detected by TakeDeep. |
 
 Project-level configs can be committed to version control to share with your team.
 
@@ -143,7 +143,7 @@ Both global and project-level files use a JSON format with a `mcpServers` object
 }
 ```
 
-_Example of MCP Server config in Kilo Code (STDIO Transport)_
+_Example of MCP Server config in TakeDeep (STDIO Transport)_
 
 {% /tab %}
 {% /tabs %}
@@ -153,7 +153,7 @@ _Example of MCP Server config in Kilo Code (STDIO Transport)_
 MCP supports two main transport types:
 
 - **Local (STDIO)**: Servers run as a child process on your machine, communicating over stdin/stdout.
-- **Remote (HTTP/SSE)**: Servers hosted over HTTP/HTTPS. Kilo Code tries `StreamableHTTP` first, then falls back to `SSE` automatically.
+- **Remote (HTTP/SSE)**: Servers hosted over HTTP/HTTPS. TakeDeep tries `StreamableHTTP` first, then falls back to `SSE` automatically.
 
 For more details, see [STDIO & SSE Transports](server-transports).
 
@@ -390,14 +390,14 @@ Use `{env:VARIABLE_NAME}` syntax in config files to reference environment variab
 
 ### Editing MCP Settings Files
 
-You can edit both global and project-level MCP configuration files directly from the Kilo Code settings.
+You can edit both global and project-level MCP configuration files directly from the TakeDeep settings.
 
-1. Click the {% codicon name="gear" /%} icon in the top navigation of the Kilo Code pane to open `Settings`.
+1. Click the {% codicon name="gear" /%} icon in the top navigation of the TakeDeep pane to open `Settings`.
 2. Click the `Agent Behaviour` tab on the left side
 3. Select the `MCP Servers` sub-tab
 4. Click the appropriate button:
    - **`Edit Global MCP`**: Opens the global `mcp_settings.json` file.
-   - **`Edit Project MCP`**: Opens the project-specific `.kilocode/mcp.json` file. If this file doesn't exist, Kilo Code will create it for you.
+   - **`Edit Project MCP`**: Opens the project-specific `.kilocode/mcp.json` file. If this file doesn't exist, TakeDeep will create it for you.
 
 {% image src="/docs/img/using-mcp-in-kilo-code/mcp-installed-config.png" alt="Edit Global MCP and Edit Project MCP buttons" width="600" caption="Edit Global MCP and Edit Project MCP buttons" /%}
 
@@ -452,7 +452,7 @@ MCP tool calls use the same permission system as built-in tools. Each MCP tool's
 
 **At runtime:** When an MCP tool is called, the Permission Dock shows an approval prompt. Click **Approve Always** to save an allow rule to your config so future calls to that tool are auto-approved.
 
-**In your config file:** Add the tool name (or a wildcard pattern) to the `permission` key in `kilo.jsonc`:
+**In your config file:** Add the tool name (or a wildcard pattern) to the `permission` key in `takedeep.jsonc`:
 
 ```json
 {
@@ -495,7 +495,7 @@ MCP tool auto-approval works on a per-tool basis and is disabled by default. To 
 
 {% image src="/docs/img/using-mcp-in-kilo-code/using-mcp-in-kilo-code-7.png" alt="Always allow checkbox for MCP tools" width="120" caption="Always allow checkbox for MCP tools" /%}
 
-When enabled, Kilo Code will automatically approve this specific tool without prompting. Note that the global "Use MCP servers" setting takes precedence - if it's disabled, no MCP tools will be auto-approved.
+When enabled, TakeDeep will automatically approve this specific tool without prompting. Note that the global "Use MCP servers" setting takes precedence - if it's disabled, no MCP tools will be auto-approved.
 
 {% /tab %}
 {% /tabs %}
@@ -651,21 +651,21 @@ Add the test MCP server for development:
 
 ## Finding and Installing MCP Servers
 
-Kilo Code does not come with any pre-installed MCP servers. You'll need to find and install them separately.
+TakeDeep does not come with any pre-installed MCP servers. You'll need to find and install them separately.
 
-- **Kilo Marketplace:** Browse community-contributed MCP server configurations and agent skills in the [Kilo Marketplace](https://github.com/Kilo-Org/kilo-marketplace). The marketplace includes ready-to-use configs for popular tools like Figma, Sentry, and more.
+- **Kilo Marketplace:** Browse community-contributed MCP server configurations and agent skills in the [Kilo Marketplace](https://github.com/Quantum-General-Intelligence/kilo-marketplace). The marketplace includes ready-to-use configs for popular tools like Figma, Sentry, and more.
 - **Community Repositories:** Check for community-maintained lists of MCP servers on GitHub
-- **Ask Kilo Code:** You can ask Kilo Code to help you find or even create MCP servers
-- **Build Your Own:** Create custom MCP servers using the SDK to extend Kilo Code with your own tools
+- **Ask TakeDeep:** You can ask TakeDeep to help you find or even create MCP servers
+- **Build Your Own:** Create custom MCP servers using the SDK to extend TakeDeep with your own tools
 
 For full SDK documentation, visit the [MCP GitHub repository](https://github.com/modelcontextprotocol/).
 
 ## Using MCP Tools in Your Workflow
 
-After configuring an MCP server, Kilo Code will automatically detect available tools and resources. To use them:
+After configuring an MCP server, TakeDeep will automatically detect available tools and resources. To use them:
 
-1. Type your request in the Kilo Code chat interface
-2. Kilo Code will identify when an MCP tool can help with your task
+1. Type your request in the TakeDeep chat interface
+2. TakeDeep will identify when an MCP tool can help with your task
 3. Approve the tool use when prompted (or use auto-approval)
 
 Example: "Analyze the performance of my API" might use an MCP tool that tests API endpoints.
@@ -684,7 +684,7 @@ Example: "Analyze the performance of my API" might use an MCP tool that tests AP
 {% tab label="CLI" %}
 
 - **Server Not Responding:** Check if the server process is running. Use `kilo mcp debug <server-name>` to inspect the connection.
-- **Permission Errors:** Ensure API keys and credentials are set in your `kilo.jsonc` config or via `{env:VARIABLE_NAME}` references.
+- **Permission Errors:** Ensure API keys and credentials are set in your `takedeep.jsonc` config or via `{env:VARIABLE_NAME}` references.
 - **Tool Not Available:** Confirm the server is properly implementing the tool and it is not disabled (`"enabled": false`) in your config.
 - **Slow Performance:** Increase the `timeout` value for the specific MCP server in your config.
 

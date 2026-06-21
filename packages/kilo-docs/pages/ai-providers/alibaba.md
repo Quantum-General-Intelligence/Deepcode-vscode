@@ -2,9 +2,9 @@
 sidebar_label: Alibaba Cloud
 ---
 
-# Using Alibaba Cloud With Kilo Code
+# Using Alibaba Cloud With TakeDeep
 
-Kilo Code supports Alibaba Cloud Model Studio (DashScope) through the native Alibaba AI SDK provider. Use it to run Qwen and other DashScope-hosted models directly from Kilo.
+TakeDeep supports Alibaba Cloud Model Studio (DashScope) through the native Alibaba AI SDK provider. Use it to run Qwen and other DashScope-hosted models directly from Kilo.
 
 **Website:** [https://www.alibabacloud.com/product/modelstudio](https://www.alibabacloud.com/product/modelstudio)
 
@@ -15,7 +15,7 @@ Kilo Code supports Alibaba Cloud Model Studio (DashScope) through the native Ali
 3. Create a key and copy it immediately.
 4. Store the key securely; do not commit it to your repository.
 
-## Configuration in Kilo Code
+## Configuration in TakeDeep
 
 {% tabs %}
 {% tab label="VSCode (Legacy)" %}
@@ -27,12 +27,12 @@ Use the **OpenAI Compatible** provider if the legacy provider list does not incl
 
 Open **Settings** (gear icon) and go to the **Providers** tab to add Alibaba Cloud. Enter your DashScope API key and choose a supported model from the model picker.
 
-The extension stores this in your `kilo.json` config file. You can also edit the config file directly — see the **CLI** tab for the file format.
+The extension stores this in your `takedeep.json` config file. You can also edit the config file directly — see the **CLI** tab for the file format.
 
 {% /tab %}
 {% tab label="CLI" %}
 
-Set the DashScope API key as an environment variable or configure it in your `kilo.json` config file:
+Set the DashScope API key as an environment variable or configure it in your `takedeep.json` config file:
 
 **Environment variable:**
 
@@ -40,7 +40,7 @@ Set the DashScope API key as an environment variable or configure it in your `ki
 export DASHSCOPE_API_KEY="your-api-key"
 ```
 
-**Config file** (`~/.config/kilo/kilo.json` or `./kilo.json`):
+**Config file** (`~/.config/kilo/takedeep.json` or `./takedeep.json`):
 
 ```jsonc
 {

@@ -11,7 +11,7 @@
   "publisher": "takedeep",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Kilo-Org/kilocode.git",
+    "url": "https://github.com/Quantum-General-Intelligence/Deepcode-vscode.git",
     "directory": "packages/kilo-vscode"
   },
   "engines": {
@@ -61,15 +61,6 @@
         }
       }
     ],
-    "icons": {
-      "takedeep-logo": {
-        "description": "TakeDeep logo",
-        "default": {
-          "fontPath": "assets/icons/kilo-icon-font.woff2",
-          "fontCharacter": "\\F101"
-        }
-      }
-    },
     "viewsContainers": {
       "activitybar": [
         {
@@ -124,8 +115,8 @@
         "command": "takedeep.openInTab",
         "title": "TakeDeep",
         "icon": {
-          "light": "assets/icons/kilo-light.svg",
-          "dark": "assets/icons/kilo-dark.svg"
+          "light": "assets/icons/takedeep-light.png",
+          "dark": "assets/icons/takedeep-dark.png"
         }
       },
       {
@@ -277,8 +268,8 @@
         "title": "Generate Commit Message",
         "category": "TakeDeep",
         "icon": {
-          "light": "assets/icons/kilo-light.svg",
-          "dark": "assets/icons/kilo-dark.svg"
+          "light": "assets/icons/takedeep-light.png",
+          "dark": "assets/icons/takedeep-dark.png"
         }
       },
       {

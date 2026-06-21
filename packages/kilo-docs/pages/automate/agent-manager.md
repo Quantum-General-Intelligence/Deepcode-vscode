@@ -5,7 +5,7 @@ description: "Manage and orchestrate multiple AI agents"
 
 # Agent Manager
 
-The Agent Manager is a control panel for running and orchestrating multiple Kilo Code agents, with support for parallel worktree-isolated sessions.
+The Agent Manager is a control panel for running and orchestrating multiple TakeDeep agents, with support for parallel worktree-isolated sessions.
 
 The Agent Manager is a **full-panel editor tab** built directly into the extension. It uses the extension's embedded runtime, so no separate Kilo CLI installation or CLI authentication setup is required. It supports:
 
@@ -24,7 +24,7 @@ New to running multiple agents in parallel? The [Agent Manager Workflows](/docs/
 ## Opening the Agent Manager
 
 - Keyboard shortcut: `Cmd+Shift+M` (macOS) / `Ctrl+Shift+M` (Windows/Linux)
-- Command Palette: "Kilo Code: Open Agent Manager"
+- Command Palette: "TakeDeep: Open Agent Manager"
 - Click the Agent Manager icon in the sidebar toolbar
 
 The panel opens as an editor tab and stays active across focus changes.
@@ -47,7 +47,7 @@ Each Agent Manager session runs in an isolated git worktree on a separate branch
 
 ### Worktree Location
 
-Managed worktrees are created under `.kilo/worktrees/` in your project. Kilo also stores Agent Manager UI state in `.kilo/agent-manager.json`.
+Managed worktrees are created under `.takedeep/worktrees/` in your project. Kilo also stores Agent Manager UI state in `.takedeep/agent-manager.json`.
 
 ### PR Status Badges
 
@@ -200,7 +200,7 @@ A common workflow is letting the agent work, then switching to the terminal to r
 
 ## Setup Scripts
 
-Place an executable script at `.kilo/setup-script` in your project root. It runs automatically whenever a new worktree is created (useful for `npm install`, env setup, etc.). Root-level `.env` and `.env.*` files are also auto-copied from the main repo before the setup script runs.
+Place an executable script at `.takedeep/setup-script` in your project root. It runs automatically whenever a new worktree is created (useful for `npm install`, env setup, etc.). Root-level `.env` and `.env.*` files are also auto-copied from the main repo before the setup script runs.
 
 ## Run Script
 
@@ -208,14 +208,14 @@ The run button lets you start your project (dev server, build, tests, etc.) dire
 
 ### Setting up a run script
 
-Create a script file in `.kilo/` using the appropriate filename for your platform:
+Create a script file in `.takedeep/` using the appropriate filename for your platform:
 
 | Platform | Filename (checked in order) |
 |---|---|
-| macOS / Linux | `.kilo/run-script`, `.kilo/run-script.sh` |
-| Windows | `.kilo/run-script.ps1`, `.kilo/run-script.cmd`, `.kilo/run-script.bat` |
+| macOS / Linux | `.takedeep/run-script`, `.takedeep/run-script.sh` |
+| Windows | `.takedeep/run-script.ps1`, `.takedeep/run-script.cmd`, `.takedeep/run-script.bat` |
 
-For example, on macOS / Linux create `.kilo/run-script`:
+For example, on macOS / Linux create `.takedeep/run-script`:
 
 ```sh
 #!/bin/sh
@@ -245,9 +245,9 @@ Two extra variables are injected into the script's environment:
 
 ## Session State and Persistence
 
-Agent Manager state is persisted in `.kilo/agent-manager.json`. It stores worktrees, sections, session tabs, ordering, collapsed state, diff preferences, and cached PR metadata. Git branches and worktree directories remain on disk separately.
+Agent Manager state is persisted in `.takedeep/agent-manager.json`. It stores worktrees, sections, session tabs, ordering, collapsed state, diff preferences, and cached PR metadata. Git branches and worktree directories remain on disk separately.
 
-Closing a managed worktree removes it from Agent Manager, deletes its `.kilo/worktrees/` directory, and deletes the local branch. Closing an imported external worktree removes the Agent Manager entry but leaves the external directory and branch untouched.
+Closing a managed worktree removes it from Agent Manager, deletes its `.takedeep/worktrees/` directory, and deletes the local branch. Closing an imported external worktree removes the Agent Manager entry but leaves the external directory and branch untouched.
 
 ## Keyboard Shortcuts (Agent Manager Panel)
 

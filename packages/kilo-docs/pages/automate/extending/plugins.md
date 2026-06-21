@@ -31,7 +31,7 @@ Add an array of plugin specifiers to your config file:
 
 ```json
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "plugin": [
     "@your-org/your-plugin",
     "your-plugin@1.2.3",
@@ -58,14 +58,14 @@ Config files live in the same locations as the rest of your CLI configuration �
 Drop TypeScript or JavaScript files into a `plugin/` or `plugins/` folder inside any config directory:
 
 - Global: `~/.config/kilo/plugin/`
-- Project: `.kilo/plugin/`, `.kilocode/plugin/`, or `.opencode/plugin/`
+- Project: `.takedeep/plugin/`, `.kilocode/plugin/`, or `.opencode/plugin/`
 
 Every `.ts` or `.js` file in those directories is auto-registered at startup — no need to list them in the config file.
 
 ```text
 my-project/
-├── kilo.json
-└── .kilo/
+├── takedeep.json
+└── .takedeep/
     └── plugin/
         ├── env-guard.ts
         └── notifications.ts
@@ -99,11 +99,11 @@ The command resolves the package, reads its `package.json` for plugin entrypoint
 
 Plugins from all sources run on every session. They load in this order:
 
-1. Internal built-ins (Kilo Gateway auth, Codex auth, Copilot auth, Cloudflare, etc.)
-2. Global config plugin array (`~/.config/kilo/kilo.json`)
+1. Internal built-ins (TakeDeep Gateway auth, Codex auth, Copilot auth, Cloudflare, etc.)
+2. Global config plugin array (`~/.config/kilo/takedeep.json`)
 3. Global plugin directory (`~/.config/kilo/plugin/`)
-4. Project config plugin array (`kilo.json` / `opencode.json`)
-5. Project plugin directory (`.kilo/plugin/` and friends)
+4. Project config plugin array (`takedeep.json` / `opencode.json`)
+5. Project plugin directory (`.takedeep/plugin/` and friends)
 
 Duplicates (same package, same version) are deduplicated. Hooks from multiple plugins run sequentially in load order.
 
@@ -122,7 +122,7 @@ A plugin is a module that exports a function returning a set of [hooks](#hooks-r
 Create a file in your plugin directory:
 
 ```ts
-// .kilo/plugin/hello.ts
+// .takedeep/plugin/hello.ts
 import type { Plugin } from "@takedeep/plugin"
 
 const hello: Plugin = async ({ project, client, $, directory, worktree }) => {
@@ -279,7 +279,7 @@ If the running CLI does not satisfy the range, the plugin is skipped and a warni
 Local plugins and custom tools can use external npm packages. Add a `package.json` to your config directory:
 
 ```json
-// .kilo/package.json
+// .takedeep/package.json
 {
   "dependencies": {
     "shescape": "^2.1.0"
@@ -290,7 +290,7 @@ Local plugins and custom tools can use external npm packages. Add a `package.jso
 Kilo runs `bun install` at startup so your plugins can import the packages:
 
 ```ts
-// .kilo/plugin/escape-bash.ts
+// .takedeep/plugin/escape-bash.ts
 import { escape } from "shescape"
 import type { Plugin } from "@takedeep/plugin"
 
@@ -412,7 +412,7 @@ const server: Plugin = async () => ({
 Plugins can register tools the model can call alongside the built-in ones. Use the `tool()` helper for type-safety:
 
 ```ts
-// .kilo/plugin/database.ts
+// .takedeep/plugin/database.ts
 import type { Plugin } from "@takedeep/plugin"
 import { tool } from "@takedeep/plugin/tool"
 
@@ -446,7 +446,7 @@ If a custom tool uses the same name as a built-in tool, **the custom tool wins**
 
 ### Alternative: standalone tool files
 
-For tools that don't need the full plugin context, drop them in a `tool/` or `tools/` folder inside any config directory — for example `.kilo/tool/database.ts` or `~/.config/kilo/tool/database.ts`. The filename becomes the tool name, and each file exports a `tool()` definition directly. The layout is identical to the [OpenCode custom tools guide](https://opencode.ai/docs/custom-tools); substitute `.kilo/` (or `.kilocode/` / `.opencode/`) for `.opencode/`.
+For tools that don't need the full plugin context, drop them in a `tool/` or `tools/` folder inside any config directory — for example `.takedeep/tool/database.ts` or `~/.config/kilo/tool/database.ts`. The filename becomes the tool name, and each file exports a `tool()` definition directly. The layout is identical to the [OpenCode custom tools guide](https://opencode.ai/docs/custom-tools); substitute `.takedeep/` (or `.kilocode/` / `.opencode/`) for `.opencode/`.
 
 ---
 
@@ -455,13 +455,13 @@ For tools that don't need the full plugin context, drop them in a `tool/` or `to
 ### Send a notification when a session finishes
 
 ```ts
-// .kilo/plugin/notify.ts
+// .takedeep/plugin/notify.ts
 import type { Plugin } from "@takedeep/plugin"
 
 const Notify: Plugin = async ({ $ }) => ({
   event: async ({ event }) => {
     if (event.type === "session.idle") {
-      await $`osascript -e 'display notification "Session complete!" with title "Kilo"'`
+      await $`osascript -e 'display notification "Session complete!" with title "TakeDeep"'`
     }
   },
 })
@@ -476,7 +476,7 @@ The VS Code extension already emits system notifications when a session finishes
 ### Block reads of `.env` files
 
 ```ts
-// .kilo/plugin/env-guard.ts
+// .takedeep/plugin/env-guard.ts
 import type { Plugin } from "@takedeep/plugin"
 
 const EnvGuard: Plugin = async () => ({
@@ -493,7 +493,7 @@ export default { id: "env-guard", server: EnvGuard }
 ### Inject environment variables into every shell command
 
 ```ts
-// .kilo/plugin/inject-env.ts
+// .takedeep/plugin/inject-env.ts
 import type { Plugin } from "@takedeep/plugin"
 
 const InjectEnv: Plugin = async () => ({
@@ -533,7 +533,7 @@ Levels: `debug`, `info`, `warn`, `error`.
 ### Inject context during session compaction
 
 ```ts
-// .kilo/plugin/compaction.ts
+// .takedeep/plugin/compaction.ts
 import type { Plugin } from "@takedeep/plugin"
 
 const Compaction: Plugin = async () => ({
@@ -603,7 +603,7 @@ Host slots include `home_prompt_right`, `session_prompt`, `session_prompt_right`
 
 ## Reference
 
-- Types: [`@takedeep/plugin`](https://github.com/Kilo-Org/kilocode/tree/main/packages/plugin) — `Plugin`, `Hooks`, `PluginInput`, `ToolDefinition`, `AuthHook`, `ProviderHook`.
-- Example plugin: [`packages/plugin/src/example.ts`](https://github.com/Kilo-Org/kilocode/blob/main/packages/plugin/src/example.ts)
+- Types: [`@takedeep/plugin`](https://github.com/Quantum-General-Intelligence/Deepcode-vscode/tree/main/packages/plugin) — `Plugin`, `Hooks`, `PluginInput`, `ToolDefinition`, `AuthHook`, `ProviderHook`.
+- Example plugin: [`packages/plugin/src/example.ts`](https://github.com/Quantum-General-Intelligence/Deepcode-vscode/blob/main/packages/plugin/src/example.ts)
 - CLI command: [`kilo plugin`](/docs/code-with-ai/platforms/cli-reference#kilo-plugin)
 - Upstream docs (behavior is identical to OpenCode): [opencode.ai/docs/plugins](https://opencode.ai/docs/plugins) and [opencode.ai/docs/custom-tools](https://opencode.ai/docs/custom-tools)

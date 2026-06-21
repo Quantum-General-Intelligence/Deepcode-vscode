@@ -32,7 +32,7 @@ Or in a raw API request:
 You can browse the full list of available models via the models endpoint:
 
 ```
-GET https://api.kilo.ai/api/gateway/models
+GET https://deeper-api.takedeep.ai/api/gateway/models
 ```
 
 This returns model information including pricing, context window, and supported features. No authentication is required.
@@ -125,7 +125,7 @@ Automatically routes to a small, fast model for lightweight background tasks (se
 With the mode header:
 
 ```bash
-curl -X POST "https://api.kilo.ai/api/gateway/chat/completions" \
+curl -X POST "https://deeper-api.takedeep.ai/api/gateway/chat/completions" \
   -H "Authorization: Bearer $KILO_API_KEY" \
   -H "x-kilocode-mode: plan" \
   -H "Content-Type: application/json" \

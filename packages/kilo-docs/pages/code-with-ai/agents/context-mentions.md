@@ -1,11 +1,11 @@
 ---
 title: "Context & Mentions"
-description: "How to provide context to Kilo Code using mentions"
+description: "How to provide context to TakeDeep using mentions"
 ---
 
 # Context Mentions
 
-Providing the right context helps Kilo Code understand your project and perform tasks accurately. All platforms support `@`-mentions for referencing files, and the agent can also discover context on its own using built-in tools like `read`, `grep`, and `glob`.
+Providing the right context helps TakeDeep understand your project and perform tasks accurately. All platforms support `@`-mentions for referencing files, and the agent can also discover context on its own using built-in tools like `read`, `grep`, and `glob`.
 
 {% tabs %}
 {% tab label="VSCode" %}
@@ -47,7 +47,7 @@ VS Code requires holding **Shift** when dragging files from outside the editor (
 
 The extension automatically includes context from your editor with each message — your currently focused file and all open editor tabs. You don't need to mention these explicitly.
 
-Selected code and editor diagnostics (errors/warnings) are not included automatically. However, you can send these to Kilo Code through VS Code's Code Actions: select code or hover over an error, then use the lightbulb menu to find context-dependent actions like "Explain with Kilo Code" or "Fix with Kilo Code."
+Selected code and editor diagnostics (errors/warnings) are not included automatically. However, you can send these to TakeDeep through VS Code's Code Actions: select code or hover over an error, then use the lightbulb menu to find context-dependent actions like "Explain with TakeDeep" or "Fix with TakeDeep."
 
 ### Tool-Based File Access
 
@@ -114,7 +114,7 @@ This means the agent can explore your entire project as needed, rather than bein
 {% /tab %}
 {% tab label="VSCode (Legacy)" %}
 
-Context mentions are a powerful way to provide Kilo Code with specific information about your project, allowing it to perform tasks more accurately and efficiently. You can use mentions to refer to files, folders, problems, and Git commits. Context mentions start with the `@` symbol.
+Context mentions are a powerful way to provide TakeDeep with specific information about your project, allowing it to perform tasks more accurately and efficiently. You can use mentions to refer to files, folders, problems, and Git commits. Context mentions start with the `@` symbol.
 
 {% image src="/docs/img/context-mentions/context-mentions.png" alt="Context Mentions Overview - showing the @ symbol dropdown menu in the chat interface" width="600" caption="Context mentions overview showing the @ symbol dropdown menu in the chat interface." /%}
 
@@ -170,7 +170,7 @@ Context mentions are a powerful way to provide Kilo Code with specific informati
 
 ### Terminal Mention
 
-{% image src="/docs/img/context-mentions/context-mentions-4.png" alt="Terminal mention example showing terminal output being included in Kilo Code's context" width="600" caption="Terminal mentions capture recent command output for debugging and analysis." /%}
+{% image src="/docs/img/context-mentions/context-mentions-4.png" alt="Terminal mention example showing terminal output being included in TakeDeep's context" width="600" caption="Terminal mentions capture recent command output for debugging and analysis." /%}
 
 | Capability | Details |
 |---|---|
@@ -182,7 +182,7 @@ Context mentions are a powerful way to provide Kilo Code with specific informati
 
 ### Git Mentions
 
-{% image src="/docs/img/context-mentions/context-mentions-5.png" alt="Git commit mention example showing commit details being analyzed by Kilo Code" width="600" caption="Git mentions provide commit details and diffs for context-aware version analysis." /%}
+{% image src="/docs/img/context-mentions/context-mentions-5.png" alt="Git commit mention example showing commit details being analyzed by TakeDeep" width="600" caption="Git mentions provide commit details and diffs for context-aware version analysis." /%}
 
 | Type | Format | Provides | Limitations |
 |---|---|---|---|

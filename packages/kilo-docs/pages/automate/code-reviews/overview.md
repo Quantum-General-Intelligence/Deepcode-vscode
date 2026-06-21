@@ -26,19 +26,19 @@ Kilo's **Code Reviews** feature automatically analyzes your pull or merge reques
 
 Before enabling Code Reviews:
 
-- **A platform integration must be configured:** Connect your GitHub or GitLab account via the [Integrations page](https://app.kilo.ai/integrations) so that the Review Agent can access your repositories. See the [Integration setup guide](/docs/automate/integrations) for detailed instructions.
-- **Kilo Code credits:** The AI model uses credits when analyzing your code.
+- **A platform integration must be configured:** Connect your GitHub or GitLab account via the [Integrations page](https://deeper-dash.takedeep.ai/integrations) so that the Review Agent can access your repositories. See the [Integration setup guide](/docs/automate/integrations) for detailed instructions.
+- **TakeDeep credits:** The AI model uses credits when analyzing your code.
 
 ## Cost
 
 - **Compute and review time are free during limited beta**
   - Feedback is welcome in the Code Reviews beta Discord channel:
     - [Kilo Discord](https://discord.gg/hZnd57qN)
-- **Kilo Code credits are still used** when the agent performs model reasoning during a review.
+- **TakeDeep credits are still used** when the agent performs model reasoning during a review.
 
 ## Getting Started
 
-1. Go to the **Code Reviews** page in your [personal dashboard](https://app.kilo.ai/profile) or [organization dashboard](https://app.kilo.ai/organizations).
+1. Go to the **Code Reviews** page in your [personal dashboard](https://deeper-dash.takedeep.ai/profile) or [organization dashboard](https://deeper-dash.takedeep.ai/organizations).
 2. Toggle **Enable AI Code Review** to on.
 3. Choose an **AI Model** (e.g., Claude Sonnet 4.5).
 4. Select a **Review Style** — Strict, Balanced, or Lenient.

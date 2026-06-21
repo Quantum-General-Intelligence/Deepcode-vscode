@@ -1,11 +1,11 @@
 ---
 title: "1Password Integration"
-description: "Connect your KiloClaw agent to 1Password to securely manage credentials"
+description: "Connect your TakeDeep Claw agent to 1Password to securely manage credentials"
 ---
 
 # 1Password Integration Guide
 
-Connect your KiloClaw agent to 1Password to securely manage credentials. This allows your agent to fetch API keys or passwords without ever seeing them in plain text.
+Connect your TakeDeep Claw agent to 1Password to securely manage credentials. This allows your agent to fetch API keys or passwords without ever seeing them in plain text.
 
 ## Step 1: Create a Dedicated Vault
 
@@ -22,9 +22,9 @@ For maximum security, do not give the bot access to your personal vault.
 3. **Important:** When prompted for permissions, select only the dedicated vault you created in Step 1.
 4. Copy the generated token (it will begin with `ops_`).
 
-## Step 3: Configure KiloClaw
+## Step 3: Configure TakeDeep Claw
 
-1. Navigate to your KiloClaw dashboard: [app.kilo.ai/claw](https://app.kilo.ai/claw).
+1. Navigate to your TakeDeep Claw dashboard: [deeper-dash.takedeep.ai/claw](https://deeper-dash.takedeep.ai/claw).
 2. Go to **Settings > Tools** (or **Edit Files**).
 3. Paste your `ops_` token into the **1Password Setup** field.
 4. Click **Save**.

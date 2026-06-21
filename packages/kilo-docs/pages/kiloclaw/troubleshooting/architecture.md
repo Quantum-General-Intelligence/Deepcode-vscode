@@ -1,11 +1,11 @@
 ---
 title: "Architecture Notes"
-description: "How KiloClaw instances are structured"
+description: "How TakeDeep Claw instances are structured"
 ---
 
 # Architecture Notes
 
-For advanced users — how KiloClaw instances are structured:
+For advanced users — how TakeDeep Claw instances are structured:
 
 - **Dedicated machine** — Each user gets their own machine and persistent volume. There is no shared infrastructure between users.
 - **Region-pinned storage** — Your persistent volume stays in the region where your instance was originally created.

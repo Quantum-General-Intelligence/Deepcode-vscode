@@ -1,11 +1,11 @@
 ---
 title: "Using Agents"
-description: "Understanding and using different agents in Kilo Code"
+description: "Understanding and using different agents in TakeDeep"
 ---
 
 # Using Agents
 
-Agents in Kilo Code are specialized personas that tailor the assistant's behavior to your current task. Each agent offers different capabilities, expertise, and access levels to help you accomplish specific goals.
+Agents in TakeDeep are specialized personas that tailor the assistant's behavior to your current task. Each agent offers different capabilities, expertise, and access levels to help you accomplish specific goals.
 
 {% callout type="info" %}
 The **VSCode (Legacy)** extension calls these **modes** instead of agents. The concept is the same — specialized personas with distinct tool access and behavior.
@@ -42,7 +42,7 @@ There are several ways to switch agents:
 {% /tab %}
 {% tab label="VSCode (Legacy)" %}
 
-{% youtube url="https://youtu.be/cS4vQfX528w" caption="Explaining the different modes in Kilo Code" /%}
+{% youtube url="https://youtu.be/cS4vQfX528w" caption="Explaining the different modes in TakeDeep" /%}
 
 Four ways to switch modes:
 
@@ -73,9 +73,9 @@ Users often confuse `/newtask` and `/smol`. Here's the key difference:
 
 You can hold `shift` to move backwards through the list of modes, for example ⌘ + shift + on macOS.
 
-4. **Accept suggestions:** Click on mode switch suggestions that Kilo Code offers when appropriate
+4. **Accept suggestions:** Click on mode switch suggestions that TakeDeep offers when appropriate
 
-   {% image src="/docs/img/modes/modes-2.png" alt="Accepting a mode switch suggestion from Kilo Code" width="400" /%}
+   {% image src="/docs/img/modes/modes-2.png" alt="Accepting a mode switch suggestion from TakeDeep" width="400" /%}
 
 {% /tab %}
 {% /tabs %}
@@ -108,7 +108,7 @@ You can hold `shift` to move backwards through the list of modes, for example �
 | Aspect | Details |
 |---|---|
 | **Description** | An experienced technical leader and planner who helps design systems and create implementation plans |
-| **Tool Access** | Read-only tools plus restricted file editing (plan files in `.kilo/plans/` only) |
+| **Tool Access** | Read-only tools plus restricted file editing (plan files in `.takedeep/plans/` only) |
 | **Ideal For** | System design, high-level planning, and architecture discussions |
 | **Special Features** | Similar to the legacy extension's "Architect" mode, with a planning-focused approach |
 
@@ -164,7 +164,7 @@ The VSCode extension and CLI do not include a built-in Review agent. Code review
 | Aspect | Details |
 |---|---|
 | **Description** | An experienced technical leader and planner who helps design systems and create implementation plans |
-| **Tool Access** | Read-only tools plus restricted file editing (plan files in `.kilo/plans/` only) |
+| **Tool Access** | Read-only tools plus restricted file editing (plan files in `.takedeep/plans/` only) |
 | **Ideal For** | System design, high-level planning, and architecture discussions |
 | **Special Features** | Similar to the legacy extension's "Architect" mode, with a planning-focused approach |
 

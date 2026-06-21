@@ -23,7 +23,7 @@ To ensure a high-quality experience for all users, we ask that maintainers using
 - **Responsive Support:** Maintain a reasonable timeframe for responding to critical bugs or security reports from users.
 - **Version Documentation:** Clearly state which versions of Kilo are supported and list any known limitations or requirements.
 
-Note: Projects that become abandoned, unmaintained, or persistently incompatible may be asked to remove the "Kilo" name to prevent user frustration and ensure the ecosystem remains reliable.
+Note: Projects that become abandoned, unmaintained, or persistently incompatible may be asked to remove the "TakeDeep" name to prevent user frustration and ensure the ecosystem remains reliable.
 
 ## Brand Assets & Logos
 

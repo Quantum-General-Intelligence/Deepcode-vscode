@@ -1,8 +1,11 @@
 import yargs from "yargs"
 import type { CommandModule } from "yargs"
 import { Log } from "../util"
+import { BRAND } from "@/takedeep/brand"
 
 type Cmd = CommandModule<any, any>
+
+const CLI = BRAND.cli
 
 const ANSI_REGEX = /\x1b\[[0-9;]*m/g
 
@@ -19,7 +22,7 @@ function extractCommandName(cmd: Cmd): string | undefined {
 
 async function getHelpText(name: string, cmd: Cmd): Promise<string> {
   const inst = yargs([])
-    .scriptName(name ? `kilo ${name}` : "kilo")
+    .scriptName(name ? `${CLI} ${name}` : CLI)
     .wrap(null)
   if (cmd.builder) {
     if (typeof cmd.builder === "function") {
@@ -43,7 +46,7 @@ async function getSubcommands(
   if (!builder || typeof builder !== "function") return []
   if (depth > 4) return [] // guard against infinite recursion
 
-  const inst = yargs([]).scriptName(`kilo ${name}`).wrap(null)
+  const inst = yargs([]).scriptName(`${CLI} ${name}`).wrap(null)
   builder(inst)
 
   const result: Array<{ name: string; hidden: boolean; help: string }> = []
@@ -60,7 +63,7 @@ async function getSubcommands(
       if (sub === "$0") continue
 
       const full = `${name} ${sub}`
-      const subInst = yargs([]).scriptName(`kilo ${full}`).wrap(null)
+      const subInst = yargs([]).scriptName(`${CLI} ${full}`).wrap(null)
 
       if (handler.builder && typeof handler.builder === "function") {
         handler.builder(subInst)
@@ -105,7 +108,7 @@ function formatMarkdown(
   const parts: string[] = []
 
   for (const section of sections) {
-    parts.push(`## ${section.name ? `kilo ${section.name}` : "kilo"}`)
+    parts.push(`## ${section.name ? `${CLI} ${section.name}` : CLI}`)
     parts.push("")
     if (section.hidden) {
       parts.push("> **Internal command** — not intended for direct use.")
@@ -117,7 +120,7 @@ function formatMarkdown(
     parts.push("")
 
     for (const sub of section.subs) {
-      parts.push(`### kilo ${sub.name}`)
+      parts.push(`### ${CLI} ${sub.name}`)
       parts.push("")
       if (sub.hidden) {
         parts.push("> **Internal command** — not intended for direct use.")
@@ -146,7 +149,7 @@ function formatText(
 
   for (const section of sections) {
     parts.push(rule)
-    const display = section.name ? `kilo ${section.name}` : "kilo"
+    const display = section.name ? `${CLI} ${section.name}` : CLI
     const label = section.hidden ? `${display} [internal]` : display
     parts.push(label)
     parts.push(rule)
@@ -155,7 +158,7 @@ function formatText(
     parts.push("")
 
     for (const sub of section.subs) {
-      const sublabel = sub.hidden ? `--- kilo ${sub.name} [internal] ---` : `--- kilo ${sub.name} ---`
+      const sublabel = sub.hidden ? `--- ${CLI} ${sub.name} [internal] ---` : `--- ${CLI} ${sub.name} ---`
       parts.push(sublabel)
       parts.push("")
       parts.push(sub.help)
@@ -219,7 +222,7 @@ export async function generateCommandTable(options?: { commands?: Cmd[] }) {
     if (!raw) continue
     if (!cmd.describe) continue
 
-    const display = raw.startsWith("$0") ? "kilo" + raw.slice(2) : "kilo " + raw
+    const display = raw.startsWith("$0") ? CLI + raw.slice(2) : `${CLI} ` + raw
 
     rows.push({
       display: display.trim(),

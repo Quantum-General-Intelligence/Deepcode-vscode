@@ -1,23 +1,23 @@
 ---
 title: "Autocomplete"
-description: "AI-powered code autocompletion in Kilo Code"
+description: "AI-powered code autocompletion in TakeDeep"
 ---
 
 # Autocomplete
 
-Kilo Code's autocomplete feature provides intelligent code suggestions and completions while you're typing, helping you write code faster and more efficiently. It offers both automatic and manual triggering options.
+TakeDeep's autocomplete feature provides intelligent code suggestions and completions while you're typing, helping you write code faster and more efficiently. It offers both automatic and manual triggering options.
 
 {% tabs %}
 {% tab label="VSCode" %}
 
 ## How Autocomplete Works
 
-The extension uses **Fill-in-the-Middle (FIM)** completion routed through the **Kilo Gateway**. It analyzes the code before and after your cursor to generate contextually accurate inline suggestions.
+The extension uses **Fill-in-the-Middle (FIM)** completion routed through the **TakeDeep Gateway**. It analyzes the code before and after your cursor to generate contextually accurate inline suggestions.
 
 You can choose between two FIM models:
 
-- **Codestral** (`mistralai/codestral-2508`) by Mistral AI — the default, billed through your Kilo account.
-- **Mercury Edit** (`inception/mercury-edit`) by Inception — temporarily available via **BYOK** (Bring Your Own Key) only; Kilo Gateway support is coming soon.
+- **Codestral** (`mistralai/codestral-2508`) by Mistral AI — the default, billed through your TakeDeep account.
+- **Mercury Edit** (`inception/mercury-edit`) by Inception — temporarily available via **BYOK** (Bring Your Own Key) only; TakeDeep Gateway support is coming soon.
 
 ## Triggering Options
 
@@ -35,13 +35,13 @@ This keybinding requires `kilo-code.new.autocomplete.enableSmartInlineTaskKeybin
 
 ## Provider and Model
 
-Autocomplete requests are routed through the **Kilo Gateway**. You can pick the FIM model under **Settings → Models → Autocomplete model**:
+Autocomplete requests are routed through the **TakeDeep Gateway**. You can pick the FIM model under **Settings → Models → Autocomplete model**:
 
-- **Codestral** (`mistralai/codestral-2508`) — the default. Billed through your Kilo account, or free when you add your own Mistral Codestral key via BYOK. See [Setting Up Mistral for Free Autocomplete](/docs/code-with-ai/features/autocomplete/mistral-setup).
-- **Mercury Edit** (`inception/mercury-edit`) — a fast diffusion-based FIM model by Inception. Temporarily requires an **Inception BYOK key** until Kilo Gateway support lands. Add one from the [BYOK page](https://app.kilo.ai/byok) in the Kilo platform. See [Bring Your Own Key (BYOK)](/docs/getting-started/byok) for setup details.
+- **Codestral** (`mistralai/codestral-2508`) — the default. Billed through your TakeDeep account, or free when you add your own Mistral Codestral key via BYOK. See [Setting Up Mistral for Free Autocomplete](/docs/code-with-ai/features/autocomplete/mistral-setup).
+- **Mercury Edit** (`inception/mercury-edit`) — a fast diffusion-based FIM model by Inception. Temporarily requires an **Inception BYOK key** until TakeDeep Gateway support lands. Add one from the [BYOK page](https://deeper-dash.takedeep.ai/byok) in the Kilo platform. See [Bring Your Own Key (BYOK)](/docs/getting-started/byok) for setup details.
 
 {% callout type="note" %}
-Mercury Edit is only available through BYOK for now — Kilo Gateway support is coming soon. If you select Mercury Edit without a valid Inception BYOK key configured, autocomplete requests will fail — switch back to Codestral or add an Inception key to continue.
+Mercury Edit is only available through BYOK for now — TakeDeep Gateway support is coming soon. If you select Mercury Edit without a valid Inception BYOK key configured, autocomplete requests will fail — switch back to Codestral or add an Inception key to continue.
 {% /callout %}
 
 ## Status Bar
@@ -57,7 +57,7 @@ You can temporarily disable autocomplete by clicking the status bar item to **sn
 
 ## Copilot Conflict Detection
 
-The extension automatically detects if **GitHub Copilot** inline suggestions are enabled and warns you about potential conflicts. Disable Copilot's inline completions for the best experience with Kilo Code autocomplete.
+The extension automatically detects if **GitHub Copilot** inline suggestions are enabled and warns you about potential conflicts. Disable Copilot's inline completions for the best experience with TakeDeep autocomplete.
 
 {% /tab %}
 {% tab label="VSCode (Legacy)" %}
@@ -77,7 +77,7 @@ Autocomplete analyzes your code context and provides:
 
 #### Auto-trigger suggestions
 
-When enabled, Kilo Code automatically shows inline suggestions when you pause typing. This provides a seamless coding experience where suggestions appear naturally as you work.
+When enabled, TakeDeep automatically shows inline suggestions when you pause typing. This provides a seamless coding experience where suggestions appear naturally as you work.
 
 - **Auto Trigger Delay**: Configure the delay (in seconds) before suggestions appear after you stop typing
 - Default is 3 seconds, but this can be adjusted up or down
@@ -89,7 +89,7 @@ For more control over when suggestions appear:
 
 1. Position your cursor where you need assistance
 2. Press `Cmd+L` (Mac) or `Ctrl+L` (Windows/Linux)
-3. Kilo Code analyzes the surrounding context
+3. TakeDeep analyzes the surrounding context
 4. Receive immediate improvements or completions
 
 This is ideal for:
@@ -105,7 +105,7 @@ You can customize this keyboard shortcut as well in your VS Code settings.
 
 #### Enable Chat Autocomplete
 
-When enabled, Kilo Code will suggest completions as you type in the chat input. Press Tab to accept suggestions.
+When enabled, TakeDeep will suggest completions as you type in the chat input. Press Tab to accept suggestions.
 
 ## Provider and Model Selection
 
@@ -113,10 +113,10 @@ Autocomplete currently uses **Codestral** (by Mistral AI) as the underlying mode
 
 ### How the Provider is Chosen
 
-Kilo Code automatically selects a provider for autocomplete in the following priority order:
+TakeDeep automatically selects a provider for autocomplete in the following priority order:
 
 - **Mistral** (using `codestral-latest`)
-- **Kilo Code** (using `mistralai/codestral-2508`)
+- **TakeDeep** (using `mistralai/codestral-2508`)
 - **OpenRouter** (using `mistralai/codestral-2508`)
 - **Requesty** (using `mistral/codestral-latest`)
 - **Bedrock** (using `mistral.codestral-2508-v1:0`)
@@ -131,7 +131,7 @@ Kilo Code automatically selects a provider for autocomplete in the following pri
 
 ## Disable Rival Autocomplete
 
-We recommend disabling rival autocompletes to optimize your experience with Kilo Code. To disable GitHub Copilot autocomplete in VSCode, go to **Settings** and navigate to **GitHub** > **Copilot: Advanced** (or search for 'copilot').
+We recommend disabling rival autocompletes to optimize your experience with TakeDeep. To disable GitHub Copilot autocomplete in VSCode, go to **Settings** and navigate to **GitHub** > **Copilot: Advanced** (or search for 'copilot').
 
 Then, toggle to 'disabled':
 

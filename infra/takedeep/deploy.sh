@@ -78,6 +78,5 @@ if command -v systemctl >/dev/null 2>&1 && systemctl is-system-running >/dev/nul
   systemctl enable cloudflared 2>/dev/null || true
   systemctl restart cloudflared
 fi
-fi
 
 echo "Done."

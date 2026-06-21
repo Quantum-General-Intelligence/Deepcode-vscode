@@ -6,7 +6,7 @@ platform: new
 
 # Custom Models
 
-Kilo Code ships with a curated list of models for each provider, but you can use **any model** your provider supports — including models that aren't in the built-in list. This is useful for:
+TakeDeep ships with a curated list of models for each provider, but you can use **any model** your provider supports — including models that aren't in the built-in list. This is useful for:
 
 - Using a newly released model before it's added to the built-in catalog
 - Running a custom or fine-tuned model via LM Studio, Ollama, or another local provider
@@ -41,16 +41,16 @@ Add custom models under the `provider.<provider_id>.models` key in your config f
 
 To edit an existing custom provider, click the **Edit provider** button next to it in the connected providers section.
 
-For additional model configuration (token limits, tool calling, reasoning, variants), edit the `kilo.jsonc` config file directly — see the **CLI** tab for the format.
+For additional model configuration (token limits, tool calling, reasoning, variants), edit the `takedeep.jsonc` config file directly — see the **CLI** tab for the format.
 
 {% /tab %}
 {% tab label="CLI" %}
 
-**Config file** (`~/.config/kilo/kilo.jsonc` or `./kilo.jsonc`):
+**Config file** (`~/.config/kilo/takedeep.jsonc` or `./takedeep.jsonc`):
 
 ```jsonc
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "model": "lmstudio/my-custom-model",
   "provider": {
     "lmstudio": {
@@ -157,7 +157,7 @@ Register a model that LM Studio serves under a custom name:
 
 ```jsonc
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "model": "lmstudio/deepseek-r1-0528",
   "provider": {
     "lmstudio": {
@@ -175,7 +175,7 @@ Register a model that LM Studio serves under a custom name:
 
 ```jsonc
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "model": "ollama/my-finetune:latest",
   "provider": {
     "ollama": {
@@ -200,7 +200,7 @@ Use a model that's not yet in the built-in catalog:
 
 ```jsonc
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "model": "openai/gpt-6-preview",
   "provider": {
     "openai": {
@@ -226,7 +226,7 @@ Connect to any provider that exposes an OpenAI-compatible API:
 
 ```jsonc
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "model": "openai-compatible/my-model",
   "provider": {
     "openai-compatible": {
@@ -255,7 +255,7 @@ Override options or define reasoning variants for a built-in model:
 
 ```jsonc
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "provider": {
     "anthropic": {
       "models": {
@@ -290,7 +290,7 @@ If the model key in your config differs from what the provider expects, use the 
 
 ```jsonc
 {
-  "$schema": "https://app.kilo.ai/config.json",
+  "$schema": "https://deeper-dash.takedeep.ai/config.json",
   "model": "lmstudio/my-local-llama",
   "provider": {
     "lmstudio": {

@@ -7,11 +7,11 @@ description: "Guide to choosing the right AI model for your tasks"
 
 Here's the honest truth about AI model recommendations: by the time I write them down, they're probably already outdated. New models drop every few weeks, existing ones get updated, prices shift, and yesterday's champion becomes today's budget option.
 
-Instead of maintaining a static list that's perpetually behind, we built something better — a real-time leaderboard showing which models Kilo Code users are actually having success with right now.
+Instead of maintaining a static list that's perpetually behind, we built something better — a real-time leaderboard showing which models TakeDeep users are actually having success with right now.
 
 ## Check the Live Models List
 
-**[👉 See what's working today at kilo.ai/models](https://kilo.ai/models)**
+**[👉 See what's working today at deeper-api.takedeep.ai/models](https://deeper-api.takedeep.ai/models)**
 
 This isn't benchmarks from some lab. It's real usage data from developers like you, updated continuously. You'll see which models people are choosing for different tasks, what's delivering results, and how the landscape is shifting in real-time.
 
@@ -26,7 +26,7 @@ While the specifics change constantly, some principles stay consistent:
 
 - Use the **model selector** in the chat prompt area to pick a model for the current session. You can also type `/models` to open the model picker.
 - When the selected model supports variants, type `/variant` to open the reasoning effort selector.
-- Set per-agent defaults and a global default in the **Settings** panel (Models tab), or directly in the `kilo.jsonc` config file.
+- Set per-agent defaults and a global default in the **Settings** panel (Models tab), or directly in the `takedeep.jsonc` config file.
 - **Model precedence:** Session override → Last picked per agent → Per-agent config → Global config → Kilo Auto (free).
 - The model selector remembers the last model you picked for each agent — switching agents restores your previous choice. A manual pick always beats config settings; use the **reset button** (visible when your active model differs from config) to go back to the config default.
 
@@ -35,7 +35,7 @@ While the specifics change constantly, some principles stay consistent:
 
 - In the TUI, use the **model picker** (`Ctrl+X m` or `/models`) to switch models.
 - For non-interactive use, pass `--model` flag to `kilo run` (e.g., `kilo run --model claude-sonnet-4-20250514`).
-- Set the global default with the `model` key in `kilo.jsonc`, or configure per-agent models in the `agent` section.
+- Set the global default with the `model` key in `takedeep.jsonc`, or configure per-agent models in the `agent` section.
 - **Model precedence:** `--model` flag → Per-agent config → Last used in session → Global config → Recent models → First available.
 
 {% /tab %}
@@ -102,7 +102,7 @@ This sets the `explore` subagent to always use Haiku regardless of the parent's 
 Subagents inherit the model currently active in the primary agent session — the model shown in the selector at the bottom of the chat. To bypass inheritance and pin a specific model for a subagent:
 
 - **Via Settings** — open **Settings → Models → Model per Mode**, find the subagent, and pick its model.
-- **Via config file** — edit `kilo.jsonc`:
+- **Via config file** — edit `takedeep.jsonc`:
 
 ```json
 {
@@ -134,4 +134,4 @@ For details on configuring subagent models, see [Custom Subagents](/docs/customi
 
 ## Stay Current
 
-The AI model space moves fast. Bookmark [kilo.ai/models](https://kilo.ai/models) and check back when you're evaluating options. What's best today might not be best next month — and that's actually exciting.
+The AI model space moves fast. Bookmark [deeper-api.takedeep.ai/models](https://deeper-api.takedeep.ai/models) and check back when you're evaluating options. What's best today might not be best next month — and that's actually exciting.

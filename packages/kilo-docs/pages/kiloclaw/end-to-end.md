@@ -1,15 +1,15 @@
 ---
 title: "Setup walkthrough"
-description: "Start-to-finish guide for configuring your KiloClaw instance"
+description: "Start-to-finish guide for configuring your TakeDeep Claw instance"
 ---
 
 # Setup walkthrough
 
-This guide walks you through a full KiloClaw setup — from creating accounts to scheduling your first automated workflow. Plan for about 60 minutes.
+This guide walks you through a full TakeDeep Claw setup — from creating accounts to scheduling your first automated workflow. Plan for about 60 minutes.
 
 ## Planning your setup
 
-For most users, a useful KiloClaw configuration involves:
+For most users, a useful TakeDeep Claw configuration involves:
 
 1. A **chat platform** (called a "channel" in OpenClaw) so you can message your Claw
 2. **Google services** for email, calendar, and Drive
@@ -17,11 +17,11 @@ For most users, a useful KiloClaw configuration involves:
 
 ### Use dedicated accounts for your Claw
 
-We recommend creating **separate accounts** for your KiloClaw rather than connecting it to your personal accounts. This applies to Google, GitHub, and any other services you connect. A dedicated account improves isolation — your personal data stays separate, and you can control exactly what access the Claw has by sharing or delegating only what you want.
+We recommend creating **separate accounts** for your TakeDeep Claw rather than connecting it to your personal accounts. This applies to Google, GitHub, and any other services you connect. A dedicated account improves isolation — your personal data stays separate, and you can control exactly what access the Claw has by sharing or delegating only what you want.
 
 ### Chat platform options
 
-- **[Kilo Chat](https://app.kilo.ai)** — available in the web app and coming soon to iOS and Android; requires zero configuration
+- **[Kilo Chat](https://deeper-dash.takedeep.ai)** — available in the web app and coming soon to iOS and Android; requires zero configuration
 - **[Telegram](/docs/kiloclaw/chat-platforms/telegram)** — easy to set up, private by default
 - **[Discord](/docs/kiloclaw/chat-platforms/discord)** — moderate setup
 - **[Slack](/docs/kiloclaw/chat-platforms/slack)** — most involved setup
@@ -36,7 +36,7 @@ The steps below walk you through this configuration.
 
 Take these steps before configuring your Claw.
 
-If you are doing a [1-1 configuration call with Kilo](https://kilo.ai/kiloclaw/config-service), please complete these steps before the call.
+If you are doing a [1-1 configuration call with Kilo](https://deeper-api.takedeep.ai/kiloclaw/config-service), please complete these steps before the call.
 
 ### Google
 
@@ -44,7 +44,7 @@ Configuring Google services is by far the most involved part of setting up your 
 
 Before configuring, take these preflight steps:
 
-1. **Create a Google Account for your Claw** — Go to [google.com](https://www.google.com/) and create a new Google/Gmail account dedicated to your KiloClaw. Something like `yourname.bot@gmail.com` works well.
+1. **Create a Google Account for your Claw** — Go to [google.com](https://www.google.com/) and create a new Google/Gmail account dedicated to your TakeDeep Claw. Something like `yourname.bot@gmail.com` works well.
 
 {% callout type="tip" title="Google Workspace users" %}
 If your organization uses Google Workspace, create the dedicated bot account inside your Workspace domain (e.g., `claw@yourcompany.com`) rather than as a standalone `@gmail.com` account.
@@ -55,10 +55,10 @@ A Workspace-managed account benefits from your organization's admin policies, ma
 2. **Set up Google Cloud** — Visit [console.cloud.google.com](https://console.cloud.google.com). Accept the terms of service and click "Start my free tier". You may need to add a credit card for identity verification.
 
    {% callout type="info" %}
-   Nothing KiloClaw does costs any money with Google.
+   Nothing TakeDeep Claw does costs any money with Google.
    {% /callout %}
 
-3. **Install Docker** — KiloClaw configures Google by running a Docker container on your machine. Download Docker at [docker.com](https://www.docker.com/), then open it. You don't need to sign in or create a Docker account.
+3. **Install Docker** — TakeDeep Claw configures Google by running a Docker container on your machine. Download Docker at [docker.com](https://www.docker.com/), then open it. You don't need to sign in or create a Docker account.
 
 ## Other Services
 
@@ -66,7 +66,7 @@ A Workspace-managed account benefits from your organization's admin policies, ma
 
 ## Set up a messaging platform
 
-Your Claw needs a way to communicate with you. **[Kilo Chat](https://app.kilo.ai)** requires no setup — just open the web app. For other platforms, follow the relevant guide:
+Your Claw needs a way to communicate with you. **[Kilo Chat](https://deeper-dash.takedeep.ai)** requires no setup — just open the web app. For other platforms, follow the relevant guide:
 
 - [Telegram](/docs/kiloclaw/chat-platforms/telegram) — about 2 minutes
 - [Discord](/docs/kiloclaw/chat-platforms/discord) — about 10 minutes
@@ -82,7 +82,7 @@ This lets your Claw act as the bot Google account — sending email, reading cal
 
 Prerequisites: Docker is installed and running, and your bot Google account is already created.
 
-1. In the KiloClaw dashboard, go to **Settings → Google Account** and copy the Docker command shown.
+1. In the TakeDeep Claw dashboard, go to **Settings → Google Account** and copy the Docker command shown.
 2. Open a terminal and run the command.
 3. Follow the steps in the console:
    - At each step, confirm you're logged in to the bot account (check the top-right corner of the screen).
@@ -130,7 +130,7 @@ Email forwarding is configured from the **destination** (bot) account. Account d
 
 ## Enable auto-approval
 
-By default, KiloClaw asks for confirmation before every tool call. To let it act freely, go to the [KiloClaw dashboard](https://app.kilo.ai/claw) and enable auto-approval in the **Default Permissions** section.
+By default, TakeDeep Claw asks for confirmation before every tool call. To let it act freely, go to the [TakeDeep Claw dashboard](https://deeper-dash.takedeep.ai/claw) and enable auto-approval in the **Default Permissions** section.
 
 ## Prompt and schedule work
 
@@ -154,7 +154,7 @@ Reusable capabilities that extend what your Claw can do — things like triaging
 
 > Install the [skill name] skill.
 
-Or ask your Claw to build a custom skill from scratch — it has a built-in skill-builder skill for exactly this. You can explore popular skills and use case inspiration at the [KiloClaw Bytes library](https://kilo.ai/kiloclaw/bytes).
+Or ask your Claw to build a custom skill from scratch — it has a built-in skill-builder skill for exactly this. You can explore popular skills and use case inspiration at the [TakeDeep Claw Bytes library](https://deeper-api.takedeep.ai/kiloclaw/bytes).
 
 ## Manage inference
 
