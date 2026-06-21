@@ -1,4 +1,4 @@
-import { createMemo, For, Match, Switch } from "solid-js"
+import { createMemo, createEffect, For, Match, Switch } from "solid-js"
 import { Button } from "@opencode-ai/ui/button"
 import { Logo } from "@opencode-ai/ui/logo"
 import { useLayout } from "@/context/layout"
@@ -13,6 +13,7 @@ import { DialogSelectServer } from "@/components/dialog-select-server"
 import { useServer } from "@/context/server"
 import { useGlobalSync } from "@/context/global-sync"
 import { useLanguage } from "@/context/language"
+import { defaultDirectory } from "@/utils/default-directory"
 
 export default function Home() {
   const sync = useGlobalSync()
@@ -29,6 +30,12 @@ export default function Home() {
       .slice()
       .sort((a, b) => (b.time.updated ?? b.time.created) - (a.time.updated ?? a.time.created))
       .slice(0, 5)
+  })
+
+  createEffect(() => {
+    const dir = defaultDirectory()
+    if (!dir) return
+    navigate(`/${base64Encode(dir)}/session`, { replace: true })
   })
 
   const serverDotClass = createMemo(() => {

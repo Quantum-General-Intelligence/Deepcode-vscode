@@ -303,6 +303,12 @@ export default function Layout(props: ParentProps) {
     setState("autoselect", false)
   })
 
+  createEffect(() => {
+    const directory = currentDir()
+    if (!directory) return
+    layout.projects.open(directory)
+  })
+
   const editorOpen = editor.editorOpen
   const openEditor = editor.openEditor
   const closeEditor = editor.closeEditor

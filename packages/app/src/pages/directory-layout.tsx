@@ -8,6 +8,7 @@ import { LocalProvider } from "@/context/local"
 import { SDKProvider } from "@/context/sdk"
 import { SyncProvider, useSync } from "@/context/sync"
 import { decode64 } from "@/utils/base64"
+import { defaultDirectory } from "@/utils/default-directory"
 
 function DirectoryDataProvider(props: ParentProps<{ directory: string }>) {
   const location = useLocation()
@@ -62,7 +63,7 @@ export default function Layout(props: ParentProps) {
       invalid = ""
       return
     }
-    const fallback = import.meta.env.VITE_DEFAULT_DIRECTORY
+    const fallback = defaultDirectory()
     if (fallback) {
       const rest = location.pathname.slice(dir.length + 1)
       navigate(`/${base64Encode(fallback)}${rest}${location.search}${location.hash}`, { replace: true })

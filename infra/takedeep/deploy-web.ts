@@ -1,7 +1,7 @@
 /**
  * Push sources + config to symboliq, build deeper (linux) there, restart serve.
  */
-import { readFileSync } from "node:fs"
+import { readFileSync, writeFileSync } from "node:fs"
 import { resolve } from "node:path"
 import { spawnSync } from "node:child_process"
 
@@ -26,6 +26,10 @@ function sshRun(cmd: string) {
 console.log("==> local config artifacts")
 run(["bun", "infra/takedeep/write-server-config.ts"])
 run(["bun", "infra/takedeep/write-prod-env.ts"])
+
+const prodEnv = resolve(root, "packages/app/.env.production.local")
+writeFileSync(prodEnv, "VITE_DEFAULT_DIRECTORY=/opt/takedeep/Deepcode-vscode\n")
+console.log("wrote", prodEnv)
 
 console.log("==> tar+ssh sync to symboliq")
 const excludes = [
